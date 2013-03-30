@@ -1,0 +1,249 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/dom/dom_errors_crossbrowser.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:16:33 GMT -->
+<head>
+
+<title>XML DOM Parser Errors</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1>XML DOM <span class="color_h1">Parser Errors</span></h1>
+<div class="chapter">
+<div class="prev"><a class="chapter" href="dom_errors.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="dom_summary.html">Next Chapter &raquo;</a></div>
+</div>
+<hr />
+<p class="intro">When Firefox encounter a parser error, it loads an XML document 
+containing the error</p>
+<hr />
+
+<h2>Parser Error in Firefox</h2>
+
+<p>When trying to open an XML document, a parser-error may occur.</p>
+<p>Unlike Internet Explorer, if Firefox encounters an error, it loads an XML 
+document containing the error description.</p>
+<p>The root node name of the XML error document is &quot;parsererror&quot;. This is used 
+to check if there is an error.</p>
+
+<hr />
+<h2>XML Error
+</h2>
+
+<p>In the following code we let the parser load an XML document that is not well-formed.
+</p>
+
+<p>(You can read more about well-formed and valid XML in our
+<a href="../xml/default.html">XML tutorial</a>)</p>
+<table class="example" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+<h2 class="example">Example</h2>
+<table class="example_code notranslate" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+xmlDoc=document.implementation.createDocument(&quot;&quot;,&quot;&quot;,null);<br />
+xmlDoc.async=false;<br />
+xmlDoc.load(&quot;note_error.xml&quot;);<br />
+<br />
+if (xmlDoc.documentElement.nodeName==&quot;parsererror&quot;)<br />
+{<br />
+errStr=xmlDoc.documentElement.childNodes[0].nodeValue;<br />
+errStr=errStr.replace(/&lt;/g, &quot;&amp;lt;&quot;);<br />
+document.write(errStr);<br />
+}<br />
+else<br />
+{<br />
+document.write(&quot;XML is valid&quot;);<br />
+}
+</td></tr></table>
+<br /><a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=note_error_firefox" class="tryitbtn">Try it yourself &raquo;</a>
+</td></tr></table>
+<p>Look at the XML file: <a target="_blank" href="note_error.xml">note_error.xml</a></p>
+<p>Example explained:</p>
+<ol>
+	<li>Load the xml file</li>
+	<li>Check if the nodeName of the root node is &quot;parsererror&quot;</li>
+	<li>Load the error string into a variable &quot;errStr&quot;</li>
+	<li>Replace &quot;&lt;&quot; characters with &quot;&amp;lt;&quot; before the error string can be 
+	written as HTML</li>
+</ol>
+<p><b>Note:</b> Only Internet Explorer will actually check your XML against the 
+DTD. Firefox will not.</p>
+
+<hr />
+<h2>Cross Browser Error Check</h2>
+<p>Here we have created an XML load function that checks for parser errors in 
+both Internet Explorer and Firefox:</p>
+
+<table class="example" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+<h2 class="example">Example</h2>
+<table class="example_code notranslate" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+function loadXMLDocErr(dname)<br />
+{<br />
+try //Internet Explorer<br />
+&nbsp;&nbsp;{<br />
+&nbsp;&nbsp;xmlDoc=new ActiveXObject(&quot;Microsoft.XMLDOM&quot;);<br />
+&nbsp;&nbsp;xmlDoc.async=false;<br />
+&nbsp;&nbsp;xmlDoc.load(dname); <br />
+<br />
+&nbsp;&nbsp;if (xmlDoc.parseError.errorCode != 0)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;alert(&quot;Error in line &quot; + xmlDoc.parseError.line +<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&quot; position &quot; + xmlDoc.parseError.linePos +<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&quot;\nError Code: &quot; + xmlDoc.parseError.errorCode +<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&quot;\nError Reason: &quot; + xmlDoc.parseError.reason +<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&quot;Error Line: &quot; + xmlDoc.parseError.srcText);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;return(null);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+&nbsp;&nbsp;}<br />
+catch(e)<br />
+&nbsp;&nbsp;{<br />
+&nbsp;&nbsp;try //Firefox<br />
+&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;xmlDoc=document.implementation.createDocument(&quot;&quot;,&quot;&quot;,null);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;xmlDoc.async=false;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;xmlDoc.load(dname);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;if (xmlDoc.documentElement.nodeName==&quot;parsererror&quot;)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert(xmlDoc.documentElement.childNodes[0].nodeValue);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return(null);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+&nbsp;&nbsp;catch(e) {alert(e.message)}<br />
+&nbsp;&nbsp;}<br />
+try<br />
+&nbsp;&nbsp;{<br />
+&nbsp;&nbsp;return(xmlDoc);<br />
+&nbsp;&nbsp;}<br />
+catch(e) {alert(e.message)}<br />
+return(null);<br />
+}
+</td></tr></table>
+<br /><a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=note_error_crossbrowser" class="tryitbtn">Try it yourself &raquo;</a>
+</td></tr></table>
+<p>Look at the XML file: <a target="_blank" href="note_error.xml">note_error.xml</a></p>
+<p>Example explained - Internet Explorer:</p>
+<ol>
+	<li>The first line creates an empty Microsoft XML document object</li>
+	<li>The second line turns off asynchronized loading, to make sure that the 
+	parser will not continue execution of the script before the document is 
+	fully loaded</li>
+	<li>The third line tells the parser to load an XML document called &quot;note_error.xml&quot;</li>
+	<li>If the errorCode property of the parseError object is different from 
+	&quot;0&quot;, alert the error and exit the function</li>
+	<li>If the errorCode property is &quot;0&quot;, return the XML document</li>
+</ol>
+<p>Example explained - Firefox:</p>
+<ol>
+	<li>The first line creates an empty XML document object.</li>
+	<li>The second line turns off asynchronized loading, to make sure that the 
+	parser will not continue execution of the script before the document is 
+	fully loaded.</li>
+	<li>The third line tells the parser to load an XML document called &quot;note_error.xml&quot;.</li>
+	<li>If the returned document is an error document, alert the error and exit 
+	the function</li>
+	<li>If not, return the XML document</li>
+</ol>
+<br />
+<div class="chapter">
+<div class="prev"><a class="chapter" href="dom_errors.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="dom_summary.html">Next Chapter &raquo;</a></div>
+</div>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/dom/dom_errors_crossbrowser.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:16:33 GMT -->
+</html>

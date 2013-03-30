@@ -1,0 +1,376 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/schema/schema_dtypes_date.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:16:40 GMT -->
+<head>
+
+<title>XML Schema Date/Time Datatypes</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1>XSD <span class="color_h1">Date and Time</span> Data Types</h1>
+<div class="chapter">
+<div class="prev"><a class="chapter" href="schema_dtypes_string.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="schema_dtypes_numeric.html">Next Chapter &raquo;</a></div>
+</div>
+<hr />
+<p class="intro">Date and time data types are used for values that contain date and time.</p>
+<hr />
+
+<h2>Date Data Type</h2>
+<p>The date data type is used to specify a date.</p>
+<p>The date is specified in the following form &quot;YYYY-MM-DD&quot; where:</p>
+<ul>
+  <li>YYYY indicates the year</li>
+  <li>MM indicates the month</li>
+  <li>DD indicates the day</li>
+</ul>
+<p><b>Note:</b> All components are required!</p>
+<p>The following is an example of a date declaration in a schema:</p>
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>&lt;xs:element name=&quot;start&quot; type=&quot;xs:date&quot;/&gt;</td></tr>
+</table>
+
+<p>An element in your document might look like this:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>&lt;start&gt;2002-09-24&lt;/start&gt;</td></tr>
+</table>
+
+<h3>Time Zones</h3>
+<p>To specify a time zone, you can either enter a date in UTC time by 
+adding a &quot;Z&quot; behind the date - like this:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>&lt;start&gt;2002-09-24Z&lt;/start&gt;</td></tr>
+</table>
+
+<p>or you can specify an offset from the UTC time by adding a positive or negative time 
+behind the date - like this:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;start&gt;2002-09-24-06:00&lt;/start&gt;<br /><br />
+or<br /><br />
+&lt;start&gt;2002-09-24+06:00&lt;/start&gt;</td></tr>
+</table>
+<br />
+<hr />
+
+<h2>Time Data Type</h2>
+<p>The time data type is used to specify a time.</p>
+<p>The time is specified in the following form &quot;hh:mm:ss&quot; where:</p>
+<ul>
+  <li>hh indicates the hour</li>
+  <li>mm indicates the minute</li>
+  <li>ss indicates the second</li>
+</ul>
+<p><b>Note:</b> All components are required!</p>
+<p>The following is an example of a time declaration in a schema:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>&lt;xs:element name=&quot;start&quot; type=&quot;xs:time&quot;/&gt;</td></tr>
+</table>
+
+<p>An element in your document might look like this:</p>
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>&lt;start&gt;09:00:00&lt;/start&gt;</td></tr>
+</table>
+
+<p>Or it might look like this:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>&lt;start&gt;09:30:10.5&lt;/start&gt;</td></tr>
+</table>
+
+<h3>Time Zones</h3>
+<p>To specify a time zone, you can either enter a time in UTC time by adding a &quot;Z&quot; behind the time - like this:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>&lt;start&gt;09:30:10Z&lt;/start&gt;</td></tr>
+</table>
+
+<p>or you can specify an offset from the UTC time by adding a positive or negative time behind the time - like this:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;start&gt;09:30:10-06:00&lt;/start&gt;<br /><br />
+or<br /><br />
+&lt;start&gt;09:30:10+06:00&lt;/start&gt;</td></tr>
+</table>
+<br />
+<hr />
+
+<h2>DateTime Data Type</h2>
+<p>The dateTime data type is used to specify a date and a time.</p>
+<p>The dateTime is specified in the following form &quot;YYYY-MM-DDThh:mm:ss&quot; where:</p>
+<ul>
+  <li>YYYY indicates the year</li>
+  <li>MM indicates the month</li>
+  <li>DD indicates the day</li>
+  <li>T indicates the start of the required time section</li>
+  <li>hh indicates the hour</li>
+  <li>mm indicates the minute</li>
+  <li>ss indicates the second</li>
+</ul>
+<p><b>Note:</b> All components are required!</p>
+<p>The following is an example of a dateTime declaration in a schema:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>&lt;xs:element name=&quot;startdate&quot; type=&quot;xs:dateTime&quot;/&gt;</td></tr>
+</table>
+
+<p>An element in your document might look like this:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>&lt;startdate&gt;2002-05-30T09:00:00&lt;/startdate&gt;</td></tr>
+</table>
+
+<p>Or it might look like this:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>&lt;startdate&gt;2002-05-30T09:30:10.5&lt;/startdate&gt;</td></tr>
+</table>
+
+<h3>Time Zones</h3>
+<p>To specify a time zone, you can either enter a dateTime in UTC time by 
+adding a &quot;Z&quot; behind the time - like this:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>&lt;startdate&gt;2002-05-30T09:30:10Z&lt;/startdate&gt;</td></tr>
+</table>
+
+<p>or you can specify an offset from the UTC time by adding a positive or negative time 
+behind the time - like this:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;startdate&gt;2002-05-30T09:30:10-06:00&lt;/startdate&gt;<br /><br />
+or<br /><br />
+&lt;startdate&gt;2002-05-30T09:30:10+06:00&lt;/startdate&gt;</td></tr>
+</table>
+<br />
+<hr />
+
+<h2>Duration Data Type</h2>
+<p>The duration data type is used to specify a time interval.</p>
+<p>The time interval is specified in the following form &quot;PnYnMnDTnHnMnS&quot; where:</p>
+<ul>
+  <li>P indicates the period (required)</li>
+  <li>nY indicates the number of years</li>
+  <li>nM indicates the number of months</li>
+  <li>nD indicates the number of days</li>
+  <li>T indicates the start of a time section (required if you are going to 
+  specify hours, minutes, or seconds)</li>
+  <li>nH indicates the number of hours</li>
+  <li>nM indicates the number of minutes</li>
+  <li>nS indicates the number of seconds</li>
+</ul>
+<p>The following is an example of a duration declaration in a schema:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>&lt;xs:element name=&quot;period&quot; type=&quot;xs:duration&quot;/&gt;</td></tr>
+</table>
+
+<p>An element in your document might look like this:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>&lt;period&gt;P5Y&lt;/period&gt;</td></tr>
+</table>
+
+<p>The example above indicates a period of five years.</p>
+<p>Or it might look like this:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>&lt;period&gt;P5Y2M10D&lt;/period&gt;</td></tr>
+</table>
+
+<p>The example above indicates a period of five years, two months, and 10 days.</p>
+<p>Or it might look like this:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>&lt;period&gt;P5Y2M10DT15H&lt;/period&gt;</td></tr>
+</table>
+
+<p>The example above indicates a period of five years, two months, 10 days, and 15 hours.</p>
+<p>Or it might look like this:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>&lt;period&gt;PT15H&lt;/period&gt;</td></tr>
+</table>
+
+<p>The example above indicates a period of 15 hours.</p>
+
+<h3>Negative Duration</h3>
+<p>To specify a negative duration, enter a minus sign before the P:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>&lt;period&gt;-P10D&lt;/period&gt;</td></tr>
+</table>
+
+<p>The example above indicates a period of minus 10 days.</p>
+<hr />
+
+<h2>Date and Time Data Types</h2>
+
+<table class="reference">
+  <tr>
+    <th width="23%" align="left" valign="top">Name</th>
+    <th width="77%" align="left" valign="top">Description</th>
+  </tr>
+  <tr>
+    <td valign="top">date</td>
+    <td valign="top">Defines a date value</td>
+  </tr>
+  <tr>
+    <td valign="top">dateTime</td>
+    <td valign="top">Defines a date and time value</td>
+  </tr>
+  <tr>
+    <td valign="top">duration</td>
+    <td valign="top">Defines a time interval</td>
+  </tr>
+  <tr>
+    <td valign="top">gDay</td>
+    <td valign="top">Defines a part of a date - the day (DD)</td>
+  </tr>
+  <tr>
+    <td valign="top">gMonth</td>
+    <td valign="top">Defines a part of a date - the month (MM)</td>
+  </tr>
+  <tr>
+    <td valign="top">gMonthDay</td>
+    <td valign="top">Defines a part of a date - the month and day (MM-DD)</td>
+  </tr>
+  <tr>
+    <td valign="top">gYear</td>
+    <td valign="top">Defines a part of a date - the year (YYYY)</td>
+  </tr>
+  <tr>
+    <td valign="top">gYearMonth</td>
+    <td valign="top">Defines a part of a date - the year and month (YYYY-MM)</td>
+  </tr>
+  <tr>
+    <td valign="top">time</td>
+    <td valign="top">Defines a time value</td>
+  </tr>
+  </table>
+<br />
+<hr />
+<h2>Restrictions on Date Data Types</h2>
+<p>Restrictions that can be used with Date data types:</p>
+<ul>
+  <li>enumeration</li>
+  <li>maxExclusive</li>
+  <li>maxInclusive</li>
+  <li>minExclusive</li>
+  <li>minInclusive</li>
+  <li>pattern</li>
+  <li>whiteSpace</li>
+</ul>
+<br />
+<div class="chapter">
+<div class="prev"><a class="chapter" href="schema_dtypes_string.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="schema_dtypes_numeric.html">Next Chapter &raquo;</a></div>
+</div>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/schema/schema_dtypes_date.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:16:40 GMT -->
+</html>

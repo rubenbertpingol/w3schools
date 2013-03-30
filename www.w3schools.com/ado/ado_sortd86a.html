@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/ado/ado_sort.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:17:32 GMT -->
+<head>
+
+<title>ADO Sort</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1>ADO <span class="color_h1">Sort</span></h1>
+<div class="chapter">
+<div class="prev"><a class="chapter" href="ado_query.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="ado_add.html">Next Chapter &raquo;</a></div>
+</div>
+<hr />
+<p class="intro">We may use SQL to specify how to sort the data in the record 
+set.&nbsp;</p>
+<hr />
+<h2>Sort the Data</h2>
+<p>We want to display the &quot;Companyname&quot; and &quot;Contactname&quot; fields from the &quot;Customers&quot; 
+table, ordered by &quot;Companyname&quot; (remember to save the file with an .asp extension):</p>
+<table class="example" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+<h2 class="example">Example</h2>
+<table class="example_code notranslate" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+&lt;html&gt;<br />
+&lt;body&gt;<br />
+<br />
+&lt;%<br />
+set conn=Server.CreateObject(&quot;ADODB.Connection&quot;)<br />
+conn.Provider=&quot;Microsoft.Jet.OLEDB.4.0&quot;<br />
+conn.Open &quot;c:/webdata/northwind.mdb&quot;<br />
+<br />
+set rs = Server.CreateObject(&quot;ADODB.recordset&quot;)<br />
+sql=&quot;SELECT Companyname, Contactname FROM<br />
+Customers ORDER BY CompanyName&quot;<br />
+rs.Open sql, conn<br />
+%&gt;<br />
+<br />
+&lt;table border=&quot;1&quot; width=&quot;100%&quot;&gt;<br />
+&nbsp;&nbsp;&lt;tr&gt;<br />
+&nbsp;&nbsp;&lt;%for each x in rs.Fields<br />
+&nbsp;&nbsp;&nbsp;&nbsp;response.write(&quot;&lt;th&gt;&quot; &amp; x.name &amp; &quot;&lt;/th&gt;&quot;)<br />
+&nbsp;&nbsp;next%&gt;<br />
+&nbsp;&nbsp;&lt;/tr&gt;<br />
+&nbsp;&nbsp;&lt;%do until rs.EOF%&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;%for each x in rs.Fields%&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;&lt;%Response.Write(x.value)%&gt;&lt;/td&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;%next<br />
+&nbsp;&nbsp;&nbsp;&nbsp;rs.MoveNext%&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br />
+&nbsp;&nbsp;&lt;%loop<br />
+&nbsp;&nbsp;rs.close<br />
+&nbsp;&nbsp;conn.close%&gt;<br />
+&lt;/table&gt;<br />
+<br />
+&lt;/body&gt;<br />
+&lt;/html&gt;
+</td></tr></table>
+<br /><a target="_blank" href="showaspaf2e.html?filename=demo_sort_1" class="showbtn">Show example &raquo;</a>
+</td></tr></table>
+
+<br />
+<hr />
+<br />
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td align="left" width="48"><img border="0" src="http://www.w3schools.com/images/tryitimg.gif" width="40" height="46" alt="Examples" /></td>
+<td align="left" valign="middle"><h2>More Examples</h2></td>
+</tr>
+</table>
+<p><a target="_blank" href="showaspb36f.html?filename=demo_sort_2">Sort the records on a specified fieldname 
+descending</a><br />
+How to sort the data on a specified fieldname.</p>
+<p><a target="_blank" href="showasp308c.html?filename=demo_sort_3">Let the user choose what column to sort on</a><br />
+Let the user choose what column to sort on.</p>
+<br />
+<div class="chapter">
+<div class="prev"><a class="chapter" href="ado_query.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="ado_add.html">Next Chapter &raquo;</a></div>
+</div>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/ado/ado_sort.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:17:32 GMT -->
+</html>

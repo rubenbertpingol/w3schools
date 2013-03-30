@@ -1,0 +1,360 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/php/php_ref_xml.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:29:32 GMT -->
+<head>
+<title>PHP XML Functions</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1>PHP <span class="color_h1">XML Parser</span> Functions</h1>
+<div class="chapter">
+<div class="prev"><a class="chapter" href="php_ref_string.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="php_ref_zip.html">Next Chapter &raquo;</a></div>
+</div>
+<hr />
+<h2>PHP XML Parser Introduction</h2>
+<p>The XML functions lets you parse, but not validate, XML documents.</p>
+<p>XML is a data format for standardized structured document exchange. More 
+information on XML can be found in our 
+<a target="_blank" href="../xml/default.html">XML Tutorial</a>.</p>
+<p>This extension uses the Expat XML parser.</p>
+<p>Expat is an event-based parser, it views an XML document as a series of 
+events. When an event occurs, it calls a specified function to handle it.</p>
+<p>Expat is a non-validating parser, and ignores any DTDs linked to a document. 
+However, if the document is not well formed it will end with an error message.</p>
+<p>Because it is an event-based, non validating parser, Expat is fast and well 
+suited for web applications.</p>
+<p>The XML parser functions lets you create XML parsers and define handlers for XML 
+events.</p>
+<hr />
+
+<h2>Installation</h2>
+<p>The XML functions are part of the PHP core. There is no installation 
+needed to use these functions.</p>
+<hr />
+
+<h2>PHP XML Parser Functions</h2>
+<p><b>PHP</b>: indicates the earliest version of PHP that supports the 
+  function.</p>
+<table class="reference">
+  <tr>
+    <th width="55%" align="left" valign="top">Function</th>
+    <th width="45%" align="left" valign="top">Description</th>
+    <th width="5%" align="left" valign="top">PHP</th>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_xml_utf8_decode.html">utf8_decode()</a></td>
+    <td valign="top">Decodes an UTF-8 string to ISO-8859-1</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_xml_utf8_encode.html">utf8_encode()</a></td>
+    <td valign="top">Encodes an ISO-8859-1 string to UTF-8</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_xml_error_string.html">xml_error_string()</a></td>
+    <td valign="top">Gets an error string from the XML parser</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_xml_get_current_byte_index.html">xml_get_current_byte_index()</a></td>
+    <td valign="top">Gets the current byte index from the XML parser</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_xml_get_current_column_number.html">xml_get_current_column_number()</a></td>
+    <td valign="top">Gets the current column number from the XML parser</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_xml_get_current_line_number.html">xml_get_current_line_number()</a></td>
+    <td valign="top">Gets the current line number from the XML parser</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_xml_get_error_code.html">xml_get_error_code()</a></td>
+    <td valign="top">Gets an error code from the XML parser</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_xml_parse.html">xml_parse()</a></td>
+    <td valign="top">Parses an XML document</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_xml_parse_into_struct.html">xml_parse_into_struct()</a></td>
+    <td valign="top">Parse XML data into an array</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_xml_parser_create_ns.html">xml_parser_create_ns()</a></td>
+    <td valign="top">Create an XML parser with namespace support</td>
+    <td valign="top">4</td>
+  </tr>
+	<tr>
+    <td valign="top"><a href="func_xml_parser_create.html">xml_parser_create()</a></td>
+    <td valign="top">Create an XML parser</td>
+    <td valign="top">3</td>
+  </tr>
+	<tr>
+    <td valign="top"><a href="func_xml_parser_free.html">xml_parser_free()</a></td>
+    <td valign="top">Free an XML parser</td>
+    <td valign="top">3</td>
+  </tr>
+	<tr>
+    <td valign="top"><a href="func_xml_parser_get_option.html">xml_parser_get_option()</a></td>
+    <td valign="top">Get options from an XML parser</td>
+    <td valign="top">3</td>
+  </tr>
+	<tr>
+    <td valign="top"><a href="func_xml_parser_set_option.html">xml_parser_set_option()</a></td>
+    <td valign="top">Set options in an XML parser</td>
+    <td valign="top">3</td>
+  </tr>
+	<tr>
+    <td valign="top"><a href="func_xml_set_character_data_handler.html">xml_set_character_data_handler()</a></td>
+    <td valign="top">Set handler function for character data</td>
+    <td valign="top">3</td>
+  </tr>
+	<tr>
+    <td valign="top"><a href="func_xml_set_default_handler.html">xml_set_default_handler()</a></td>
+    <td valign="top">Set default handler function</td>
+    <td valign="top">3</td>
+  </tr>
+	<tr>
+    <td valign="top"><a href="func_xml_set_element_handler.html">xml_set_element_handler()</a></td>
+    <td valign="top">Set handler function for start and end element of elements</td>
+    <td valign="top">3</td>
+  </tr>
+	<tr>
+    <td valign="top">xml_set_end_namespace_decl_handler()</td>
+    <td valign="top">Set handler function for the end of namespace declarations</td>
+    <td valign="top">4</td>
+  </tr>
+	<tr>
+    <td valign="top"><a href="func_xml_set_external_entity_ref_handler.html">xml_set_external_entity_ref_handler()</a></td>
+    <td valign="top">Set handler function for external entities</td>
+    <td valign="top">3</td>
+  </tr>
+	<tr>
+    <td valign="top"><a href="func_xml_set_notation_decl_handler.html">xml_set_notation_decl_handler()</a></td>
+    <td valign="top">Set handler function for notation declarations</td>
+    <td valign="top">3</td>
+  </tr>
+	<tr>
+    <td valign="top"><a href="func_xml_set_object.html">xml_set_object()</a></td>
+    <td valign="top">Use XML Parser within an object</td>
+    <td valign="top">4</td>
+  </tr>
+	<tr>
+    <td valign="top"><a href="func_xml_set_processing_instruction_handler.html">xml_set_processing_instruction_handler()</a></td>
+    <td valign="top">Set handler function for processing instruction</td>
+    <td valign="top">3</td>
+  </tr>
+	<tr>
+    <td valign="top">xml_set_start_namespace_decl_handler()</td>
+    <td valign="top">Set handler function for the start of namespace 
+	declarations</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_xml_set_unparsed_entity_decl_handler.html">xml_set_unparsed_entity_decl_handler()</a></td>
+    <td valign="top">Set handler function for unparsed entity declarations</td>
+    <td valign="top">3</td>
+  </tr>
+  </table>
+<br />
+<hr />
+
+<h2>PHP XML Parser Constants</h2>
+<table class="reference">
+  <tr>
+    <th width="30%" align="left">Constant</th>
+  </tr>
+  <tr>
+    <td valign="top">XML_ERROR_NONE (integer)</td>
+  </tr>
+  <tr>
+    <td valign="top">XML_ERROR_NO_MEMORY (integer)</td>
+  </tr>
+	<tr>
+    <td valign="top">XML_ERROR_SYNTAX (integer)</td>
+  </tr>
+  <tr>
+    <td valign="top">XML_ERROR_NO_ELEMENTS (integer)</td>
+  </tr>
+  <tr>
+    <td valign="top">XML_ERROR_INVALID_TOKEN (integer)</td>
+  </tr>
+  <tr>
+    <td valign="top">XML_ERROR_UNCLOSED_TOKEN (integer)</td>
+  </tr>
+  <tr>
+    <td valign="top">XML_ERROR_PARTIAL_CHAR (integer)</td>
+  </tr>
+  <tr>
+    <td valign="top">XML_ERROR_TAG_MISMATCH (integer)</td>
+  </tr>
+  <tr>
+    <td valign="top">XML_ERROR_DUPLICATE_ATTRIBUTE (integer)</td>
+  </tr>
+  <tr>
+    <td valign="top">XML_ERROR_JUNK_AFTER_DOC_ELEMENT (integer)</td>
+  </tr>
+  <tr>
+    <td valign="top">XML_ERROR_PARAM_ENTITY_REF (integer)</td>
+  </tr>
+  <tr>
+    <td valign="top">XML_ERROR_UNDEFINED_ENTITY (integer)</td>
+  </tr>
+  <tr>
+    <td valign="top">XML_ERROR_RECURSIVE_ENTITY_REF (integer)</td>
+  </tr>
+  <tr>
+    <td valign="top">XML_ERROR_ASYNC_ENTITY (integer)</td>
+  </tr>
+	<tr>
+    <td valign="top">XML_ERROR_BAD_CHAR_REF (integer)</td>
+  </tr>
+	<tr>
+    <td valign="top">XML_ERROR_BINARY_ENTITY_REF (integer)</td>
+  </tr>
+	<tr>
+    <td valign="top">XML_ERROR_ATTRIBUTE_EXTERNAL_ENTITY_REF (integer)</td>
+  </tr>
+	<tr>
+    <td valign="top">XML_ERROR_MISPLACED_XML_PI (integer)</td>
+  </tr>
+	<tr>
+    <td valign="top">XML_ERROR_UNKNOWN_ENCODING (integer)</td>
+  </tr>
+	<tr>
+    <td valign="top">XML_ERROR_INCORRECT_ENCODING (integer)</td>
+  </tr>
+	<tr>
+    <td valign="top">XML_ERROR_UNCLOSED_CDATA_SECTION (integer)</td>
+  </tr>
+	<tr>
+    <td valign="top">XML_ERROR_EXTERNAL_ENTITY_HANDLING (integer)</td>
+  </tr>
+	<tr>
+    <td valign="top">XML_OPTION_CASE_FOLDING (integer)</td>
+  </tr>
+	<tr>
+    <td valign="top">XML_OPTION_TARGET_ENCODING (integer)</td>
+  </tr>
+	<tr>
+    <td valign="top">XML_OPTION_SKIP_TAGSTART (integer)</td>
+  </tr>
+  <tr>
+    <td valign="top">XML_OPTION_SKIP_WHITE (integer)</td>
+  </tr>
+</table>
+<br />
+<div class="chapter">
+<div class="prev"><a class="chapter" href="php_ref_string.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="php_ref_zip.html">Next Chapter &raquo;</a></div>
+</div>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/php/php_ref_xml.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:29:32 GMT -->
+</html>

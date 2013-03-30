@@ -1,0 +1,332 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/razor/razor_ref_classes.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:33:28 GMT -->
+<head>
+
+<title>ASP.NET Classes Reference</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1>ASP.NET Razor <span class="color_h1">- Classes Reference</span></h1>
+<div class="chapter">
+<div class="prev"><a class="chapter" href="razor_quiz.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="razor_ref_database.html">Next Chapter &raquo;</a></div>
+</div>
+<hr />
+
+<table class="reference">
+<tr>
+<th align="left" width="50%">Method</th>
+<th align="left" width="50%">Description</th>
+</tr>
+<tr>
+<td class="unknown" valign="top">AsBool(), AsBool(true|false)</td>
+<td valign="top">
+Converts a string value to a Boolean value 
+(true/false). Returns false or the specified value 
+if the string does not represent true/false.
+</td></tr><tr>
+<td class="unknown" valign="top">AsDateTime(), AsDateTime(<em>value</em>)</td>
+<td valign="top">
+Converts a string value to date/time. Returns DateTime. MinValue or the specified value if 
+the string does not represent a date/time.</td></tr><tr>
+<td class="unknown" valign="top">AsDecimal(), AsDecimal(<em>value</em>)</td>
+<td valign="top">
+Converts a string value to a decimal value. Returns 
+0.0 or the specified value if the string does not 
+represent a decimal value.</td></tr><tr>
+<td class="unknown" valign="top">AsFloat(), AsFloat(<em>value</em>)</td>
+<td valign="top">
+Converts a string value to a float. Returns 0.0 or 
+the specified value if the string does not represent 
+a decimal value.</td></tr><tr>
+<td class="unknown" valign="top">AsInt(), AsInt(<em>value</em>)</td>
+<td valign="top">
+Converts a string value to an integer. Returns 0 or 
+the specified value if the string does not represent 
+an integer.</td></tr><tr>
+<td class="unknown" valign="top">Href(<em>path</em> <em>[, param1 [, 
+param2]]</em>)</td><td valign="top">Creates a browser-compatible 
+URL from a local file path, with optional additional 
+path parts.</td></tr><tr>
+<td class="unknown" valign="top">Html.Raw(<em>value</em>)</td><td valign="top">Renders
+<em>value</em> as HTML markup instead of rendering 
+it as HTML-encoded output.</td></tr><tr>
+<td class="unknown" valign="top">IsBool(), IsDateTime(), IsDecimal(), 
+IsFloat(), IsInt()</td><td valign="top">Returns true if the 
+value can be converted from a string to the 
+specified type.</td></tr><tr>
+<td class="unknown" valign="top">IsEmpty()</td><td valign="top">Returns true if the 
+object or variable has no value.</td></tr><tr>
+<td class="unknown" valign="top">IsPost</td><td valign="top">Returns true if the 
+request is a POST. (Initial requests are usually a 
+GET.)</td></tr><tr>
+<td class="unknown" valign="top">Layout</td><td valign="top">Specifies the path of a 
+layout page to apply to this page.</td></tr><tr>
+<td class="unknown" valign="top">PageData[<em>key</em>], PageData[<em>index</em>], 
+Page</td><td valign="top">Contains data shared between the page, 
+layout pages, and partial pages in the current 
+request. You can use the dynamic Page 
+property to access the same data, as in the 
+following example:</td></tr><tr>
+<td class="unknown" valign="top">RenderBody()</td><td valign="top">(Layout pages) 
+Renders the content of a content page that is not in 
+any named sections.</td></tr><tr>
+<td class="unknown" valign="top">RenderPage(<em>path</em>,<em> values</em>)
+<br>
+RenderPage(<em>path[, param1 [, param2]]</em>)</td><td valign="top">
+Renders a content page using the specified path and 
+optional extra data. You can get the values of the 
+extra parameters from PageData by 
+position (example 1) or key (example 2).</td></tr><tr>
+<td class="unknown" valign="top">RenderSection(<em>sectionName [, required 
+= </em>true|false<em>]</em>)</td><td valign="top">(Layout pages) 
+Renders a content section that has a name. Set <em>
+required</em> to false to make a section optional.</td></tr><tr>
+<td class="unknown" valign="top">Request.Cookies[<em>key</em>]</td>
+<td valign="top">
+Gets or sets the value of an HTTP cookie.</td></tr><tr>
+<td class="unknown" valign="top">Request.Files[<em>key</em>]</td>
+<td valign="top">Gets 
+the files that were uploaded in the current request.</td></tr><tr>
+<td class="unknown" valign="top">Request.Form[<em>key</em>]</td>
+<td valign="top">Gets 
+data that was posted in a form (as strings). 
+Request[<em>key</em>] checks both the Request.Form and the Request.QueryString collections.</td>
+</tr><tr>
+<td class="unknown" valign="top">Request.QueryString[<em>key</em>]</td>
+<td valign="top">
+Gets data that was specified in the URL query 
+string. Request[<em>key</em>] checks 
+both the Request.Form and the Request.QueryString collections. 
+</td></tr><tr>
+<td class="unknown" valign="top">Request.Unvalidated(<em>key</em>) <br>
+Request.Unvalidated().QueryString|Form|Cookies|Headers[<em>key</em>]</td>
+<td valign="top">
+Selectively disables request validation for a 
+form element, query-string value, cookie, or header 
+value. Request validation is enabled by default and 
+prevents users from posting markup or other 
+potentially dangerous content.</td></tr><tr>
+<td class="unknown" valign="top">Response.AddHeader(<em>name</em>, <em>
+value</em>)</td><td valign="top">Adds an HTTP server header to 
+the response. 
+</td></tr><tr>
+<td class="unknown" valign="top">Response.OutputCache(<em>seconds</em> <em>
+[, sliding] [, varyByParams]</em>)</td><td valign="top">Caches 
+the page output for a specified time. Optionally set
+<em>sliding</em> to reset the timeout on each page 
+access and <em>varyByParams</em> to cache different 
+versions of the page for each different query string 
+in the page request.</td></tr><tr>
+<td class="unknown" valign="top">Response.Redirect(<em>path</em>)</td>
+<td valign="top">
+Redirects the browser request to a new location.</td></tr><tr>
+<td class="unknown" valign="top">Response.SetStatus(<em>httpStatusCode</em>)</td>
+<td valign="top">
+Sets the HTTP status code sent to the browser.</td></tr><tr>
+<td class="unknown" valign="top">Response.WriteBinary(<em>data</em> <em>[, 
+mimetype]</em>)</td><td valign="top">Writes the contents of <em>
+data</em> to the response with an optional MIME 
+type.</td></tr><tr>
+<td class="unknown" valign="top">Response.WriteFile(<em>file</em>)</td>
+<td valign="top">
+Writes the contents of a file to the response.</td></tr><tr>
+<td class="unknown" valign="top">@section(<em>sectionName</em>) { <em>
+content</em> }</td><td valign="top">(Layout pages) Defines a 
+content section that has a name.</td></tr><tr>
+<td class="unknown" valign="top">Server.HtmlDecode(<em>htmlText</em>)</td>
+<td valign="top">
+Decodes a string that is HTML encoded.</td></tr><tr>
+<td class="unknown" valign="top">Server.HtmlEncode(<em>text</em>)</td>
+<td valign="top">
+Encodes a string for rendering in HTML markup.</td></tr><tr>
+<td class="unknown" valign="top">Server.MapPath(<em>virtualPath</em>)</td>
+<td valign="top">
+Returns the server physical path for the specified 
+virtual path.</td></tr><tr>
+<td class="unknown" valign="top">Server.UrlDecode(<em>urlText</em>)</td>
+<td valign="top">
+Decodes text from a URL.</td></tr><tr>
+<td class="unknown" valign="top">Server.UrlEncode(<em>text</em>)</td>
+<td valign="top">
+Encodes text to put in a URL.</td></tr><tr>
+<td class="unknown" valign="top">Session[<em>key</em>]</td><td valign="top">Gets or 
+sets a value that exists until the user closes the 
+browser.</td></tr><tr>
+<td class="unknown" valign="top">ToString()</td><td valign="top">Displays a string 
+representation of the object's value.</td></tr><tr>
+<td class="unknown" valign="top">UrlData[<em>index</em>]</td><td valign="top">Gets 
+additional data from the URL (for example, <em>
+/MyPage/ExtraData</em>).</td></tr><tr>
+<td class="unknown" valign="top">WebSecurity.ChangePassword(<em>userName</em>,
+<em>currentPassword</em>, <em>newPassword</em>)</td><td valign="top">
+Changes the password for the specified user.</td></tr><tr>
+<td class="unknown" valign="top">WebSecurity.ConfirmAccount(<em>accountConfirmationToken</em>)</td>
+<td valign="top">
+Confirms an account using the account confirmation 
+token.</td></tr><tr>
+<td class="unknown" valign="top">WebSecurity.CreateAccount(<em>userName</em>,
+<em>password <br>
+&nbsp; [, requireConfirmationToken = </em>true|false<em>]</em>)</td>
+<td valign="top">
+Creates a new user account with the specified user 
+name and password. To require a confirmation token, 
+pass true for <em>requireConfirmationToken.</em></td></tr><tr>
+<td class="unknown" valign="top">WebSecurity.CurrentUserId</td><td valign="top">Gets 
+the integer identifier for the currently logged-in 
+user.</td></tr><tr>
+<td class="unknown" valign="top">WebSecurity.CurrentUserName</td>
+<td valign="top">Gets 
+the name for the currently logged-in user.</td></tr><tr>
+<td class="unknown" valign="top">WebSecurity.GeneratePasswordResetToken(<em>username
+<br>
+&nbsp; [, tokenExpirationInMinutesFromNow]</em>)</td><td valign="top">
+Generates a password-reset token that can be sent in 
+email to a user so that the user can reset the 
+password.</td></tr><tr>
+<td class="unknown" valign="top">WebSecurity.GetUserId(<em>userName</em>)</td>
+<td valign="top">
+Returns the user ID from the user name.</td></tr><tr>
+<td class="unknown" valign="top">WebSecurity.IsAuthenticated</td>
+<td valign="top">
+Returns true if the current user is logged in.</td></tr><tr>
+<td class="unknown" valign="top">WebSecurity.IsConfirmed(<em>userName</em>)</td>
+<td valign="top">
+Returns true if the user has been confirmed (for 
+example, through a confirmation email).</td></tr><tr>
+<td class="unknown" valign="top">WebSecurity.IsCurrentUser(<em>userName</em>)</td>
+<td valign="top">
+Returns true if the current user&#8217;s name matches the 
+specified user name.</td></tr><tr>
+<td class="unknown" valign="top">WebSecurity.Login(<em>userName</em>,<em> 
+password[, persistCookie]</em>)</td><td valign="top">Logs the 
+user in by setting an authentication token in the 
+cookie.</td></tr><tr>
+<td class="unknown" valign="top">WebSecurity.Logout()</td><td valign="top">Logs the 
+user out by removing the authentication token 
+cookie.</td></tr><tr>
+<td class="unknown" valign="top">WebSecurity.RequireAuthenticatedUser()</td>
+<td valign="top">
+If the user is not authenticated, sets the HTTP 
+status to 401 (Unauthorized).</td></tr><tr>
+<td class="unknown" valign="top">WebSecurity.RequireRoles(<em>roles</em>)</td>
+<td valign="top">
+If the current user is not a member of one of the 
+specified roles, sets the HTTP status to 401 
+(Unauthorized).</td></tr><tr>
+<td class="unknown" valign="top">WebSecurity.RequireUser(<em>userId</em>)
+<br>
+WebSecurity.RequireUser(<em>userName</em>)</td><td valign="top">
+If the current user is not the user specified by <em>
+username</em>, sets the HTTP status to 401 
+(Unauthorized).</td></tr><tr>
+<td class="unknown" valign="top">WebSecurity.ResetPassword(<em>passwordResetToken</em>,<em> 
+newPassword</em>)</td><td valign="top">If the password reset 
+token is valid, changes the user&#8217;s password to the 
+new password.</td></tr></table>
+<br />
+<div class="chapter">
+<div class="prev"><a class="chapter" href="razor_quiz.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="razor_ref_database.html">Next Chapter &raquo;</a></div>
+</div>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+</body>
+<!-- Mirrored from www.w3schools.com/razor/razor_ref_classes.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:33:28 GMT -->
+</html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/html5/html5_new_elements.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:08:54 GMT -->
+<head>
+
+<title>HTML5 New Elements</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+
+<h1>HTML5 <span class="color_h1">New Elements</span></h1>
+<div class="chapter">
+<div class="prev"><a class="chapter" href="html5_intro.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="html5_video.html">Next Chapter &raquo;</a></div>
+</div>
+<hr />
+<h2>New Elements in HTML5</h2>
+<p>The internet has changed a lot since HTML 4.01 became a standard in 1999.</p>
+<p>Today, some elements in HTML 4.01 are obsolete, never used, or not used the way they were intended to. These elements are deleted or 
+re-written in HTML5.</p>
+<p>To better handle today's internet use, HTML5 also includes new elements for 
+better structure, drawing, media content, and better form handling.</p>
+<hr />
+<h2>New Markup Elements</h2>
+<p>New elements for better structure:</p>
+<table class="reference">
+<tr>
+<th align="left" width="110">Tag</th>
+<th align="left">Description</th>
+</tr>
+<tr>
+<td>&lt;article&gt;</td>
+<td>Specifies independent, self-contained content, could be a news-article, blog post, forum post,
+or other articles which can be distributed independently from the rest of the site.
+</td>
+</tr>
+<tr>
+<td>&lt;aside&gt;</td>
+<td>For content aside from the content it is placed in. The aside content should 
+be related to the surrounding content</td>
+</tr>
+<tr>
+<td>&lt;bdi&gt;</td>
+<td>For text that should not be bound to the text-direction of its parent elements</td>
+</tr>
+<tr>
+<td>&lt;command&gt;</td>
+<td>A button, or a radiobutton, or a checkbox</td>
+</tr>
+<tr>
+<td>&lt;details&gt;</td>
+<td>For describing details about a document, or parts of a document</td>
+</tr>
+<tr>
+<td>&lt;summary&gt;</td>
+<td>A caption, or summary, inside the details element</td>
+</tr>
+<tr>
+<td>&lt;figure&gt;</td>
+<td>For grouping a section of 
+stand-alone content, could be a video</td>
+</tr>
+<tr>
+<td>&lt;figcaption&gt;</td>
+<td>The caption of the figure section</td>
+</tr>
+<tr>
+<td>&lt;footer&gt;</td>
+<td>For a footer of a document or section, could include the name of the author, the 
+date of the document, contact information, or copyright information</td>
+</tr>
+<tr>
+<td>&lt;header&gt;</td>
+<td>For an introduction of a document or section, could include navigation</td>
+</tr>
+<tr>
+<td>&lt;hgroup&gt;</td>
+<td>For a section of headings, using &lt;h1&gt; to &lt;h6&gt;, where the largest is the main 
+heading of the section, and the others are sub-headings
+</td>
+</tr>
+<tr>
+<td>&lt;mark&gt;</td>
+<td>For text that should be highlighted</td>
+</tr>
+<tr>
+<td>&lt;meter&gt;</td>
+<td>For a measurement, used only if the maximum and minimum values are known</td>
+</tr>
+<tr>
+<td>&lt;nav&gt;</td>
+<td>For a section of navigation</td>
+</tr>
+<tr>
+<td>&lt;progress&gt;</td>
+<td>The state of a work in progress</td>
+</tr>
+<tr>
+<td>&lt;ruby&gt;</td>
+<td>For ruby annotation (Chinese notes or characters)</td>
+</tr>
+<tr>
+<td>&lt;rt&gt;</td>
+<td>For explanation of the ruby annotation</td>
+</tr>
+<tr>
+<td>&lt;rp&gt;</td>
+<td>What to show browsers that do not support the ruby element</td>
+</tr>
+<tr>
+<td>&lt;section&gt;</td>
+<td>For a section in a document. Such as chapters, headers, footers, or any 
+other sections of the document</td>
+</tr>
+<tr>
+<td>&lt;time&gt;</td>
+<td>For defining a time or a date, or both</td>
+</tr>
+<tr>
+<td>&lt;wbr&gt;</td>
+<td>Word break. For defining a line-break opportunity.</td>
+</tr>
+</table>
+<br />
+<hr />
+
+<h2>New Media Elements</h2>
+<p>HTML5 provides a new standard for media content:</p>
+<table class="reference">
+<tr>
+<th align="left" width="110">Tag</th>
+<th align="left">Description</th>
+</tr>
+<tr>
+<td>&lt;audio&gt;</td>
+<td>For multimedia content, sounds, music or other audio streams</td>
+</tr>
+<tr>
+<td>&lt;video&gt;</td>
+<td>For video content, such as a movie clip or other video streams</td>
+</tr>
+<tr>
+<td>&lt;source&gt;</td>
+<td>For media resources for media elements, defined inside video or audio 
+elements</td>
+</tr>
+<tr>
+<td>&lt;embed&gt;</td>
+<td>For embedded content, such as a plug-in</td>
+</tr>
+<tr>
+<td>&lt;track&gt;</td>
+<td>For text tracks used in mediaplayers</td>
+</tr>
+</table>
+<br />
+<hr />
+
+<h2>The Canvas Element</h2>
+<p>The canvas element uses JavaScript to make drawings on a web page.</p>
+<table class="reference">
+<tr>
+<th align="left" width="110">Tag</th>
+<th align="left">Description</th>
+</tr>
+<tr>
+<td>&lt;canvas&gt;</td>
+<td>For making graphics with a script</td>
+</tr>
+</table>
+<br />
+<hr />
+
+<h2>New Form Elements</h2>
+<p>HTML5 offers more form elements, with more functionality:</p>
+<table class="reference">
+<tr>
+<th align="left" width="110">Tag</th>
+<th align="left">Description</th>
+</tr>
+<tr>
+<td>&lt;datalist&gt;</td>
+<td>A list of options for input values</td>
+</tr>
+<tr>
+<td>&lt;keygen&gt;</td>
+<td>Generate keys to authenticate users</td>
+</tr>
+<tr>
+<td>&lt;output&gt;</td>
+<td>For different types of output, such as output written by a script</td>
+</tr>
+</table>
+
+<h2>New Input Type Attribute Values</h2>
+<p>Also, the input element's type attribute has many new values, for 
+better input control before sending it to the server:</p>
+<table class="reference">
+<tr>
+<th align="left" width="110">Type</th>
+<th align="left">Description</th>
+</tr>
+<tr>
+<td>tel</td>
+<td>The input value is of type telephone number</td>
+</tr>
+<tr>
+<td>search</td>
+<td>The input field is a search field</td>
+</tr>
+<tr>
+<td>url</td>
+<td>The input value is a URL</td>
+</tr>
+<tr>
+<td>email</td>
+<td>The input value is one or more email addresses</td>
+</tr>
+<tr>
+<td>datetime</td>
+<td>The input value is a date and/or time</td>
+</tr>
+<tr>
+<td>date</td>
+<td>The input value is a date</td>
+</tr>
+<tr>
+<td>month</td>
+<td>The input value is a month</td>
+</tr>
+<tr>
+<td>week</td>
+<td>The input value is a week</td>
+</tr>
+<tr>
+<td>time</td>
+<td>The input value is of type time</td>
+</tr>
+<tr>
+<td>datetime-local</td>
+<td>The input value is a local date/time</td>
+</tr>
+<tr>
+<td>number</td>
+<td>The input value is a number</td>
+</tr>
+<tr>
+<td>range</td>
+<td>The input value is a number in a given range</td>
+</tr>
+<tr>
+<td>color</td>
+<td>The input value is a hexadecimal color, like #FF8800</td>
+</tr>
+<tr>
+<td>placeholder</td>
+<td>Specifies a short hint that describes the expected value of an input field</td>
+</tr>
+</table>
+<br />
+
+<br />
+<div class="chapter">
+<div class="prev"><a class="chapter" href="html5_intro.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="html5_video.html">Next Chapter &raquo;</a></div>
+</div>
+<hr />
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/html5/html5_new_elements.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:08:54 GMT -->
+</html>

@@ -1,0 +1,133 @@
+
+<html>
+
+<!-- Mirrored from www.w3schools.com/xml/tryxslt.asp?xmlfile=simple&xsltfile=simple by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:16:18 GMT -->
+<head>
+<title>XSLT Tryit Editor v1.0</title>
+<link rel="stylesheet" type="text/css" href="../tryit.css" />
+<script type="text/javascript">
+function displayad()
+{
+document.getElementById("adframe").src="../tryitbannerf833.html?secid=tryxslt&amp;rnd=" + Math.random()
+}
+
+function submitReady()
+{
+document.forms["codeform"]["submitOK"].value="OK"
+displayad()
+}
+</script>
+</head>
+
+<body xonload="load_xsltResult()">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center">
+<iframe id="adframe" style="background-color:#ffffff" height="98" width="890" marginwidth="0" marginheight="0" frameborder="0" scrolling="no" 
+src="../tryitbanner84e4.asp?secid=tryxslt&amp;rnd=0.954632"></iframe>
+</td>
+</tr>
+</table>
+
+<form name="codeform" id="codeform" style="margin:0px" action="http://www.w3schools.com/xsl/tryxslt_result.asp" method="post" target="view">
+
+<table border="0" class="maintable" cellpadding="3" cellspacing="3">
+<tr>
+<td colspan="2">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td align="left" valign="bottom"><p style="margin-bottom:0px;" class="result_header">XML Code:</p></td>
+<td align="center" valign="bottom"><input style="margin-bottom:5px;font-family:verdana;" type="submit" value="Edit and Click Me >>" onclick="submitReady()"></td>
+<td align="right" valign="bottom"><p style="margin-bottom:0px;" class="result_header">XSLT Code:</p></td>
+</tr>
+</table>
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="bottom">
+<textarea class="code_input" width="100%" height="250px" id="xml_input" name="xml_input" wrap="logical">
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Edited by XMLSpy® -->
+<breakfast_menu>
+	<food>
+		<name>Belgian Waffles</name>
+		<price>$5.95</price>
+		<description>two of our famous Belgian Waffles with plenty of real maple syrup</description>
+		<calories>650</calories>
+	</food>
+	<food>
+		<name>Strawberry Belgian Waffles</name>
+		<price>$7.95</price>
+		<description>light Belgian waffles covered with strawberries and whipped cream</description>
+		<calories>900</calories>
+	</food>
+	<food>
+		<name>Berry-Berry Belgian Waffles</name>
+		<price>$8.95</price>
+		<description>light Belgian waffles covered with an assortment of fresh berries and whipped cream</description>
+		<calories>900</calories>
+	</food>
+	<food>
+		<name>French Toast</name>
+		<price>$4.50</price>
+		<description>thick slices made from our homemade sourdough bread</description>
+		<calories>600</calories>
+	</food>
+	<food>
+		<name>Homestyle Breakfast</name>
+		<price>$6.95</price>
+		<description>two eggs, bacon or sausage, toast, and our ever-popular hash browns</description>
+		<calories>950</calories>
+	</food>
+</breakfast_menu>
+
+</textarea>
+</td>
+<td width="50%" valign="bottom">
+<textarea class="code_input" width="100%" height="250px" id="xslt_input" name="xslt_input" wrap="logical">
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Edited by XMLSpy® -->
+<html xsl:version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns="http://www.w3.org/1999/xhtml">
+  <body style="font-family:Arial;font-size:12pt;background-color:#EEEEEE">
+    <xsl:for-each select="breakfast_menu/food">
+      <div style="background-color:teal;color:white;padding:4px">
+        <span style="font-weight:bold"><xsl:value-of select="name"/></span>
+        - <xsl:value-of select="price"/>
+      </div>
+      <div style="margin-left:20px;margin-bottom:1em;font-size:10pt">
+        <xsl:value-of select="description"/>
+        <span style="font-style:italic">
+          <xsl:value-of select="calories"/> (calories per serving)
+        </span>
+      </div>
+    </xsl:for-each>
+  </body>
+
+<!-- Mirrored from www.w3schools.com/xml/tryxslt.asp?xmlfile=simple&xsltfile=simple by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:16:18 GMT -->
+</html>
+
+</textarea>
+<input type="hidden" name="submitOK" id="submitOK" value="" />
+</td>
+</tr>
+<td colspan="2" valign="top">
+<p style="margin-bottom:0px;" class="result_header">Your Result:</p>
+<iframe class="result_output" width="100%" height="250px" frameborder="0" name="view" src="tryxslt_result2b63.asp?xmlfile=simple&amp;xsltfile=simple"></iframe>
+</td>
+</tr>
+<tr>
+<td align="left" class="bottomtext">
+Edit the code above and click to see the result.
+</td>
+<td align="right" class="bottomtext">
+<a style="color:#617f10" href="../index.html">W3Schools.com</a> - Try it yourself&nbsp;
+</td>
+</tr>
+</table>
+</form>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/xml/tryxslt.asp?xmlfile=simple&xsltfile=simple by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:16:18 GMT -->
+</html>

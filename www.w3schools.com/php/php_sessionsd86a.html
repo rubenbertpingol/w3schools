@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/php/php_sessions.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:20:36 GMT -->
+<head>
+<title>PHP Sessions</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1>PHP <span class="color_h1">Sessions</span></h1>
+<div class="chapter">
+<div class="prev"><a class="chapter" href="php_cookies.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="php_mail.html">Next Chapter &raquo;</a></div>
+</div>
+<hr />
+<p class="intro">A PHP session variable is used to store information about, or 
+change settings for a user session. Session variables hold information about one 
+single user, and are available to all pages in one application.</p>
+<hr />
+
+<h2>PHP Session Variables</h2>
+<p>When you are working with an application, you open it, do some changes and 
+then you close it. This is much like a Session. The computer knows who you are. 
+It knows when you start the application and when you end. But on the internet 
+there is one problem: the web server does not know who you are and what you do 
+because the HTTP address doesn't maintain state.</p>
+<p>A PHP session solves this problem by allowing you to store user information 
+on the server for later use (i.e. username, shopping items, etc). However, session information is temporary and 
+will be deleted after 
+the user has left the website. If you need a permanent storage you may want to store the data in a database.</p>
+<p>Sessions work by creating a unique id (UID) for each 
+visitor and store variables based on this UID. The UID is either stored in a 
+cookie or is propagated in the URL.</p>
+<hr />
+
+<h2>Starting a PHP Session</h2>
+<p>Before you can store user information in your PHP session, you must 
+first start up the session.</p>
+<p><b>Note:</b> The session_start() function must appear BEFORE the &lt;html&gt; tag:</p>
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;?php session_start(); ?&gt;<br />
+<br />
+&lt;html&gt;<br />
+&lt;body&gt;<br />
+<br />
+&lt;/body&gt;<br />
+&lt;/html&gt;
+</td></tr>
+</table>
+<p>The code above will register the user's session with the server, allow you to 
+start saving user information, and assign a UID 
+for that user's session.</p>
+<hr />
+
+<h2>Storing a Session Variable</h2>
+<p>The correct way to store and retrieve session variables is to use the 
+PHP $_SESSION variable:</p>
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;?php<br />
+session_start();<br />
+// store session data<br />
+$_SESSION['views']=1;<br />
+?&gt;<br />
+<br />
+&lt;html&gt;<br />
+&lt;body&gt;<br />
+<br />
+&lt;?php<br />
+//retrieve session data<br />
+echo &quot;Pageviews=&quot;. $_SESSION['views'];<br />
+?&gt;<br />
+<br />
+&lt;/body&gt;<br />
+&lt;/html&gt;
+</td></tr>
+</table>
+<p>Output:</p>
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+Pageviews=1
+</td></tr>
+</table>
+<p>In the example below, we create a simple page-views counter. The isset() 
+function checks if the &quot;views&quot; variable has already been set. If &quot;views&quot; has 
+been set, we can increment our counter. If &quot;views&quot; doesn't exist, we create a &quot;views&quot; 
+variable, and set it to 1:</p>
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;?php<br />
+session_start();<br />
+<br />
+if(isset($_SESSION['views']))<br />
+$_SESSION['views']=$_SESSION['views']+1;<br />
+else<br />
+$_SESSION['views']=1;<br />
+echo &quot;Views=&quot;. $_SESSION['views'];<br />
+?&gt;
+</td></tr>
+</table>
+<br />
+<hr />
+
+<h2>Destroying a Session</h2>
+<p>If you wish to delete some session data, you can use the unset() or the 
+session_destroy() function.</p>
+<p>The unset() function is used to free the specified session variable:</p>
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;?php<br />
+unset($_SESSION['views']);<br />
+?&gt;
+</td></tr>
+</table>
+<p>You can also completely destroy the session by calling the session_destroy() function:</p>
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;?php<br />
+session_destroy();<br />
+?&gt;
+</td></tr>
+</table>
+<p><b>Note:</b> session_destroy() will reset your session and you will lose all 
+your stored session data.</p>
+<br />
+<div class="chapter">
+<div class="prev"><a class="chapter" href="php_cookies.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="php_mail.html">Next Chapter &raquo;</a></div>
+</div>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/php/php_sessions.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:20:36 GMT -->
+</html>

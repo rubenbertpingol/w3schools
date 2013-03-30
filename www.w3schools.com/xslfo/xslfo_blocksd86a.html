@@ -1,0 +1,354 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/xslfo/xslfo_blocks.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:16:44 GMT -->
+<head>
+
+<title>XSL-FO Blocks</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1>XSL-FO <span class="color_h1">Blocks</span></h1>
+<div class="chapter">
+<div class="prev"><a class="chapter" href="xslfo_pages.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="xslfo_lists.html">Next Chapter &raquo;</a></div>
+</div>
+<hr />
+<p class="intro">XSL-FO output goes into blocks.</p>
+<hr />
+
+<h2>XSL-FO Pages, Flow, and Block</h2>
+<p>&quot;Blocks&quot; of content &quot;Flow&quot; into &quot;Pages&quot; of the output media.</p>
+<p>XSL-FO output is normally nested inside &lt;fo:block&gt; elements, nested inside &lt;fo:flow&gt; elements, nested inside &lt;fo:page-sequence&gt; elements:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;fo:page-sequence&gt;<br />
+  &nbsp;
+  &lt;fo:flow flow-name=&quot;xsl-region-body&quot;&gt;<br />
+    &nbsp;&nbsp;&nbsp;
+    &lt;fo:block&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &lt;!-- Output goes here --&gt;<br />
+    &nbsp;&nbsp;&nbsp;
+    &lt;/fo:block&gt;<br />
+  &nbsp;
+  &lt;/fo:flow&gt;<br />
+&lt;/fo:page-sequence&gt;</td></tr></table>
+<br />
+<hr />
+
+<h2>Block Area Attributes</h2>
+<p>Blocks are sequences of output in rectangular boxes:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;fo:block border-width=&quot;1mm&quot;&gt;<br />
+&nbsp;
+This block of output will have a one millimeter border around it.<br />
+&lt;/fo:block&gt;</td></tr></table>
+
+<p>Since block areas are rectangular boxes, they share many common area properties:</p>
+<ul>
+	<li>space before and space after</li>
+	<li>margin</li>
+	<li>border</li>
+	<li>padding</li>
+</ul>
+
+<table border="1" cellpadding="0" cellspacing="0" width="60%" bgcolor="#ffffff">
+<tr>
+<td width="100%" align="center">space before<br />
+</td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="60%" bgcolor="#a0a0a0">
+<tr>
+<td width="100%" align="center">margin<br />
+	<table border="0" cellpadding="0" cellspacing="0" width="95%" bgcolor="#b0b0b0">
+	<tr>
+	<td width="100%" align="center">border<br />
+		<table border="0" cellpadding="0" cellspacing="0" width="90%" bgcolor="#d0d0d0">
+		<tr>
+		<td width="100%" align="center">padding<br />
+			<table border="0" cellpadding="0" cellspacing="0" width="90%" bgcolor="#ffffff">
+		    <tr>
+			<td width="100%" align="center">
+			<br /><br /><br />content<br /><br /><br /><br />
+			</td>
+			</tr>
+			</table>
+		<br />
+		</td>
+		</tr>
+		</table>
+	<br />
+	</td>
+	</tr>
+	</table>
+<br />
+</td>
+</tr>
+</table>
+<table border="1" cellpadding="0" cellspacing="0" width="60%" bgcolor="#ffffff">
+<tr>
+<td width="100%" align="center">space after<br />
+</td>
+</tr>
+</table>
+
+<p>The <b>space before</b> and <b>space after</b> is the empty space separating the block from the other blocks.</p>
+<p>The <b>margin</b> is the empty area on the outside of the block.&nbsp; </p>
+<p>The <b>border</b> is the rectangle drawn around the external edge of the area. It can have different widths on all four sides. It can also 
+be filled with different colors and background images.</p>
+<p>The <b>padding</b> is the area between the border and the content area.</p>
+<p>The <b>content</b> area contains the actual content like text, pictures, graphics, or whatever.</p>
+<hr />
+
+<h2>Block Margin</h2>
+<ul>
+	<li>margin</li>
+	<li>margin-top</li>
+	<li>margin-bottom</li>
+	<li>margin-left</li>
+	<li>margin-right</li>
+</ul>
+<hr />
+
+<h2>Block Border</h2>
+<p>Border style attributes:</p>
+<ul>
+	<li>border-style</li>
+	<li>border-before-style</li>
+	<li>border-after-style</li>
+	<li>border-start-style</li>
+	<li>border-end-style</li>
+	<li>border-top-style (same as border-before)</li>
+	<li>border-bottom-style (same as border-after)</li>
+	<li>border-left-style (same as border-start)</li>
+	<li>border-right-style (same as border-end)</li>
+</ul>
+<p>Border color attributes:</p>
+<ul>
+	<li>border-color</li>
+	<li>border-before-color</li>
+	<li>border-after-color</li>
+	<li>border-start-color</li>
+	<li>border-end-color</li>
+	<li>border-top-color (same as border-before)</li>
+	<li>border-bottom-color (same as border-after)</li>
+	<li>border-left-color (same as border-start)</li>
+	<li>border-right-color (same as border-end)</li>
+</ul>
+<p>Border width attributes:</p>
+<ul>
+	<li>border-width</li>
+	<li>border-before-width</li>
+	<li>border-after-width</li>
+	<li>border-start-width</li>
+	<li>border-end-width</li>
+	<li>border-top-width (same as border-before)</li>
+	<li>border-bottom-width (same as border-after)</li>
+	<li>border-left-width (same as border-start)</li>
+	<li>border-right-width (same as border-end)</li>
+</ul>
+<hr />
+
+<h2>Block Padding</h2>
+<ul>
+	<li>padding</li>
+	<li>padding-before</li>
+	<li>padding-after</li>
+	<li>padding-start</li>
+	<li>padding-end</li>
+	<li>padding-top (same as padding-before)</li>
+	<li>padding-bottom (same as padding-after)</li>
+	<li>padding-left (same as padding-start)</li>
+	<li>padding-right (same as padding-end)</li>
+</ul>
+<hr />
+
+<h2>Block Background</h2>
+<ul>
+	<li>background-color</li>
+	<li>background-image</li>
+	<li>background-repeat </li>
+	<li>background-attachment (scroll or fixed)</li>
+</ul>
+<hr />
+
+<h2>Block Styling Attributes</h2>
+<p>Blocks are sequences of output that can be styled individually:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;fo:block
+  font-size=&quot;12pt&quot;
+  font-family=&quot;sans-serif&quot;&gt;<br />
+&nbsp;
+This block of output will be written in a 12pt sans-serif font.<br />
+&lt;/fo:block&gt;</td></tr>
+</table>
+
+<p>Font attributes:</p>
+<ul>
+	<li>font-family</li>
+	<li>font-weight</li>
+	<li>font-style</li>
+	<li>font-size</li>
+	<li>font-variant</li>
+</ul>
+<p>Text attributes:</p>
+<ul>
+	<li>text-align</li>
+	<li>text-align-last</li>
+	<li>text-indent</li>
+	<li>start-indent</li>
+	<li>end-indent </li>
+	<li>wrap-option (defines word wrap)</li>
+	<li>break-before (defines page breaks)</li>
+	<li>break-after (defines page breaks)</li>
+	<li>reference-orientation (defines text rotation in 90&quot; increments) 
+	</li>
+</ul>
+<hr />
+
+<h2>Example</h2>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;fo:block
+    font-size=&quot;14pt&quot; font-family=&quot;verdana&quot; color=&quot;red&quot;<br />
+    space-before=&quot;5mm&quot; space-after=&quot;5mm&quot;&gt;<br />
+&nbsp;
+W3Schools<br />
+&lt;/fo:block&gt;<br /><br />
+&lt;fo:block
+    text-indent=&quot;5mm&quot;
+    font-family=&quot;verdana&quot; font-size=&quot;12pt&quot;&gt;<br />
+&nbsp;
+At W3Schools you will find all the Web-building tutorials you<br />
+&nbsp;
+need, from basic HTML and XHTML to advanced XML, XSL, Multimedia and WAP.<br />
+&lt;/fo:block&gt;</td></tr></table>
+
+<p>Result:</p>
+<table border="1" cellpadding="0" cellspacing="0" width="50%">
+  <tr>
+    <td><p style="font:14pt verdana;color:red">W3Schools</p>
+    <p style="font:12pt verdana">&nbsp;&nbsp; At W3Schools you will find all the Web-building 
+    tutorials you need, from basic HTML and XHTML to advanced XML, XSL, Multimedia and WAP.</p>
+  </td>
+  </tr>
+</table>
+
+<p>When you look at the example above, you can see that it will take a lot of code to produce a document with many headers and paragraphs.</p>
+<p>Normally XSL-FO document do not combine formatting information and content like we have done here.</p>
+<p>With a little help from XSLT we can put the formatting information into templates and write a cleaner content.</p>
+<p>You will learn more about how to combine XSL-FO with XSLT templates in a later chapter in this tutorial.</p>
+<br />
+<div class="chapter">
+<div class="prev"><a class="chapter" href="xslfo_pages.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="xslfo_lists.html">Next Chapter &raquo;</a></div>
+</div>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/xslfo/xslfo_blocks.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:16:44 GMT -->
+</html>

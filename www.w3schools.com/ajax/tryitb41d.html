@@ -1,0 +1,108 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/ajax/tryit.asp?filename=tryajax_responsexml by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:16:04 GMT -->
+<head>
+<title>Tryit Editor v1.4</title>
+<link rel="stylesheet" type="text/css" href="../tryit.css" />
+<script type="text/javascript">
+function displayad()
+{
+var t=document.getElementById("pre_code").value;	
+document.getElementById("code").value=t;
+//document.getElementById("adframe").src="/tryitbanner.asp?secid=tryajax&rnd=" + Math.random();
+}
+</script>
+</head>
+
+<body>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center">
+<iframe id="adframe" style="background-color:#ffffff" height="98" width="960" marginwidth="0" marginheight="0" frameborder="0" scrolling="no" 
+src="../tryitbannercf5a.asp?secid=tryajax&amp;rnd=0.2807123"></iframe>
+</td>
+</tr>
+</table>
+
+<table border="0" class="maintable" cellpadding="3px" cellspacing="3px">
+<tr>
+<td width="50%">
+
+<form style="margin:0px" action="http://www.w3schools.com/ajax/tryit_view.asp" method="post" target="view">
+<input style="margin-bottom:5px;font-family:verdana;" name="submit" type="submit" value="Edit and Click Me >>" onclick="displayad()">
+<textarea class="code_input" width="100%" height="400px" id="pre_code" wrap="logical">
+<html>
+
+<!-- Mirrored from www.w3schools.com/ajax/tryit.asp?filename=tryajax_responsexml by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:16:04 GMT -->
+<head>
+<script type="text/javascript">
+function loadXMLDoc()
+{
+var xmlhttp;
+var txt,x,i;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    xmlDoc=xmlhttp.responseXML;
+    txt="";
+    x=xmlDoc.getElementsByTagName("ARTIST");
+    for (i=0;i<x.length;i++)
+      {
+      txt=txt + x[i].childNodes[0].nodeValue + "<br />";
+      }
+    document.getElementById("myDiv").innerHTML=txt;
+    }
+  }
+xmlhttp.open("GET","cd_catalog.xml",true);
+xmlhttp.send();
+}
+</script>
+</head>
+
+<body>
+
+<h2>My CD Collection:</h2>
+<div id="myDiv"></div>
+<button type="button" onclick="loadXMLDoc()">Get my CD collection</button>
+ 
+</body>
+
+<!-- Mirrored from www.w3schools.com/ajax/tryit.asp?filename=tryajax_responsexml by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:16:04 GMT -->
+</html>
+
+</textarea>
+<input type="hidden" name="code" id="code" />
+<input type="hidden" id="bt" name="bt" />
+</form>
+
+</td>
+<td valign="top">
+<p class="result_header">Your Result:</p>
+<iframe class="result_output" width="100%" height="400px" frameborder="0" name="view" src="tryit_viewb41d.asp?filename=tryajax_responsexml"></iframe>
+</td>
+</tr>
+<tr>
+<td align="left" class="bottomtext">
+Edit the code above and click to see the result.
+</td>
+<td align="right" class="bottomtext">
+<a style="color:#617f10" href="../index.html">W3Schools.com</a> - Try it yourself&nbsp;
+</td>
+</tr>
+</table>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/ajax/tryit.asp?filename=tryajax_responsexml by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:16:04 GMT -->
+</html>

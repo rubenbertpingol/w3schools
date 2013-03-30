@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/php/func_string_vfprintf.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:50:22 GMT -->
+<head>
+
+<title>PHP vfprintf() Function</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+
+<h1>PHP <span class="color_h1">vfprintf()</span> Function</h1>
+<hr />
+<a href="php_ref_string.html"><img class="navup" src="http://www.w3schools.com/images/up.gif" alt="PHP String Reference" border="0" /> Complete PHP String Reference</a>
+<hr />
+
+<h2>Definition and Usage</h2>
+
+<p>The vfprintf() function writes a formatted string to a 
+specified output stream (example: file or database).</p>
+<p>Unlike fprintf(), the arguments in vfprintf(), are placed in an array. The 
+array elements will be inserted at the percent (%) 
+signs in the main string. This function works &quot;step-by-step&quot;. At the first % sign, 
+the first array element is inserted, at the second % sign, the second array 
+element is inserted, etc.</p>
+<p>The vfprintf() function returns the length of the written string.</p>
+<h2>Syntax</h2>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+vfprintf(stream,format,argarray)
+</td></tr>
+</table><br />
+
+<table class="reference"> 
+  <tr>
+    <th align="left" valign="top" width="20%">Parameter</th>
+    <th align="left" valign="top" width="80%">Description</th>
+  </tr>  
+  <tr>
+    <td valign="top">stream</td>
+    <td valign="top">Required. Specifies where to write/output the string</td>
+  </tr>
+  <tr>
+    <td valign="top">format</td>
+    <td valign="top">Required. Specifies the string and how to format the 
+	variables in it.<p>Possible format values:</p>
+<ul>
+	<li>%% - Returns a percent sign</li>
+	<li>%b - Binary number</li>
+	<li>%c - The character according to the ASCII value</li>
+	<li>%d - Signed decimal number</li>
+	<li>%e - Scientific notation (e.g. 1.2e+2)</li>
+	<li>%u - Unsigned decimal number</li>
+	<li>%f - Floating-point number (local settings aware)</li>
+	<li>%F - Floating-point number (not local settings 
+	aware)</li>
+	<li>%o - Octal number</li>
+	<li>%s - String</li>
+	<li>%x - Hexadecimal number (lowercase letters)</li>
+	<li>%X - Hexadecimal number (uppercase letters)</li>
+</ul>
+	<p>Additional format values. These are placed between the % and the letter 
+	(example %.2f):</p>
+	<ul>
+	<li>+ (Forces both + and - in front of numbers. By 
+	default, only negative numbers are marked)</li>
+		<li>' (Specifies what to use as padding. Default is space. Must be used 
+		together with the width specifier. 
+		Example: %'x20s (this uses &quot;x&quot; as padding)</li>
+		<li>- (Left-justifies the variable value)</li>
+		<li>[0-9] (Specifies the minimum width held of to the variable value)</li>
+		<li>.[0-9] (Specifies the number of decimal digits or maximum  
+		string length)</li>
+	</ul>
+	<p><b>Note:</b> If multiple additional format values are used, they must be in the same 
+	order as above.</p></td>
+  </tr>
+	<tr>
+    <td valign="top">argarray</td>
+    <td valign="top">Required. An array with arguments to be inserted at 
+	the % signs in the format string</td>
+  </tr>
+  </table>
+<br />
+
+<hr />
+
+<h2>Tips and Notes</h2>
+
+<p><b>Note: </b>If there are more % signs than arguments, you must use placeholders. A placeholder is 
+inserted after the % sign, 
+and consists of the argument- number and &quot;\$&quot;. See example three.</p>
+<p><b>Tip:</b> Related functions: fprintf(), printf(), sprintf(), vprintf(), and 
+vsprintf().</p>
+<hr />
+<h2>Example 1</h2>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;?php<br />
+$str = &quot;Hello&quot;;<br />
+$number = 123;<br />
+$file = fopen(&quot;test.txt&quot;,&quot;w&quot;);<br />
+echo vfprintf($file,&quot;%s world. Day number %u&quot;,array($str,$number));<br />
+?&gt; 
+</td></tr>
+</table>
+<p>The output of the code above will be:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+27
+</td></tr>
+</table>
+<p>The following text will be written to the file &quot;test.txt&quot;:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+Hello world. Day number 123
+</td></tr>
+</table><br />
+
+<hr />
+<h2>Example 2</h2>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;?php<br />
+$num1 = 123;<br />
+$num2 = 456;<br />
+$file = fopen(&quot;test.txt&quot;,&quot;w&quot;);<br />
+vfprintf($file,&quot;%f%f&quot;,array($num1,$num2));<br />
+?&gt;
+</td></tr>
+</table>
+<p>The following text will be written to the file &quot;test.txt&quot;:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+123.000000456.000000
+</td></tr>
+</table><br />
+
+<hr />
+<h2>Example 3</h2>
+<p>Use of placeholders:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;?php<br />
+$number = 123;<br />
+$file = fopen(&quot;test.txt&quot;,&quot;w&quot;);<br />
+vfprintf($file,&quot;With 2 decimals: %1\$.2f<br />
+\nWith no decimals: %1\$u&quot;,array($number));<br />
+?&gt;
+</td></tr>
+</table>
+<p>The following text will be written to the file &quot;test.txt&quot;:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+With 2 decimals: 123.00<br />
+With no decimals: 123
+</td></tr>
+</table><br />
+<hr />
+<a href="php_ref_string.html"><img class="navup" src="http://www.w3schools.com/images/up.gif" alt="PHP String Reference" border="0" /> Complete PHP String Reference</a>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/php/func_string_vfprintf.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:50:22 GMT -->
+</html>

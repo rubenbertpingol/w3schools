@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/css/css_id_class.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:10:13 GMT -->
+<head>
+
+<title>CSS Id and Class</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1>CSS <span class="color_h1">Id</span> and <span class="color_h1">Class</span></h1>
+<div class="chapter">
+<div class="prev"><a class="chapter" href="css_syntax.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="css_howto.html">Next Chapter &raquo;</a></div>
+</div>
+<hr />
+
+<h2>The id and class Selectors</h2>
+<p>In addition to setting a style for a HTML element, CSS allows you to specify 
+your own selectors called &quot;id&quot; and &quot;class&quot;.</p>
+<hr />
+
+<h2>The id Selector</h2>
+
+<p>The id selector is used to specify a style for a single, unique element.</p>
+<p>The id selector uses the id attribute of the HTML element, and is defined 
+with a &quot;#&quot;.</p>
+
+<p>The style rule below will be applied to the element with id=&quot;para1&quot;:</p>
+
+<table class="example" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+<h2 class="example">Example</h2>
+<table class="example_code notranslate" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+#para1<br />
+{<br />
+text-align:center;<br />
+color:red;<br />
+}
+</td></tr></table>
+<br /><a target="_blank" href="http://www.w3schools.com/css/tryit.asp?filename=trycss_syntax_id" class="tryitbtn">Try it yourself &raquo;</a>
+</td></tr></table>
+
+<p><img border="0" src="http://www.w3schools.com/images/lamp.gif" alt="Remark" /> Do <b>NOT</b> start an ID name with a number! It will not work in Mozilla/Firefox.</p>
+<hr />
+
+<h2>The class Selector</h2>
+<p>The class selector is used to specify a style for a group of elements. Unlike the id 
+selector, the class selector is most often used on several elements. </p>
+<p>This allows you to set a particular style for many HTML elements with the same class. </p>
+<p>The class selector uses the HTML class 
+attribute, and is defined with a &quot;.&quot;</p>
+<p>In the example 
+below, all HTML elements with class=&quot;center&quot; will be center-aligned:</p>
+
+<table class="example" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+<h2 class="example">Example</h2>
+<table class="example_code notranslate" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+.center {text-align:center;}
+</td></tr></table>
+<br /><a target="_blank" href="http://www.w3schools.com/css/tryit.asp?filename=trycss_syntax_class" class="tryitbtn">Try it yourself &raquo;</a>
+</td></tr></table>
+<p>You can also specify that only specific HTML elements should be affected by a 
+class.</p>
+<p>In the example 
+below, all p elements with class=&quot;center&quot; will be center-aligned:</p>
+
+<table class="example" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+<h2 class="example">Example</h2>
+<table class="example_code notranslate" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+p.center {text-align:center;}
+</td></tr></table>
+<br /><a target="_blank" href="http://www.w3schools.com/css/tryit.asp?filename=trycss_syntax_element_class" class="tryitbtn">Try it yourself &raquo;</a>
+</td></tr></table>
+
+<p><img border="0" src="http://www.w3schools.com/images/lamp.gif" alt="Remark" /> Do <b>NOT</b> start a class name with a number! This is only supported in Internet Explorer.</p>
+
+<br />
+<div class="chapter">
+<div class="prev"><a class="chapter" href="css_syntax.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="css_howto.html">Next Chapter &raquo;</a></div>
+</div>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/css/css_id_class.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:10:13 GMT -->
+</html>

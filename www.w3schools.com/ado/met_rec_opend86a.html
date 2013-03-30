@@ -1,0 +1,368 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/ado/met_rec_open.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:50:10 GMT -->
+<head>
+
+<title>ADO Open Method</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+
+<h1>ADO <span class="color_h1">Open</span> Method</h1>
+<hr />
+<a href="ado_ref_record.html"><img class="navup" src="http://www.w3schools.com/images/up.gif" alt="Record Object Reference" border="0" /> Complete Record Object Reference</a>
+<hr />
+<p>The Open method opens an existing Record object or creates a new file or
+directory.
+</p>
+
+<h3>Syntax
+</h3>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>Open(source,actconn,mode,createopt,opt,username,psword)</td></tr>
+</table>
+<br />
+<table class="reference"> 
+  <tr>
+    <th align="left" valign="top" width="20%">Parameter</th>
+    <th align="left" valign="top" width="80%">Description</th>
+  </tr>  
+  <tr>
+    <td valign="top">source </td>
+    <td valign="top">Optional. The source parameter may be one of the following:
+      <ul>
+        <li>An absolute url</li>
+        <li>A relative url</li>
+        <li>An open Recordset</li>
+        <li>Another Record object</li>
+        <li>A Command object</li>
+        <li>An SQL SELECT statement</li>
+        <li>A table name</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top">actconn </td>
+    <td valign="top">   Optional. A connection string or a Connection object      
+    </td>
+  </tr>
+  <tr>
+    <td valign="top">mode </td>
+    <td valign="top">   Optional. A <a href="#connectmodeenum">ConnectModeEnum</a>
+      value, that indicates the access mode of the Record object. Default is adModeUnknown      
+    </td>
+  </tr>
+  <tr>
+    <td valign="top">createopt </td>
+    <td valign="top">   Optional. A <a href="#recordcreateoptionsenum"> RecordCreateOptionsEnum</a> value, that
+      indicates whether an existing file/directory should be opened, or a new file/directory should be created.
+      Default is adFailIfNotExists. This parameter will be ignored if the source parameter
+      is not a URL      
+    </td>
+  </tr>
+  <tr>
+    <td valign="top">opt </td>
+    <td valign="top">   Optional. One or more <a href="#recordopenoptionsenum">RecordOpenOptionsEnum</a>
+      values, that specifies the options for opening the Record.
+      Default is adOpenRecordUnspecified      
+    </td>
+  </tr>
+  <tr>
+    <td valign="top">username </td>
+    <td valign="top">   Optional. A user ID that authorizes access to source      
+    </td>
+  </tr>
+  <tr>
+    <td valign="top">psword </td>
+    <td valign="top">   Optional. A password that verifies the username      
+    </td>
+  </tr>
+</table>
+
+<h3>Example</h3>
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+<b>Example 1: source as the URL of a folder:</b><br />
+<br />
+set rec = Server.CreateObject(&quot;ADODB.record&quot;)<br />
+rec.Open(&quot;http://www.w3schools.com/ado/&quot;)<br />
+<br />
+<b>Example 2: source as a relative URL in a Connection object:</b><br />
+<br />
+set conn=Server.CreateObject(&quot;ADODB.Connection&quot;)<br />
+set rec = Server.CreateObject(&quot;ADODB.record&quot;)<br />
+conn.Open &quot;URL=http://www.w3schools.com/ado/&quot;<br />
+rec.Open(&quot;test.doc&quot;, conn)<br />
+<br />
+<b>Example 3: source as a row in a Recordset object:</b><br />
+<br />
+set rs = Server.CreateObject(&quot;ADODB.recordset&quot;)<br />
+set rec = Server.CreateObject(&quot;ADODB.record&quot;)<br />
+rs.Open &quot;test.doc&quot;, &quot;URL=http://www.w3schools.com/ado/&quot;,,,adCmdTableDirect<br />
+rs.MoveLast()&nbsp;<br />
+rec.Open(rs)&nbsp;
+</td></tr>
+</table>
+<br />
+<hr />
+<a name="connectmodeenum"><h3>ConnectModeEnum Values</h3></a>
+<table class="reference">
+    <tr>
+      <th valign="top" width="30%">Constant</th>
+      <th valign="top" width="10%">Value</th>
+      <th valign="top" width="60%">Description</th>
+    </tr>
+    <tr>
+      <td valign="top">adModeUnknown</td>
+      <td valign="top">0</td>
+      <td valign="top">Default. Permissions have not been set or cannot be
+        determined</td>
+    </tr>
+    <tr>
+      <td valign="top">adModeRead</td>
+      <td valign="top">1</td>
+      <td valign="top">Read-only</td>
+    </tr>
+    <tr>
+      <td valign="top">adModeWrite</td>
+      <td valign="top">2</td>
+      <td valign="top">Write-only</td>
+    </tr>
+    <tr>
+      <td valign="top">adModeReadWrite</td>
+      <td valign="top">3</td>
+      <td valign="top">Read/write</td>
+    </tr>
+    <tr>
+      <td valign="top">adModeShareDenyRead</td>
+      <td valign="top">4</td>
+      <td valign="top">Prevents others from opening a connection with read
+        permissions</td>
+    </tr>
+    <tr>
+      <td valign="top">adModeShareDenyWrite</td>
+      <td valign="top">8</td>
+      <td valign="top">Prevents others from opening a connection with write
+        permissions</td>
+    </tr>
+    <tr>
+      <td valign="top">adModeShareExclusive</td>
+      <td valign="top">12</td>
+      <td valign="top">Prevents others from opening a connection</td>
+    </tr>
+    <tr>
+      <td valign="top">adModeShareDenyNone</td>
+      <td valign="top">16</td>
+      <td valign="top">Allows others to open a connection with any permissions</td>
+    </tr>
+    <tr>
+      <td valign="top">adModeRecursive</td>
+      <td valign="top">0x400000</td>
+      <td valign="top">Used with adModeShareDenyNone, adModeShareDenyWrite, or
+        adModeShareDenyRead to set permissions on all sub-records of the current
+        Record</td>
+    </tr>
+</table>
+<br />
+<hr />
+
+<a name="recordcreateoptionsenum"><h3>RecordCreateOptionsEnum Values</h3></a>
+<table class="reference">
+      <tr>
+        <th width="30%" align="left" valign="top">Constant</th>
+        <th width="10%" align="left" valign="top">Value</th>
+        <th width="60%" align="left" valign="top">Description</th>
+      </tr>
+      <tr>
+        <td valign="top">adFailIfNotExists</td>
+        <td valign="top">-1</td>
+        <td valign="top">Default. Fails if the source parameter<i> </i>points
+          to a node that not exists</td>
+      </tr>
+      <tr>
+        <td valign="top">adCreateNonCollection</td>
+        <td valign="top">0</td>
+        <td valign="top">Creates a new Record of type adSimpleRecord</td>
+      </tr>
+      <tr>
+        <td valign="top">adCreateCollection</td>
+        <td valign="top">0x2000</td>
+        <td valign="top">Creates a new Record specified by the
+          source parameter. If it points to an existing node, an error
+          will occur. To prevent the error combine this value with adOpenIfExists or
+          adCreateOverwrite</td>
+      </tr>
+      <tr>
+        <td valign="top">adOpenIfExists</td>
+        <td valign="top">0x2000000</td>
+        <td valign="top">If the source points to an existing
+          node or Record object, then the provider
+          must open the existing Record instead of creating a new one. This value cannot be used
+          with adCreateOverwrite</td>
+      </tr>
+      <tr>
+        <td valign="top">adCreateOverwrite</td>
+        <td valign="top">0x4000000</td>
+        <td valign="top">If the source points to an existing
+          node or Record, then the existing Record will be overwritten
+          and a new one is created in its place. This value cannot be used with adOpenIfExists</td>
+      </tr>
+      <tr>
+        <td valign="top">adCreateStructDoc</td>
+        <td valign="top">0x80000000</td>
+        <td valign="top">Creates a new Record of type adStructDoc</td>
+      </tr>
+  </table>
+<br />
+<hr />
+<a name="recordopenoptionsenum"><h3>RecordOpenOptionsEnum Values</h3></a>
+<table class="reference">
+      <tr>
+        <th width="30%" align="left" valign="top">Constant</th>
+        <th width="10%" align="left" valign="top">Value</th>
+        <th width="60%" align="left" valign="top">Description</th>
+      </tr>
+      <tr>
+        <td valign="top">adOpenRecordUnspecified</td>
+        <td valign="top">-1</td>
+        <td valign="top">Default. No options are specified</td>
+      </tr>
+      <tr>
+        <td valign="top">adOpenAsync</td>
+        <td valign="top">0x1000</td>
+        <td valign="top">Opens the Record object in asynchronous mode</td>
+      </tr>
+      <tr>
+        <td valign="top">adDelayFetchStream</td>
+        <td valign="top">0x4000</td>
+        <td valign="top">The default stream
+          associated with the Record need not be retrieved initially</td>
+      </tr>
+      <tr>
+        <td valign="top">adDelayFetchFields</td>
+        <td valign="top">0x8000</td>
+        <td valign="top">The fields associated
+          with the Record need not be retrieved initially, but can be
+          retrieved at the first attempt to access the field</td>
+      </tr>
+      <tr>
+        <td valign="top">adOpenExecuteCommand</td>
+        <td valign="top">0x10000</td>
+        <td valign="top">The source contains command text
+          that should be executed</td>
+      </tr>
+      <tr>
+        <td valign="top">adOpenOutput</td>
+        <td valign="top">0x800000</td>
+        <td valign="top">If the source points to a node that
+          contains an executable script, then the opened Record
+          will contain the results of the executed script. This value is only
+          valid with non-collection records</td>
+      </tr>
+  </table>
+<br />
+<hr />
+<a href="ado_ref_record.html"><img class="navup" src="http://www.w3schools.com/images/up.gif" alt="Record Object Reference" border="0" /> Complete Record Object Reference</a>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/ado/met_rec_open.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:50:10 GMT -->
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/aspnet/control_listitem.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:53:59 GMT -->
+<head>
+
+<title>ASP.NET ListItem Control</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1>ASP.NET <span class="color_h1">ListItem</span> Control</h1>
+<hr />
+<a href="aspnet_refwebcontrols.html"><img class="navup" src="http://www.w3schools.com/images/up.gif" alt="Web Server Controls" border="0" /> Web Server Controls</a>
+<hr />
+
+<h2>Definition and Usage</h2>
+<p>The ListItem control creates an item in a list.</p>
+<p>This control is used with the list controls such as <a href="control_listbox.html">&lt;asp:ListBox&gt;</a>, 
+<a href="control_radiobuttonlist.html">&lt;asp:RadioButtonList&gt;</a> and <a href="control_bulletedlist.html">&lt;asp:BulletedList&gt;</a>.</p>
+<hr />
+
+<h2>Syntax</h2>
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;asp:ListItem<br />
+Enabled=&quot;True|False&quot;<br />
+Selected=&quot;True|False&quot;<br />
+Text=&quot;label&quot;<br />
+Value=&quot;value&quot; /&gt;
+</td></tr>
+</table>
+<h2>Properties</h2>
+
+<table class="reference">
+  <tr>
+    <th width="30%" align="left">Property</th>
+    <th width="63%" align="left">Description</th>
+    <th width="7%" align="left">.NET</th>
+  </tr>
+  <tr>
+    <td>Attributes</td>
+    <td>Optional. A collection of attribute name and value pairs for the ListItem that are not directly supported by the class</td>
+    <td>1.0</td>
+  </tr>
+  <tr>
+    <td><a href="prop_webcontrol_listitem_enabled.html">Enabled</a></td>
+    <td>Optional. Specifies if the item is enabled or disabled</td>
+    <td>2.0</td>
+  </tr>
+  <tr>
+    <td><a href="prop_webcontrol_listitem_selected.html">Selected</a></td>
+    <td>Optional. Specifies whether or not the item is selected</td>
+    <td>1.0</td>
+  </tr>
+  <tr>
+    <td><a href="prop_webcontrol_listitem_text.html">Text</a></td>
+    <td>Optional. The text displayed in the ListItem</td>
+    <td>1.0</td>
+  </tr>
+  <tr>
+    <td><a href="prop_webcontrol_listitem_value.html">Value</a></td>
+    <td>Optional. The value of the the ListItem.</td>
+    <td>1.0</td>
+  </tr>
+  </table>
+
+<h2>Web Control Standard Properties</h2>
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+AccessKey, Attributes, BackColor, BorderColor, 
+		BorderStyle, BorderWidth, CssClass, Enabled, Font, EnableTheming, 
+		ForeColor, Height, IsEnabled, SkinID, Style, TabIndex, ToolTip, Width</td>
+	</tr>
+</table>
+<p>For a full description, go to <a href="prop_webcontrol_standard.html">Web 
+Control Standard Attributes</a>.</p>
+
+<h2>Control Standard Properties</h2>
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+AppRelativeTemplateSourceDirectory, BindingContainer, 
+		ClientID, Controls, EnableTheming, EnableViewState, ID, NamingContainer, 
+		Page, Parent, Site, TemplateControl, TemplateSourceDirectory, UniqueID, 
+		Visible</td>
+	</tr>
+</table>
+<p>For a full description, go to <a href="prop_control_standard.html">Control Standard Attributes</a>.</p>
+
+<p>It is possible to use the Text or Value properties and the inner HTML text to set the text displayed for an item in the list.</p>
+
+<h2>Example</h2>
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>&lt;asp:ListItem Value=&quot;Text1&quot; Text=&quot;Text2&quot;&gt;Text3&lt;/asp:ListItem&gt;</td></tr></table>
+
+<p>Depending on the combination of the three, different texts are shown and 
+values used. The table below shows all possible combinations and their results:</p>
+<table class="reference">
+	<tr>
+		<th>Inner HTML</th>
+		<th>Text Property</th>
+		<th>Value Property</th>
+		<th>Text Shown</th>
+		<th>Value Used</th>
+	</tr>
+	<tr>
+		<td>Set</td>
+		<td>Set</td>
+		<td>Set</td>
+		<td>Inner HTML</td>
+		<td>Value Property</td>
+	</tr>
+	<tr>
+		<td>Set</td>
+		<td>Set</td>
+		<td>Not set</td>
+		<td>Inner HTML</td>
+		<td>Inner HTML</td>
+	</tr>
+	<tr>
+		<td>Set</td>
+		<td>Not set</td>
+		<td>Set</td>
+		<td>Inner HTML</td>
+		<td>Value Property</td>
+	</tr>
+	<tr>
+		<td>Set</td>
+		<td>Not set</td>
+		<td>Not set</td>
+		<td>Inner HTML</td>
+		<td>Inner HTML</td>
+	</tr>
+	<tr>
+		<td>Not set</td>
+		<td>Set</td>
+		<td>Set</td>
+		<td>Text Property</td>
+		<td>Value Property</td>
+	</tr>
+	<tr>
+		<td>Not set</td>
+		<td>Set</td>
+		<td>Not set</td>
+		<td>Text Property</td>
+		<td>Text Property</td>
+	</tr>
+	<tr>
+		<td>Not set</td>
+		<td>Not set</td>
+		<td>Set</td>
+		<td>Value Property</td>
+		<td>Value Property</td>
+	</tr>
+	<tr>
+		<td>Not set</td>
+		<td>Not set</td>
+		<td>Not set</td>
+		<td>Not set</td>
+		<td>Not set</td>
+	</tr>
+</table>
+<br />
+<hr />
+<h2>Tips and Notes</h2>
+<p><b>Note:</b> The Text and Value properties have a default value of an empty string. Because of this it is possible to have empty list items.</p>
+<hr />
+
+<h2>Examples</h2>
+<p><a target="_blank" href="showaspa4f5.html?filename=demo_listitem">Basic ListItem in BulletedList</a><br />
+A BulletedList control with two ListItems in an .aspx file.</p>
+
+<p><a target="_blank" href="showaspfad1.html?filename=demo_listitem_text">ListItems with different properties in ListBox</a><br />
+A ListBox control with some ListItems in an .aspx file. The items in the list uses different properties to show the ListItem text.</p>
+
+<p><a target="_blank" href="showasp9a99.html?filename=demo_listitem_disabled">ListItem disabled in ListBox</a><br />
+A ListBox control with one of the ListItems disabled.</p>
+
+<p><a target="_blank" href="showasp0d99.html?filename=demo_listitem_selected">ListItem selected in RadioButtonList</a><br />
+A RadioButtonList control with one of the ListItems selected.</p>
+<hr />
+<a href="aspnet_refwebcontrols.html"><img class="navup" src="http://www.w3schools.com/images/up.gif" alt="Web Server Controls" border="0" /> Web Server Controls</a>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/aspnet/control_listitem.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:53:59 GMT -->
+</html>

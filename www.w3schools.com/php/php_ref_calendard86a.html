@@ -1,0 +1,363 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/php/php_ref_calendar.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:21:01 GMT -->
+<head>
+<title>PHP Calendar Functions</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1>PHP <span class="color_h1">Calendar</span> Functions</h1>
+<div class="chapter">
+<div class="prev"><a class="chapter" href="php_ref_array.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="php_ref_date.html">Next Chapter &raquo;</a></div>
+</div>
+<hr />
+<h2>PHP Calendar Introduction</h2>
+<p>The calendar functions are useful when working with different calendar formats. The standard it is based on is the Julian 
+day count (Julian day count is a count of days starting from January 1, 4713 B.C.). 
+Note that the Julian day count is not the same as the Julian calendar!</p>
+<p><b>Note:</b> To convert between calendar formats, you must first convert to Julian 
+day 
+count, then to the calendar format.</p>
+<hr />
+
+<h2>Installation</h2>
+<p>The windows version of PHP has built-in support for the calendar extension. 
+So, the calendar functions will work automatically. </p>
+<p>However, if you are running the Linux version of PHP, you will have to compile PHP with <i>--enable-calendar </i>to get the 
+calendar functions to work.</p>
+<hr />
+
+<h2>PHP Calendar Functions</h2>
+
+<p><b>PHP</b>: indicates the earliest version of PHP that supports the 
+  function. </p>
+<table class="reference">
+  <tr>
+    <th width="30%" align="left" valign="top">Function</th>
+    <th width="64%" align="left" valign="top">Description</th>
+    <th width="5%" align="left" valign="top">PHP</th>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_cal_cal_days_in_month.html">cal_days_in_month()</a></td>
+    <td valign="top">Returns the number of days in a month for a specified year and 
+	calendar</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_cal_cal_from_jd.html">cal_from_jd()</a></td>
+    <td valign="top">Converts a Julian day count into a date of a specified 
+	calendar</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_cal_cal_info.html">cal_info()</a></td>
+    <td valign="top">Returns information about a given calendar</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_cal_cal_to_jd.html">cal_to_jd()</a></td>
+    <td valign="top">Converts a date to Julian day count</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_cal_easter_date.html">easter_date()</a></td>
+    <td valign="top">Returns the Unix timestamp for midnight on Easter of a 
+	specified 
+	year</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_cal_easter_days.html">easter_days()</a></td>
+    <td valign="top">Returns the number of days after March 21, on which Easter 
+	falls for a specified year</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_cal_frenchtojd.html">FrenchToJD()</a></td>
+    <td valign="top">Converts a French Republican date to a 
+	Julian day count</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_cal_gregoriantojd.html">GregorianToJD()</a></td>
+    <td valign="top">Converts a Gregorian date to a Julian day count</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_cal_jddayofweek.html">JDDayOfWeek()</a></td>
+    <td valign="top">Returns the day of a week</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_cal_jdmonthname.html">JDMonthName()</a></td>
+    <td valign="top">Returns a month name</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_cal_jdtofrench.html">JDToFrench()</a></td>
+    <td valign="top">Converts a Julian day count to a French Republican 
+	date</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_cal_jdtogregorian.html">JDToGregorian()</a></td>
+    <td valign="top">Converts a Julian day count to a Gregorian date</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_cal_jdtojewish.html">jdtojewish()</a></td>
+    <td valign="top">Converts a Julian day count to a Jewish date</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_cal_jdtojulian.html">JDToJulian()</a></td>
+    <td valign="top">Converts a Julian day count to a Julian date</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_cal_jdtounix.html">jdtounix()</a></td>
+    <td valign="top">Converts a Julian day count to a Unix timestamp</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_cal_jewishtojd.html">JewishToJD()</a></td>
+    <td valign="top">Converts a Jewish date to a Julian day count</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_cal_juliantojd.html">JulianToJD()</a></td>
+    <td valign="top">Converts a Julian date to a Julian day count</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_cal_unixtojd.html">unixtojd()</a></td>
+    <td valign="top">Converts a Unix timestamp to a Julian day count</td>
+    <td valign="top">4</td>
+  </tr>
+  </table>
+<br />
+<hr>
+
+<h2>PHP Calendar Constants</h2>
+<p><b>PHP</b>: indicates the earliest version of PHP that supports the 
+  constant. </p>
+<table class="reference">
+  <tr>
+    <th width="45%" align="left">Constant</th>
+    <th width="50%" align="left">Description</th>
+    <th width="5%" align="left">PHP</th>
+  </tr>
+  <tr>
+    <td valign="top">CAL_GREGORIAN</td>
+    <td valign="top">Gregorian calendar</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top">CAL_JULIAN</td>
+    <td valign="top">Julian calendar</td>
+    <td valign="top">3</td>
+  </tr>
+	<tr>
+    <td valign="top">CAL_JEWISH</td>
+    <td valign="top">Jewish calendar</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top">CAL_FRENCH</td>
+    <td valign="top">French Republican calendar</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top">CAL_NUM_CALS</td>
+    <td valign="top">&nbsp;</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top">CAL_DOW_DAYNO</td>
+    <td valign="top">&nbsp;</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top">CAL_DOW_SHORT</td>
+    <td valign="top">&nbsp;</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top">CAL_DOW_LONG</td>
+    <td valign="top">&nbsp;</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top">CAL_MONTH_GREGORIAN_SHORT</td>
+    <td valign="top">&nbsp;</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top">CAL_MONTH_GREGORIAN_LONG</td>
+    <td valign="top">&nbsp;</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top">CAL_MONTH_JULIAN_SHORT</td>
+    <td valign="top">&nbsp;</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top">CAL_MONTH_JULIAN_LONG</td>
+    <td valign="top">&nbsp;</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top">CAL_MONTH_JEWISH</td>
+    <td valign="top">&nbsp;</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top">CAL_MONTH_FRENCH</td>
+    <td valign="top">&nbsp;</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top">CAL_EASTER_DEFAULT</td>
+    <td valign="top">&nbsp;</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top">CAL_EASTER_ROMAN</td>
+    <td valign="top">&nbsp;</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top">CAL_EASTER_ALWAYS_GREGORIAN</td>
+    <td valign="top">&nbsp;</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top">CAL_EASTER_ALWAYS_JULIAN</td>
+    <td valign="top">&nbsp;</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top">CAL_JEWISH_ADD_ALAFIM_GERESH</td>
+    <td valign="top">&nbsp;</td>
+    <td valign="top">5</td>
+  </tr>
+  <tr>
+    <td valign="top">CAL_JEWISH_ADD_ALAFIM</td>
+    <td valign="top">&nbsp;</td>
+    <td valign="top">5</td>
+  </tr>
+  <tr>
+    <td valign="top">CAL_JEWISH_ADD_GERESHAYIM</td>
+    <td valign="top">&nbsp;</td>
+    <td valign="top">5</td>
+  </tr>
+  </table>
+<br />
+<div class="chapter">
+<div class="prev"><a class="chapter" href="php_ref_array.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="php_ref_date.html">Next Chapter &raquo;</a></div>
+</div>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/php/php_ref_calendar.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:21:01 GMT -->
+</html>

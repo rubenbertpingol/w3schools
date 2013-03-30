@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/xml/xml_real_life.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:16:19 GMT -->
+<head>
+
+<title>XML in Real Life</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1>XML in <span class="color_h1">Real Life</span></h1>
+<div class="chapter">
+<div class="prev"><a class="chapter" href="xml_technologies.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="xml_editors.html">Next Chapter &raquo;</a></div>
+</div>
+<hr />
+<p class="intro">Some examples of how XML can be used to exchange information.</p>
+<hr />
+
+<h2>Example: XML News</h2>
+<p><b>XMLNews is a specification for exchanging news and other information.</b></p>
+<p>Using such a standard makes it easier for both news producers and news consumers to produce, receive, and archive any kind of news information across different hardware, software, and programming languages.</p>
+<p>An example XMLNews document:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;<br />
+&lt;nitf&gt;<br />
+&nbsp;
+&lt;head&gt;<br />
+&nbsp;&nbsp;&nbsp;
+&lt;title&gt;Colombia Earthquake&lt;/title&gt;<br />
+&nbsp;
+&lt;/head&gt;<br />
+&nbsp;
+&lt;body&gt;<br />
+&nbsp;&nbsp;&nbsp;
+&lt;headline&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &lt;hl1&gt;143 Dead in Colombia Earthquake&lt;/hl1&gt;<br />
+&nbsp;&nbsp;&nbsp;
+&lt;/headline&gt;<br />
+&nbsp;&nbsp;&nbsp;
+&lt;byline&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &lt;bytag&gt;By Jared Kotler, Associated Press Writer&lt;/bytag&gt;<br />
+&nbsp;&nbsp;&nbsp;
+&lt;/byline&gt;<br />
+&nbsp;&nbsp;&nbsp;
+&lt;dateline&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &lt;location&gt;Bogota, Colombia&lt;/location&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &lt;date&gt;Monday January 25 1999 7:28 ET&lt;/date&gt;<br />
+&nbsp;&nbsp;&nbsp;
+&lt;/dateline&gt;<br />
+&nbsp;
+&lt;/body&gt;<br />
+&lt;/nitf&gt;</td></tr></table>
+<br />
+<hr />
+
+<h2>Example: XML Weather Service</h2>
+<p>An example of an XML national weather service from NOAA (National Oceanic and Atmospheric Administration):</p>
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot; ?&gt;<br />
+&lt;current_observation&gt;<br /><br />
+&lt;credit&gt;NOAA's National Weather Service&lt;/credit&gt;<br />
+&lt;credit_URL&gt;http://weather.gov/&lt;/credit_URL&gt;<br /><br />
+&lt;image&gt;<br />
+&nbsp;
+&lt;url&gt;http://weather.gov/images/xml_logo.gif&lt;/url&gt;<br />
+&nbsp;
+&lt;title&gt;NOAA's National Weather Service&lt;/title&gt;<br />
+&nbsp;
+&lt;link&gt;http://weather.gov&lt;/link&gt;<br />
+&lt;/image&gt;<br /><br />
+&lt;location&gt;New York/John F. Kennedy Intl Airport, NY&lt;/location&gt;<br />
+&lt;station_id&gt;KJFK&lt;/station_id&gt;<br />
+&lt;latitude&gt;40.66&lt;/latitude&gt;<br />
+&lt;longitude&gt;-73.78&lt;/longitude&gt;<br />
+&lt;observation_time_rfc822&gt;Mon, 11 Feb 2008 06:51:00 -0500 EST<br />
+&lt;/observation_time_rfc822&gt;<br /><br />
+&lt;weather&gt;A Few Clouds&lt;/weather&gt;<br />
+&lt;temp_f&gt;11&lt;/temp_f&gt;<br />
+&lt;temp_c&gt;-12&lt;/temp_c&gt;<br />
+&lt;relative_humidity&gt;36&lt;/relative_humidity&gt;<br />
+&lt;wind_dir&gt;West&lt;/wind_dir&gt;<br />
+&lt;wind_degrees&gt;280&lt;/wind_degrees&gt;<br /> 
+&lt;wind_mph&gt;18.4&lt;/wind_mph&gt;<br />
+&lt;wind_gust_mph&gt;29&lt;/wind_gust_mph&gt;<br /> 
+&lt;pressure_mb&gt;1023.6&lt;/pressure_mb&gt;<br />
+&lt;pressure_in&gt;30.23&lt;/pressure_in&gt;<br />
+&lt;dewpoint_f&gt;-11&lt;/dewpoint_f&gt;<br />
+&lt;dewpoint_c&gt;-24&lt;/dewpoint_c&gt;<br />
+&lt;windchill_f&gt;-7&lt;/windchill_f&gt;<br />
+&lt;windchill_c&gt;-22&lt;/windchill_c&gt;<br />
+&lt;visibility_mi&gt;10.00&lt;/visibility_mi&gt;<br /><br />
+&lt;icon_url_base&gt;http://weather.gov/weather/images/fcicons/&lt;/icon_url_base&gt;<br />
+&lt;icon_url_name&gt;nfew.jpg&lt;/icon_url_name&gt;<br />
+&lt;disclaimer_url&gt;http://weather.gov/disclaimer.html&lt;/disclaimer_url&gt;<br />
+&lt;copyright_url&gt;http://weather.gov/disclaimer.html&lt;/copyright_url&gt;<br /><br />
+&lt;/current_observation&gt;</td></tr></table><br />
+<br />
+<div class="chapter">
+<div class="prev"><a class="chapter" href="xml_technologies.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="xml_editors.html">Next Chapter &raquo;</a></div>
+</div>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/xml/xml_real_life.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:16:19 GMT -->
+</html>

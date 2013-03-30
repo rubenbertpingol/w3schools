@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/dotnetmobile/control_link.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:56:19 GMT -->
+<head>
+
+<title>ASP.NET Mobile Link Control</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1>ASP.NET Mobile <span class="color_h1">Link</span> Control</h1>
+<hr />
+<a href="mobile_reference.html"><img class="navup" src="http://www.w3schools.com/images/up.gif" alt="ASP.NET Mobile Reference" border="0" /> Complete ASP.NET Mobile Reference</a>
+<hr />
+
+<h2>Definition and Usage</h2>
+
+<p>The Link control is used to create a hyperlink on a mobile device.</p>
+
+<hr />
+
+<h2>Properties</h2>
+
+<table class="reference">
+  <tr>
+    <th align="left">Property</th>
+    <th align="left">Value</th>
+    <th align="left">Description</th>
+  </tr>
+  <tr>
+    <td valign="top">Alignment</td>
+    <td valign="top">left<br />
+    center<br />
+    right</td>
+    <td valign="top">Optional. How to align the Link control</td>
+  </tr>
+  <tr>
+    <td valign="top">BackColor</td>
+    <td valign="top">rgb(x,x,x)<br />
+    #xxxxxx<br />
+    colorname</td>
+    <td valign="top">Optional. A background color for the link</td>
+  </tr>
+  <tr>
+    <td valign="top">ForeColor</td>
+    <td valign="top">rgb(x,x,x)<br />
+    #xxxxxx<br />
+    colorname</td>
+    <td valign="top">Optional. A foreground color for the link</td>
+  </tr>
+  <tr>
+    <td valign="top">Font-Bold</td>
+    <td valign="top">false<br />
+    true</td>
+    <td valign="top">Optional. Specifies whether or not the text in the link should be bold</td>
+  </tr>
+  <tr>
+    <td valign="top">Font-Italic</td>
+    <td valign="top">false<br />
+    true</td>
+    <td valign="top">Optional. Specifies whether or not the text in the link should be italic</td>
+  </tr>
+  <tr>
+    <td valign="top">Font-Name</td>
+    <td valign="top">fontname</td>
+    <td valign="top">Optional. Specifies the font name of the text in the link</td>
+  </tr>
+  <tr>
+    <td valign="top">Font-Size</td>
+    <td valign="top">normal<br />
+    small<br />
+    large</td>
+    <td valign="top">Optional. Specifies the font size of the text in the link</td>
+  </tr>
+    <tr>
+    <td valign="top">id</td>
+    <td valign="top">unique_name</td>
+    <td valign="top">Optional. A unique id for the control</td>
+    </tr>
+  <tr>
+    <td valign="top">NavigateUrl</td>
+    <td valign="top">URL<br />
+    #form_id</td>
+    <td valign="top">Optional. The URL of the link. If the value of this 
+    property begins with a #, it means that the link should navigate to another 
+    form on the current MobilePage control</td>
+  </tr>
+    <tr>
+    <td valign="top">runat</td>
+    <td valign="top">&quot;server&quot;</td>
+    <td valign="top">Required. Specifies that the control is a server control</td>
+    </tr>
+  <tr>
+    <td valign="top">SoftkeyLabel</td>
+    <td valign="top">text</td>
+    <td valign="top">Optional. Sets or returns the text displayed for a soft key 
+    when the NavigateUrl property is defined</td>
+  </tr>
+  <tr>
+    <td valign="top">StyleReference</td>
+    <td valign="top">name_of_style_element</td>
+    <td valign="top">Optional. Specifies a reference to a style to be applied to 
+    the control</td>
+  </tr>
+    <tr>
+    <td valign="top">Text</td>
+    <td valign="top">text</td>
+    <td valign="top">Optional. The text to display in the link</td>
+    </tr>
+  <tr>
+    <td valign="top">Wrapping</td>
+    <td valign="top">wrap<br />
+    nowrap</td>
+    <td valign="top">Optional. Specifies whether or not the text in the link should wrap</td>
+  </tr>
+  </table>
+
+<h3>Example 1</h3>
+<p>The following example contains one form in an .aspx file. The Link control 
+creates a hyperlink to W3Schools:</p>
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;%@ Page<br />
+Inherits=&quot;System.Web.UI.MobileControls.MobilePage&quot;%&gt;<br />
+&lt;%@ Register TagPrefix=&quot;Mobile&quot;<br />
+Namespace=&quot;System.Web.UI.MobileControls&quot;<br />
+Assembly=&quot;System.Web.Mobile&quot; %&gt;<br />
+<br />
+&lt;Mobile:Form runat=&quot;server&quot;&gt;<br />
+&nbsp;&nbsp;&lt;Mobile:Link runat=&quot;server&quot;<br />
+&nbsp;&nbsp;NavigateURL=&quot;http://www.w3schools.com&quot;&gt;Go to W3Schools!<br />
+&nbsp;&nbsp;&lt;/Mobile:Link&gt;<br />
+&lt;/Mobile:Form&gt;
+</td></tr>
+</table>
+
+<h3>Example 2</h3>
+<p>The following example contains two forms in an .aspx file. The Link control 
+lets the user navigate between the two mobile forms:</p>
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;%@ Page<br />
+Inherits=&quot;System.Web.UI.MobileControls.MobilePage&quot;%&gt;<br />
+&lt;%@ Register TagPrefix=&quot;Mobile&quot;<br />
+Namespace=&quot;System.Web.UI.MobileControls&quot;<br />
+Assembly=&quot;System.Web.Mobile&quot; %&gt;<br />
+<br />
+&lt;Mobile:Form id=&quot;f1&quot; runat=&quot;server&quot;&gt;<br />
+&nbsp;&nbsp;&lt;Mobile:Label runat=&quot;server&quot;&gt;Hello W3Schools<br />
+&nbsp;&nbsp;&lt;/Mobile:Label&gt;<br />
+&nbsp;&nbsp;&lt;Mobile:Link runat=&quot;server&quot; NavigateURL=&quot;#f2&quot;&gt;2<br />
+&nbsp;&nbsp;&lt;/Mobile:Link&gt;<br />
+&lt;/Mobile:Form&gt;<br />
+<br />
+&lt;Mobile:Form id=&quot;f2&quot; runat=&quot;server&quot;&gt;<br />
+&nbsp;&nbsp;&lt;Mobile:Label runat=&quot;server&quot;&gt;Hello Again<br />
+&nbsp;&nbsp;&lt;/Mobile:Label&gt;<br />
+&nbsp;&nbsp;&lt;Mobile:Link runat=&quot;server&quot; NavigateURL=&quot;#f1&quot;&gt;1<br />
+&nbsp;&nbsp;&lt;/Mobile:Link&gt;<br />
+&lt;/Mobile:Form&gt;
+</td></tr>
+</table>
+
+<br />
+<hr />
+<a href="mobile_reference.html"><img class="navup" src="http://www.w3schools.com/images/up.gif" alt="ASP.NET Mobile Reference" border="0" /> Complete ASP.NET Mobile Reference</a>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/dotnetmobile/control_link.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:56:19 GMT -->
+</html>

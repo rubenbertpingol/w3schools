@@ -1,0 +1,325 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/php/php_ajax_livesearch.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:20:38 GMT -->
+<head>
+
+<title>PHP Example AJAX Live Search</title>
+<script type="text/javascript">
+function showResult(str)
+{
+if (str.length==0)
+  { 
+  document.getElementById("livesearch").innerHTML="";
+  document.getElementById("livesearch").style.border="0px";
+  return;
+  }
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("livesearch").innerHTML=xmlhttp.responseText;
+    document.getElementById("livesearch").style.border="1px solid #A5ACB2";
+    }
+  }
+xmlhttp.open("GET","livesearch03d2.html?q="+str,true);
+xmlhttp.send();
+}
+</script>
+<style type="text/css"> 
+#livesearch
+{ 
+margin:0px;
+width:194px;         
+}
+#txt1
+{ 
+margin:0px;
+}        
+</style>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1>PHP Example - <span class="color_h1">AJAX Live Search</span></h1>
+<div class="chapter">
+<div class="prev"><a class="chapter" href="php_ajax_xml.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="php_ajax_rss_reader.html">Next Chapter &raquo;</a></div>
+</div>
+<hr />
+<p class="intro">AJAX can be used to create more user-friendly and interactive 
+searches.</p>
+<hr>
+
+<h2>AJAX Live Search</h2>
+<p>The following example will demonstrate a live search, where you 
+get search results while you type.</p>
+<p>Live search has many benefits compared to traditional searching:</p>
+<ul>
+	<li>Results are shown as you type</li>
+	<li>Results narrow as you continue typing</li>
+	<li>If results become too narrow, remove characters to see a broader result</li>
+</ul>
+<p>Search for a W3Schools page in the input field below:</p>
+<form>
+<input type="text" size="30" onkeyup="showResult(this.value)" />
+<div id="livesearch"></div>
+</form>
+</p>
+<p>The results in the example above are found in an XML file (<a target="_blank" href="links.xml">links.xml</a>). To make this 
+example small and simple, only six results are available.</p>
+<hr />
+<h2>Example Explained - The HTML Page</h2>
+<p>When a user types a character in the input field above, the function &quot;showResult()&quot; is executed. The function is triggered by the &quot;onkeyup&quot; 
+event:</p> 
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;html&gt;<br />
+&lt;head&gt;<br />
+&lt;script type=&quot;text/javascript&quot;&gt;<br />
+function showResult(str)<br />
+{<br />
+if (str.length==0)<br />
+&nbsp; { <br />
+&nbsp;&nbsp;document.getElementById(&quot;livesearch&quot;).innerHTML=&quot;&quot;;<br />
+&nbsp;&nbsp;document.getElementById(&quot;livesearch&quot;).style.border=&quot;0px&quot;;<br />
+&nbsp; return;<br />
+&nbsp; }<br />
+if (window.XMLHttpRequest)<br />
+&nbsp; {// code for IE7+, Firefox, Chrome, Opera, Safari<br />
+&nbsp; xmlhttp=new XMLHttpRequest();<br />
+&nbsp; }<br />
+else<br />
+&nbsp; {// code for IE6, IE5<br />
+&nbsp; xmlhttp=new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);<br />
+&nbsp; }<br />
+xmlhttp.onreadystatechange=function()<br />
+&nbsp; {<br />
+&nbsp; if (xmlhttp.readyState==4 &amp;&amp; xmlhttp.status==200)<br />
+&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;
+&nbsp;&nbsp;document.getElementById(&quot;livesearch&quot;).innerHTML=xmlhttp.responseText;<br />
+&nbsp;&nbsp;&nbsp; document.getElementById(&quot;livesearch&quot;).style.border=&quot;1px solid #A5ACB2&quot;;<br />
+&nbsp;&nbsp;&nbsp; }<br />
+&nbsp; }<br />
+xmlhttp.open(&quot;GET&quot;,&quot;livesearch.php?q=&quot;+str,true);<br />
+xmlhttp.send();<br />
+}<br />
+&lt;/script&gt;<br>
+&lt;/head&gt;<br />
+&lt;body&gt;<br />
+<br />
+&lt;form&gt;<br />
+&lt;input type=&quot;text&quot; size=&quot;30&quot; onkeyup=&quot;showResult(this.value)&quot; /&gt;<br />
+&lt;div id=&quot;livesearch&quot;&gt;&lt;/div&gt;<br />
+&lt;/form&gt;<br />
+<br />
+&lt;/body&gt;<br />
+&lt;/html&gt;
+</td></tr>
+</table>
+
+<p>Source code explanation:</p>
+<p>If the input field is empty (str.length==0), the function clears the 
+content of the livesearch placeholder and exits the function.</p>
+
+<p>If the input field is not empty, the showResult() function executes the following:</p>
+<ul>
+	<li>Create an XMLHttpRequest object</li>
+	<li>Create the function to be executed when the server response is ready</li>
+	<li>Send the request off to a file on the server</li>
+	<li>Notice that a parameter (q) is added to the URL (with the content of the 
+	input field)</li>
+</ul>
+
+<hr>
+<h2>The PHP File</h2>
+
+<p>The page on the server called by the JavaScript above is a PHP file called &quot;livesearch.php&quot;.</p>
+<p>The source code in &quot;livesearch.php&quot; searches an XML file for titles 
+matching the search string and returns the result:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;?php<br />
+$xmlDoc=new DOMDocument();<br />
+$xmlDoc-&gt;load(&quot;links.xml&quot;);<br />
+<br />
+$x=$xmlDoc-&gt;getElementsByTagName('link');<br />
+<br />
+//get the q parameter from URL<br />
+$q=$_GET[&quot;q&quot;];<br />
+<br />
+//lookup all links from the xml file if length of q&gt;0<br />
+if (strlen($q)&gt;0)<br />
+{<br />
+$hint=&quot;&quot;;<br />
+for($i=0; $i&lt;($x-&gt;length); $i++)<br />
+&nbsp;&nbsp;{<br />
+&nbsp;&nbsp;$y=$x-&gt;item($i)-&gt;getElementsByTagName('title');<br />
+&nbsp;&nbsp;$z=$x-&gt;item($i)-&gt;getElementsByTagName('url');<br />
+&nbsp;&nbsp;if ($y-&gt;item(0)-&gt;nodeType==1)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;//find a link matching the search text<br />
+&nbsp;&nbsp;&nbsp;&nbsp;if (stristr($y-&gt;item(0)-&gt;childNodes-&gt;item(0)-&gt;nodeValue,$q))<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if ($hint==&quot;&quot;)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$hint=&quot;&lt;a href='&quot; . <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$z-&gt;item(0)-&gt;childNodes-&gt;item(0)-&gt;nodeValue . <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;' target='_blank'&gt;&quot; . <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$y-&gt;item(0)-&gt;childNodes-&gt;item(0)-&gt;nodeValue . &quot;&lt;/a&gt;&quot;;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$hint=$hint . &quot;&lt;br /&gt;&lt;a href='&quot; . <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$z-&gt;item(0)-&gt;childNodes-&gt;item(0)-&gt;nodeValue . <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;' target='_blank'&gt;&quot; . <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$y-&gt;item(0)-&gt;childNodes-&gt;item(0)-&gt;nodeValue . &quot;&lt;/a&gt;&quot;;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+&nbsp;&nbsp;}<br />
+}<br />
+<br />
+// Set output to &quot;no suggestion&quot; if no hint were found<br />
+// or to the correct values<br />
+if ($hint==&quot;&quot;)<br />
+&nbsp;&nbsp;{<br />
+&nbsp;&nbsp;$response=&quot;no suggestion&quot;;<br />
+&nbsp;&nbsp;}<br />
+else<br />
+&nbsp;&nbsp;{<br />
+&nbsp;&nbsp;$response=$hint;<br />
+&nbsp;&nbsp;}<br />
+<br />
+//output the response<br />
+echo $response;<br />
+?&gt;
+</td></tr>
+</table>
+<p>If there is any text sent from the JavaScript (strlen($q) &gt; 0), the following 
+happens:</p>
+<ul>
+	<li>Load an XML file into a new XML DOM object</li>
+	<li>Loop through all&nbsp;&lt;title&gt; elements to find matches from the 
+	text sent from the JavaScript</li>
+	<li>Sets the correct url and title in the 
+	&quot;$response&quot; variable. If more than one match is found, all matches are added 
+	to the variable</li>
+	<li>If no matches are found, the $response variable is set to &quot;no suggestion&quot;</li>
+</ul>
+<br />
+<div class="chapter">
+<div class="prev"><a class="chapter" href="php_ajax_xml.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="php_ajax_rss_reader.html">Next Chapter &raquo;</a></div>
+</div>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/php/php_ajax_livesearch.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:20:38 GMT -->
+</html>

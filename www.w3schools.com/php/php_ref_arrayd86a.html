@@ -1,0 +1,625 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/php/php_ref_array.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:03:59 GMT -->
+<head>
+<title>PHP Array Functions</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1>PHP <span class="color_h1">Array</span> Functions</h1>
+<div class="chapter">
+<div class="prev"><a class="chapter" href="php_ajax_poll.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="php_ref_calendar.html">Next Chapter &raquo;</a></div>
+</div>
+<hr />
+<h2>PHP Array Introduction</h2>
+<p>The array functions allow you to manipulate arrays.</p>
+<p>PHP supports both simple and multi-dimensional arrays. There are also 
+specific functions for populating arrays from database queries.</p>
+<hr />
+
+<h2>Installation</h2>
+<p>The array functions are part of the PHP core. There is no installation needed 
+to use these functions.</p>
+<hr />
+
+<h2>PHP Array Functions</h2>
+
+<p><b>PHP</b>: indicates the earliest version of PHP that supports the 
+  function. </p>
+<table class="reference">
+  <tr>
+    <th width="35%" align="left" valign="top">Function</th>
+    <th width="60%" align="left" valign="top">Description</th>
+    <th width="5%" align="left" valign="top">PHP</th>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array.html">array()</a></td>
+    <td valign="top">Creates an array</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_change_key_case.html">array_change_key_case()</a></td>
+    <td valign="top">Returns an array with all keys in lowercase or uppercase</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_chunk.html">array_chunk()</a></td>
+    <td valign="top">Splits an array into chunks of arrays</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_combine.html">array_combine()</a></td>
+    <td valign="top">Creates an array by using one array for keys and another for its values</td>
+    <td valign="top">5</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_count_values.html">array_count_values()</a></td>
+    <td valign="top">Returns an array with the number of occurrences for each value</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_diff.html">array_diff()</a></td>
+    <td valign="top">Compares array values, and returns the differences</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_diff_assoc.html">array_diff_assoc()</a></td>
+    <td valign="top">Compares array keys and values, and returns the differences</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_diff_key.html">array_diff_key()</a></td>
+    <td valign="top">Compares array keys, and returns the differences</td>
+    <td valign="top">5</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_diff_uassoc.html">array_diff_uassoc()</a></td>
+    <td valign="top">Compares array keys and values, with an additional user-made function check, and returns the differences</td>
+    <td valign="top">5</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_diff_ukey.html">array_diff_ukey()</a></td>
+    <td valign="top">Compares array keys, with an additional user-made function check, and returns the differences</td>
+    <td valign="top">5</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_fill.html">array_fill()</a></td>
+    <td valign="top">Fills an array with values</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_filter.html">array_filter()</a></td>
+    <td valign="top">Filters elements of an array using a user-made function</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_flip.html">array_flip()</a></td>
+    <td valign="top">Exchanges all keys with their associated values in an array</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_intersect.html">array_intersect()</a></td>
+    <td valign="top">Compares array values, and returns the matches</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_intersect_assoc.html">array_intersect_assoc()</a></td>
+    <td valign="top">Compares array keys and values, and returns the matches</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_intersect_key.html">array_intersect_key()</a></td>
+    <td valign="top">Compares array keys, and returns the matches</td>
+    <td valign="top">5</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_intersect_uassoc.html">array_intersect_uassoc()</a></td>
+    <td valign="top">Compares array keys and values, with an additional user-made function check, and returns the matches</td>
+    <td valign="top">5</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_intersect_ukey.html">array_intersect_ukey()</a></td>
+    <td valign="top">Compares array keys, with an additional user-made function check, and returns the matches</td>
+    <td valign="top">5</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_key_exists.html">array_key_exists()</a></td>
+    <td valign="top">Checks if the specified key exists in the array</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_keys.html">array_keys()</a></td>
+    <td valign="top">Returns all the keys of an array</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_map.html">array_map()</a></td>
+    <td valign="top">Sends each value of an array to a user-made function, which returns new values</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_merge.html">array_merge()</a></td>
+    <td valign="top">Merges one or more arrays into one array</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_merge_recursive.html">array_merge_recursive()</a></td>
+    <td valign="top">Merges one or more arrays into one array</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_multisort.html">array_multisort()</a></td>
+    <td valign="top">Sorts multiple or multi-dimensional arrays</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_pad.html">array_pad()</a></td>
+    <td valign="top">Inserts a specified number of items, with a specified value, to an array</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_pop.html">array_pop()</a></td>
+    <td valign="top">Deletes the last element of an array</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_product.html">array_product()</a></td>
+    <td valign="top">Calculates the product of the values in an array</td>
+    <td valign="top">5</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_push.html">array_push()</a></td>
+    <td valign="top">Inserts one or more elements to the end of an array</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_rand.html">array_rand()</a></td>
+    <td valign="top">Returns one or more random keys from an array</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_reduce.html">array_reduce()</a></td>
+    <td valign="top">Returns an array as a string, using a user-defined function</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_reverse.html">array_reverse()</a></td>
+    <td valign="top">Returns an array in the reverse order</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_search.html">array_search()</a></td>
+    <td valign="top">Searches an array for a given value and returns the key</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_shift.html">array_shift()</a></td>
+    <td valign="top">Removes the first element from an array, and returns the value of the removed element</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_slice.html">array_slice()</a></td>
+    <td valign="top">Returns selected parts of an array</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_splice.html">array_splice()</a></td>
+    <td valign="top">Removes and replaces specified elements of an array</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_sum.html">array_sum()</a></td>
+    <td valign="top">Returns the sum of the values in an array</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_udiff.html">array_udiff()</a></td>
+    <td valign="top">Compares array values in a user-made function and returns an array</td>
+    <td valign="top">5</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_udiff_assoc.html">array_udiff_assoc()</td>
+    <td valign="top">Compares array keys, and compares array values in a user-made function, and returns an array</td>
+    <td valign="top">5</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_udiff_uassoc.html">array_udiff_uassoc()</a></td>
+    <td valign="top">Compares array keys and array values in user-made functions, and returns an array</td>
+    <td valign="top">5</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_uintersect.html">array_uintersect()</a></td>
+    <td valign="top">Compares array values in a user-made function and returns an array</td>
+    <td valign="top">5</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_uintersect_assoc.html">array_uintersect_assoc()</a></td>
+    <td valign="top">Compares array keys, and compares array values in a user-made function, and returns an array</td>
+    <td valign="top">5</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_uintersect_uassoc.html">array_uintersect_uassoc()</a></td>
+    <td valign="top">Compares array keys and array values in user-made functions, and returns an array</td>
+    <td valign="top">5</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_unique.html">array_unique()</a></td>
+    <td valign="top">Removes duplicate values from an array</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_unshift.html">array_unshift()</a></td>
+    <td valign="top">Adds one or more elements to the beginning of an array</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_values.html">array_values()</a></td>
+    <td valign="top">Returns all the values of an array</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_walk.html">array_walk()</a></td>
+    <td valign="top">Applies a user function to every member of an array</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_walk_recursive.html">array_walk_recursive()</a></td>
+    <td valign="top">Applies a user function recursively to every member of an 
+	array</td>
+    <td valign="top">5</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_arsort.html">arsort()</a></td>
+    <td valign="top">Sorts an array in reverse order and maintain index 
+	association</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_asort.html">asort()</a></td>
+    <td valign="top">Sorts an array and maintain index association</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_compact.html">compact()</a></td>
+    <td valign="top">Create array containing variables and their values</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_count.html">count()</a></td>
+    <td valign="top">Counts elements in an array, or properties in an object</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_current.html">current()</a></td>
+    <td valign="top">Returns the current element in an array</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_each.html">each()</a></td>
+    <td valign="top">Returns the current key and value pair from an array</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_end.html">end()</a></td>
+    <td valign="top">Sets the internal pointer of an array to its last element</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_extract.html">extract()</a></td>
+    <td valign="top">Imports variables into the current symbol table from an 
+	array</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_in_array.html">in_array()</a></td>
+    <td valign="top">Checks if a specified value exists in an array</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_key.html">key()</a></td>
+    <td valign="top">Fetches a key from an array</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_krsort.html">krsort()</a></td>
+    <td valign="top">Sorts an array by key in reverse order</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_ksort.html">ksort()</a></td>
+    <td valign="top">Sorts an array by key</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_list.html">list()</a></td>
+    <td valign="top">Assigns variables as if they were an array</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_natcasesort.html">natcasesort()</a></td>
+    <td valign="top">Sorts an array using a case insensitive &quot;natural order&quot; 
+	algorithm</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_natsort.html">natsort()</a></td>
+    <td valign="top">Sorts an array using a &quot;natural order&quot; algorithm</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_next.html">next()</a></td>
+    <td valign="top">Advance the internal array pointer of an array</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_pos.html">pos()</a></td>
+    <td valign="top">Alias of current()</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_prev.html">prev()</a></td>
+    <td valign="top">Rewinds the internal array pointer</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_range.html">range()</a></td>
+    <td valign="top">Creates an array containing a range of elements</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_reset.html">reset()</a></td>
+    <td valign="top">Sets the internal pointer of an array to its first element</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_rsort.html">rsort()</a></td>
+    <td valign="top">Sorts an array in reverse order</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_shuffle.html">shuffle()</a></td>
+    <td valign="top">Shuffles an array</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_sizeof.html">sizeof()</a></td>
+    <td valign="top">Alias of count()</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_sort.html">sort()</a></td>
+    <td valign="top">Sorts an array</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_uasort.html">uasort()</a></td>
+    <td valign="top">Sorts an array with a user-defined function and 
+	maintain index association</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_uksort.html">uksort()</a></td>
+    <td valign="top">Sorts an array by keys using a user-defined function</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array_usort.html">usort()</a></td>
+    <td valign="top">Sorts an array by values using a user-defined  
+	function</td>
+    <td valign="top">3</td>
+  </tr>
+  </table>
+<br />
+<hr>
+
+<h2>PHP Array Constants</h2>
+<p><b>PHP</b>: indicates the earliest version of PHP that supports the 
+  constant. </p>
+<table class="reference">
+  <tr>
+    <th width="35%" align="left">Constant</th>
+    <th width="60%" align="left">Description</th>
+    <th width="5%" align="left">PHP</th>
+  </tr>
+  <tr>
+    <td valign="top">CASE_LOWER</td>
+    <td valign="top">Used with array_change_key_case() to convert array keys to 
+	lower case</td>
+    <td valign="top">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top">CASE_UPPER</td>
+    <td valign="top">Used with array_change_key_case() to convert array keys to 
+	upper case</td>
+    <td valign="top">&nbsp;</td>
+  </tr>
+	<tr>
+    <td valign="top">SORT_ASC</td>
+    <td valign="top">Used with array_multisort() to sort in ascending order</td>
+    <td valign="top">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top">SORT_DESC</td>
+    <td valign="top">Used with array_multisort() to sort in descending order</td>
+    <td valign="top">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top">SORT_REGULAR</td>
+    <td valign="top">Used to compare items normally</td>
+    <td valign="top">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top">SORT_NUMERIC</td>
+    <td valign="top">Used to compare items numerically</td>
+    <td valign="top">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top">SORT_STRING</td>
+    <td valign="top">Used to compare items as strings</td>
+    <td valign="top">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top">SORT_LOCALE_STRING</td>
+    <td valign="top">Used to compare items as strings, based on the current 
+	locale </td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top">COUNT_NORMAL</td>
+    <td valign="top">&nbsp;</td>
+    <td valign="top">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top">COUNT_RECURSIVE</td>
+    <td valign="top">&nbsp;</td>
+    <td valign="top">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top">EXTR_OVERWRITE</td>
+    <td valign="top">&nbsp;</td>
+    <td valign="top">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top">EXTR_SKIP</td>
+    <td valign="top">&nbsp;</td>
+    <td valign="top">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top">EXTR_PREFIX_SAME</td>
+    <td valign="top">&nbsp;</td>
+    <td valign="top">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top">EXTR_PREFIX_ALL</td>
+    <td valign="top">&nbsp;</td>
+    <td valign="top">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top">EXTR_PREFIX_INVALID</td>
+    <td valign="top">&nbsp;</td>
+    <td valign="top">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top">EXTR_PREFIX_IF_EXISTS</td>
+    <td valign="top">&nbsp;</td>
+    <td valign="top">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top">EXTR_IF_EXISTS</td>
+    <td valign="top">&nbsp;</td>
+    <td valign="top">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top">EXTR_REFS</td>
+    <td valign="top">&nbsp;</td>
+    <td valign="top">&nbsp;</td>
+  </tr>
+  </table>
+<br />
+<div class="chapter">
+<div class="prev"><a class="chapter" href="php_ajax_poll.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="php_ref_calendar.html">Next Chapter &raquo;</a></div>
+</div>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/php/php_ref_array.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:03:59 GMT -->
+</html>

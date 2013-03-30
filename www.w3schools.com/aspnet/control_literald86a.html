@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/aspnet/control_literal.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:54:01 GMT -->
+<head>
+
+<title>ASP.NET Literal Control</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1>ASP.NET <span class="color_h1">Literal</span> Control</h1>
+<hr />
+<a href="aspnet_refwebcontrols.html"><img class="navup" src="http://www.w3schools.com/images/up.gif" alt="Web Server Controls" border="0" /> Web Server Controls</a>
+<hr />
+
+<h2>Definition and Usage</h2>
+<p>The Literal control is used to display text on a page. The text is programmable.</p>
+<p><b>Note:</b></b> This control does not let you apply styles to its content!</p>
+<hr />
+
+<h2>Properties</h2>
+<table class="reference">
+  <tr>
+    <th width="25%" align="left">Property</th>
+    <th width="68%" align="left">Description</th>
+    <th width="7%" align="left">.NET</th>
+  </tr>
+  <tr>
+    <td>Mode</td>
+    <td>&nbsp;</td>
+    <td>2.0</td>
+  </tr>
+  <tr>
+    <td>runat</td>
+    <td>Specifies that the control is a server control. Must be set to &quot;server&quot;</td>
+    <td>1.0</td>
+  </tr>
+  <tr>
+    <td><a href="prop_webcontrol_literal_text.html">Text</a></td>
+    <td>Specifies the text to display</td>
+    <td>1.0</td>
+  </tr>
+</table>
+
+<h2>Control Standard Properties</h2>
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+AppRelativeTemplateSourceDirectory, BindingContainer, 
+		ClientID, Controls, EnableTheming, EnableViewState, ID, NamingContainer, 
+		Page, Parent, Site, TemplateControl, TemplateSourceDirectory, UniqueID, 
+		Visible
+</td></tr>
+</table>
+<p>For a full description, go to <a href="prop_control_standard.html">Control 
+Standard Attributes</a>.</p>
+<hr />
+
+<h2>Examples</h2>
+<p><a target="_blank" href="showaspd91a.html?filename=demo_literal">Literal</a><br />
+Declare one Literal control which displays some static text in an .aspx file.</p>
+
+<p><a target="_blank" href="showasp3964.html?filename=demo_literal2">Literal 2</a><br />
+Declare one Literal control and one Button control in an .aspx file. When the user clicks on the 
+button, the submit subroutine is executed. The subroutine changes the text of the Literal control.</p>
+<hr />
+<a href="aspnet_refwebcontrols.html"><img class="navup" src="http://www.w3schools.com/images/up.gif" alt="Web Server Controls" border="0" /> Web Server Controls</a>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/aspnet/control_literal.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:54:01 GMT -->
+</html>

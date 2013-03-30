@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/php/php_ref_mail.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:24:45 GMT -->
+<head>
+<title>PHP Mail Functions</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1>PHP <span class="color_h1">Mail</span> Functions</h1>
+<div class="chapter">
+<div class="prev"><a class="chapter" href="php_ref_libxml.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="php_ref_math.html">Next Chapter &raquo;</a></div>
+</div>
+<hr />
+<h2>PHP Mail Introduction</h2>
+<p>The mail() function allows you to send emails directly from a script.</p>
+<hr />
+
+<h2>Requirements</h2>
+<p>For the mail functions to be available, PHP requires an installed and working 
+email system. The program to be used is defined by 
+the configuration settings in the php.ini file.</p>
+<hr />
+
+<h2>Installation</h2>
+<p>The mail functions are part of the PHP core. There is no installation 
+needed to use these functions.</p>
+<hr />
+
+<h2>Runtime Configuration</h2>
+<p>The behavior of the mail functions is affected by settings in the php.ini 
+file.</p>
+<p>Mail configuration options:</p>
+<table class="reference">
+  <tr>
+    <th width="20%" align="left" valign="top">Name</th>
+    <th width="15%" align="left" valign="top">Default</th>
+    <th width="42%" align="left" valign="top">Description</th>
+    <th width="23%" align="left" valign="top">Changeable</th>
+  </tr>
+  <tr>
+    <td valign="top">SMTP</td>
+    <td valign="top">&quot;localhost&quot;</td>
+    <td valign="top">Windows only: The DNS name or IP address of the SMTP 
+	server</td>
+    <td valign="top">PHP_INI_ALL</td>
+  </tr>
+  <tr>
+    <td valign="top">smtp_port</td>
+    <td valign="top">&quot;25&quot;</td>
+    <td valign="top">Windows only: The SMTP port number. Available since PHP 4.3</td>
+    <td valign="top">PHP_INI_ALL</td>
+  </tr>
+  <tr>
+    <td valign="top">sendmail_from</td>
+    <td valign="top">NULL</td>
+    <td valign="top">Windows only: Specifies the &quot;from&quot; address to be used 
+	in email sent from PHP</td>
+    <td valign="top">PHP_INI_ALL</td>
+  </tr>
+  <tr>
+    <td valign="top">sendmail_path</td>
+    <td valign="top">NULL</td>
+    <td valign="top">Unix systems only: Specifies where the sendmail program can be found (usually /usr/sbin/sendmail 
+	or /usr/lib/sendmail)</td>
+    <td valign="top">PHP_INI_SYSTEM</td>
+  </tr>
+  </table>
+<br />
+<hr />
+
+<h2>PHP Mail Functions</h2>
+<p><b>PHP</b>: indicates the earliest version of PHP that supports the 
+  function.</p>
+<table class="reference">
+  <tr>
+    <th width="20%" align="left" valign="top">Function</th>
+    <th width="75%" align="left" valign="top">Description</th>
+    <th width="5%" align="left" valign="top">PHP</th>
+  </tr>
+  <tr>
+    <td valign="top">ezmlm_hash()</td>
+    <td valign="top">Calculates the hash value needed by the EZMLM mailing 
+	list system</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_mail_mail.html">mail()</a></td>
+    <td valign="top">Allows you to send emails directly from a script</td>
+    <td valign="top">3</td>
+  </tr>
+  </table>
+<br />
+<hr>
+<h2>PHP Mail Constants</h2>
+<p><b>None.</b><br /></p>
+<br />
+<div class="chapter">
+<div class="prev"><a class="chapter" href="php_ref_libxml.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="php_ref_math.html">Next Chapter &raquo;</a></div>
+</div>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/php/php_ref_mail.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:24:45 GMT -->
+</html>

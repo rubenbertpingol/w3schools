@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/ado/met_rs_movefirst.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:50:12 GMT -->
+<head>
+
+<title>ADO MoveFirst, MoveLast, MoveNext, and MovePrevious Methods</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+
+<h1>ADO <span class="color_h1">MoveFirst, MoveLast, MoveNext,</span> and <span class="color_h1">MovePrevious</span> Methods</h1>
+<hr />
+<a href="ado_ref_recordset.html"><img class="navup" src="http://www.w3schools.com/images/up.gif" alt="Recordset Object Reference" border="0" /> Complete Recordset Object Reference</a>
+<hr />
+<h3>The MoveFirst Method
+</h3>
+
+<p>This method is used to move to the first record in a Recordset object. It
+also make the first record the current record.
+</p>
+
+<p><b>Note:</b> Calling MoveFirst or MoveLast when the Recordset is empty generates an error.
+</p>
+
+<h3>The MoveLast Method
+</h3>
+
+<p>This method is used to move to the last record in a Recordset object. It also
+make the last record the current record.
+</p>
+
+<p><b>Note:</b> Calling MoveFirst or MoveLast when the Recordset is empty generates an error.
+</p>
+
+<p><b>Note:</b>  An error will occur if the Recordset object does not support bookmarks or backward cursor
+movement.
+</p>
+
+<h3>The MoveNext Method
+</h3>
+
+<p>This method is used to move to the next record in a Recordset object. It also
+make the &quot;next&quot; record the current record.
+</p>
+
+<p><b>Note:</b> If you call this method when the current record is the last
+record, it generates an error.
+</p>
+
+<h3>The MovePrevious Method
+</h3>
+
+<p>This method is used to move to the previous record in a Recordset object. It
+also make the &quot;previous&quot; record the current record.
+</p>
+
+<p><b>Note:</b>  An error will occur if the Recordset object does not support bookmarks or backward cursor
+movement.
+</p>
+
+<p><b>Note:</b> If you call this method when the current record is the first
+record, it generates an error.
+</p>
+
+<h3>Syntax
+</h3>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>objRecordset.MoveFirst
+objRecordset.MoveLast
+objRecordset.MoveNext
+objRecordset.MovePrevious</td></tr>
+</table>
+
+<br />
+<hr />
+<a href="ado_ref_recordset.html"><img class="navup" src="http://www.w3schools.com/images/up.gif" alt="Recordset Object Reference" border="0" /> Complete Recordset Object Reference</a>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/ado/met_rs_movefirst.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:50:12 GMT -->
+</html>

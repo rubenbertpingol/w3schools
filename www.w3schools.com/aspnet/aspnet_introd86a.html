@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+
+<!-- Mirrored from www.w3schools.com/aspnet/aspnet_intro.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:29:45 GMT -->
+<head>
+<title>ASP.NET Introduction</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1>ASP.NET <span class="color_h1">Introduction</span></h1>
+<div class="chapter">
+<div class="prev"><a class="chapter" href="default.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="aspnet_vsasp.html">Next Chapter &raquo;</a></div>
+</div>
+<hr />
+<h2>What You Should Already Know</h2>
+<p>Before you continue you should have a basic understanding of the
+following:</p>
+<ul>
+	<li>WWW, HTML, XML and the basics of building Web pages</li>
+	<li>Scripting languages like JavaScript or VBScript</li>
+	<li>The basics of server side scripting like ASP or PHP</li>
+</ul>
+<p>If you want to study these subjects first, find the tutorials on our <a href="../default.html" target="_top">Home
+Page</a></p>
+<hr />
+
+<h2>What is Classic ASP?</h2>
+<p>Microsoft's previous server side scripting technology ASP (Active Server 
+Pages) is now often called classic ASP. </p>
+<p>ASP 3.0 was the last version of classic ASP.</p>
+
+<p>To learn more about
+classic ASP, you can study our <a href="../asp/default.html">ASP tutorial</a>.</p>
+<hr />
+
+<h2>ASP.NET is NOT ASP</h2>
+<p>ASP.NET is the next generation ASP, but it's not an upgraded version of ASP. </p>
+<p>ASP.NET is an entirely new technology for server-side scripting. It was 
+written from the ground up and is not backward compatible with classic ASP.</p>
+<p>You can read more about the differences
+between ASP and ASP.NET in the next chapter of this tutorial.</p>
+<p>ASP.NET is the major part of the Microsoft's .NET Framework.</p>
+<hr />
+
+<h2>What is ASP.NET?</h2>
+<p>ASP.NET is a server side scripting technology that enables
+scripts (embedded in web pages) to be executed by an Internet server.</p>
+<ul>
+<li>ASP.NET is a Microsoft Technology</li> 
+<li>ASP stands for Active Server Pages</li> 
+<li>ASP.NET is a program that runs inside IIS</li>
+<li>IIS (Internet Information Services) is Microsoft's Internet server</li>
+<li>IIS comes as a free component with Windows servers</li>
+<li>IIS is also a part of Windows 2000 and XP Professional</li>
+</ul>
+
+<h2>What is an ASP.NET File?</h2>
+<ul>
+<li>An ASP.NET file is just the same as an HTML file</li> 
+<li>An ASP.NET file can contain HTML, XML, and scripts</li> 
+<li>Scripts in an ASP.NET file are executed on the server</li> 
+<li>An ASP.NET file has the file extension &quot;.aspx&quot;</li> 
+</ul>
+
+<h2>How Does ASP.NET Work?</h2>
+<ul>
+  <li>When a browser requests an HTML file, the server returns the file</li>
+  <li>When a browser requests an ASP.NET file, IIS passes the request to the ASP.NET 
+	engine on the server</li>
+  <li>The ASP.NET engine reads the file, line by line, and executes the scripts in the file</li>
+  <li>Finally, the ASP.NET file is returned to the browser as plain HTML</li>
+</ul>
+
+<hr />
+
+<h2>What is ASP+?</h2>
+<p>ASP+ is the same as ASP.NET.</p>
+<p>ASP+ is just an early name used by Microsoft
+when they developed ASP.NET.</p>
+<hr />
+
+<h2>The Microsoft .NET Framework</h2>
+<p>The .NET Framework is the infrastructure for the Microsoft .NET platform.&nbsp;</p>
+<p>The .NET Framework is an environment for building, deploying, and
+running Web applications and Web Services.</p>
+<p>Microsoft's first server technology ASP (Active Server Pages), was a powerful and flexible &quot;programming language&quot;. But it was too code oriented. It was not an application framework and not an enterprise development tool.</p>
+<p>The Microsoft .NET Framework was developed to solve this problem. </p>
+<p><b>.NET Frameworks keywords:</b></p>
+<ul>
+	<li>Easier and quicker programming</li>
+	<li>Reduced amount of code</li>
+	<li>Declarative programming model</li>
+	<li>Richer server control hierarchy with events</li>
+	<li>Larger class library</li>
+	<li>Better support for development tools</li>
+</ul>
+<p><b>The .NET Framework consists of 3 main parts:</b></p>
+<p>Programming languages:</p>
+<ul>
+	<li>C# (Pronounced C sharp)</li>
+	<li>Visual Basic (VB .NET)</li>
+	<li>J# (Pronounced J sharp)</li>
+</ul>
+<p>Server technologies and client technologies:</p>
+<ul>
+	<li>ASP .NET (Active Server Pages)</li>
+	<li>Windows Forms (Windows desktop solutions)</li>
+	<li>Compact Framework (PDA / Mobile solutions)</li>
+</ul>
+
+<p>Development environments:</p>
+<ul>
+	<li>Visual Studio .NET (VS .NET)</li>
+	<li>Visual Web Developer</li>
+</ul>
+
+<p>This tutorial is about ASP.NET.</p>
+<hr />
+
+<h2>ASP.NET 2.0</h2>
+<p>ASP.NET 2.0 improves upon ASP.NET by adding support for several new features.</p>
+<p>You can read more about the differences between ASP.NET 2.0 and ASP.NET in 
+the next chapter of this tutorial.</p>
+<hr />
+
+<h2>ASP.NET 3.0</h2>
+<p>ASP.NET 3.0 is not a new version of ASP.NET. It's just the name for a new 
+ASP.NET 2.0 framework library with support for Windows Presentation Foundation, Windows 
+Communication Foundation, Windows Workflow Foundation; and Windows CardSpace. </p>
+<p>ASP.NET 3.0 is not covered in this tutorial.</p>
+<br />
+<div class="chapter">
+<div class="prev"><a class="chapter" href="default.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="aspnet_vsasp.html">Next Chapter &raquo;</a></div>
+</div>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/aspnet/aspnet_intro.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:29:45 GMT -->
+</html>

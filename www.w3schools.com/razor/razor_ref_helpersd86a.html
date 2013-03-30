@@ -1,0 +1,312 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/razor/razor_ref_helpers.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:33:28 GMT -->
+<head>
+
+<title>ASP.NET Helpers Reference</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1>ASP.NET Razor <span class="color_h1">- Helpers Reference</span></h1>
+<div class="chapter">
+<div class="prev"><a class="chapter" href="razor_ref_database.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="default.html">Next Chapter &raquo;</a></div>
+</div>
+<hr />
+<table class="reference">
+<tr>
+<th align="left" width="50%">Helper</th>
+<th align="left" width="50%">Description</th>
+</tr>
+<tr>
+<td class="unknown" valign="top">Analytics.GetGoogleHtml(<em>webPropertyId</em>)</td>
+<td valign="top">
+Renders the Google Analytics JavaScript code for the 
+specified ID.</td></tr><tr>
+<td class="unknown" valign="top">Analytics.GetStatCounterHtml(<em>project</em>,
+<em>security</em>)</td><td valign="top">Renders the StatCounter 
+Analytics JavaScript code for the specified project.</td></tr><tr>
+<td class="unknown" valign="top">Analytics.GetYahooHtml(<em>account</em>)</td>
+<td valign="top">
+Renders the Yahoo Analytics JavaScript code for the 
+specified account.</td></tr><tr>
+<td class="unknown" valign="top">Bing.SearchBox(<em>[boxWidth]</em>)</td>
+<td valign="top">
+Passes a search to Bing. To specify the site to 
+search and a title for the search box, you can set 
+the Bing.SiteUrl and Bing.SiteTitle properties. Normally you set 
+these properties in the <em>_AppStart</em> page. 
+</td></tr><tr>
+<td class="unknown" valign="top">Bing.AdvancedSearchBox(<em>[, boxWidth] [, 
+resultWidth] [, resultHeight] <br>
+&nbsp; [, themeColor] [, locale]</em>)</td><td valign="top">Displays 
+Bing search results in the page with optional 
+formatting. To specify the site to search and a 
+title for the search box, you can set the Bing.SiteUrl and Bing.SiteTitle 
+properties. Normally you set these properties in the
+<em>_AppStart</em> page. 
+</td></tr><tr>
+<td class="unknown" valign="top">Chart(<em>width</em>, <em>height [, 
+template] [, templatePath]</em>)</td><td valign="top">
+Initializes a chart.</td></tr><tr>
+<td class="unknown" valign="top">Chart.AddLegend(<em>[title] [, name]</em>)</td>
+<td valign="top">
+Adds a legend to a chart.</td></tr><tr>
+<td class="unknown" valign="top">Chart.AddSeries(<em>[name] [, chartType] 
+[, chartArea] <br>
+&nbsp; [, axisLabel] [, legend] [, markerStep] [, xValue]
+<br>
+&nbsp; [, xField] [, yValues] [, yFields] [, options])</em></td>
+<td valign="top">
+Adds a series of values to the chart.</td></tr><tr>
+<td class="unknown" valign="top">Crypto.Hash(<em>string [, algorithm]</em>)
+<br>
+Crypto.Hash(<em>bytes [, algorithm]</em>)</td><td valign="top">
+Returns a hash for the specified data. The default 
+algorithm is sha256.</td></tr><tr>
+<td class="unknown" valign="top">Facebook.LikeButton(<em>href [, 
+buttonLayout] [, showFaces] [, width] [, height] <br>
+[, action] [, font] [, colorScheme] [, refLabel]</em>)</td><td valign="top">
+Lets Facebook users make a connection to pages.</td></tr><tr>
+<td class="unknown" valign="top">FileUpload.GetHtml(<em>[initialNumberOfFiles] 
+[</em>, <em>allowMoreFilesToBeAdded] <br>
+&nbsp; [</em>, <em>includeFormTag] [, addText] [</em>,
+<em>uploadText]</em>)</td><td valign="top">Renders UI for 
+uploading files.</td></tr><tr>
+<td class="unknown" valign="top">GamerCard.GetHtml(<em>gamerTag</em>)</td>
+<td valign="top">
+Renders the specified Xbox gamer tag.</td></tr><tr>
+<td class="unknown" valign="top">Gravatar.GetHtml(<em>email [, imageSize] 
+[, defaultImage] [, rating] <br>
+&nbsp; [, imageExtension] [, attributes]</em>)</td><td valign="top">
+Renders the Gravatar image for the specified email 
+address.</td></tr><tr>
+<td class="unknown" valign="top">Json.Encode(<em>object</em>)</td>
+<td valign="top">
+Converts a data object to a string in the JavaScript 
+Object Notation (JSON) format. 
+</td></tr><tr>
+<td class="unknown" valign="top">Json.Decode(<em>string</em>)</td>
+<td valign="top">
+Converts a JSON-encoded input string to a data 
+object that you can iterate over or insert into a 
+database.</td></tr><tr>
+<td class="unknown" valign="top">LinkShare.GetHtml(<em>pageTitle [, 
+pageLinkBack] [, twitterUserName] <br>
+&nbsp; [, additionalTweetText] [, linkSites]</em>)</td><td valign="top">
+Renders social networking links using the specified 
+title and optional URL.</td></tr><tr>
+<td class="unknown" valign="top">ModelStateDictionary.AddError(<em>key</em>,
+<em>errorMessage</em>)</td><td valign="top">Associates an error 
+message with a form field. Use the ModelState 
+helper to access this member. 
+</td></tr><tr>
+<td class="unknown" valign="top">ModelStateDictionary.AddFormError(<em>errorMessage</em>)</td>
+<td valign="top">
+Associates an error message with a form. Use the ModelState helper to access this 
+member. 
+</td></tr><tr>
+<td class="unknown" valign="top">ModelStateDictionary.IsValid</td>
+<td valign="top">
+Returns true if there are no validation errors. Use 
+the ModelState helper to access this 
+member. 
+</td></tr><tr>
+<td class="unknown" valign="top">ObjectInfo.Print(<em>value [, depth] [, 
+enumerationLength]</em>)</td><td valign="top">Renders the 
+properties and values of an object and any child 
+objects. 
+</td></tr><tr>
+<td class="unknown" valign="top">Recaptcha.GetHtml(<em>[, publicKey] [, 
+theme] [, language] [, tabIndex]</em>)</td><td valign="top">
+Renders the reCAPTCHA verification test.</td></tr><tr>
+<td class="unknown" valign="top">ReCaptcha.PublicKey <br>
+ReCaptcha.PrivateKey</td><td valign="top">Sets public and 
+private keys for the reCAPTCHA service. Normally you 
+set these properties in the <em>_AppStart</em> page.</td></tr><tr>
+<td class="unknown" valign="top">ReCaptcha.Validate(<em>[, privateKey]</em>)</td>
+<td valign="top">
+Returns the result of the reCAPTCHA test.</td></tr><tr>
+<td class="unknown" valign="top">ServerInfo.GetHtml()</td><td valign="top">Renders 
+status information about ASP.NET Web Pages.</td></tr><tr>
+<td class="unknown" valign="top">Twitter.Profile(<em>twitterUserName</em>)</td>
+<td valign="top">
+Renders a Twitter stream for the specified user.</td></tr><tr>
+<td class="unknown" valign="top">Twitter.Search(<em>searchQuery</em>)</td>
+<td valign="top">
+Renders a Twitter stream for the specified search 
+text.</td></tr><tr>
+<td class="unknown" valign="top">Video.Flash(<em>filename [, width, height]</em>)</td>
+<td valign="top">
+Renders a Flash video player for the specified file 
+with optional width and height.</td></tr><tr>
+<td class="unknown" valign="top">Video.MediaPlayer(<em>filename [, width, 
+height]</em>)</td><td valign="top">Renders a Windows Media 
+player for the specified file with optional width 
+and height.</td></tr><tr>
+<td class="unknown" valign="top">Video.Silverlight(<em>filename</em>, <em>
+width</em>, <em>height</em>)</td><td valign="top">Renders a 
+Silverlight player for the specified <em>.xap</em> 
+file with required width and height.</td></tr><tr>
+<td class="unknown" valign="top">WebCache.Get(<em>key</em>)</td>
+<td valign="top">
+Returns the object specified by <em>key</em>, or 
+null if the object is not found.</td></tr><tr>
+<td class="unknown" valign="top">WebCache.Remove(<em>key</em>)</td>
+<td valign="top">
+Removes the object specified by <em>key</em> from 
+the cache.</td></tr><tr>
+<td class="unknown" valign="top">WebCache.Set(<em>key</em>, <em>value [, 
+minutesToCache] [, slidingExpiration]</em>)</td><td valign="top">
+Puts <em>value</em> into the cache under the name 
+specified by <em>key</em>.</td></tr><tr>
+<td class="unknown" valign="top">WebGrid(<em>data</em>)</td><td valign="top">Creates a 
+new WebGrid object using data from a 
+query.</td></tr><tr>
+<td class="unknown" valign="top">WebGrid.GetHtml()</td><td valign="top">Renders markup 
+to display data in an HTML table.</td></tr><tr>
+<td class="unknown" valign="top">WebGrid.Pager()</td><td valign="top">Renders a pager 
+for the WebGrid object.</td></tr><tr>
+<td class="unknown" valign="top">WebImage(<em>path</em>)</td><td valign="top">Loads an 
+image from the specified path.</td></tr><tr>
+<td class="unknown" valign="top">WebImage.AddImagesWatermark(<em>image</em>)</td>
+<td valign="top">
+Adds the specified image as a watermark.</td></tr><tr>
+<td class="unknown" valign="top">WebImage.AddTextWatermark(<em>text</em>)</td>
+<td valign="top">
+Adds the specified text to the image.</td></tr><tr>
+<td class="unknown" valign="top">WebImage.FlipHorizontal() <br>
+WebImage.FlipVertical()</td><td valign="top">Flips the image 
+horizontally or vertically.</td></tr><tr>
+<td class="unknown" valign="top">WebImage.GetImageFromRequest()</td>
+<td valign="top">
+Loads an image when an image is posted to a page 
+during a file upload.</td></tr><tr>
+<td class="unknown" valign="top">WebImage.Resize(<em>width</em>,<em> height</em>)</td>
+<td valign="top">
+Resizes an the image.</td></tr><tr>
+<td class="unknown" valign="top">WebImage.RotateLeft() <br>
+WebImage.RotateRight()</td><td valign="top">Rotates the image to 
+the left or the right.</td></tr><tr>
+<td class="unknown" valign="top">WebImage.Save(<em>path [, imageFormat]</em>)</td>
+<td valign="top">
+Saves the image to the specified path.</td></tr><tr>
+<td class="unknown" valign="top">WebMail.Password</td><td valign="top">Sets the 
+password for the SMTP server. Normally you set this 
+property in the <em>_AppStart</em> page. 
+</td></tr><tr>
+<td class="unknown" valign="top">WebMail.Send(<em>to</em>,<em> subject</em>,
+<em>body [, from] [, cc] [, filesToAttach] [, 
+isBodyHtml] <br>
+&nbsp; [, additionalHeaders]</em>)</td><td valign="top">Sends an 
+email message.</td></tr><tr>
+<td class="unknown" valign="top">WebMail.SmtpServer</td><td valign="top">Sets the SMTP 
+server name. Normally you set this property in the<em> 
+_AppStart</em> page.</td></tr><tr>
+<td class="unknown" valign="top">WebMail.UserName</td><td valign="top">Sets the user 
+name for the SMTP server. Normally you should set 
+this property in the <em>_AppStart</em> page.</td></tr></table><br />
+<div class="chapter">
+<div class="prev"><a class="chapter" href="razor_ref_database.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="default.html">Next Chapter &raquo;</a></div>
+</div>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+</body>
+<!-- Mirrored from www.w3schools.com/razor/razor_ref_helpers.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:33:28 GMT -->
+</html>

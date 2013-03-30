@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/php/php_ref_zip.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:29:45 GMT -->
+<head>
+<title>PHP Zip File Functions</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1>PHP <span class="color_h1">Zip File</span> Functions</h1>
+<div class="chapter">
+<div class="prev"><a class="chapter" href="php_ref_xml.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="php_quiz.html">Next Chapter &raquo;</a></div>
+</div>
+<hr />
+<h2>PHP Zip File Introduction</h2>
+<p>The Zip files functions allows you to read ZIP files.</p>
+<hr />
+
+<h2>Installation</h2>
+<p>For the Zip file functions to work on your server, these libraries must be 
+installed:</p>
+<ul>
+	<li>The ZZIPlib library by Guido Draheim:
+	<a target="_blank" href="http://zziplib.sourceforge.net/download.html">Download the ZZIPlib 
+	library</a></li>
+	<li>The Zip PELC extension: <a target="_blank" href="http://snaps.php.net/">Download the Zip 
+	PELC extension</a></li>
+</ul>
+<p><b>Installation on Linux Systems</b></p>
+<p><b>PHP 5+:</b> Zip functions and the Zip library is not enabled by default 
+and must be downloaded from the links above. Use the
+<i>--with-zip=DIR</i> configure option to include Zip support.</p>
+<p><b>Installation on Windows Systems</b></p>
+<p><b>PHP 5+:</b> Zip functions is not enabled by default, so the php_zip.dll 
+and the ZZIPlib library must be downloaded from the link above. php_zip.dll must 
+be enabled inside of php.ini. </p>
+<p>To enable any PHP extension, the PHP extension_dir setting (in the php.ini 
+file) should be set to the directory where the PHP extensions are 
+located. An example extension_dir value is c:\php\ext.</p>
+<hr />
+
+<h2>PHP Zip File Functions</h2>
+<p><b>PHP</b>: indicates the earliest version of PHP that supports the 
+  function.</p>
+<table class="reference">
+  <tr>
+    <th width="40%" align="left" valign="top">Function</th>
+    <th width="55%" align="left" valign="top">Description</th>
+    <th width="5%" align="left" valign="top">PHP</th>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_zip_close.html">zip_close()</a></td>
+    <td valign="top">Closes a ZIP file</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_zip_entry_close.html">zip_entry_close()</a></td>
+    <td valign="top">Closes an entry in the ZIP file</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_zip_entry_compressedsize.html">zip_entry_compressedsize()</a></td>
+    <td valign="top">Returns the compressed size of an entry in the ZIP file</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_zip_entry_compressionmethod.html">zip_entry_compressionmethod()</a></td>
+    <td valign="top">Returns the compression method of an entry in the ZIP file</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_zip_entry_filesize.html">zip_entry_filesize()</a></td>
+    <td valign="top">Returns the actual file size of an entry in the ZIP file</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_zip_entry_name.html">zip_entry_name()</a></td>
+    <td valign="top">Returns the name of an entry in the ZIP file</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_zip_entry_open.html">zip_entry_open()</a></td>
+    <td valign="top">Opens an entry in the ZIP file for reading</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_zip_entry_read.html">zip_entry_read()</a></td>
+    <td valign="top">Reads from an open entry in the ZIP file</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_zip_open.html">zip_open()</a></td>
+    <td valign="top">Opens a ZIP file</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_zip_read.html">zip_read()</a></td>
+    <td valign="top">Reads the next entry in a ZIP file</td>
+    <td valign="top">4</td>
+  </tr>
+  </table>
+<br />
+<hr />
+
+<h2>PHP Zip File Constants</h2>
+<p>NONE</p>
+<br />
+<div class="chapter">
+<div class="prev"><a class="chapter" href="php_ref_xml.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="php_quiz.html">Next Chapter &raquo;</a></div>
+</div>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/php/php_ref_zip.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:29:45 GMT -->
+</html>

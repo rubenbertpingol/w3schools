@@ -1,0 +1,419 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/tags/att_input_type.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sun, 16 Oct 2011 00:00:24 GMT -->
+<head>
+
+<title>HTML input type Attribute</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+
+<h1>HTML &lt;input&gt; <span class="color_h1">type</span> Attribute</h1>
+<p><a href="tag_input.html"><img class="navup" src="http://www.w3schools.com/images/up.gif" alt="HTML input Tag Reference" border="0" /> HTML &lt;input&gt; tag</a></p>
+<table class="example" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td>
+<h2 class="example">Example</h2>
+<p>A simple HTML form with two input fields and one submit button:</p>
+<table class="example_code notranslate" border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td>&lt;form 
+    action=&quot;form_action.asp&quot;
+    method=&quot;get&quot;&gt;<br />
+&nbsp;
+    First name: &lt;input type=&quot;text&quot; name=&quot;fname&quot; 
+    /&gt;&lt;br /&gt;<br />
+    &nbsp;
+    Last name: 
+    &lt;input type=&quot;text&quot; name=&quot;lname&quot; 
+    /&gt;&lt;br /&gt;<br />
+    &nbsp;
+    &lt;input type=&quot;submit&quot; value=&quot;Submit&quot; /&gt;<br />
+    &lt;/form&gt;</td>
+  </tr>
+</table>
+<br />
+<a target="_blank" href="tryitcff8.html?filename=tryhtml_form_submit" class="tryitbtn">Try it yourself &raquo;</a><br />(more examples below)</td>
+</tr>
+</table>
+<hr />
+
+<h2>Definition and Usage</h2>
+<p>The type attribute specifies the type of an input element.</p>
+<hr />
+
+<h2>Browser Support</h2>
+<p><img border="0" src="http://www.w3schools.com/images/compatible_ie.gif" width="31" height="30" alt="Internet Explorer" title="Internet Explorer" />
+<img border="0" src="http://www.w3schools.com/images/compatible_firefox.gif" width="31" height="30" alt="Firefox" title="Firefox" />
+<img border="0" src="http://www.w3schools.com/images/compatible_opera.gif" width="28" height="30" alt="Opera" title="Opera" />
+<img border="0" src="http://www.w3schools.com/images/compatible_chrome.gif" width="31" height="30" alt="Google Chrome" title="Google Chrome" />
+<img border="0" src="http://www.w3schools.com/images/compatible_safari.gif" width="28" height="30" alt="Safari" title="Safari" /></p>
+<p>The type attribute is supported in all major browsers.</p>
+<hr />
+
+<h2>Syntax</h2>
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>&lt;input type=&quot;<i>value</i>&quot; /&gt;</td></tr></table>
+
+<h2>Attribute Values</h2>
+<table class="reference"> 
+  <tr>
+    <th align="left" width="15%">Value</th>
+    <th align="left" width="85%">Description</th>
+  </tr>  
+  <tr>
+    <td>button</td>
+    <td>Defines a clickable button (mostly used with a JavaScript to activate a script)</td>
+  </tr>
+  <tr>
+    <td>checkbox</td>
+    <td>Defines a checkbox</td>
+  </tr>
+  <tr>
+    <td>file</td>
+    <td>Defines an input field and a &quot;Browse...&quot; button, for file uploads</td>
+  </tr>
+  <tr>
+    <td>hidden</td>
+    <td>Defines a hidden input field</td>
+  </tr>
+  <tr>
+    <td>image</td>
+    <td>Defines an image as a submit button</td>
+  </tr>
+  <tr>
+    <td>password</td>
+    <td>Defines a password field. The characters in this field are masked</td>
+  </tr>
+  <tr>
+    <td>radio</td>
+    <td>Defines a radio button</td>
+  </tr>
+  <tr>
+    <td>reset</td>
+    <td>Defines a reset button. A reset button resets all form fields to their 
+	initial values</td>
+  </tr>
+  <tr>
+    <td>submit</td>
+    <td>Defines a submit button. A submit button sends form data to a server</td>
+  </tr>
+  <tr>
+    <td>text</td>
+    <td>Defines a one-line input field that a user can enter text into. Default width is 20 characters</td>
+  </tr>
+  </table>
+<br />
+<hr />
+
+<h2>Text</h2>
+<p>&lt;input type=&quot;text&quot; /&gt; defines a one-line input field that a user can enter text into.</p>
+<table class="example" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td>
+<h2 class="example">Example</h2>
+<table class="example_code notranslate" border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td>Email: &lt;input type=&quot;text&quot; name=&quot;email&quot; 
+    /&gt;&lt;br /&gt;<br />
+    Pin: 
+    &lt;input type=&quot;text&quot; name=&quot;pin&quot; /&gt;</td>
+  </tr>
+</table>
+<br />
+<a target="_blank" href="tryit55d6.html?filename=tryhtml_input_type_text" class="tryitbtn">Try it yourself &raquo;</a>
+</td>
+</tr>
+</table>
+<br />
+<hr />
+
+<h2>Button</h2>
+<p>&lt;input type=&quot;button&quot; /&gt; defines a clickable button, that does not do anything. The 
+button type is most often used to activate a JavaScript when a user clicks on the button.</p>
+<table class="example" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td>
+<h2 class="example">Example</h2>
+<table class="example_code notranslate" border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td>&lt;input type=&quot;button&quot; value=&quot;Click me&quot; onclick=&quot;msg()&quot; /&gt;</td>
+  </tr>
+</table>
+<br />
+<a target="_blank" href="tryit8785.html?filename=tryhtml_input_type_button" class="tryitbtn">Try it yourself &raquo;</a>
+</td>
+</tr>
+</table>
+<br />
+<hr />
+
+<h2>Checkbox</h2>
+<p>&lt;input type=&quot;checkbox&quot; /&gt; defines a checkbox. Checkboxes let a user select one or more options of a limited number of choices.</p>
+<table class="example" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td>
+<h2 class="example">Example</h2>
+<table class="example_code notranslate" border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td>&lt;input type=&quot;checkbox&quot; name=&quot;vehicle&quot; value=&quot;Bike&quot; /&gt; 
+	I have a bike&lt;br /&gt;<br />
+	&lt;input type=&quot;checkbox&quot; name=&quot;vehicle&quot; value=&quot;Car&quot; /&gt; 
+	I have a car</td>
+  </tr>
+</table>
+<br />
+<a target="_blank" href="tryit4102.html?filename=tryhtml_input_type_checkbox" class="tryitbtn">Try it yourself &raquo;</a>
+</td>
+</tr>
+</table>
+<br />
+<hr />
+
+<h2>File</h2>
+<p>&lt;input type=&quot;file&quot; /&gt; is used for file uploads.</p>
+<table class="example" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td>
+<h2 class="example">Example</h2>
+<table class="example_code notranslate" border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td>&lt;input type=&quot;file&quot; /&gt;</td>
+  </tr>
+</table>
+<br />
+<a target="_blank" href="tryit8e52.html?filename=tryhtml_input_type_file" class="tryitbtn">Try it yourself &raquo;</a>
+</td>
+</tr>
+</table>
+<br />
+<hr />
+
+<h2>Hidden</h2>
+<p>&lt;input type=&quot;hidden&quot; /&gt; defines a hidden field. A hidden field is not visible 
+for the user. Hidden fields often store a default value, or have their value changed by a JavaScript.</p>
+<table class="example" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td>
+<h2 class="example">Example</h2>
+<table class="example_code notranslate" border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td>&lt;input type=&quot;hidden&quot; name=&quot;country&quot; value=&quot;Norway&quot; /&gt;</td>
+  </tr>
+</table>
+<br />
+<a target="_blank" href="tryit4612.html?filename=tryhtml_input_type_hidden" class="tryitbtn">Try it yourself &raquo;</a>
+</td>
+</tr>
+</table>
+<br />
+<hr />
+
+<h2>Image</h2>
+<p>&lt;input type=&quot;image&quot; /&gt; defines an image as a submit button.</p>
+<p>The src and alt attribute are required with &lt;input type=&quot;image&quot;&gt;.</p>
+<table class="example" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td>
+<h2 class="example">Example</h2>
+<table class="example_code notranslate" border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td>&lt;input type=&quot;image&quot; src=&quot;submit.gif&quot; alt=&quot;Submit&quot; /&gt;</td>
+  </tr>
+</table>
+<br />
+<a target="_blank" href="tryit0932.html?filename=tryhtml_input_src" class="tryitbtn">Try it yourself &raquo;</a>
+</td>
+</tr>
+</table>
+<br />
+<hr />
+
+<h2>Password</h2>
+<p>&lt;input type=&quot;password&quot; /&gt; defines a password field. The characters in a password field are masked (shown as asterisks or circles).</p>
+<table class="example" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td>
+<h2 class="example">Example</h2>
+<table class="example_code notranslate" border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td>&lt;input type=&quot;password&quot; name=&quot;pwd&quot; /&gt;</td>
+  </tr>
+</table>
+<br />
+<a target="_blank" href="tryitdd81.html?filename=tryhtml_input_type_password" class="tryitbtn">Try it yourself &raquo;</a>
+</td>
+</tr>
+</table>
+<br />
+<hr />
+
+<h2>Radio</h2>
+<p>&lt;input type=&quot;radio&quot; /&gt; defines a radio button. Radio buttons 
+let a user select only one of a limited number of choices.</p>
+<table class="example" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td>
+<h2 class="example">Example</h2>
+<table class="example_code notranslate" border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td>&lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;male&quot; /&gt; Male&lt;br /&gt;<br />
+	&lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;female&quot; /&gt; Female</td>
+  </tr>
+</table>
+<br />
+<a target="_blank" href="tryit57d2.html?filename=tryhtml_input_type_radio" class="tryitbtn">Try it yourself &raquo;</a>
+</td>
+</tr>
+</table>
+<br />
+<hr />
+
+<h2>Reset Button</h2>
+<p>&lt;input type=&quot;reset&quot; /&gt; defines a reset button. A reset button 
+resets all form fields to their initial values.</p>
+<p><b>Tip:</b> Use the reset button carefully! It can be annoying for users who accidentally activate the 
+reset button.</p>
+<table class="example" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td>
+<h2 class="example">Example</h2>
+<table class="example_code notranslate" border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td>&lt;input type=&quot;reset&quot; /&gt;</td>
+  </tr>
+</table>
+<br />
+<a target="_blank" href="tryit51fa.html?filename=tryhtml_input_type_reset" class="tryitbtn">Try it yourself &raquo;</a>
+</td>
+</tr>
+</table>
+<br />
+<hr />
+
+<h2>Submit</h2>
+<p>&lt;input type=&quot;submit&quot; /&gt; defines a submit button. A submit button is used to 
+send form data to a server. The data is sent to the page specified in the form's action attribute.</p>
+<table class="example" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td>
+<h2 class="example">Example</h2>
+<table class="example_code notranslate" border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td>&lt;form action=&quot;form_action.asp&quot; method=&quot;get&quot;&gt;<br />
+	Email: &lt;input type=&quot;text&quot; name=&quot;email&quot; /&gt;&lt;br /&gt;<br />
+	&lt;input type=&quot;submit&quot; /&gt;<br />
+	&lt;/form&gt;</td>
+  </tr>
+</table>
+<br />
+<a target="_blank" href="tryit55d6.html?filename=tryhtml_input_type_text" class="tryitbtn">Try it yourself &raquo;</a>
+</td>
+</tr>
+</table>
+<br />
+<hr />
+<a href="tag_input.html"><img class="navup" src="http://www.w3schools.com/images/up.gif" alt="HTML input Tag Reference" border="0" /> HTML &lt;input&gt; tag</a>
+<hr />
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/tags/att_input_type.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sun, 16 Oct 2011 00:00:24 GMT -->
+</html>

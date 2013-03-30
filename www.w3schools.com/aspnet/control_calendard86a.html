@@ -1,0 +1,342 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/aspnet/control_calendar.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:52:18 GMT -->
+<head>
+
+<title>ASP.NET Calendar Control</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1>ASP.NET <span class="color_h1">Calendar</span> Control</h1>
+<hr />
+<a href="aspnet_refwebcontrols.html"><img class="navup" src="http://www.w3schools.com/images/up.gif" alt="Web Server Controls" border="0" /> Web Server Controls</a>
+<hr />
+
+<h2>Definition and Usage</h2>
+<p>The Calendar control is used to display a calendar in the browser.</p>
+<p>This control displays a one-month calendar that allows the user to select dates and move to the next and previous months.</p>
+<hr />
+
+<h2>Properties</h2>
+<table class="reference">
+  <tr>
+    <th width="30%" align="left">Property</th>
+    <th width="63%" align="left">Description</th>
+    <th width="7%" align="left">.NET</th>
+  </tr>
+  <tr>
+    <td><a href="prop_webcontrol_calendar_caption.html">Caption</a></td>
+    <td>The caption of the calendar</td>
+    <td>2.0</td>
+  </tr>
+  <tr>
+    <td><a href="prop_webcontrol_calendar_captionalign.html">CaptionAlign</a></td>
+    <td>The alignment of the caption text</td>
+    <td>2.0</td>
+  </tr>
+  <tr>
+    <td><a href="prop_webcontrol_calendar_cellpadding.html">CellPadding</a></td>
+    <td>The space, in pixels, between the cell walls and contents</td>
+    <td>1.0</td>
+  </tr>
+  <tr>
+    <td><a href="prop_webcontrol_calendar_cellspacing.html">CellSpacing</a></td>
+    <td>The space, in pixels, between cells</td>
+    <td>1.0</td>
+  </tr>
+  <tr>
+    <td><a href="prop_webcontrol_calendar_dayheaderstyle.html">DayHeaderStyle</a></td>
+    <td>The style for displaying the names of the days</td>
+    <td>1.0</td>
+  </tr>
+  <tr>
+    <td><a href="prop_webcontrol_calendar_daynameformat.html">DayNameFormat</a></td>
+    <td>The format for displaying the names of the days</td>
+    <td>1.0</td>
+  </tr>
+  <tr>
+    <td><a href="prop_webcontrol_calendar_daystyle.html">DayStyle</a></td>
+    <td>The style for displaying days</td>
+    <td>1.0</td>
+  </tr>
+  <tr>
+    <td><a href="prop_webcontrol_calendar_firstdayofweek.html">FirstDayOfWeek</a></td>
+    <td>What should be the first day of week</td>
+    <td>1.0</td>
+  </tr>
+  <tr>
+    <td><a href="prop_webcontrol_calendar_nextmonthtext.html">NextMonthText</a></td>
+    <td>The text displayed for the next month link</td>
+    <td>1.0</td>
+  </tr>
+  <tr>
+    <td><a href="prop_webcontrol_calendar_nextprevformat.html">NextPrevFormat</a></td>
+    <td>The format of the next and previous month links</td>
+    <td>1.0</td>
+  </tr>
+  <tr>
+    <td><a href="prop_webcontrol_calendar_nextprevstyle.html">NextPrevStyle</a></td>
+    <td>The style for displaying next and previous month links</td>
+    <td>1.0</td>
+  </tr>
+  <tr>
+    <td><a href="prop_webcontrol_calendar_othermonthdaystyle.html">OtherMonthDayStyle</a></td>
+    <td>The style for displaying days that are not in the current 
+    month</td>
+    <td>1.0</td>
+  </tr>
+  <tr>
+    <td><a href="prop_webcontrol_calendar_prevmonthtext.html">PrevMonthText</a></td>
+    <td>The text displayed for the previous month link</td>
+    <td>1.0</td>
+  </tr>
+  <tr>
+    <td>runat</td>
+    <td>Specifies that the control is a server control.&nbsp; Must 
+    be set to &quot;server&quot;</td>
+    <td>1.0</td>
+  </tr>
+  <tr>
+    <td><a href="prop_webcontrol_calendar_selecteddate.html">SelectedDate</a></td>
+    <td>The selected date</td>
+    <td>1.0</td>
+  </tr>
+  <tr>
+    <td><a href="prop_webcontrol_calendar_selecteddates.html">SelectedDates</a></td>
+    <td>The selected dates</td>
+    <td>1.0</td>
+  </tr>
+  <tr>
+    <td><a href="prop_webcontrol_calendar_selecteddaystyle.html">SelectedDayStyle</a></td>
+    <td>The style for selected days</td>
+    <td>1.0</td>
+  </tr>
+  <tr>
+    <td><a href="prop_webcontrol_calendar_selectionmode.html">SelectionMode</a></td>
+    <td>How a user is allowed to select dates</td>
+    <td>1.0</td>
+  </tr>
+  <tr>
+    <td><a href="prop_webcontrol_calendar_selectmonthtext.html">SelectMonthText</a></td>
+    <td>The text displayed for the month selection link</td>
+    <td>1.0</td>
+  </tr>
+  <tr>
+    <td><a href="prop_webcontrol_calendar_selectorstyle.html">SelectorStyle</a></td>
+    <td>The style for the month and weeks selection links</td>
+    <td>1.0</td>
+  </tr>
+  <tr>
+    <td><a href="prop_webcontrol_calendar_selectweektext.html">SelectWeekText</a></td>
+    <td>The text displayed for the week selection link</td>
+    <td>1.0</td>
+  </tr>
+  <tr>
+    <td><a href="prop_webcontrol_calendar_showdayheader.html">ShowDayHeader</a></td>
+    <td>A Boolean value that specifies whether the days of the week 
+    header should be shown</td>
+    <td>1.0</td>
+  </tr>
+  <tr>
+    <td><a href="prop_webcontrol_calendar_showgridlines.html">ShowGridLines</a></td>
+    <td>A Boolean value that specifies whether the grid lines between days should be shown</td>
+    <td>1.0</td>
+  </tr>
+  <tr>
+    <td><a href="prop_webcontrol_calendar_shownextprevmonth.html">ShowNextPrevMonth</a></td>
+    <td>A Boolean value that specifies whether the next and previous month links should be shown</td>
+    <td>1.0</td>
+  </tr>
+  <tr>
+    <td><a href="prop_webcontrol_calendar_showtitle.html">ShowTitle</a></td>
+    <td>A Boolean value that specifies whether the title of the calendar should be shown</td>
+    <td>1.0</td>
+  </tr>
+  <tr>
+    <td><a href="prop_webcontrol_calendar_titleformat.html">TitleFormat</a></td>
+    <td>The format for the title of the calendar</td>
+    <td>1.0</td>
+  </tr>
+  <tr>
+    <td><a href="prop_webcontrol_calendar_titlestyle.html">TitleStyle</a></td>
+    <td>The style of the title of the calendar</td>
+    <td>1.0</td>
+  </tr>
+  <tr>
+    <td><a href="prop_webcontrol_calendar_todaydaystyle.html">TodayDayStyle</a></td>
+    <td>The style for today's date</td>
+    <td>1.0</td>
+  </tr>
+  <tr>
+    <td><a href="prop_webcontrol_calendar_todaysdate.html">TodaysDate</a></td>
+    <td>Today's date</td>
+    <td>1.0</td>
+  </tr>
+  <tr>
+    <td>UseAccessibleHeader</td>
+    <td>Specifying whether to use the &lt;th&gt; element for the day headers instead of the &lt;td&gt; element</td>
+    <td>2.0</td>
+  </tr>
+  <tr>
+    <td><a href="prop_webcontrol_calendar_visibledate.html">VisibleDate</a></td>
+    <td>The date that specifies the month that is currently visible in the calendar</td>
+    <td>1.0</td>
+  </tr>
+  <tr>
+    <td><a href="prop_webcontrol_calendar_weekenddaystyle.html">WeekendDayStyle</a></td>
+    <td>The style for weekends</td>
+    <td>1.0</td>
+  </tr>
+  <tr>
+    <td>OnDayRender</td>
+    <td>The name of the function to be executed when when each day cell is created</td>
+    <td>&nbsp;</td>
+  </tr>
+	<tr>
+    <td>OnSelectionChanged</td>
+    <td>The name of the function to be executed when the user selects a day, week, or month</td>
+    <td>&nbsp;</td>
+  </tr>
+	<tr>
+    <td>OnVisibleMonthChanged</td>
+    <td>The name of the function to be executed when the user navigates to a different month</td>
+    <td>&nbsp;</td>
+  </tr>
+  </table>
+
+<h2>Web Control Standard Properties</h2>
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>AccessKey, Attributes, BackColor, BorderColor, BorderStyle, BorderWidth, CssClass, Enabled, Font, EnableTheming, 
+ForeColor, Height, IsEnabled, SkinID, Style, TabIndex, ToolTip, Width</td></tr></table>
+
+<p>For a full description, go to <a href="prop_webcontrol_standard.html">Web Control Standard Attributes</a>.</p>
+
+<h2>Control Standard Properties</h2>
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>AppRelativeTemplateSourceDirectory, BindingContainer, ClientID, Controls, EnableTheming, EnableViewState, ID, NamingContainer, 
+Page, Parent, Site, TemplateControl, TemplateSourceDirectory, UniqueID, Visible</td></tr></table>
+
+<p>For a full description, go to <a href="prop_control_standard.html">Control Standard Attributes</a>.</p>
+<hr />
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td align="left" width="48"><img border="0" src="http://www.w3schools.com/images/tryitimg.gif" width="40" height="46" alt="Examples" /></td>
+<td align="left" valign="middle"><h2>Try it Yourself - Examples</h2></td>
+</tr>
+</table>
+<p><a target="_blank" href="showaspc82b.html?filename=demo_calendar">Calendar</a><br />
+Declare a Calendar control in its simplest use.</p>
+
+<p><a target="_blank" href="showasp1323.html?filename=demo_calendar2">Calendar 2</a><br />
+Declare a Calendar control where the days are displayed with full names in blue, the 
+weekends are displayed in red on a yellow background, and the current date is 
+displayed with a green background.</p>
+
+<p><a target="_blank" href="showaspa086.html?filename=demo_calendar3">Calendar 3</a><br />
+Declare a Calendar control where the days are displayed with full names, the user may 
+select a day, a week, or the whole month, and the selected day/week/month is displayed with a grey background color.</p>
+<hr />
+<a href="aspnet_refwebcontrols.html"><img class="navup" src="http://www.w3schools.com/images/up.gif" alt="Web Server Controls" border="0" /> Web Server Controls</a>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/aspnet/control_calendar.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:52:18 GMT -->
+</html>

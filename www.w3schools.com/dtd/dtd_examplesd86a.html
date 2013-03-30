@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/dtd/dtd_examples.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:16:20 GMT -->
+<head>
+
+<title>DTD Examples</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1>DTD - <span class="color_h1">Examples from the internet</span></h1>
+<div class="chapter">
+<div class="prev"><a class="chapter" href="dtd_validation.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="dtd_summary.html">Next Chapter &raquo;</a></div>
+</div>
+<hr />
+<h2>TV Schedule DTD</h2>
+<p>By David Moisan. Copied from <a target="_blank" href="http://www.davidmoisan.org/">http://www.davidmoisan.org/</a></p>
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+  <tr>
+    <td>
+&lt;!DOCTYPE TVSCHEDULE [<br /><br />
+&lt;!ELEMENT TVSCHEDULE (CHANNEL+)&gt;<br />
+&lt;!ELEMENT CHANNEL (BANNER,DAY+)&gt;<br />
+&lt;!ELEMENT BANNER (#PCDATA)&gt;<br />
+&lt;!ELEMENT DAY (DATE,(HOLIDAY|PROGRAMSLOT+)+)&gt;<br />
+&lt;!ELEMENT HOLIDAY (#PCDATA)&gt;<br />
+&lt;!ELEMENT DATE (#PCDATA)&gt;<br />
+&lt;!ELEMENT PROGRAMSLOT (TIME,TITLE,DESCRIPTION?)&gt;<br />
+&lt;!ELEMENT TIME (#PCDATA)&gt;<br />
+&lt;!ELEMENT TITLE (#PCDATA)&gt;&nbsp;<br />
+&lt;!ELEMENT DESCRIPTION (#PCDATA)&gt;<br /><br />
+&lt;!ATTLIST TVSCHEDULE NAME CDATA #REQUIRED&gt;<br />
+&lt;!ATTLIST CHANNEL CHAN CDATA #REQUIRED&gt;<br />
+&lt;!ATTLIST PROGRAMSLOT VTR CDATA #IMPLIED&gt;<br />
+&lt;!ATTLIST TITLE RATING CDATA #IMPLIED&gt;<br />
+&lt;!ATTLIST TITLE LANGUAGE CDATA #IMPLIED&gt;<br />
+]&gt;</td>
+  </tr>
+</table>
+<br />
+<hr />
+<h2>Newspaper Article DTD</h2>
+<p>Copied from <a href="http://www.vervet.com/" target="_blank">http://www.vervet.com/</a></p>
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+  <tr>
+    <td>
+&lt;!DOCTYPE NEWSPAPER [<br /><br />
+&lt;!ELEMENT NEWSPAPER (ARTICLE+)&gt;<br />
+&lt;!ELEMENT ARTICLE (HEADLINE,BYLINE,LEAD,BODY,NOTES)&gt;<br />
+&lt;!ELEMENT HEADLINE (#PCDATA)&gt;<br />
+&lt;!ELEMENT BYLINE (#PCDATA)&gt;<br />
+&lt;!ELEMENT LEAD (#PCDATA)&gt;<br />
+&lt;!ELEMENT BODY (#PCDATA)&gt;<br />
+&lt;!ELEMENT NOTES (#PCDATA)&gt;<br /><br />
+&lt;!ATTLIST ARTICLE AUTHOR CDATA #REQUIRED&gt;<br />
+&lt;!ATTLIST ARTICLE EDITOR CDATA #IMPLIED&gt;<br />
+&lt;!ATTLIST ARTICLE DATE CDATA #IMPLIED&gt;<br />
+&lt;!ATTLIST ARTICLE EDITION CDATA #IMPLIED&gt;<br /><br />
+&lt;!ENTITY NEWSPAPER &quot;Vervet Logic Times&quot;&gt;<br />
+&lt;!ENTITY PUBLISHER &quot;Vervet Logic Press&quot;&gt;<br />
+&lt;!ENTITY COPYRIGHT &quot;Copyright 1998 Vervet Logic Press&quot;&gt;<br /><br />
+]&gt;</td></tr>
+</table>
+<br />
+<hr />
+<h2>Product Catalog DTD</h2>
+<p>Copied from <a href="http://www.vervet.com/" target="_blank">http://www.vervet.com/</a></p>
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr><td>
+&lt;!DOCTYPE CATALOG [<br /><br />
+&lt;!ENTITY AUTHOR &quot;John Doe&quot;&gt;<br />
+&lt;!ENTITY COMPANY &quot;JD Power Tools, Inc.&quot;&gt;<br />
+&lt;!ENTITY EMAIL &quot;jd@jd-tools.com&quot;&gt;<br /><br />
+&lt;!ELEMENT CATALOG (PRODUCT+)&gt;<br /><br />
+&lt;!ELEMENT PRODUCT<br />
+(SPECIFICATIONS+,OPTIONS?,PRICE+,NOTES?)&gt;<br />
+&lt;!ATTLIST PRODUCT<br />
+NAME CDATA #IMPLIED<br />
+CATEGORY (HandTool|Table|Shop-Professional) &quot;HandTool&quot;<br />
+PARTNUM CDATA #IMPLIED<br />
+PLANT (Pittsburgh|Milwaukee|Chicago) &quot;Chicago&quot;<br />
+INVENTORY (InStock|Backordered|Discontinued) &quot;InStock&quot;&gt;<br /><br />
+&lt;!ELEMENT SPECIFICATIONS (#PCDATA)&gt;<br />
+&lt;!ATTLIST SPECIFICATIONS<br />
+WEIGHT CDATA #IMPLIED<br />
+POWER CDATA #IMPLIED&gt;<br /><br />
+&lt;!ELEMENT OPTIONS (#PCDATA)&gt;<br />
+&lt;!ATTLIST OPTIONS<br />
+FINISH (Metal|Polished|Matte) &quot;Matte&quot;<br />
+ADAPTER (Included|Optional|NotApplicable) &quot;Included&quot;<br />
+CASE (HardShell|Soft|NotApplicable) &quot;HardShell&quot;&gt;<br /><br />
+&lt;!ELEMENT PRICE (#PCDATA)&gt;<br />
+&lt;!ATTLIST PRICE<br />
+MSRP CDATA #IMPLIED<br />
+WHOLESALE CDATA #IMPLIED<br />
+STREET CDATA #IMPLIED<br />
+SHIPPING CDATA #IMPLIED&gt;<br /><br />
+&lt;!ELEMENT NOTES (#PCDATA)&gt;<br /><br />
+]&gt;</td></tr>
+</table>
+<br />
+<div class="chapter">
+<div class="prev"><a class="chapter" href="dtd_validation.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="dtd_summary.html">Next Chapter &raquo;</a></div>
+</div>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/dtd/dtd_examples.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:16:20 GMT -->
+</html>

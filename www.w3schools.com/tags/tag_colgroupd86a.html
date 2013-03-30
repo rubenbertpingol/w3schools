@@ -1,0 +1,369 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/tags/tag_colgroup.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:38:26 GMT -->
+<head>
+
+<title>HTML colgroup tag</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+
+<h1>HTML <span class="color_h1">&lt;colgroup&gt;</span> Tag</h1>
+<table class="example" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td>
+<h2 class="example">Example</h2>
+<p>Two colgroup elements that specify different alignment and style for the three 
+columns in the table (notice that the first colgroup element spans two columns):</p>
+<table class="example_code notranslate" border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td>&lt;table width=&quot;100%&quot; border=&quot;1&quot;&gt;<br />
+&nbsp; &lt;colgroup span=&quot;2&quot; align=&quot;left&quot;&gt;&lt;/colgroup&gt;<br />
+&nbsp; &lt;colgroup align=&quot;right&quot; style=&quot;color:#0000FF;&quot;&gt;&lt;/colgroup&gt;<br />
+&nbsp; &lt;tr&gt;<br />
+&nbsp;&nbsp;&nbsp; &lt;th&gt;ISBN&lt;/th&gt;<br />
+&nbsp;&nbsp;&nbsp; &lt;th&gt;Title&lt;/th&gt;<br />
+&nbsp;&nbsp;&nbsp; &lt;th&gt;Price&lt;/th&gt;<br />
+&nbsp; &lt;/tr&gt;<br />
+&nbsp; &lt;tr&gt;<br />
+&nbsp;&nbsp;&nbsp; &lt;td&gt;3476896&lt;/td&gt;<br />
+&nbsp;&nbsp;&nbsp; &lt;td&gt;My first HTML&lt;/td&gt;<br />
+&nbsp;&nbsp;&nbsp; &lt;td&gt;$53&lt;/td&gt;<br />
+&nbsp; &lt;/tr&gt;<br />
+	&lt;/table&gt;</td>
+  </tr>
+</table>
+<br />
+<a target="_blank" href="tryit719e.html?filename=tryhtml_colgroup_test" class="tryitbtn">Try it yourself &raquo;</a></td>
+</tr>
+</table>
+<hr />
+
+<h2>Definition and Usage</h2>
+<p>The &lt;colgroup&gt; tag is used to group columns in a table for formatting.</p>
+<p>The &lt;colgroup&gt; tag is useful for applying styles to entire columns, instead of repeating the styles for each cell, for each row.</p>
+<p>The &lt;colgroup&gt; tag can only be used inside a table element.</p>
+<hr />
+
+<h2>Browser Support</h2>
+<p><img border="0" src="http://www.w3schools.com/images/compatible_ie.gif" width="31" height="30" alt="Internet Explorer" title="Internet Explorer" />
+<img border="0" src="http://www.w3schools.com/images/compatible_firefox.gif" width="31" height="30" alt="Firefox" title="Firefox" />
+<img border="0" src="http://www.w3schools.com/images/compatible_opera.gif" width="28" height="30" alt="Opera" title="Opera" />
+<img border="0" src="http://www.w3schools.com/images/compatible_chrome.gif" width="31" height="30" alt="Google Chrome" title="Google Chrome" />
+<img border="0" src="http://www.w3schools.com/images/compatible_safari.gif" width="28" height="30" alt="Safari" title="Safari" /></p>
+<p>The &lt;colgroup&gt; tag is supported in all major browsers.</p>
+<p><b>Note:</b> Firefox, Chrome, and Safari only support the span and width 
+attributes of the colgroup element.</p>
+<hr />
+
+<h2>Differences Between HTML and XHTML</h2>
+<p>NONE</p>
+<hr />
+
+<h2>Tips and Notes</h2>
+<p><b>Tip:</b> Add the style attribute to the &lt;colgroup&gt; tag, and let CSS take 
+care of backgrounds, width and borders. These are the ONLY CSS properties that 
+work with the &lt;colgroup&gt; tag.
+<a target="_blank" href="tryit3442.html?filename=tryhtml_colgroup_css">Try it 
+yourself</a>.</p>
+<p>Also have a look at the <a href="tag_col.html">&lt;col&gt;</a> tag.</p>
+<hr />
+
+<h2>Optional Attributes</h2>
+<p><b>DTD</b> indicates in which <a href="tag_doctype.html">HTML 4.01/XHTML 1.0 
+DTD</a> the attribute is allowed. S=Strict, T=Transitional, and F=Frameset.</p>
+<table class="reference">
+  <tr>
+    <th align="left" width="15%">Attribute</th>
+    <th align="left" width="20%">Value</th>
+    <th align="left" width="60%">Description</th>
+    <th align="left" width="5%">DTD</th>
+  </tr>
+  <tr>
+    <td><a href="att_colgroup_align.html">align</a></td>
+    <td>left<br />
+      right<br />
+      center<br />
+      justify<br />
+      char</td>
+    <td>Aligns the 
+content in a column group</td>
+    <td>STF</td>
+      </tr>
+      <tr>
+    <td><a href="att_colgroup_char.html">char</a></td>
+    <td><i>character</i></td>
+    <td>Aligns the content in a column group to a character</td>
+    <td>STF</td>
+      </tr>
+      <tr>
+    <td><a href="att_colgroup_charoff.html">charoff</a></td>
+    <td><i>number</i></td>
+    <td>Sets the number of characters the content will be aligned 
+	from the character specified by the char attribute</td>
+    <td>STF</td>
+        </tr>
+  <tr>
+    <td><a href="att_colgroup_span.html">span</a></td>
+    <td><i>number</i></td>
+    <td>Specifies the number of columns a column group should span</td>
+    <td>STF</td>
+  </tr>
+        <tr>
+    <td><a href="att_colgroup_valign.html">valign</a></td>
+    <td>top<br />
+      middle<br />
+      bottom<br />
+      baseline</td>
+    <td>Vertical aligns the 
+content in a column group</td>
+    <td>STF</td>
+    </tr>
+  <tr>
+    <td><a href="att_colgroup_width.html">width</a></td>
+    <td><i>pixels<br />
+    %<br />
+	relative_length</i></td>
+    <td>Specifies the width of a column group</td>
+    <td>STF</td>
+  </tr>
+  </table>
+  
+<br />
+<hr />
+
+<h2>Standard Attributes</h2>
+<p>The &lt;colgroup&gt; tag supports the following standard attributes:</p>
+<table class="reference"> 
+  <tr>
+    <th align="left" width="20%">Attribute</th>
+    <th align="left" width="20%">Value</th>
+    <th align="left" width="55%">Description</th>
+    <th align="left" width="5%">DTD</th>
+  </tr>
+  <tr>
+    <td>class</td>
+    <td><i>classname</i></td>
+    <td>Specifies a classname for an element</td>
+    <td>STF</td>
+  </tr>
+  <tr>
+    <td>dir</td>
+    <td>rtl<br />
+	ltr</td>
+    <td>Specifies the text direction
+	for the content in an element</td>
+    <td>STF</td>
+  </tr>
+  <tr>
+    <td>id</td>
+    <td><i>id</i></td>
+    <td>Specifies a unique id for an element</td>
+    <td>STF</td>
+  </tr>
+  <tr>
+    <td>lang</td>
+    <td><i>language_code</i></td>
+    <td>Specifies a language code for the content in an element</td>
+    <td>STF</td>
+  </tr>
+  <tr>
+    <td>style</td>
+    <td><i>style_definition</i></td>
+    <td>Specifies an inline style for an element</td>
+    <td>STF</td>
+  </tr>
+  <tr>
+    <td>title</td>
+    <td><i>text</i></td>
+    <td>Specifies extra information about an element</td>
+    <td>STF</td>
+  </tr>
+  <tr>
+    <td>xml:lang</td>
+    <td><i>language_code</i></td>
+    <td>Specifies a language code for the content in an element, in 
+	XHTML documents</td>
+    <td>STF</td>
+  </tr>
+</table>
+<p>More information about <a href="ref_standardattributes.html">Standard Attributes</a>.</p>
+<hr />
+
+<h2>Event Attributes</h2>
+<p>The &lt;colgroup&gt; tag supports the following event attributes:</p>
+<table class="reference"> 
+  <tr>
+    <th align="left" width="20%">Attribute</th>
+    <th align="left" width="20%">Value</th>
+    <th align="left" width="55%">Description</th>
+    <th align="left" width="5%">DTD</th>
+  </tr>
+	<tr>
+    <td>onclick</td>
+    <td><i>script</i></td>
+    <td>Script to be run on a mouse click</td>
+    <td>STF</td>
+  </tr>
+	<tr>
+    <td>ondblclick</td>
+    <td><i>script</i></td>
+    <td>Script to be run on a mouse double-click</td>
+    <td>STF</td>
+  </tr>
+  <tr>
+    <td>onmousedown</td>
+    <td><i>script</i></td>
+    <td>Script to be run when mouse button is pressed</td>
+    <td>STF</td>
+  </tr>
+  <tr>
+    <td>onmousemove</td>
+    <td><i>script</i></td>
+    <td>Script to be run when mouse pointer moves</td>
+    <td>STF</td>
+  </tr>
+	<tr>
+    <td>onmouseout</td>
+    <td><i>script</i></td>
+    <td>Script to be run when mouse pointer moves out of an
+      element</td>
+    <td>STF</td>
+  </tr>
+	<tr>
+    <td>onmouseover</td>
+    <td><i>script</i></td>
+    <td>Script to be run when mouse pointer moves over an
+      element</td>
+    <td>STF</td>
+  </tr>
+  <tr>
+    <td>onmouseup</td>
+    <td><i>script</i></td>
+    <td>Script to be run when mouse button is released</td>
+    <td>STF</td>
+  </tr>
+  <tr>
+    <td>onkeydown</td>
+    <td><i>script</i></td>
+    <td>Script to be run when a key is pressed</td>
+    <td>STF</td>
+  </tr>
+  <tr>
+    <td>onkeypress</td>
+    <td><i>script</i></td>
+    <td>Script to be run when a key is pressed and released</td>
+    <td>STF</td>
+  </tr>
+  <tr>
+    <td>onkeyup</td>
+    <td><i>script</i></td>
+    <td>Script to be run when a key is released</td>
+    <td>STF</td>
+  </tr>
+  </table>
+<p>More information about <a href="ref_eventattributes.html">Event Attributes</a>.</p>
+
+<hr />
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/tags/tag_colgroup.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:38:26 GMT -->
+</html>

@@ -1,0 +1,43 @@
+<html>
+
+<!-- Mirrored from www.w3schools.com/dhtml/tryit_view.asp?filename=trydhtml_form_bg_textarea by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:45:54 GMT -->
+<head>
+
+<script type="text/javascript">
+function bgChange(bg)
+{
+document.getElementById('x').style.background="url(" + bg + ")";
+}
+</script>
+</head>
+
+<body>
+<p>This example demonstrates how to
+insert a background image to a textarea</p>
+
+<p>Mouse over these images and the
+textarea will get a background image.</p>
+
+<table width="300" height="100">
+<tr>
+<td onmouseover="bgChange('paper.jpg')" 
+background="paper.jpg"></td>
+<td onmouseover="bgChange('bgdesert.jpg')" 
+background="bgdesert.jpg"></td>
+</tr>
+</table>
+
+<form>
+<textarea id="x" rows="5" cols="20">
+This example can not be edited
+because our editor uses a textarea
+for input,
+and your browser does not allow
+a textarea inside a textarea.
+</textarea>
+</form>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/dhtml/tryit_view.asp?filename=trydhtml_form_bg_textarea by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:45:54 GMT -->
+</html>

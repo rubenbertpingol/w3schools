@@ -1,0 +1,311 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/css3/css3_text_effects.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:13:08 GMT -->
+<head>
+
+<link rel="stylesheet" type="text/css" href="css3_theme.css" />
+<title>CSS3 Text Effects</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+<style type="text/css">
+#textshadow
+{
+text-shadow: 5px 5px 5px #FF0000;
+font-size:30px;
+}
+#wordwrap
+{
+width:11em; 
+border:1px solid #000000;
+word-wrap:break-word;
+}
+#normal
+{
+width:11em; 
+border:1px solid #000000;
+word-wrap:normal;
+}
+</style>
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1>CSS3 <span class="color_h1">Text Effects</span></h1>
+<div class="chapter">
+<div class="prev"><a class="chapter" href="css3_backgrounds.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="css3_fonts.html">Next Chapter &raquo;</a></div>
+</div>
+<hr />
+<h2>CSS3 Text Effects</h2>
+<p>CSS3 contains several new text features.</p>
+<p>In this chapter you will learn about the following text properties:</p>
+<ul>
+	<li>text-shadow</li>
+	<li>word-wrap</li>
+</ul>
+<hr />
+<h2>Browser Support</h2>
+<table class="browsersupport" cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<th>Property</th>
+		<th colspan="5">Browser Support</th>
+	</tr>
+	<tr>
+		<td class="bsProperty">text-shadow</td>
+		<td class="bsNoIE"></td>						
+		<td class="bsFirefox"></td>
+		<td class="bsChrome"></td>
+		<td class="bsSafari"></td>		
+		<td class="bsOpera"></td>				
+	</tr>
+	<tr>
+		<td class="bsProperty">word-wrap</td>
+		<td class="bsIE"></td>						
+		<td class="bsFirefox"></td>
+		<td class="bsChrome"></td>
+		<td class="bsSafari"></td>				
+		<td class="bsOpera"></td>				
+	</tr>
+	</table>
+<p>Internet Explorer does not yet support the text-shadow property.</p>
+<p>Firefox, Chrome, Safari, and Opera support the text-shadow property.</p>
+<p>All major browsers support the word-wrap property.</p>
+<hr />
+
+<h2>CSS3 Text Shadow</h2>
+<p>In CSS3, the text-shadow property applies shadow to text.</p>
+<p>
+
+<img src="text_shadow_effect.gif" alt="Text shadow effect!" border="0" />
+
+</p>
+<p>You specify the horizontal shadow, the vertical shadow, the blur distance, 
+and the color of the shadow:</p>
+<table class="example" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td>
+<img style="float:right;" border="0" src="http://www.w3schools.com/images/compatible_opera2020.gif" align="middle" title="Opera" alt="Opera" width="20" height="20" />
+<img style="float:right;" border="0" src="http://www.w3schools.com/images/compatible_safari2020.gif" align="middle" title="Safari" alt="Safari" width="20" height="20" />
+<img style="float:right;" border="0" src="http://www.w3schools.com/images/compatible_chrome2020.gif" align="middle" title="Chrome" alt="Chrome" width="20" height="20" />
+<img style="float:right;" border="0" src="http://www.w3schools.com/images/compatible_firefox2020.gif" align="middle" title="Firefox" alt="Firefox" width="20" height="20" />
+<img style="float:right;" border="0" src="http://www.w3schools.com/images/incompatible_ie2020.gif" align="middle" title="Internet Explorer" alt="Internet Explorer" width="20" height="20" />
+<h2 class="example">Example</h2>
+<p>Add a shadow to a header:</p>
+<table class="example_code notranslate" border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td>h1<br />
+	{<br />
+	text-shadow: 5px 5px 5px #FF0000;<br />
+	}</td>
+  </tr>
+</table>
+<br />
+<a target="_blank" class="tryitbtn" href="tryit1323.html?filename=trycss3_text-shadow_tut">Try it yourself &raquo;</a>
+</td>
+</tr>
+</table>
+<br />
+<hr />
+
+<h2>CSS3 Word Wrapping</h2>
+<p>If a word is too long to fit within an area, it expands outside:</p>
+<p id="normal"> This paragraph contains a very long word: thisisaveryveryveryveryveryverylongword. The long word will break and wrap to the next line.</p>
+
+<p>In CSS3, the word-wrap property allows you to force the text to wrap - even if it means splitting it in the middle of a word:</p>
+<p id="wordwrap"> This paragraph contains a very long word: thisisaveryveryveryveryveryverylongword. The long word will break and wrap to the next line.</p>
+
+<p>The CSS code is as follows:</p>
+<table class="example" border="0" cellpadding="0" cellspacing="0" width="100%" id="table1">
+<tr>
+<td>
+<img style="float:right;" border="0" src="http://www.w3schools.com/images/compatible_opera2020.gif" align="middle" title="Opera" alt="Opera" width="20" height="20" />
+<img style="float:right;" border="0" src="http://www.w3schools.com/images/compatible_safari2020.gif" align="middle" title="Safari" alt="Safari" width="20" height="20" />
+<img style="float:right;" border="0" src="http://www.w3schools.com/images/compatible_chrome2020.gif" align="middle" title="Chrome" alt="Chrome" width="20" height="20" />
+<img style="float:right;" border="0" src="http://www.w3schools.com/images/compatible_firefox2020.gif" align="middle" title="Firefox" alt="Firefox" width="20" height="20" />
+<img style="float:right;" border="0" src="http://www.w3schools.com/images/compatible_ie2020.gif" align="middle" title="Internet Explorer" alt="Internet Explorer" width="20" height="20" />
+<h2 class="example">Example</h2>
+<p>Allow long words to be able to break and wrap onto the next line:</p>
+<table class="example_code notranslate" border="0" cellpadding="0" cellspacing="0" width="100%" id="table2">
+  <tr>
+    <td>p {word-wrap:break-word;}</td>
+  </tr>
+</table>
+<br />
+<a target="_blank" class="tryitbtn" href="tryit9c61.html?filename=trycss3_word-wrap">Try it yourself &raquo;</a>
+</td>
+</tr>
+</table>
+<br />
+<hr />
+
+<h2>New Text Properties</h2>
+<table class="reference">
+  <tr>
+    <th width="28%" align="left">Property</th>
+    <th width="67%" align="left">Description</th>
+    <th width="5%" align="left">CSS</th>
+  </tr>
+  <tr>
+    <td><a href="../cssref/css3_pr_hanging-punctuation.html">hanging-punctuation</a></td>
+    <td>Specifies whether a punctuation character may be placed outside the line box</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td><a href="../cssref/css3_pr_punctuation-trim.html">punctuation-trim</a></td>
+    <td>Specifies whether a punctuation character should be trimmed </td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>text-align-last</td>
+    <td>Describes how the last line of a block or a line right before a forced line break is aligned when text-align is &quot;justify&quot;</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td><a href="../cssref/css3_pr_text-emphasis.html">text-emphasis</a></td>
+    <td>Applies emphasis marks, and the foreground color of the emphasis marks, 
+	to the element's text </td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td><a href="../cssref/css3_pr_text-justify.html">text-justify</a></td>
+    <td>Specifies the justification method used when text-align is  
+	&quot;justify&quot;</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td><a href="../cssref/css3_pr_text-outline.html">text-outline</a></td>
+    <td>Specifies a text outline</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td><a href="../cssref/css3_pr_text-overflow.html">text-overflow</a></td>
+    <td>Specifies what should happen when text overflows the containing element</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td><a href="../cssref/css3_pr_text-shadow.html">text-shadow</a></td>
+    <td>Adds shadow to text </td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td><a href="../cssref/css3_pr_text-wrap.html">text-wrap</a></td>
+    <td>Specifies line breaking rules for text</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td><a href="../cssref/css3_pr_word-break.html">word-break</a></td>
+    <td>Specifies line breaking rules for non-CJK scripts</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td><a href="../cssref/css3_pr_word-wrap.html">word-wrap</a></td>
+    <td>Allows long, unbreakable words to be broken and wrap to the next line</td>
+    <td>3</td>
+  </tr>
+</table>
+<br />
+
+<br />
+<div class="chapter">
+<div class="prev"><a class="chapter" href="css3_backgrounds.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="css3_fonts.html">Next Chapter &raquo;</a></div>
+</div>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/css3/css3_text_effects.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:13:08 GMT -->
+</html>

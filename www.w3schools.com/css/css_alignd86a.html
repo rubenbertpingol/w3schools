@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/css/css_align.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:10:14 GMT -->
+<head>
+
+<title>CSS Horizontal Align</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1>CSS <span class="color_h1">Horizontal Align</span></h1>
+<div class="chapter">
+<div class="prev"><a class="chapter" href="css_float.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="css_pseudo_classes.html">Next Chapter &raquo;</a></div>
+</div>
+<hr />
+<div style="text-align:center;">
+<div style="border:1px solid gray;padding:2px 14px;margin-left:auto;margin-right:auto;width:45%;background-color:#e5eecc;text-align:left;">
+<h2>In CSS, several properties are used to align elements horizontally.</h2>
+</div>
+</div>
+<hr />
+
+<h2>Aligning Block Elements</h2>
+<p>A block element is an element that takes up the full width available, and 
+has a line break before and after it.</p>
+
+<p>Examples of block elements:</p>
+<ul>
+	<li>&lt;h1&gt;</li>
+	<li>&lt;p&gt;</li>
+	<li>&lt;div&gt;</li>
+</ul>
+<p>For aligning text, see the
+<a href="css_text.html">CSS Text</a> chapter.</p>
+<p>In this chapter we will show you how to horizontally align block elements for 
+layout purposes.</p>
+<hr />
+<h2>Center Aligning Using the margin Property</h2>
+<p>Block elements can be aligned by setting the left and right margins to 
+&quot;auto&quot;.</p>
+<p><b>Note: </b>Using margin:auto will not work in IE8 and earlier, <b>unless a !DOCTYPE 
+is declared.</b></p>
+<p>Setting the left and right margins to auto specifies that they should split the available 
+margin equally. The result is a centered element:</p>
+<table class="example" border="0" cellpadding="0" cellspacing="0" width="100%" id="table13"><tr><td>
+<h2 class="example">Example</h2>
+<table class="example_code notranslate" border="0" cellpadding="0" cellspacing="0" width="100%" id="table14"><tr><td>
+.center<br />
+{<br />
+margin-left:auto;<br />
+margin-right:auto;<br />
+width:70%;<br />
+background-color:#b0e0e6;<br />
+}</td></tr></table>
+<br /><a target="_blank" href="http://www.w3schools.com/css/tryit.asp?filename=trycss_align_container" class="tryitbtn">Try it yourself &raquo;</a>
+</td></tr></table>
+<p><b>Tip:</b> Aligning has no effect if the width is 100%.</p>
+<p><b>Note:</b> In IE5 there is a margin handling bug for block elements. To 
+make the example above work in IE5, add some extra code. <a target="_blank" href="http://www.w3schools.com/css/tryit.asp?filename=trycss_align_container_ie5">Try it yourself</a></p>
+<hr />
+<h2>Left and Right Aligning Using the position Property</h2>
+<p>One method of aligning elements is to use absolute positioning:</p>
+<table class="example" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+<h2 class="example">Example</h2>
+<table class="example_code notranslate" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+.right<br />
+{<br />
+position:absolute;<br />
+right:0px;<br />
+width:300px;<br />
+background-color:#b0e0e6;<br />
+}</td></tr></table>
+<br /><a target="_blank" href="http://www.w3schools.com/css/tryit.asp?filename=trycss_align_pos" class="tryitbtn">Try it yourself &raquo;</a>
+</td></tr></table>
+<p><b>Note:</b> Absolute positioned elements are removed from the 
+normal flow, and can overlap elements.</p>
+<hr />
+<h2>Crossbrowser Compatibility Issues</h2>
+<p>When aligning elements like this, it is always a good idea to predefine 
+margin and padding for the &lt;body&gt; element. This is to avoid visual differences 
+in different browsers.</p>
+<p>There is a problem with IE8 and earlier, when using the position property. If 
+a container element (in our case &lt;div class=&quot;container&quot;&gt;) has a 
+specified width, 
+and the !DOCTYPE declaration is missing, IE8 and earlier versions will add a 17px margin on 
+the right side. This seems to be space reserved for a scrollbar. Always set the !DOCTYPE 
+declaration when using the position property:</p>
+<table class="example" border="0" cellpadding="0" cellspacing="0" width="100%" id="table19"><tr><td>
+<h2 class="example">Example</h2>
+<table class="example_code notranslate" border="0" cellpadding="0" cellspacing="0" width="100%" id="table20"><tr><td>
+body<br />
+{<br />
+margin:0;<br />
+padding:0;<br />
+}<br />
+.container<br />
+{<br />
+position:relative;<br />
+width:100%;<br />
+}<br />
+.right<br />
+{<br />
+position:absolute;<br />
+right:0px;<br />
+width:300px;<br />
+background-color:#b0e0e6;<br />
+}</td></tr></table>
+<br />
+<a target="_blank" href="http://www.w3schools.com/css/tryit.asp?filename=trycss_align_pos_crossbrowser" class="tryitbtn">Try it yourself &raquo;</a>
+</td></tr></table>
+<br />
+<hr />
+<h2>Left and Right Aligning Using the float Property</h2>
+<p>One method of aligning elements is to use the float property:</p>
+<table class="example" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+<h2 class="example">Example</h2>
+<table class="example_code notranslate" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+.right<br />
+{<br />
+float:right;<br />
+width:300px;<br />
+background-color:#b0e0e6;<br />
+}</td></tr></table>
+<br /><a target="_blank" href="http://www.w3schools.com/css/tryit.asp?filename=trycss_align_float" class="tryitbtn">Try it yourself &raquo;</a>
+</td></tr></table>
+<br />
+<hr />
+<h2>Crossbrowser Compatibility Issues</h2>
+<p>When aligning elements like this, it is always a good idea to predefine 
+margin and padding for the &lt;body&gt; element. This is to avoid visual differences 
+in different browsers.</p>
+<p>There is a problem with IE8 and earlier when using the float property. If 
+the !DOCTYPE declaration is missing, IE8 and earlier versions will add a 17px margin on 
+the right side. This seems to be space reserved for a scrollbar. Always set the !DOCTYPE 
+declaration when using the float property:</p>
+<table class="example" border="0" cellpadding="0" cellspacing="0" width="100%" id="table23"><tr><td>
+<h2 class="example">Example</h2>
+<table class="example_code notranslate" border="0" cellpadding="0" cellspacing="0" width="100%" id="table24"><tr><td>
+body<br />
+{<br />
+margin:0;<br />
+padding:0;<br />
+}<br />
+.right<br />
+{<br />
+float:right;<br />
+width:300px;<br />
+background-color:#b0e0e6;<br />
+}</td></tr></table>
+<br />
+<a target="_blank" href="http://www.w3schools.com/css/tryit.asp?filename=trycss_align_float_crossbrowser" class="tryitbtn">Try it yourself &raquo;</a>
+</td></tr></table>
+<br />
+<div class="chapter">
+<div class="prev"><a class="chapter" href="css_float.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="css_pseudo_classes.html">Next Chapter &raquo;</a></div>
+</div>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/css/css_align.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:10:14 GMT -->
+</html>

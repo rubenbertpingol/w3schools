@@ -1,0 +1,680 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/vbscript/vbscript_ref_functions.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:16:03 GMT -->
+<head>
+<title>VBScript Functions</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+<a name="top"></a>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1>VBScript <span class="color_h1">Functions</span></h1>
+<div class="chapter">
+<div class="prev"><a class="chapter" href="vbscript_examples.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="vbscript_ref_keywords.html">Next Chapter &raquo;</a></div>
+</div>
+<hr />
+<p>This page contains all the built-in VBScript functions. The page is divided into following sections:</p>
+<table border="0" width="100%">
+  <tr>
+    <td width="33%" valign="top" align="left">
+    <ul>
+      <li><a href="#date">Date/Time functions</a></li>
+      <li><a href="#conversion">Conversion functions</a></li>
+      <li><a href="#format">Format functions</a></li>
+    </ul>
+    </td>
+    <td width="33%" valign="top" align="left">
+    <ul>
+      <li><a href="#math">Math functions</a></li>
+      <li><a href="#array">Array functions</a></li>
+    </ul>
+    </td>
+    <td width="34%" valign="top" align="left">
+    <ul>
+      <li><a href="#string">String functions</a></li>
+      <li><a href="#other">Other functions</a></li>
+    </ul>
+    </td>
+  </tr>
+</table>
+
+<h2><a name="date">Date/Time Functions</a></h2>
+<table class="reference">
+  <tr>
+    <th width="32%" align="left">Function</th>
+    <th width="68%" align="left">Description</th>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_cdate.html">CDate</a></td>
+    <td valign="top">Converts a valid date and time expression to the variant of 
+    subtype Date</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_date.html">Date</a></td>
+    <td valign="top">Returns the current system date</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_dateadd.html">DateAdd</a></td>
+    <td valign="top">Returns a date to which a specified time interval has been 
+    added</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_datediff.html">DateDiff</a></td>
+    <td valign="top">Returns the number of intervals between two dates</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_datepart.html">DatePart</a></td>
+    <td valign="top">Returns the specified part of a given date</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_dateserial.html">DateSerial</a></td>
+    <td valign="top">Returns the date for a specified year, 
+    month, and day</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_datevalue.html">DateValue</a></td>
+    <td valign="top">Returns a date</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_day.html">Day</a></td>
+    <td valign="top">Returns a number  that represents the day 
+    of the month (between 1 and 31, inclusive)</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_formatdatetime.html">FormatDateTime</a></td>
+    <td valign="top">Returns an expression formatted as a date or time</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_hour.html">Hour</a></td>
+    <td valign="top">Returns a number that 
+    represents the hour of the day (between 0 and 23, inclusive)</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_isdate.html">IsDate</a></td>
+    <td valign="top">Returns a Boolean value that indicates if the evaluated 
+    expression can be converted to a date</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_minute.html">Minute</a></td>
+    <td valign="top">Returns a number that 
+    represents the minute of the hour (between 0 and 59, inclusive)</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_month.html">Month</a></td>
+    <td valign="top">Returns a number  that 
+    represents the month of the year (between 1 and 12, inclusive)</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_monthname.html">MonthName</a></td>
+    <td valign="top">Returns the name of a specified month</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_now.html">Now</a></td>
+    <td valign="top">Returns the current system date and time</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_second.html">Second</a></td>
+    <td valign="top">Returns a number that 
+    represents the second of the minute (between 0 and 59, inclusive)</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_time.html">Time</a></td>
+    <td valign="top">Returns the current 
+    system time</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_timer.html">Timer</a></td>
+    <td valign="top">Returns the number of seconds since 12:00 
+    AM</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_timeserial.html">TimeSerial</a></td>
+    <td valign="top">Returns the time for a 
+    specific hour, minute, and second</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_timevalue.html">TimeValue</a></td>
+    <td valign="top">Returns a time</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_weekday.html">Weekday</a></td>
+    <td valign="top">Returns a number that represents the day of the week 
+    (between 1 and 7, inclusive)</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_weekdayname.html">WeekdayName</a></td>
+    <td valign="top">Returns the weekday name of a specified day of the week</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_year.html">Year</a></td>
+    <td valign="top">Returns a number that represents the year</td>
+  </tr>
+</table>
+<br />
+
+<table border="0" width="100%">
+  <tr>
+    <td width="70%" align="left"><h2><a name="conversion">Conversion Functions</a></h2></td>
+    <td width="30%" align="right"><a href="#top">Top</a></td>
+  </tr>
+</table>
+<table class="reference">
+  <tr>
+    <th width="32%" align="left">Function</th>
+    <th width="68%" align="left">Description</th>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_asc.html">Asc</a></td>
+    <td valign="top">Converts the first letter in a string to ANSI code</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_cbool.html">CBool</a></td>
+    <td valign="top">Converts an expression to a variant of subtype Boolean</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_cbyte.html">CByte</a></td>
+    <td valign="top">Converts an expression to a variant of subtype Byte</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_ccur.html">CCur</a></td>
+    <td valign="top">Converts an expression to a variant of subtype Currency</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_cdate.html">CDate</a></td>
+    <td valign="top">Converts a valid date and time expression to the variant of 
+    subtype Date</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_cdbl.html">CDbl</a></td>
+    <td valign="top">Converts an expression to a variant of subtype Double</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_chr.html">Chr</a></td>
+    <td valign="top">Converts the specified ANSI code to a character</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_cint.html">CInt</a></td>
+    <td valign="top">Converts an expression to a variant of subtype Integer</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_clng.html">CLng</a></td>
+    <td valign="top">Converts an expression to a variant of subtype Long</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_csng.html">CSng</a></td>
+    <td valign="top">Converts an expression to a variant of subtype Single</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_cstr.html">CStr</a></td>
+    <td valign="top">Converts an expression to a variant of subtype String</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_hex.html">Hex</a></td>
+    <td valign="top">Returns the hexadecimal value of a specified number</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_oct.html">Oct</a></td>
+    <td valign="top">Returns the octal value of a specified number</td>
+  </tr>
+  </table>
+
+<br />
+<table border="0" width="100%">
+  <tr>
+    <td width="70%" align="left"><h2><a name="format">Format Functions</a></h2></td>
+    <td width="30%" align="right"><a href="#top">Top</a></td>
+  </tr>
+</table>
+<table class="reference">
+  <tr>
+    <th width="32%" align="left">Function</th>
+    <th width="68%" align="left">Description</th>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_formatcurrency.html">FormatCurrency</a></td>
+    <td valign="top">Returns an expression formatted as a currency value</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_formatdatetime.html">FormatDateTime</a></td>
+    <td valign="top">Returns an expression formatted as a date or time</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_formatnumber.html">FormatNumber</a></td>
+    <td valign="top">Returns an expression formatted as a number</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_formatpercent.html">FormatPercent</a></td>
+    <td valign="top">Returns an expression formatted as a percentage</td>
+  </tr>
+  </table>
+<br />
+
+<table border="0" width="100%">
+  <tr>
+    <td width="70%" align="left"><h2><a name="math">Math Functions</a></h2></td>
+    <td width="30%" align="right"><a href="#top">Top</a></td>
+  </tr>
+</table>
+<table class="reference">
+  <tr>
+    <th width="32%" align="left">Function</th>
+    <th width="68%" align="left">Description</th>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_abs.html">Abs</a></td>
+    <td valign="top">Returns the absolute value of a specified number</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_atn.html">Atn</a></td>
+    <td valign="top">Returns the arctangent of a specified number</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_cos.html">Cos</a></td>
+    <td valign="top">Returns the cosine of a specified number (angle)</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_exp.html">Exp</a></td>
+    <td valign="top">Returns <i>e</i> raised to 
+    a power</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_hex.html">Hex</a></td>
+    <td valign="top">Returns the hexadecimal value of a 
+    specified number</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_int.html">Int</a></td>
+    <td valign="top">Returns the integer part of a specified number</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_fix.html">Fix</a></td>
+    <td valign="top">Returns the integer part of a specified number</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_log.html">Log</a></td>
+    <td valign="top">Returns the natural logarithm of a specified number</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_oct.html">Oct</a></td>
+    <td valign="top">Returns the octal value of a specified number</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_rnd.html">Rnd</a></td>
+    <td valign="top">Returns a random number less than 1 but greater or equal to 
+    0</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_sgn.html">Sgn</a></td>
+    <td valign="top">Returns an integer that indicates the sign of a specified number</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_sin.html">Sin</a></td>
+    <td valign="top">Returns the sine of a specified number (angle)</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_sqr.html">Sqr</a></td>
+    <td valign="top">Returns the square root of a specified number</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_tan.html">Tan</a></td>
+    <td valign="top">Returns the tangent of a specified number (angle)</td>
+  </tr>
+  </table>
+<br />
+
+<table border="0" width="100%">
+  <tr>
+    <td width="70%" align="left"><h2><a name="array">Array Functions</a></h2></td>
+    <td width="30%" align="right"><a href="#top">Top</a></td>
+  </tr>
+</table>
+<table class="reference">
+  <tr>
+    <th width="32%" align="left">Function</th>
+    <th width="68%" align="left">Description</th>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_array.html">Array</a></td>
+    <td valign="top">Returns a variant containing an array</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_filter.html">Filter</a></td>
+    <td valign="top">Returns a zero-based array that contains a subset 
+    of a string array based on a filter criteria</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_isarray.html">IsArray</a></td>
+    <td valign="top">Returns a Boolean value that indicates whether a 
+    specified variable is an array</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_join.html">Join</a></td>
+    <td valign="top">Returns a string that consists of a number of substrings 
+    in an array</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_lbound.html">LBound</a></td>
+    <td valign="top">Returns the smallest subscript for 
+    the indicated dimension of an array</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_split.html">Split</a></td>
+    <td valign="top">Returns a zero-based, one-dimensional array that contains a 
+    specified number of substrings</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_ubound.html">UBound</a></td>
+    <td valign="top">Returns the largest subscript for the 
+    indicated dimension of an array</td>
+  </tr>
+  </table>
+<br />
+
+<table border="0" width="100%">
+  <tr>
+    <td width="70%" align="left"><h2><a name="string">String Functions</a></h2></td>
+    <td width="30%" align="right"><a href="#top">Top</a></td>
+  </tr>
+</table>
+<table class="reference">
+  <tr>
+    <th width="32%" align="left">Function</th>
+    <th width="68%" align="left">Description</th>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_instr.html">InStr</a></td>
+    <td valign="top">Returns the position of the first occurrence of 
+    one string within another. The search begins at the first character of the 
+    string</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_instrrev.html">InStrRev</a></td>
+    <td valign="top">Returns the position of the first occurrence of one string 
+    within another. The search begins at the last character of the string</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_lcase.html">LCase</a></td>
+    <td valign="top">Converts a specified string to lowercase</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_left.html">Left</a></td>
+    <td valign="top">Returns a specified number of characters from 
+    the left side of a string</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_len.html">Len</a></td>
+    <td valign="top">Returns the number of characters in a string</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_ltrim.html">LTrim</a></td>
+    <td valign="top">Removes spaces on the left side of a string</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_rtrim.html">RTrim</a></td>
+    <td valign="top">Removes spaces on the right side of a string</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_trim.html">Trim</a></td>
+    <td valign="top">Removes spaces on both the left and the right side of a 
+    string</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_mid.html">Mid</a></td>
+    <td valign="top">Returns a specified number of characters from a 
+    string</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_replace.html">Replace</a></td>
+    <td valign="top">Replaces a specified part of a string with another string a 
+    specified number of times</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_right.html">Right</a></td>
+    <td valign="top">Returns a specified number of characters from 
+    the right side of a string</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_space.html">Space</a></td>
+    <td valign="top">Returns a string that consists of a specified number of 
+    spaces</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_strcomp.html">StrComp</a></td>
+    <td valign="top">Compares two strings and returns a value that represents 
+    the result of the comparison</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_string.html">String</a></td>
+    <td valign="top">Returns a string that contains a repeating character of a 
+    specified length</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_strreverse.html">StrReverse</a></td>
+    <td valign="top">Reverses a string</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_ucase.html">UCase</a></td>
+    <td valign="top">Converts a specified string to uppercase</td>
+  </tr>
+  </table>
+<br />
+
+<table border="0" width="100%">
+  <tr>
+    <td width="70%" align="left"><h2><a name="other">Other Functions</a></h2></td>
+    <td width="30%" align="right"><a href="#top">Top</a></td>
+  </tr>
+</table>
+<table class="reference">
+  <tr>
+    <th width="32%" align="left">Function</th>
+    <th width="68%" align="left">Description</th>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_createobject.html">CreateObject</a></td>
+    <td valign="top">Creates an object of a specified type</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_eval.html">Eval</a></td>
+    <td valign="top">Evaluates an expression and returns the result</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_getlocale.html">GetLocale</a></td>
+    <td valign="top">Returns the current locale ID</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_getobject.html">GetObject</a></td>
+    <td valign="top">Returns a reference to an automation object 
+    from a file</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_getref.html">GetRef</a></td>
+    <td valign="top">Allows you to connect a VBScript procedure to a DHTML event 
+    on your pages</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_inputbox.html">InputBox</a></td>
+    <td valign="top">Displays a dialog box, where the user can write some input 
+    and/or click on a button, and returns the contents</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_isempty.html">IsEmpty</a></td>
+    <td valign="top">Returns a Boolean value that indicates whether a 
+    specified variable has been initialized or not</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_isnull.html">IsNull</a></td>
+    <td valign="top">Returns a Boolean value that indicates whether 
+    a specified expression contains no valid data (Null)</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_isnumeric.html">IsNumeric</a></td>
+    <td valign="top">Returns a Boolean value that indicates whether a specified 
+    expression can be evaluated as a number</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_isobject.html">IsObject</a></td>
+    <td valign="top">Returns a Boolean value that indicates whether the 
+    specified expression is an automation object</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_loadpicture.html">LoadPicture</a></td>
+    <td valign="top">Returns a picture object. Available only on 
+    32-bit platforms</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_msgbox.html">MsgBox</a></td>
+    <td valign="top">Displays a message box, waits for the user to click a 
+    button, and returns a value that indicates which button the user clicked</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_rgb.html">RGB</a></td>
+    <td valign="top">Returns a number that represents an RGB 
+    color value</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_round.html">Round</a></td>
+    <td valign="top">Rounds a number</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_scriptengine.html">ScriptEngine</a></td>
+    <td valign="top">Returns the scripting 
+    language in use</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_scriptengine.html">ScriptEngineBuildVersion</a></td>
+    <td valign="top">Returns the build version number of the 
+    scripting engine in use</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_scriptengine.html">ScriptEngineMajorVersion</a></td>
+    <td valign="top">Returns the major version number of the 
+    scripting engine in use</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_scriptengine.html">ScriptEngineMinorVersion</a></td>
+    <td valign="top">Returns the minor version number of the 
+    scripting engine in use</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_setlocale.html">SetLocale</a></td>
+    <td valign="top">Sets the locale ID and returns the previous locale ID</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_typename.html">TypeName</a></td>
+    <td valign="top">Returns the subtype 
+    of a specified variable</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_vartype.html">VarType</a></td>
+    <td valign="top">Returns a value that indicates the subtype of a specified 
+    variable</td>
+  </tr>
+  </table>
+<br />
+<div class="chapter">
+<div class="prev"><a class="chapter" href="vbscript_examples.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="vbscript_ref_keywords.html">Next Chapter &raquo;</a></div>
+</div>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/vbscript/vbscript_ref_functions.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:16:03 GMT -->
+</html>

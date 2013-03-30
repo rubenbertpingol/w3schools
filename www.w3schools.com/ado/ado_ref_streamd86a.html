@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/ado/ado_ref_stream.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:20:35 GMT -->
+<head>
+
+<title>ADO Stream Object</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1>ADO <span class="color_h1">Stream</span> Object</h1>
+<div class="chapter">
+<div class="prev"><a class="chapter" href="ado_ref_recordset.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="ado_datatypes.html">Next Chapter &raquo;</a></div>
+</div>
+<hr />
+<h2>Stream Object (ADO version 2.5)</h2>
+<p>The ADO Stream Object is used to read, write, and manage a stream of binary data or text.</p>
+<p>A Stream object can be obtained in three ways:</p>
+<ul>
+  <li>From a URL pointing to a document, a folder, or a Record object</li>
+  <li>By instantiating a Stream object to store data for your application</li>
+  <li>By opening the default Stream object associated with a Record object</li>
+</ul>
+<h3>Syntax</h3>
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+objectname.property<br />
+objectname.method
+</td></tr>
+</table>
+<br />
+<hr />
+
+<h3>Properties</h3>
+<table class="reference">
+  <tr valign="top">
+    <th width="40%" align="left" valign="top">Property</th>
+    <th width="60%" align="left" valign="top">Description</th>
+  </tr>
+  <tr valign="top">
+    <td valign="top"><a href="prop_stream_charset.html">CharSet</a></td>
+    <td valign="top">Sets or returns a value that specifies into which character set the contents
+      are to be
+      translated. This property is only used with text Stream objects (type is
+      adTypeText)</td>
+  </tr>
+  <tr valign="top">
+    <td valign="top"><a href="prop_stream_eos.html">EOS</a></td>
+    <td valign="top">Returns whether the current position is at the end of the
+      stream or not</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_stream_lineseparator.html">LineSeparator</a></td>
+    <td valign="top">Sets or returns the line separator character used in a text Stream
+      object</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_stream_mode.html">Mode</a></td>
+    <td valign="top">Sets or returns the available permissions for modifying
+      data</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_stream_position.html">Position</a></td>
+    <td valign="top">Sets or returns the current position (in bytes) from the
+      beginning of a Stream object</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_stream_size.html">Size</a></td>
+    <td valign="top">Returns the size of an open Stream
+      object</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_stream_state.html">State</a></td>
+    <td valign="top">Returns a value describing if the Stream object is open or
+      closed</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_stream_type.html">Type</a></td>
+    <td valign="top">Sets or returns the type of data in a Stream object</td>
+  </tr>
+</table>
+
+<h3>Methods</h3>
+<table class="reference">
+  <tr valign="top">
+    <th width="40%" align="left" valign="top">Method</th>
+    <th width="60%" align="left" valign="top">Description</th>
+  </tr>
+  <tr>
+    <td valign="top"><a href="met_stream_cancel.html">Cancel</a></td>
+    <td valign="top">Cancels an execution of an Open call on a Stream object</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="met_stream_close.html">Close</a></td>
+    <td valign="top">Closes a Stream object</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="met_stream_copyto.html">CopyTo</a></td>
+    <td valign="top">Copies a specified number of characters/bytes from one
+      Stream object into another Stream object</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="met_stream_flush.html">Flush</a></td>
+    <td valign="top">Sends the contents of the Stream buffer to the associated
+      underlying object</td>
+  </tr>
+  <tr>
+    <td valign="top"> <a href="met_stream_loadfromfile.html"> LoadFromFile</a></td>
+    <td valign="top">Loads the contents of a file into a Stream object</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="met_stream_open.html">Open</a></td>
+    <td valign="top">Opens a Stream object</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="met_stream_read.html">Read</a></td>
+    <td valign="top">Reads the entire stream or a specified number of bytes from
+      a binary Stream object</td>
+  </tr>
+  <tr>
+    <td valign="top"> <a href="met_stream_readtext.html"> ReadText</a></td>
+    <td valign="top">Reads the entire stream, a line, or a specified number of
+      characters from a text Stream object</td>
+  </tr>
+  <tr>
+    <td valign="top"> <a href="met_stream_savetofile.html"> SaveToFile</a></td>
+    <td valign="top">Saves the binary contents of a Stream object to a file</td>
+  </tr>
+  <tr>
+    <td valign="top"> <a href="met_stream_seteos.html"> SetEOS</a></td>
+    <td valign="top">Sets the current position to be the end of the stream (EOS)</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="met_stream_skipline.html">SkipLine</a></td>
+    <td valign="top">Skips a line when reading a text Stream</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="met_stream_write.html">Write</a></td>
+    <td valign="top">Writes binary data to a binary Stream object</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="met_stream_writetext.html">WriteText</a></td>
+    <td valign="top">Writes character data to a text Stream object</td>
+  </tr>
+</table>
+<br />
+<div class="chapter">
+<div class="prev"><a class="chapter" href="ado_ref_recordset.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="ado_datatypes.html">Next Chapter &raquo;</a></div>
+</div>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/ado/ado_ref_stream.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:20:35 GMT -->
+</html>

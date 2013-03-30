@@ -1,0 +1,388 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/php/php_ref_ftp.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:24:34 GMT -->
+<head>
+<title>PHP FTP Functions</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1>PHP <span class="color_h1">FTP</span> Functions</h1>
+<div class="chapter">
+<div class="prev"><a class="chapter" href="php_ref_filter.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="php_ref_http.html">Next Chapter &raquo;</a></div>
+</div>
+<hr />
+<h2>PHP FTP Introduction</h2>
+<p>The FTP functions give client access to file servers through the File 
+Transfer Protocol (FTP).</p>
+<p>The FTP functions are used to open, login and close connections, as well as 
+upload, download, rename, delete, and get information on files from file 
+servers. Not all of the FTP functions will work with every server or return the 
+same results. The FTP functions became available with PHP 3.</p>
+<p>These functions are meant for detailed access to an FTP server. If you only 
+wish to read from or write to a file on an FTP server, consider using the ftp:// 
+wrapper with the Filesystem functions.</p>
+<hr />
+
+<h2>Installation</h2>
+<p>The windows version of PHP has built-in support for the FTP extension. 
+So, the FTP functions will work automatically. </p>
+<p>However, if you are running the Linux version of PHP, you will have to compile PHP with <i>--enable-ftp </i>
+(PHP 4+) or <i>--with-ftp</i> (PHP 3) to get the FTP functions to work.</p>
+<hr />
+
+<h2>PHP FTP Functions</h2>
+<p><b>PHP</b>: indicates the earliest version of PHP that supports the 
+  function. </p>
+<table class="reference">
+  <tr>
+    <th width="30%" align="left" valign="top">Function</th>
+    <th width="65%" align="left" valign="top">Description</th>
+    <th width="5%" align="left" valign="top">PHP</th>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_ftp_alloc.html">ftp_alloc()</a></td>
+    <td valign="top">Allocates space for a file to be uploaded to the FTP server</td>
+    <td valign="top">5</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_ftp_cdup.html">ftp_cdup()</a></td>
+    <td valign="top">Changes the current directory to the parent directory on 
+	the FTP server</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_ftp_chdir.html">ftp_chdir()</a></td>
+    <td valign="top">Changes the current directory on the FTP server</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_ftp_chmod.html">ftp_chmod()</a></td>
+    <td valign="top">Sets permissions on a file via FTP</td>
+    <td valign="top">5</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_ftp_close.html">ftp_close()</a></td>
+    <td valign="top">Closes an FTP connection</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_ftp_connect.html">ftp_connect()</a></td>
+    <td valign="top">Opens an FTP connection</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_ftp_delete.html">ftp_delete()</a></td>
+    <td valign="top">Deletes a file on the FTP server</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_ftp_exec.html">ftp_exec()</a></td>
+    <td valign="top">Executes a program/command on the FTP server</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_ftp_fget.html">ftp_fget()</a></td>
+    <td valign="top">Downloads a file from the FTP server and saves it to an 
+	open file</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_ftp_fput.html">ftp_fput()</a></td>
+    <td valign="top">Uploads from an open file and saves it to a file on the FTP server</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_ftp_get_option.html">ftp_get_option()</a></td>
+    <td valign="top">Returns runtime behaviors of the FTP connection</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_ftp_get.html">ftp_get()</a></td>
+    <td valign="top">Downloads a file from the FTP server</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_ftp_login.html">ftp_login()</a></td>
+    <td valign="top">Logs on to an FTP connection</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_ftp_mdtm.html">ftp_mdtm()</a></td>
+    <td valign="top">Returns the last modified time of a specified file</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_ftp_mkdir.html">ftp_mkdir()</a></td>
+    <td valign="top">Creates a new directory on the FTP server</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_ftp_nb_continue.html">ftp_nb_continue()</a></td>
+    <td valign="top">Continues retrieving/sending a file (non-blocking)</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_ftp_nb_fget.html">ftp_nb_fget()</a></td>
+    <td valign="top">Downloads a file from the FTP server and saves it to an 
+	open file (non-blocking)</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_ftp_nb_fput.html">ftp_nb_fput()</a></td>
+    <td valign="top">Uploads from an open file and saves it to a file on the FTP server 
+	(non-blocking)</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_ftp_nb_get.html">ftp_nb_get()</a></td>
+    <td valign="top">Downloads a file from the FTP server (non-blocking)</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_ftp_nb_put.html">ftp_nb_put()</a></td>
+    <td valign="top">Uploads a file to the FTP server (non-blocking)</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_ftp_nlist.html">ftp_nlist()</a></td>
+    <td valign="top">Lists the files in a specified directory on the FTP server</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_ftp_pasv.html">ftp_pasv()</a></td>
+    <td valign="top">Turns passive mode on or off</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_ftp_put.html">ftp_put()</a></td>
+    <td valign="top">Uploads a file to the FTP server</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_ftp_pwd.html">ftp_pwd()</a></td>
+    <td valign="top">Returns the current directory name</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_ftp_quit.html">ftp_quit()</a></td>
+    <td valign="top">Alias of ftp_close()</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_ftp_raw.html">ftp_raw()</a></td>
+    <td valign="top">Sends a raw command to the FTP server</td>
+    <td valign="top">5</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_ftp_rawlist.html">ftp_rawlist()</a></td>
+    <td valign="top">Returns a detailed list of files in the specified directory</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_ftp_rename.html">ftp_rename()</a></td>
+    <td valign="top">Renames a file or directory on the FTP server</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_ftp_rmdir.html">ftp_rmdir()</a></td>
+    <td valign="top">Removes a directory on the FTP server</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_ftp_set_option.html">ftp_set_option()</a></td>
+    <td valign="top">Sets runtime options for the FTP connection</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_ftp_site.html">ftp_site()</a></td>
+    <td valign="top">Sends a SITE command to the server</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_ftp_size.html">ftp_size()</a></td>
+    <td valign="top">Returns the size of the specified file</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_ftp_ssl_connect.html">ftp_ssl_connect()</a></td>
+    <td valign="top">Opens a secure SSL-FTP connection</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_ftp_systype.html">ftp_systype()</a></td>
+    <td valign="top">Returns the system type identifier of the FTP server</td>
+    <td valign="top">3</td>
+  </tr>
+  </table>
+<br />
+<hr>
+
+<h2>PHP FTP Constants</h2>
+<p><b>PHP</b>: indicates the earliest version of PHP that supports the 
+  constant. </p>
+<table class="reference">
+  <tr>
+    <th width="30%" align="left">Constant</th>
+    <th width="65%" align="left">Description</th>
+    <th width="5%" align="left">PHP</th>
+  </tr>
+  <tr>
+    <td valign="top">FTP_ASCII</td>
+    <td valign="top">&nbsp;</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top">FTP_TEXT</td>
+    <td valign="top">&nbsp;</td>
+    <td valign="top">3</td>
+  </tr>
+	<tr>
+    <td valign="top">FTP_BINARY</td>
+    <td valign="top">&nbsp;</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top">FTP_IMAGE</td>
+    <td valign="top">&nbsp;</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top">FTP_TIMEOUT_SEC</td>
+    <td valign="top">&nbsp;</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top">FTP_AUTOSEEK</td>
+    <td valign="top">&nbsp;</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top">FTP_AUTORESUME</td>
+    <td valign="top">Determine resume position and start position for get and 
+	put requests automatically</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top">FTP_FAILED</td>
+    <td valign="top">Asynchronous transfer has failed</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top">FTP_FINISHED</td>
+    <td valign="top">Asynchronous transfer has finished</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top">FTP_MOREDATA</td>
+    <td valign="top">Asynchronous transfer is still active</td>
+    <td valign="top">4</td>
+  </tr>
+  </table>
+<br />
+<div class="chapter">
+<div class="prev"><a class="chapter" href="php_ref_filter.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="php_ref_http.html">Next Chapter &raquo;</a></div>
+</div>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/php/php_ref_ftp.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:24:34 GMT -->
+</html>

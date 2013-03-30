@@ -1,0 +1,429 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/ado/prop_para_attributes.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:50:09 GMT -->
+<head>
+
+<title>ADO Attributes Property</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+
+<h1>ADO <span class="color_h1">Attributes</span> Property</h1>
+<hr />
+<a href="ado_ref_parameter.html"><img class="navup" src="http://www.w3schools.com/images/up.gif" alt="Parameter Object Reference" border="0" /> Complete Parameter Object Reference</a>
+<hr />
+<p>The Attributes property sets or returns a long value that indicates one or more characteristics of an object.
+</p>
+
+<p><b>Note:</b> When setting multiple attributes, it is possible to sum the
+values.
+</p>
+<table class="reference">
+  <tr>
+    <th align="left" valign="top" width="20%">Object</th>
+    <th align="left" valign="top" width="80%">Description of the Attributes
+      Property</th>
+  </tr>  
+  <tr>
+    <td valign="top">Connection </td>
+    <td valign="top">The Attributes property has read/write permissions on a Connection
+      object. Its value can be the sum of one or more <a href="#XactAttributeEnum">XactAttributeEnum</a>  values.
+      Default value is 0</td>
+  </tr>
+  <tr>
+    <td valign="top">Parameter </td>
+    <td valign="top">   The Attributes property has read/write permissions on a Parameter
+      object. Its value can be the sum of one or more <a href="#ParameterAttributesEnum">ParameterAttributesEnum</a> values.
+      Default value is adParamSigned
+    </td>
+  </tr>
+  <tr>
+    <td valign="top">Field </td>
+    <td valign="top">   <p>The Attributes property has read/write permissions when
+      used to create a Recordset, but it has read-only permissions when you open an
+      existing Recordset. Its value can be the sum of one or more <a href="#FieldAttributeEnum">FieldAttributeEnum</a> 
+      values
+</p>
+
+    </td>
+  </tr>
+  <tr>
+    <td valign="top">Property </td>
+    <td valign="top">   The Attributes property is read-only for a Property
+      object. Its value can be the sum of one or more <a href="#PropertyAttributesEnum">PropertyAttributesEnum</a>
+      values
+    </td>
+  </tr>
+</table>
+
+<h3>Syntax</h3>
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+object.Attributes
+</td></tr>
+</table>
+<h3>Example - For a Connection object:</h3>
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;%<br />
+set conn=Server.CreateObject(&quot;ADODB.Connection&quot;)<br />
+conn.Provider=&quot;Microsoft.Jet.OLEDB.4.0&quot;<br />
+conn.Open &quot;c:/webdata/northwind.mdb&quot;<br />
+<br />
+response.write(conn.Attributes)<br />
+<br />
+conn.close<br />
+%&gt;
+</td></tr>
+</table>
+<h3>Example - For a Field object:</h3>
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;%<br />
+set conn=Server.CreateObject(&quot;ADODB.Connection&quot;)<br />
+conn.Provider=&quot;Microsoft.Jet.OLEDB.4.0&quot;<br />
+conn.Open &quot;c:/webdata/northwind.mdb&quot;<br />
+<br />
+set rs = Server.CreateObject(&quot;ADODB.Recordset&quot;)<br />
+rs.open &quot;Select * from orders&quot;, conn<br />
+<br />
+set f=Server.CreateObject(&quot;ADODB.Field&quot;)<br />
+<br />
+'Display the field attributes of the Orders Table<br />
+for each f in rs.Fields<br />
+&nbsp;&nbsp;response.write(&quot;Attr:&quot; &amp; f.Attributes &amp; &quot;&lt;br /&gt;&quot;)<br />
+&nbsp;&nbsp;response.write(&quot;Name:&quot; &amp; f.Name &amp; &quot;&lt;br /&gt;&quot;)<br />
+&nbsp;&nbsp;response.write(&quot;Value:&quot; &amp; f.Value &amp; &quot;&lt;br /&gt;&quot;)<br />
+Next<br />
+<br />
+rs.Close<br />
+conn.close<br />
+set rs=nothing<br />
+set conn=nothing<br />
+%&gt;
+</td></tr>
+</table>
+<h3>Example - For a Property object:</h3>
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;%<br />
+set conn=Server.CreateObject(&quot;ADODB.Connection&quot;)<br />
+conn.Provider=&quot;Microsoft.Jet.OLEDB.4.0&quot;<br />
+conn.Open &quot;c:/webdata/northwind.mdb&quot;<br />
+<br />
+set rs = Server.CreateObject(&quot;ADODB.Recordset&quot;)<br />
+rs.open &quot;Select * from orders&quot;, conn<br />
+<br />
+set prop=Server.CreateObject(&quot;ADODB.Property&quot;)<br />
+<br />
+'Display the property attributes of the Orders Table<br />
+for each prop in rs.Properties<br />
+&nbsp;&nbsp;response.write(&quot;Attr:&quot; &amp; prop.Attributes &amp; &quot;&lt;br /&gt;&quot;)<br />
+&nbsp;&nbsp;response.write(&quot;Name:&quot; &amp; prop.Name &amp; &quot;&lt;br /&gt;&quot;)<br />
+&nbsp;&nbsp;response.write(&quot;Value:&quot; &amp; prop.Value &amp; &quot;&lt;br /&gt;&quot;)<br />
+next<br />
+<br />
+rs.close<br />
+conn.close<br />
+set rs=nothing<br />
+set conn=nothing<br />
+%&gt;
+</td></tr>
+</table>
+<br />
+
+<hr />
+<a name="XactAttributeEnum"></a>
+<h3>XactAttributeEnum Values</h3>
+<table class="reference">
+  <tr>
+    <th width="30%" valign="top">Constant</th>
+    <th width="10%" valign="top">Value</th>
+    <th width="60%" valign="top">Description</th>
+  </tr>
+  <tr>
+    <td valign="top">adXactAbortRetaining</td>
+    <td valign="top">262144</td>
+    <td valign="top">When calling RollbackTrans it automatically starts a new
+      transaction.</td>
+  </tr>
+  <tr>
+    <td valign="top">adXactCommitRetaining</td>
+    <td valign="top">131072</td>
+    <td valign="top">When calling CommitTrans it automatically starts a new
+      transaction.</td>
+  </tr>
+</table>
+<br />
+
+<hr />
+<a name="ParameterAttributesEnum"></a>
+<h3>ParameterAttributesEnum Values</h3>
+<table class="reference">
+  <tr>
+    <th width="30%" valign="top">Constant</th>
+    <th width="10%" valign="top">Value</th>
+    <th width="60%" valign="top">Description</th>
+  </tr>
+  <tr>
+    <td valign="top">adParamSigned</td>
+    <td valign="top">16</td>
+    <td valign="top">The parameter will accept signed values.</td>
+  </tr>
+  <tr>
+    <td valign="top">adParamNullable</td>
+    <td valign="top">64</td>
+    <td valign="top">The parameter will accept null values.</td>
+  </tr>
+  <tr>
+    <td valign="top">adParamLong</td>
+    <td valign="top">128</td>
+    <td valign="top">The parameter will accept long binary data.</td>
+  </tr>
+</table>
+<br />
+<hr />
+<a name="FieldAttributeEnum"></a>
+<h3>FieldAttributeEnum Values</h3>
+<table class="reference">
+  <tr>
+    <th width="30%" valign="top">Constant</th>
+    <th width="10%" valign="top">Value</th>
+    <th width="60%" valign="top">Description</th>
+  </tr>
+  <tr>
+    <td valign="top">adFldCacheDeferred</td>
+    <td valign="top">0x1000</td>
+    <td valign="top">Provider caches the field values and reads from the cache.</td>
+  </tr>
+  <tr>
+    <td valign="top">adFldFixed</td>
+    <td valign="top">0x10</td>
+    <td valign="top">Field contains fixed-length data.</td>
+  </tr>
+  <tr>
+    <td valign="top">adFldIsChapter</td>
+    <td valign="top">0x2000</td>
+    <td valign="top">Field contains a chapter value that specifies a child
+      recordset.</td>
+  </tr>
+  <tr>
+    <td valign="top">adFldIsCollection</td>
+    <td valign="top">0x40000</td>
+    <td valign="top">The field specifies that the resource represented by the
+      record is a collection of&nbsp; resources</td>
+  </tr>
+  <tr>
+    <td valign="top">adFldIsDefaultStream</td>
+    <td valign="top">0x20000</td>
+    <td valign="top">Field contains the default stream for the resource
+      represented by the record.</td>
+  </tr>
+  <tr>
+    <td valign="top">adFldIsNullable</td>
+    <td valign="top">0x20</td>
+    <td valign="top">Field accepts null values.</td>
+  </tr>
+  <tr>
+    <td valign="top">adFldIsRowURL</td>
+    <td valign="top">0x10000</td>
+    <td valign="top">Field contains the URL that names the resource from the
+      data store represented by the record.</td>
+  </tr>
+  <tr>
+    <td valign="top">adFldLong</td>
+    <td valign="top">0x80</td>
+    <td valign="top">Field is a long binary field.</td>
+  </tr>
+  <tr>
+    <td valign="top">adFldMayBeNull</td>
+    <td valign="top">0x40</td>
+    <td valign="top">You can read null values from the field.</td>
+  </tr>
+  <tr>
+    <td valign="top">adFldMayDefer</td>
+    <td valign="top">0x2</td>
+    <td valign="top">Field values are not retrieved from the data source with
+      the whole record, but only when you explicitly access them.</td>
+  </tr>
+  <tr>
+    <td valign="top">adFldNegativeScale</td>
+    <td valign="top">0x4000</td>
+    <td valign="top">Field represents a numeric value from a column that
+      supports negative scale values.</td>
+  </tr>
+  <tr>
+    <td valign="top">adFldRowID</td>
+    <td valign="top">0x100</td>
+    <td valign="top">Field contains a persistent row identifier that cannot be
+      written to and has no meaningful value except to identify the row (such as
+      a unique id)</td>
+  </tr>
+  <tr>
+    <td valign="top">adFldRowVersion</td>
+    <td valign="top">0x200</td>
+    <td valign="top">Field contains some kind of time/date stamp used to track
+      updates.</td>
+  </tr>
+  <tr>
+    <td valign="top">adFldUnknownUpdatable</td>
+    <td valign="top">0x8</td>
+    <td valign="top">The provider cannot determine if you can write to the
+      field.</td>
+  </tr>
+  <tr>
+    <td valign="top">adFldUnspecified</td>
+    <td valign="top">&nbsp;-1<br />
+      0xFFFFFFFF</td>
+    <td valign="top">Provider does not specify the field attributes.</td>
+  </tr>
+  <tr>
+    <td valign="top">adFldUpdatable</td>
+    <td valign="top">0x4</td>
+    <td valign="top">You can write to the field.</td>
+  </tr>
+</table>
+<br />
+<hr />
+<a name="PropertyAttributesEnum"></a>
+<h3>PropertyAttributesEnum Values</h3>
+<table class="reference">
+  <tr>
+    <th width="30%" valign="top">Constant</th>
+    <th width="10%" valign="top">Value</th>
+    <th width="60%" valign="top">Description</th>
+  </tr>
+  <tr>
+    <td valign="top">adPropNotSupported</td>
+    <td valign="top">0</td>
+    <td valign="top">The property is not supported by the provider.</td>
+  </tr>
+  <tr>
+    <td valign="top">adPropRequired</td>
+    <td valign="top">1</td>
+    <td valign="top">The user must specify a value for this property before the
+      data source is initialized.</td>
+  </tr>
+  <tr>
+    <td valign="top">adPropOptional</td>
+    <td valign="top">2</td>
+    <td valign="top">The user does not need to specify a value for this property
+      before the data source is initialized.</td>
+  </tr>
+  <tr>
+    <td valign="top">adPropRead</td>
+    <td valign="top">512</td>
+    <td valign="top">The user can read the property.</td>
+  </tr>
+  <tr>
+    <td valign="top">adPropWrite</td>
+    <td valign="top">1024</td>
+    <td valign="top">The user can set the property.</td>
+  </tr>
+</table>
+<br />
+
+<hr />
+<a href="ado_ref_parameter.html"><img class="navup" src="http://www.w3schools.com/images/up.gif" alt="Parameter Object Reference" border="0" /> Complete Parameter Object Reference</a>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/ado/prop_para_attributes.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:50:09 GMT -->
+</html>

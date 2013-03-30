@@ -1,0 +1,286 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/dom/dom_attribute.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:16:31 GMT -->
+<head>
+
+<title>XML DOM - Attr object</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1>XML DOM - The <span class="color_h1">Attr</span> Object</h1>
+<div class="chapter">
+<div class="prev"><a class="chapter" href="dom_element.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="dom_text.html">Next Chapter &raquo;</a></div>
+</div>
+<hr />
+<h2>The Attr object</h2>
+<p>The Attr object represents an attribute of an Element object. The allowable 
+values for attributes are usually defined in a DTD. </p>
+<p>Because the Attr object is also a 
+Node, it inherits the Node object's properties and methods. However, 
+an attribute does not have a parent node and is not considered to be a child node of an element, and will return 
+null for many of the Node properties.</p>
+<p>
+<b>IE:</b> Internet Explorer, <b>F:</b> Firefox, <b>O:</b> Opera, <b>W3C:</b> 
+World Wide Web Consortium (Internet Standard)</p>
+
+<h2>Attr Object Properties</h2>
+
+<table class="reference">
+<tr>
+<th width="32%" align="left">Property</th>
+<th width="48%" align="left">Description</th>
+<th width="5%" align="left">IE</th>
+<th width="4%" align="left">F</th>
+<th width="4%" align="left">O</th>
+<th width="7%" align="left">W3C</th>
+</tr>
+<tr>
+	<td><a href="prop_attr_baseuri.html">baseURI</a></td>
+	<td>Returns the absolute base URI of the attribute</td>
+	<td>No</td>
+	<td>1</td>
+	<td>No</td>
+	<td>Yes</td>
+</tr>
+<tr>
+	<td><a href="prop_attr_isid.html">isId</a></td>
+	<td>Returns true if the attribute is known to be of type ID, otherwise it returns 
+	false</td>
+	<td>No</td>
+	<td>No</td>
+	<td>No</td>
+	<td>Yes</td>
+</tr>
+<tr>
+	<td><a href="prop_attr_localname.html">localName</a></td>
+	<td>Returns the local part of the name of the attribute</td>
+	<td>No</td>
+	<td>1</td>
+	<td>9</td>
+	<td>Yes</td>
+</tr>
+<tr>
+	<td><a href="prop_attr_name.html">name</a></td>
+	<td>Returns the name of the attribute</td>
+	<td>5</td>
+	<td>1</td>
+	<td>9</td>
+	<td>Yes</td>
+</tr>
+<tr>
+	<td><a href="prop_attr_namespaceuri.html">namespaceURI</a></td>
+	<td>Returns the namespace URI of the attribute</td>
+	<td>No</td>
+	<td>1</td>
+	<td>9</td>
+	<td>Yes</td>
+</tr>
+<tr>
+	<td><a href="prop_attr_nodename.html">nodeName</a></td>
+	<td>Returns the name of the node, depending on its type</td>
+	<td>5</td>
+	<td>1</td>
+	<td>9</td>
+	<td>Yes</td>
+</tr>
+<tr>
+	<td><a href="prop_attr_nodetype.html">nodeType</a></td>
+	<td>Returns the type of the node</td>
+	<td>5</td>
+	<td>1</td>
+	<td>9</td>
+	<td>Yes</td>
+</tr>
+<tr>
+	<td><a href="prop_attr_nodevalue.html">nodeValue</a></td>
+	<td>Sets or returns the value of the node, depending on its 
+	type</td>
+	<td>5</td>
+	<td>1</td>
+	<td>9</td>
+	<td>Yes</td>
+</tr>
+<tr>
+	<td><a href="prop_attr_ownerdocument.html">ownerDocument</a></td>
+	<td>Returns the root element (document object) for an attribute</td>
+	<td>5</td>
+	<td>1</td>
+	<td>9</td>
+	<td>Yes</td>
+</tr>
+<tr>
+	<td><a href="prop_attr_ownerelement.html">ownerElement</a></td>
+	<td>Returns the element node the attribute is attached to</td>
+	<td>No</td>
+	<td>1</td>
+	<td>9</td>
+	<td>Yes</td>
+</tr>
+<tr>
+	<td><a href="prop_attr_prefix.html">prefix</a></td>
+	<td>Sets or returns the namespace prefix of the attribute</td>
+	<td>No</td>
+	<td>1</td>
+	<td>9</td>
+	<td>Yes</td>
+</tr>
+<tr>
+	<td>schemaTypeInfo</td>
+	<td>Returns the type information associated with this attribute</td>
+	<td>No</td>
+	<td>No</td>
+	<td>No</td>
+	<td>Yes</td>
+</tr>
+<tr>
+	<td><a href="prop_attr_specified.html">specified</a></td>
+	<td>Returns true if the attribute value is set in the document, 
+	and false if it's a default value in a DTD/Schema.</td>
+	<td>5</td>
+	<td>1</td>
+	<td>9</td>
+	<td>Yes</td>
+</tr>
+<tr>
+	<td><a href="prop_attr_textcontent.html">textContent</a></td>
+	<td>Sets or returns the textual content of an attribute</td>
+	<td>No</td>
+	<td>1</td>
+	<td>9</td>
+	<td>Yes</td>
+</tr>
+<tr>
+	<td><a href="prop_attr_text.html">text</a></td>
+	<td>Returns the text of the attribute. 
+	IE-only property</td>
+	<td>5</td>
+	<td>No</td>
+	<td>No</td>
+	<td>No</td>
+</tr>
+<tr>
+	<td><a href="prop_attr_value.html">value</a></td>
+	<td>Sets or returns the value of the attribute</td>
+	<td>5</td>
+	<td>1</td>
+	<td>9</td>
+	<td>Yes</td>
+</tr>
+<tr>
+	<td><a href="prop_attr_xml.html">xml</a></td>
+	<td>Returns the XML of the attribute. IE-only 
+	property</td>
+	<td>5</td>
+	<td>No</td>
+	<td>No</td>
+	<td>No</td>
+</tr>
+</table>
+<br />
+<div class="chapter">
+<div class="prev"><a class="chapter" href="dom_element.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="dom_text.html">Next Chapter &raquo;</a></div>
+</div>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/dom/dom_attribute.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:16:31 GMT -->
+</html>

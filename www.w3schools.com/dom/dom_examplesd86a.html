@@ -1,0 +1,366 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/dom/dom_examples.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:06:41 GMT -->
+<head>
+
+<title>XML DOM Examples</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1>XML DOM <span class="color_h1">Examples</span></h1>
+<div class="chapter">
+<div class="prev"><a class="chapter" href="dom_summary.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="dom_validate.html">Next Chapter &raquo;</a></div>
+</div>
+<hr />
+<p><b>XML DOM Parsing</b></p>
+<p>The examples below use the XML file <a target="_blank" href="books.xml">
+books.xml</a>. </p>
+<p><a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_loadxml">Load an 
+XML file</a><br />
+<a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_loadxmltext">Load an 
+XML string</a></p>
+<p><a class="example" href="dom_parser.html">Examples explained</a></p>
+<hr />
+
+<p><b> XML DOM Properties and Methods</b></p>
+<p>The examples below use the XML file <a target="_blank" href="books.xml">
+books.xml</a>. <br />
+A function, <a href="dom_loadxmldoc.html">loadXMLDoc()</a>, in an external 
+JavaScript is used to load the XML file.<br />
+A function, <a href="dom_loadxmldoc.html">loadXMLString()</a>, in an external 
+JavaScript is used to load the XML string.</p>
+<p><a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_parsertest">Load and 
+parse an XML file - External parsing script</a><br />
+<a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_parsertest2">Load and parse 
+an XML string - External parsing script</a></p>
+<p><a class="example" href="dom_methods.html">Examples explained</a></p>
+<hr />
+
+<p><b> XML DOM Accessing Nodes</b></p>
+<p>The examples below use the XML file <a target="_blank" href="books.xml">
+books.xml</a>. <br />
+A function, <a href="dom_loadxmldoc.html">loadXMLDoc()</a>, in an external 
+JavaScript is used to load the XML file.</p>
+<p><a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_index">Access a node using its index number in a node list</a><br />
+<a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_list_loop">Loop through nodes using the length property</a><br />
+<a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_root">See the node type of an element</a><br />
+<a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_loop">Loop through element nodes</a><br />
+<a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_navigate">Loop through element nodes using node relationships</a></p>
+<p><a class="example" href="dom_nodes_access.html">Examples explained</a></p>
+<hr />
+
+<p><b> XML DOM Node Information</b></p>
+<p>The examples below use the XML file <a target="_blank" href="books.xml">
+books.xml</a>. <br />
+A function, <a href="dom_loadxmldoc.html">loadXMLDoc()</a>, in an external 
+JavaScript is used to load the XML file.</p>
+<p><a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_nodename3">Get the node name of an element node</a><br />
+<a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_getelement">Get the text from a text node</a><br />
+<a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_changeelement">Change the text in a text node</a><br />
+<a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_root">Get the node name and type of an element node</a></p>
+<p><a class="example" href="dom_nodes_info.html">Examples explained</a></p>
+<hr />
+
+<p><b> XML DOM Node List and Attribute List</b></p>
+<p>The examples below use the XML file <a target="_blank" href="books.xml">
+books.xml</a>. <br />
+A function, <a href="dom_loadxmldoc.html">loadXMLDoc()</a>, in an external 
+JavaScript is used to load the XML file.</p>
+<p><a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_nodelist">Get the text 
+from the first &lt;title&gt; element</a><br />
+<a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_nodelist_length">Loop 
+through nodes using the length property</a><br />
+<a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_attributes">Get the 
+attribute of an element</a></p>
+<p><a class="example" href="dom_nodes_nodelist.html">Examples explained</a></p>
+<hr />
+
+<p><b> XML DOM Traversing Node Tree</b></p>
+<p>The examples below use the XML file <a target="_blank" href="books.xml">
+books.xml</a>. <br />
+A function, <a href="dom_loadxmldoc.html">loadXMLString()</a>, in an external 
+JavaScript is used to load the XML string.</p>
+<p><a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_parsertest3">Traverse a 
+node tree</a></p>
+<p><a class="example" href="dom_nodes_traverse.html">Examples explained</a></p>
+<hr />
+
+<p><b> XML DOM Browser Differences</b></p>
+<p>The examples below use the XML file <a target="_blank" href="books.xml">
+books.xml</a>. <br />
+A function, <a href="dom_loadxmldoc.html">loadXMLDoc()</a>, in an external 
+JavaScript is used to load the XML file.</p>
+<p><a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_nodetype_ievsmozilla">
+Display the length of a node list - Different results in IE and other browsers</a><br />
+<a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_nodetype_ievsmozilla2">
+Ignore empty text between nodes</a></p>
+<p><a class="example" href="dom_mozilla_vs_ie.html">Examples explained</a></p>
+<hr />
+
+<p><b> XML DOM Navigating Nodes</b></p>
+<p>The examples below use the XML file <a target="_blank" href="books.xml">
+books.xml</a>. <br />
+A function, <a href="dom_loadxmldoc.html">loadXMLDoc()</a>, in an external 
+JavaScript is used to load the XML file.</p>
+<p><a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_nav_parentnode">Get the 
+parent of a node</a><br />
+<a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_nav_firstchild">Get the 
+first child element of a node</a><br />
+<a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_nav_lastchild">Get the last 
+child element of a node</a><br />
+<a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_nav_nextsibling">Get the 
+next sibling element of a node</a>&nbsp;<br />
+<a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_nav_prevsibling">Get the 
+previous sibling element of a node</a></p>
+<p><a class="example" href="dom_nodes_navigate.html">Examples explained</a></p>
+<hr />
+
+<p><b>XML DOM Get Node Values</b></p>
+
+<p>The examples below use the XML file
+<a target="_blank" href="books.xml">books.xml</a>. <br />
+A function, <a href="dom_loadxmldoc.html">loadXMLDoc()</a>, in an external JavaScript is used to load the XML file.</p>
+<p><a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_getelementsbytagname">Get 
+an element's text value</a><br />
+<a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_getattribute">Get an 
+attribute's text value</a></p>
+<p><a class="example" href="dom_nodes_get.html">Examples explained</a></p>
+<hr />
+
+<p><b>XML DOM Change Node Values</b></p>
+
+<p>The examples below use the XML file
+<a target="_blank" href="books.xml">books.xml</a>. <br />
+A function, <a href="dom_loadxmldoc.html">loadXMLDoc()</a>, in an external JavaScript is used to load the XML file.</p>
+<p><a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_change_nodevalue">Change 
+an elements text node</a><br />
+<a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_setattribute1">Change an 
+attributes value using setAttribute</a><br />
+<a href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_att_nodevalue">Change an attributes value 
+using nodeValue</a></p>
+<p><a class="example" href="dom_nodes_set.html">Examples explained</a></p>
+<hr />
+
+<p><b>XML DOM Remove Nodes</b></p>
+
+<p>The examples below use the XML file
+<a target="_blank" href="books.xml">books.xml</a>. <br />
+A function, <a href="dom_loadxmldoc.html">loadXMLDoc()</a>, in an external JavaScript is used to load the XML file.</p>
+<p><a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_removechild">Remove an 
+element node</a><br />
+<a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_removecurrent">Remove the 
+current element node</a><br />
+<a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_removetextnode">Remove a 
+text node</a><br />
+<a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_remove_nodevalue">Clear the 
+text of a text node</a><br />
+<a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_removeattribute">Remove an 
+attribute by name</a><br />
+<a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_removeattributenode">Remove 
+attributes by object</a></p>
+<p><a class="example" href="dom_nodes_remove.html">Examples explained</a></p>
+<hr />
+
+<p><b>XML DOM Replace Nodes</b></p>
+
+<p>The examples below use the XML file
+<a target="_blank" href="books.xml">books.xml</a>. <br />
+A function, <a href="dom_loadxmldoc.html">loadXMLDoc()</a>, in an external JavaScript is used to load the XML file.</p>
+<p><a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_replacechild">Replace an 
+element node</a><br />
+<a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_replacedata2">Replace data 
+in a text node</a></p>
+<p><a class="example" href="dom_nodes_replace.html">Examples explained</a></p>
+<hr />
+
+<p><b>XML DOM Create Nodes</b></p>
+
+<p>The examples below use the XML file
+<a target="_blank" href="books.xml">books.xml</a>. <br />
+A function, <a href="dom_loadxmldoc.html">loadXMLDoc()</a>, in an external JavaScript is used to load the XML file.</p>
+<p><a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_createelement1">Create an 
+element node</a><br />
+<a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_createattribute">Create an 
+attribute node using createAttribute </a><br />
+<a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_createattribute3">Create an 
+attribute node using setAttribute </a><br />
+<a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_createelement1">Create a 
+text node</a><br />
+<a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_createcdatasection1">Create 
+a CDATA section node</a><br />
+<a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_createcomment1">Create a 
+comment node</a></p>
+<p><a class="example" href="dom_nodes_create.html">Examples explained</a></p>
+<hr />
+
+<p><b>XML DOM Add Nodes</b></p>
+
+<p>The examples below use the XML file
+<a target="_blank" href="books.xml">books.xml</a>. <br />
+A function, <a href="dom_loadxmldoc.html">loadXMLDoc()</a>, in an external JavaScript is used to load the XML file.</p>
+<p><a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_createelement2">Add a 
+node after the last child node</a><br />
+<a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_insertbefore">Add a node 
+before a specified child node</a><br />
+<a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_createattribute3">Add a new 
+attribute</a><br />
+<a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_insertdata">Add data to a 
+text node</a></p>
+<p><a class="example" href="dom_nodes_add.html">Examples explained</a></p>
+<hr />
+
+<p><b>XML DOM Clone Nodes</b></p>
+
+<p>The examples below use the XML file
+<a target="_blank" href="books.xml">books.xml</a>. <br />
+A function, <a href="dom_loadxmldoc.html">loadXMLDoc()</a>, in an external JavaScript is used to load the XML file.</p>
+<p><a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_clonenode">Copy a node 
+and append it to an existing node</a></p>
+<p><a class="example" href="dom_nodes_clone.html">Examples explained</a></p>
+<hr />
+
+<p><b>XML DOM The XMLHttpRequest Object</b></p>
+
+<p>
+<a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_xmlhttprequest_first">A 
+simple XMLHttpRequest example</a><br />
+Create a simple XMLHttpRequest, and retrieve data from a TXT file.
+</p>
+
+<p>
+<a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_xmlhttprequest_header">
+Retrieve header information with getAllResponseHeaders()</a><br />
+Retrieve header information of a resource (file).
+</p>
+
+<p>
+<a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_xmlhttprequest_lastmodified">
+Retrieve specific header information with getResponseHeader()</a><br />
+Retrieve specific header information of a resource (file).
+</p>
+
+<p>
+<a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_xmlhttprequest_suggest">Retrieve the content of an ASP file</a><br />
+How a web page can communicate with a web server while a user type characters in an input field.
+</p>
+
+<p>
+<a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_xmlhttprequest_database">Retrieve content from a database</a><br />
+How a web page can fetch information from a database with the XMLHttpRequest 
+object.
+</p>
+
+<p>
+<a target="_blank" href="http://www.w3schools.com/dom/tryit.asp?filename=try_dom_xmlhttprequest_xml">Retrieve the content of an XML file</a><br />
+Create an XMLHttpRequest to retrieve data from an XML file and display the data in an HTML table.
+</p>
+
+<p><a class="example" href="dom_httprequest.html">Examples explained</a></p>
+<br />
+<div class="chapter">
+<div class="prev"><a class="chapter" href="dom_summary.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="dom_validate.html">Next Chapter &raquo;</a></div>
+</div>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/dom/dom_examples.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:06:41 GMT -->
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/php/php_secure_mail.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:20:36 GMT -->
+<head>
+<title>PHP Secure E-mail</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1>PHP <span class="color_h1">Secure E-mails</span></h1>
+<div class="chapter">
+<div class="prev"><a class="chapter" href="php_mail.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="php_error.html">Next Chapter &raquo;</a></div>
+</div>
+<hr />
+<p class="intro">There is a weakness in the PHP e-mail script in the previous 
+chapter.</p>
+<hr />
+
+<h2>PHP E-mail Injections</h2>
+<p>First, look at the PHP code from the previous chapter:</p>
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;html&gt;<br />
+&lt;body&gt;<br />
+<br />
+&lt;?php<br />
+if (isset($_REQUEST['email']))<br />
+//if &quot;email&quot; is filled out, send email<br />
+&nbsp;&nbsp;{<br />
+&nbsp;&nbsp;//send email<br />
+&nbsp;&nbsp;$email = $_REQUEST['email'] ;<br />
+&nbsp;&nbsp;$subject = $_REQUEST['subject'] ;<br />
+&nbsp;&nbsp;$message = $_REQUEST['message'] ;<br />
+&nbsp;&nbsp;mail(&quot;someone@example.com&quot;, &quot;Subject: $subject&quot;,<br />
+&nbsp;&nbsp;$message, &quot;From: $email&quot; );<br />
+&nbsp;&nbsp;echo &quot;Thank you for using our mail form&quot;;<br />
+&nbsp;&nbsp;}<br />
+else<br />
+//if &quot;email&quot; is not filled out, display the form<br />
+&nbsp;&nbsp;{<br />
+&nbsp;&nbsp;echo &quot;&lt;form method='post' action='mailform.php'&gt;<br />
+&nbsp;&nbsp;Email: &lt;input name='email' type='text' /&gt;&lt;br /&gt;<br />
+&nbsp;&nbsp;Subject: &lt;input name='subject' type='text' /&gt;&lt;br /&gt;<br />
+&nbsp;&nbsp;Message:&lt;br /&gt;<br />
+&nbsp;&nbsp;&lt;textarea name='message' rows='15' cols='40'&gt;<br />
+&nbsp;&nbsp;&lt;/textarea&gt;&lt;br /&gt;<br />
+&nbsp;&nbsp;&lt;input type='submit' /&gt;<br />
+&nbsp;&nbsp;&lt;/form&gt;&quot;;<br />
+&nbsp;&nbsp;}<br />
+?&gt;<br />
+<br />
+&lt;/body&gt;<br />
+&lt;/html&gt;
+</td></tr>
+</table>
+<p>The problem with the code above is that unauthorized users can insert data into the 
+mail headers via the input form.</p>
+<p>What happens if the user adds the following text to the email input field in 
+the form?</p>
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+someone@example.com%0ACc:person2@example.com<br />
+%0ABcc:person3@example.com,person3@example.com,<br />
+anotherperson4@example.com,person5@example.com<br />
+%0ABTo:person6@example.com
+</td></tr>
+</table>
+<p>The mail() function puts the text above into the mail headers as usual, and now the 
+header has an extra Cc:, Bcc:, and To: field. When the user clicks the submit 
+button, the e-mail will be sent to all of the addresses above!</p>
+<hr />
+
+<h2>PHP Stopping E-mail Injections</h2>
+<p>The best way to stop e-mail injections is to validate the input.</p>
+<p>The code below is the same as in the previous chapter, but now we have added an input validator 
+that checks the email field in the form:</p>
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;html&gt;<br />
+&lt;body&gt;<br />
+&lt;?php<br />
+function spamcheck($field)<br />
+&nbsp;&nbsp;{<br />
+&nbsp;&nbsp;//filter_var() sanitizes the e-mail<br />
+&nbsp;&nbsp;//address using FILTER_SANITIZE_EMAIL<br />
+&nbsp;&nbsp;$field=filter_var($field, FILTER_SANITIZE_EMAIL);<br />
+<br />
+&nbsp;&nbsp;//filter_var() validates the e-mail<br />
+&nbsp;&nbsp;//address using FILTER_VALIDATE_EMAIL<br />
+&nbsp;&nbsp;if(filter_var($field, FILTER_VALIDATE_EMAIL))<br />
+&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;return TRUE;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+&nbsp;&nbsp;else<br />
+&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;return FALSE;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+&nbsp;&nbsp;}<br />
+<br />
+if (isset($_REQUEST['email']))<br />
+&nbsp;&nbsp;{//if &quot;email&quot; is filled out, proceed<br />
+<br />
+&nbsp;&nbsp;//check if the email address is invalid<br />
+&nbsp;&nbsp;$mailcheck = spamcheck($_REQUEST['email']);<br />
+&nbsp;&nbsp;if ($mailcheck==FALSE)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;echo &quot;Invalid input&quot;;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+&nbsp;&nbsp;else<br />
+&nbsp;&nbsp;&nbsp;&nbsp;{//send email<br />
+&nbsp;&nbsp;&nbsp;&nbsp;$email = $_REQUEST['email'] ;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;$subject = $_REQUEST['subject'] ;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;$message = $_REQUEST['message'] ;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;mail(&quot;someone@example.com&quot;, &quot;Subject: $subject&quot;,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;$message, &quot;From: $email&quot; );<br />
+&nbsp;&nbsp;&nbsp;&nbsp;echo &quot;Thank you for using our mail form&quot;;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+&nbsp;&nbsp;}<br />
+else<br />
+&nbsp;&nbsp;{//if &quot;email&quot; is not filled out, display the form<br />
+&nbsp;&nbsp;echo &quot;&lt;form method='post' action='mailform.php'&gt;<br />
+&nbsp;&nbsp;Email: &lt;input name='email' type='text' /&gt;&lt;br /&gt;<br />
+&nbsp;&nbsp;Subject: &lt;input name='subject' type='text' /&gt;&lt;br /&gt;<br />
+&nbsp;&nbsp;Message:&lt;br /&gt;<br />
+&nbsp;&nbsp;&lt;textarea name='message' rows='15' cols='40'&gt;<br />
+&nbsp;&nbsp;&lt;/textarea&gt;&lt;br /&gt;<br />
+&nbsp;&nbsp;&lt;input type='submit' /&gt;<br />
+&nbsp;&nbsp;&lt;/form&gt;&quot;;<br />
+&nbsp;&nbsp;}<br />
+?&gt;<br />
+<br />
+&lt;/body&gt;<br />
+&lt;/html&gt;
+</td></tr>
+</table>
+
+<p>In the code above we use PHP filters to validate input:</p>
+<ul>
+	<li>The FILTER_SANITIZE_EMAIL filter removes all illegal e-mail characters 
+	from a string</li>
+	<li>The FILTER_VALIDATE_EMAIL filter validates value as an e-mail address</li>
+</ul>
+<p>You can read more about filters in our <a href="php_filter.html">PHP Filter</a> 
+chapter.<br /></p>
+<br />
+<div class="chapter">
+<div class="prev"><a class="chapter" href="php_mail.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="php_error.html">Next Chapter &raquo;</a></div>
+</div>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/php/php_secure_mail.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:20:36 GMT -->
+</html>

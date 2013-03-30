@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/aspnet/control_htmltablerow.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:50:23 GMT -->
+<head>
+
+<title>ASP.NET HtmlTableRow Control</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1>ASP.NET <span class="color_h1">HtmlTableRow</span> Control</h1>
+<hr />
+<a href="aspnet_refhtmlcontrols.html"><img class="navup" src="http://www.w3schools.com/images/up.gif" alt="HTML Server Controls" border="0" /> HTML Server Controls</a>
+<hr />
+
+<h2>Definition and Usage</h2>
+<p>The HtmlTableRow control is used to control a &lt;tr&gt; element. In HTML, the &lt;tr&gt; 
+element is used to create a table row.</p>
+<hr />
+
+<h2>Properties</h2>
+<table class="reference">
+<tr>
+    <th width="25%" align="left">Property</th>
+    <th width="75%" align="left">Description</th>
+  </tr>
+  <tr>
+    <td>Align</td>
+    <td>The alignment of the row</td>
+  </tr>
+  <tr>
+    <td>Attributes</td>
+    <td>Returns all attribute name and value pairs of the element</td>
+  </tr>
+  <tr>
+    <td>BGColor</td>
+    <td>The background color of the row</td>
+  </tr>
+  <tr>
+    <td>BorderColor</td>
+    <td>The color of the borders</td>
+  </tr>
+  <tr>
+    <td>Cells</td>
+    <td>Returns the cells in this row</td>
+  </tr>
+  <tr>
+    <td>Disabled</td>
+    <td>A Boolean value that indicates whether or not the control should be disabled. Default is false</td>
+  </tr>
+  <tr>
+    <td>Height</td>
+    <td>The height of the row</td>
+  </tr>
+  <tr>
+    <td>id</td>
+    <td>A unique id for the control</td>
+  </tr>
+  <tr>
+    <td>InnerHtml</td>
+    <td>Sets or returns the content between the opening and closing tags of the HTML element.
+    Special characters are not automatically converted to HTML entities</td>
+  </tr>
+  <tr>
+    <td>InnerText</td>
+    <td>Sets or returns all text between the opening and closing tags of the HTML element.
+    Special characters are automatically converted to HTML entities</td>
+  </tr>
+  <tr>
+    <td>runat</td>
+    <td>Specifies that the control is a server control. Must be set to &quot;server&quot;</td>
+  </tr>
+  <tr>
+    <td>Style</td>
+    <td>Sets or returns the CSS properties that are applied to the control</td>
+  </tr>
+  <tr>
+    <td>TagName</td>
+    <td>Returns the element tag name</td>
+  </tr>
+  <tr>
+    <td>VAlign</td>
+    <td>The vertical alignment of cells in the row</td>
+  </tr>
+  <tr>
+    <td>Visible</td>
+    <td>A Boolean value that indicates whether or not the control should be visible</td>
+  </tr>
+</table>
+<br />
+<hr />
+
+<h2>Examples</h2>
+<p><a target="_blank" href="showasp18ce.html?filename=demo_htmltable">HTMLTable</a><br />
+Declare two HtmlSelect controls, one HtmlInputButton control, and one HtmlTable control in an .aspx file (remember to embed the controls 
+inside an HtmlForm control). The user may choose number of cells and rows. When the submit button is triggered, the submit subroutine is executed. The submit 
+subroutine generates the table based on what the user did input.</p>
+
+<p><a target="_blank" href="showasp7056.html?filename=demo_htmltable2">HTMLTable 2</a><br />
+Declare an HtmlTable control and an HtmlInputButton control in an .aspx file (remember to embed the controls 
+inside an HtmlForm control). When the submit button is triggered, the submit subroutine is executed. The submit subroutine modifies the background color and 
+the border color of the table, it also changes the contents of the cells.</p>
+<hr />
+<a href="aspnet_refhtmlcontrols.html"><img class="navup" src="http://www.w3schools.com/images/up.gif" alt="HTML Server Controls" border="0" /> HTML Server Controls</a>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/aspnet/control_htmltablerow.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:50:23 GMT -->
+</html>

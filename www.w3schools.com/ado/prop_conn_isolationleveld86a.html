@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/ado/prop_conn_isolationlevel.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:50:06 GMT -->
+<head>
+
+<title>ADO IsolationLevel Property</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+
+<h1>ADO <span class="color_h1">IsolationLevel</span> Property</h1>
+<hr />
+<a href="ado_ref_connection.html"><img class="navup" src="http://www.w3schools.com/images/up.gif" alt="Connection Object Reference" border="0" /> Complete Connection Object Reference</a>
+<hr />
+<p>The IsolationLevel property sets or returns the isolation level of a Connection object.
+The value is an <a href="#isolationlevelenum">IsolationLevelEnum</a> value.
+Default is adXactChaos.
+</p>
+
+<p><b>Note:</b> The IsolationLevel settings will not work until next time BeginTrans
+is called.
+</p>
+
+<h3>Syntax
+</h3>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+objconn.IsolationLevel
+</td></tr>
+</table>
+<h3>Example</h3>
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;%<br />
+set conn=Server.CreateObject(&quot;ADODB.Connection&quot;)<br />
+conn.Provider=&quot;Microsoft.Jet.OLEDB.4.0&quot;<br />
+conn.IsolationLevel=adXactIsolated<br />
+conn.Open(Server.Mappath(&quot;northwind.mdb&quot;))<br />
+<br />
+response.write(conn.IsolationLevel)<br />
+<br />
+conn.Close<br />
+%&gt;
+</td></tr>
+</table>
+<br />
+<hr />
+<a name="isolationlevelenum"><h3>IsolationLevelEnum</h3></a>
+<table class="reference">
+    <tr>
+      <th valign="top" width="30%">Constant</th>
+      <th valign="top" width="10%">Value</th>
+      <th valign="top" width="60%">Description</th>
+    </tr>
+    <tr>
+      <td valign="top">adXactUnspecified</td>
+      <td valign="top">-1</td>
+      <td valign="top">Cannot use the specified isolation level, because the
+        provider is using a different isolation level, and that level cannot be
+        determined.</td>
+    </tr>
+    <tr>
+      <td valign="top">adXactChaos</td>
+      <td valign="top">16</td>
+      <td valign="top">Cannot overwrite higher level transactions.</td>
+    </tr>
+    <tr>
+      <td valign="top">adXactBrowse</td>
+      <td valign="top">256</td>
+      <td valign="top">Can view uncommitted changes in other transactions.</td>
+    </tr>
+    <tr>
+      <td valign="top">adXactReadUncommitted</td>
+      <td valign="top">256</td>
+      <td valign="top">Same as adXactBrowse.</td>
+    </tr>
+    <tr>
+      <td valign="top">adXactCursorStability</td>
+      <td valign="top">4096</td>
+      <td valign="top">Can view committed changes in other transactions.</td>
+    </tr>
+    <tr>
+      <td valign="top">adXactReadCommitted</td>
+      <td valign="top">4096</td>
+      <td valign="top">Same as adXactCursorStability.</td>
+    </tr>
+    <tr>
+      <td valign="top">adXactRepeatableRead</td>
+      <td valign="top">65536</td>
+      <td valign="top">Cannot see changes in other transactions, but you can
+        requery</td>
+    </tr>
+    <tr>
+      <td valign="top">adXactIsolated</td>
+      <td valign="top">1048576</td>
+      <td valign="top">Your transactions are isolated from all other
+        transactions.</td>
+    </tr>
+    <tr>
+      <td valign="top">adXactSerializable</td>
+      <td valign="top">1048576</td>
+      <td valign="top">Same as adXactIsolated.</td>
+    </tr>
+</table>
+<br />
+<hr />
+<a href="ado_ref_connection.html"><img class="navup" src="http://www.w3schools.com/images/up.gif" alt="Connection Object Reference" border="0" /> Complete Connection Object Reference</a>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/ado/prop_conn_isolationlevel.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:50:06 GMT -->
+</html>

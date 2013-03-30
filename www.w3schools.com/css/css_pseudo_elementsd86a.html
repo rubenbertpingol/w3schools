@@ -1,0 +1,366 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/css/css_pseudo_elements.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:10:45 GMT -->
+<head>
+
+<title>CSS Pseudo-elements</title>
+<style type="text/css">
+div.ex:first-letter 
+{
+color: #ff0000;
+font-size:xx-large;
+}
+div.ex2:first-line 
+{
+color:#0000ff;
+font-variant:small-caps;
+}
+div.ex1:first-letter 
+{
+color: #ff0000;
+font-size:xx-large;
+}
+div.ex1:first-line 
+{
+color: #0000ff;
+}
+</style>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1>CSS <span class="color_h1">Pseudo-elements</span></h1>
+<div class="chapter">
+<div class="prev"><a class="chapter" href="css_pseudo_classes.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="css_navbar.html">Next Chapter &raquo;</a></div>
+</div>
+<hr />
+<p class="intro">CSS pseudo-elements are used to add special effects to some selectors.</p>
+<hr />
+
+<h2>Syntax</h2>
+<p>The syntax of pseudo-elements:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>selector:pseudo-element {property:value;}</td></tr></table>
+
+<p>CSS classes can also be used with pseudo-elements:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>selector.class:pseudo-element {property:value;}</td></tr></table>
+<br />
+<hr />
+
+<h2>The :first-line Pseudo-element</h2>
+<p>The &quot;first-line&quot; pseudo-element is used to add a special style to the first 
+line of a text.</p>
+
+<p>In the following example the browser formats the first line of text in a p 
+element according to the style in the &quot;first-line&quot; pseudo-element (where the browser breaks the line,
+depends on the size of the browser window):</p>
+
+<table class="example" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+<h2 class="example">Example</h2>
+<table class="example_code notranslate" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+p:first-line <br />
+{<br />
+color:#ff0000;<br />
+font-variant:small-caps;<br />
+}</td></tr></table>
+<br /><a target="_blank" href="http://www.w3schools.com/css/tryit.asp?filename=trycss_firstline" class="tryitbtn">Try it yourself &raquo;</a>
+</td></tr></table>
+
+<p><b>Note:</b> The &quot;first-line&quot; pseudo-element can only be used with block-level elements.</p>
+<p><b>Note:</b> The following properties apply to the &quot;first-line&quot; 
+pseudo-element:</p>
+<ul>
+  <li> font properties</li>
+  <li>color properties&nbsp;</li>
+  <li> background properties</li>
+  <li>word-spacing</li>
+  <li>letter-spacing</li>
+  <li>text-decoration</li>
+  <li>vertical-align</li>
+  <li>text-transform</li>
+  <li>line-height</li>
+  <li>clear</li>
+</ul>
+<hr />
+
+<h2>The :first-letter Pseudo-element</h2>
+<p>The &quot;first-letter&quot; pseudo-element is used to add a special style to the first letter of 
+a text:</p>
+
+<table class="example" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+<h2 class="example">Example</h2>
+<table class="example_code notranslate" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+p:first-letter <br />
+{<br />
+color:#ff0000;<br />
+font-size:xx-large;<br />
+}</td></tr></table>
+<br /><a target="_blank" href="http://www.w3schools.com/css/tryit.asp?filename=trycss_firstletter" class="tryitbtn">Try it yourself &raquo;</a>
+</td></tr></table>
+
+<p><b>Note:</b> The &quot;first-letter&quot; pseudo-element can only be used with block-level elements.</p>
+<p><b>Note:</b> The following properties apply to the &quot;first-letter&quot; pseudo- element:&nbsp;</p>
+<ul>
+  <li> font properties</li>
+  <li> color properties&nbsp;</li>
+  <li> background properties</li>
+  <li>margin properties</li>
+  <li>padding properties</li>
+  <li>border properties</li>
+  <li>text-decoration</li>
+  <li>vertical-align (only if &quot;float&quot; is &quot;none&quot;)</li>
+  <li>text-transform</li>
+  <li>line-height</li>
+  <li>float</li>
+  <li>clear</li>
+</ul>
+<hr />
+
+<h2>Pseudo-elements and CSS Classes</h2>
+<p>Pseudo-elements can be combined with CSS classes:&nbsp;</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+p.article:first-letter {color:#ff0000;}<br /><br />
+&lt;p class=&quot;article&quot;&gt;A paragraph in an article&lt;/p&gt;</td></tr></table>
+
+<p>The example above will display the first letter of all paragraphs with class=&quot;article&quot;, 
+in red.</p>
+<hr />
+
+<h2>Multiple Pseudo-elements</h2>
+<p>Several pseudo-elements can also be combined.</p>
+
+<p>In the following example, the first letter of a paragraph will be red, in 
+an xx-large font size. The rest of the first line will be blue, and in 
+small-caps. The rest of the paragraph will be the default font size and color:</p>
+
+
+<table class="example" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+<h2 class="example">Example</h2>
+<table class="example_code notranslate" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+p:first-letter<br />
+{<br />
+color:#ff0000;<br />
+font-size:xx-large;<br />
+}<br />
+p:first-line <br />
+{<br />
+color:#0000ff;<br />
+font-variant:small-caps;<br />
+}</td></tr></table>
+<br /><a target="_blank" href="http://www.w3schools.com/css/tryit.asp?filename=trycss_firstline_letter" class="tryitbtn">Try it yourself &raquo;</a>
+</td></tr></table>
+<br />
+<hr />
+
+<h2>CSS - The :before Pseudo-element</h2>
+<p>The &quot;:before&quot; pseudo-element can be used to insert some content before the content of an element.</p>
+<p>The following example inserts an image before each &lt;h1&gt; element:</p>
+
+
+<table class="example" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+<h2 class="example">Example</h2>
+<table class="example_code notranslate" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+h1:before <br />
+{<br />
+content:url(smiley.gif);<br />
+}</td></tr></table>
+<br /><a target="_blank" href="http://www.w3schools.com/css/tryit.asp?filename=trycss_before" class="tryitbtn">Try it yourself &raquo;</a>
+</td></tr></table>
+<br />
+<hr />
+
+<h2>CSS - The :after Pseudo-element</h2>
+<p>The &quot;:after&quot; pseudo-element can be used to insert some content after the content of an element.</p>
+<p>The following example inserts an image after each &lt;h1&gt; element:</p>
+
+
+<table class="example" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+<h2 class="example">Example</h2>
+<table class="example_code notranslate" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+h1:after<br />
+{<br />
+content:url(smiley.gif);<br />
+}</td></tr></table>
+<br /><a target="_blank" href="http://www.w3schools.com/css/tryit.asp?filename=trycss_after" class="tryitbtn">Try it yourself &raquo;</a>
+</td></tr></table>
+<br />
+<hr />
+
+<h2>All CSS Pseudo Classes/Elements</h2>
+
+<table class="reference">
+  <tr>
+    <th width="20%" align="left">Selector</th>
+    <th width="17%" align="left">Example</th>
+    <th width="63%" align="left">Example description</th>
+  </tr>
+  <tr>
+    <td><a href="../cssref/sel_link.html">:link</a></td>
+    <td class="notranslate">a:link</td>
+    <td>Selects all unvisited links</td>
+  </tr>
+	<tr>
+    <td><a href="../cssref/sel_visited.html">:visited</a></td>
+    <td class="notranslate">a:visited</td>
+    <td>Selects all visited links</td>
+  </tr>
+	<tr>
+    <td><a href="../cssref/sel_active.html">:active</a></td>
+    <td class="notranslate">a:active</td>
+    <td>Selects the active link</td>
+  </tr>
+	<tr>
+    <td><a href="../cssref/sel_hover.html">:hover</a></td>
+    <td class="notranslate">a:hover</td>
+    <td>Selects links on mouse over</td>
+  </tr>
+	<tr>
+    <td><a href="../cssref/sel_focus.html">:focus</a></td>
+    <td class="notranslate">input:focus</td>
+    <td>Selects the input element which has focus</td>
+  </tr>
+	<tr>
+    <td><a href="../cssref/sel_firstletter.html">:first-letter</a></td>
+    <td class="notranslate">p:first-letter</td>
+    <td>Selects the first letter of every &lt;p&gt; element</td>
+  </tr>
+	<tr>
+    <td><a href="../cssref/sel_firstline.html">:first-line</a></td>
+    <td class="notranslate">p:first-line</td>
+    <td>Selects the first line of every &lt;p&gt; element</td>
+  </tr>
+  <tr>
+    <td><a href="../cssref/sel_firstchild.html">:first-child</a></td>
+    <td class="notranslate">p:first-child</td>
+    <td>Selects every &lt;p&gt; elements that is the first child of its parent</td>
+  </tr>
+	<tr>
+    <td><a href="../cssref/sel_before.html">:before</a></td>
+    <td class="notranslate">p:before</td>
+    <td>Insert content before every &lt;p&gt; element</td>
+  </tr>
+	<tr>
+    <td><a href="../cssref/sel_after.html">:after</a></td>
+    <td class="notranslate">p:after</td>
+    <td>Insert content after every &lt;p&gt; element</td>
+  </tr>
+	<tr>
+    <td><a href="../cssref/sel_lang.html">:lang(<i>language</i>)</a></td>
+    <td class="notranslate">p:lang(it)</td>
+    <td>Selects every &lt;p&gt; element with a lang attribute value starting 
+	with &quot;it&quot;</td>
+  </tr>
+</table>
+<br />
+
+<div class="chapter">
+<div class="prev"><a class="chapter" href="css_pseudo_classes.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="css_navbar.html">Next Chapter &raquo;</a></div>
+</div>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/css/css_pseudo_elements.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:10:46 GMT -->
+</html>

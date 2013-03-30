@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/xml/xml_examples.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:06:41 GMT -->
+<head>
+
+<title>XML Examples</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1>XML <span class="color_h1">Examples</span></h1>
+<div class="chapter">
+<div class="prev"><a class="chapter" href="xml_summary.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="xml_quiz.html">Next Chapter &raquo;</a></div>
+</div>
+<hr />
+<p class="intro">These examples demonstrate XML files, XML formatting and XML 
+transformation (XSLT).</p>
+<p class="intro">They also demonstrate 
+JavaScript used together with XML (AJAX).</p>
+<hr />
+<p><b>Viewing XML Files</b></p>
+<p>
+<a target="_blank" href="note.xml">View a simple XML file (note.xml)</a><br />
+<a target="_blank" href="note_error.xml">View the same XML file with an error</a><br />
+<a target="_blank" href="cd_catalog.xml">View an XML CD catalog</a><br />
+<a target="_blank" href="plant_catalog.xml">View an XML plant catalog</a><br />
+<a target="_blank" href="simple.xml">View an XML food menu</a>
+</p>
+<p><b><a href="xml_view.html">Examples explained</a></b></p>
+<hr />
+<p><b>XML and CSS</b></p>
+<p>
+<a target="_blank" href="cd_catalog.xml">View an XML CD catalog</a><br />
+<a target="_blank" href="cd_catalog.txt">View the corresponding CSS file</a><br />
+<a target="_blank" href="cd_catalog_with_css.xml">Display the CD catalog formatted with the CSS file</a>
+</p>
+<p><b><a href="xml_display.html">Examples explained</a></b></p>
+<hr />
+<p><b>XML and XSLT</b></p>
+<p>
+<a target="_blank" href="simple.xml">View an XML food menu</a><br />
+<a target="_blank" href="simple.xsl">View the corresponding XSLT stylesheet</a><br />
+<a target="_blank" href="simplexsl.xml">Display the food menu styled with the XSLT stylesheet</a></p>
+<p><b><a href="xml_xsl.html">Examples explained</a></b></p>
+<hr />
+<p><b>Parsing XML and the XML DOM</b></p>
+<p>
+<a target="_blank" href="note.xml">View a simple XML file (note.xml)</a><br />
+<a target="_blank" href="tryit6ff2.html?filename=tryxml_parsertest">Parse the XML file - Crossbrowser example</a><br />
+<a target="_blank" href="tryit9085.html?filename=tryxml_parsertest2">Parse an XML string - Crossbrowser example</a>
+</p>
+<p>
+<b><a href="xml_dom.html">Examples explained</a></b></p>
+<hr />
+<p><b>XML to HTML</b></p>
+<p>
+<a target="_blank" href="cd_catalog.xml">View an XML CD catalog</a><br />
+<a target="_blank" href="tryitdca8.html?filename=tryxml_display_table">Display XML data in an HTML table</a></p>
+<p><b><a href="xml_to_html.html">Examples explained</a></b></p>
+<hr />
+
+<p><b>XML Applications</b></p>
+<p>
+<a target="_blank" href="cd_catalog.xml">View an XML CD catalog</a><br />
+<a target="_blank" href="tryit1ac8.html?filename=tryxml_app_first">Show XML data inside an HTML div element</a><br />
+<a target="_blank" href="tryitd2d0.html?filename=tryxml_app_navigate">Navigate through XML nodes</a><br />
+<a target="_blank" href="tryit91b2.html?filename=tryxml_app">A simple CD catalog application</a>
+</p>
+<p><b><a href="xml_applications.html">Examples explained</a></b></p>
+<hr />
+<p><b>XML Output From a Server</b></p>
+<p><a target="_blank" href="note.asp">See how ASP can return XML</a><br />
+<a target="_blank" href="note.php">See how PHP can return XML</a><br />
+<a target="_blank" href="guestbook.asp">View XML output from a database</a>
+</p>
+<p><b><a href="xml_server.html">Examples explained</a></b></p>
+<hr />
+<p><b>XML DOM Advanced</b></p>
+<p><a target="_blank" href="tryit78fd.html?filename=tryxml_dom_getelement">Get the value of an XML element</a><br />
+<a target="_blank" href="tryit9758.html?filename=tryxml_dom_getattribute">Get the value of an XML attribute</a><br />
+<a target="_blank" href="tryitea0a.html?filename=tryxml_dom_changeelement">Change the value of an XML element</a><br />
+<a target="_blank" href="tryita3f1.html?filename=tryxml_dom_addattribute">Add a new attribute to an XML element</a><br />
+<a target="_blank" href="tryit2dba.html?filename=tryxml_dom_createelement">Create a new XML element</a><br />
+<a target="_blank" href="tryitf79f.html?filename=tryxml_dom_removeelement">Remove an XML element</a></p>
+
+<p><b><a href="xml_dom_advanced.html">Examples explained</a></b></p>
+<br />
+<div class="chapter">
+<div class="prev"><a class="chapter" href="xml_summary.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="xml_quiz.html">Next Chapter &raquo;</a></div>
+</div>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/xml/xml_examples.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:06:41 GMT -->
+</html>

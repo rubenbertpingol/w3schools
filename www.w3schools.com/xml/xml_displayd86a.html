@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/xml/xml_display.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:16:18 GMT -->
+<head>
+
+<title>XML and CSS</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1>Displaying <span class="color_h1">XML with CSS</span></h1>
+<div class="chapter">
+<div class="prev"><a class="chapter" href="xml_view.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="xml_xsl.html">Next Chapter &raquo;</a></div>
+</div>
+<hr />
+<p class="intro">With CSS (Cascading Style Sheets) you can add display information to an XML document.</p>
+<hr />
+
+<h2>Displaying your XML Files with CSS?</h2>
+<p>It is possible to use CSS to format an XML document.</p>
+<p>Below is an example of how to use a CSS style sheet to format an XML document:</p>
+<p>Take a look at this XML file: <a target="_blank" href="cd_catalog.xml">The CD catalog</a></p>
+<p>Then look at this style sheet: <a target="_blank" href="cd_catalog.txt">The CSS file</a></p>
+<p>Finally, view: <a target="_blank" href="cd_catalog_with_css.xml">The CD catalog formatted with the CSS file</a></p>
+
+<p>Below is a fraction of the XML file. The second line&nbsp;links the XML file to the CSS file:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;<br />
+<span style="color:red">&lt;?xml-stylesheet type=&quot;text/css&quot; href=&quot;cd_catalog.css&quot;?&gt;</span><br />
+&lt;CATALOG&gt;<br />
+  &nbsp;
+  &lt;CD&gt;<br />
+    &nbsp;&nbsp;&nbsp;
+    &lt;TITLE&gt;Empire Burlesque&lt;/TITLE&gt;<br />
+    &nbsp;&nbsp;&nbsp;
+    &lt;ARTIST&gt;Bob Dylan&lt;/ARTIST&gt;<br />
+    &nbsp;&nbsp;&nbsp;
+    &lt;COUNTRY&gt;USA&lt;/COUNTRY&gt;<br />
+    &nbsp;&nbsp;&nbsp;
+    &lt;COMPANY&gt;Columbia&lt;/COMPANY&gt;<br />
+    &nbsp;&nbsp;&nbsp;
+    &lt;PRICE&gt;10.90&lt;/PRICE&gt;<br />
+    &nbsp;&nbsp;&nbsp;
+    &lt;YEAR&gt;1985&lt;/YEAR&gt;<br />
+  &nbsp;
+  &lt;/CD&gt;<br />
+  &nbsp;
+  &lt;CD&gt;<br />
+    &nbsp;&nbsp;&nbsp;
+    &lt;TITLE&gt;Hide your heart&lt;/TITLE&gt;<br />
+    &nbsp;&nbsp;&nbsp;
+    &lt;ARTIST&gt;Bonnie Tyler&lt;/ARTIST&gt;<br />
+    &nbsp;&nbsp;&nbsp;
+    &lt;COUNTRY&gt;UK&lt;/COUNTRY&gt;<br />
+    &nbsp;&nbsp;&nbsp;
+    &lt;COMPANY&gt;CBS Records&lt;/COMPANY&gt;<br />
+    &nbsp;&nbsp;&nbsp;
+    &lt;PRICE&gt;9.90&lt;/PRICE&gt;<br />
+    &nbsp;&nbsp;&nbsp;
+    &lt;YEAR&gt;1988&lt;/YEAR&gt;<br />
+  &nbsp;
+  &lt;/CD&gt;<br />
+.<br />
+.<br />
+.<br />
+&lt;/CATALOG&gt;</td></tr></table>
+<p>Formatting XML with CSS is not the most common method.</p>
+<p>W3C recommends using XSLT instead. See the next chapter.</p>
+<br />
+<div class="chapter">
+<div class="prev"><a class="chapter" href="xml_view.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="xml_xsl.html">Next Chapter &raquo;</a></div>
+</div>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+
+<!-- Mirrored from www.w3schools.com/xml/xml_display.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:16:18 GMT -->
+</html>

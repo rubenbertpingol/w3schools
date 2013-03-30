@@ -1,0 +1,51 @@
+table.browsersupport
+{
+border:1px solid #c3c3c3;
+border-collapse:collapse;
+}
+
+table.browsersupport th
+{
+background-color:#e5eecc;
+/*background-color:#98bf21;
+color:#ffffff;*/
+border:1px solid #c3c3c3;
+padding:3px;
+vertical-align:middle;
+}
+
+table.browsersupport td 
+{
+border:1px solid #c3c3c3;
+padding:3px;
+vertical-align:middle;
+width:60px;
+height:32px;
+background-position:center;
+background-repeat:no-repeat;
+border:1px solid #dadada;
+text-align:center;
+}
+
+table.browsersupport td.bsProperty
+{
+font-family:courier new;
+white-space:nowrap;
+text-align:left;
+}
+
+table.browsersupport .bsIE			{background-image:url('http://www.w3schools.com/images/compatible_ie.gif');}
+table.browsersupport .bsFirefox		{background-image:url('http://www.w3schools.com/images/compatible_firefox.gif')}
+table.browsersupport .bsChrome		{background-image:url('http://www.w3schools.com/images/compatible_chrome.gif');}
+table.browsersupport .bsSafari		{background-image:url('http://www.w3schools.com/images/compatible_safari.gif');}
+table.browsersupport .bsOpera		{background-image:url('http://www.w3schools.com/images/compatible_opera.gif')}
+table.browsersupport .bsNoIE		{background-image:url('http://www.w3schools.com/images/incompatible_ie.gif');}
+table.browsersupport .bsNoFirefox	{background-image:url('http://www.w3schools.com/images/incompatible_firefox.gif')}
+table.browsersupport .bsNoChrome	{background-image:url('http://www.w3schools.com/images/incompatible_chrome.gif');}
+table.browsersupport .bsNoSafari	{background-image:url('http://www.w3schools.com/images/incompatible_safari.gif');}
+table.browsersupport .bsNoOpera		{background-image:url('http://www.w3schools.com/images/incompatible_opera.gif')}
+table.browsersupport .bsPreIE		{background-image:url('http://www.w3schools.com/images/precompatible_ie.gif')}
+table.browsersupport .bsPreFirefox	{background-image:url('http://www.w3schools.com/images/precompatible_firefox.gif')}
+table.browsersupport .bsPreChrome	{background-image:url('http://www.w3schools.com/images/precompatible_chrome.gif');}
+table.browsersupport .bsPreSafari	{background-image:url('http://www.w3schools.com/images/precompatible_safari.gif');}
+table.browsersupport .bsPreOpera	{background-image:url('http://www.w3schools.com/images/precompatible_opera.gif')}

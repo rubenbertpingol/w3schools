@@ -1,0 +1,265 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/php/php_ref_filter.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:23:57 GMT -->
+<head>
+<title>PHP Filter Functions</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1>PHP <span class="color_h1">Filter</span> Functions</h1>
+<div class="chapter">
+<div class="prev"><a class="chapter" href="php_ref_filesystem.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="php_ref_ftp.html">Next Chapter &raquo;</a></div>
+</div>
+<hr />
+<h2>PHP Filter Introduction</h2>
+<p>This PHP filters is used to validate and filter data coming from insecure sources, 
+like user input.</p>
+<hr />
+
+<h2>Installation</h2>
+<p>The filter functions are part of the PHP core. There is no installation needed 
+to use these functions.</p>
+<hr />
+
+<h2>PHP Filter Functions</h2>
+<p><b>PHP</b>: indicates the earliest version of PHP that supports the 
+  function.</p>
+<table class="reference">
+  <tr>
+    <th width="30%" align="left" valign="top">Function</th>
+    <th width="65%" align="left" valign="top">Description</th>
+    <th width="5%" align="left" valign="top">PHP</th>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_filter_has_var.html">filter_has_var()</a></td>
+    <td valign="top">Checks if a variable of a specified input type exist</td>
+    <td valign="top">5</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_filter_id.html">filter_id()</a></td>
+    <td valign="top">Returns the ID number of a specified filter</td>
+    <td valign="top">5</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_filter_input.html">filter_input()</a></td>
+    <td valign="top">Get input from outside the script and filter it</td>
+    <td valign="top">5</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_filter_input_array.html">filter_input_array()</a></td>
+    <td valign="top">Get multiple inputs from outside the script and filters 
+	them</td>
+    <td valign="top">5</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_filter_list.html">filter_list()</a></td>
+    <td valign="top">Returns an array of all supported filters</td>
+    <td valign="top">5</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_filter_var_array.html">filter_var_array()</a></td>
+    <td valign="top">Get multiple variables and filter them</td>
+    <td valign="top">5</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_filter_var.html">filter_var()</a></td>
+    <td valign="top">Get a variable and filter it</td>
+    <td valign="top">5</td>
+  </tr>
+  </table>
+<br />
+<hr>
+
+<h2>PHP Filters</h2>
+<table class="reference">
+  <tr>
+    <th width="50%" align="left" valign="top">ID Name</th>
+	<th width="50%" align="left" valign="top">Description</th>
+  </tr>
+			<tr>
+				<td valign="top"><a href="filter_callback.html">FILTER_CALLBACK</a></td>
+				<td valign="top">Call a user-defined function to filter data</td>
+			</tr>
+			<tr>
+				<td valign="top"><a href="filter_sanitize_string.html">FILTER_SANITIZE_STRING</a></td>
+				<td valign="top">Strip tags, optionally strip or encode special characters</td>
+			</tr>
+	<tr>
+				<td valign="top"><a href="filter_sanitize_stripped.html">FILTER_SANITIZE_STRIPPED</a></td>
+				<td valign="top">Alias of &quot;string&quot; filter</td>
+			</tr>
+	<tr>
+				<td valign="top"><a href="filter_sanitize_encoded.html">FILTER_SANITIZE_ENCODED</a></td>
+				<td valign="top">URL-encode string, optionally strip or encode special 
+				characters</td>
+			</tr>
+	<tr>
+				<td valign="top"><a href="filter_sanitize_special_chars.html">FILTER_SANITIZE_SPECIAL_CHARS</a></td>
+				<td valign="top">HTML-escape '&quot;&lt;&gt;&amp; and characters with ASCII value less than 
+				32</td>
+			</tr>
+	<tr>
+				<td valign="top"><a href="filter_sanitize_email.html">FILTER_SANITIZE_EMAIL</a></td>
+				<td valign="top">Remove all characters, except letters, digits and !#$%&amp;'*+-/=?^_`{|}~@.[]</td>
+			</tr>
+	<tr>
+				<td valign="top"><a href="filter_sanitize_url.html">FILTER_SANITIZE_URL</a></td>
+				<td valign="top">Remove all characters, except letters, digits and $-_.+!*'(),{}|\\^~[]`&lt;&gt;#%&quot;;/?:@&amp;=</td>
+			</tr>
+	<tr>
+				<td valign="top"><a href="filter_sanitize_number_int.html">FILTER_SANITIZE_NUMBER_INT</a></td>
+				<td valign="top">Remove all characters, except digits and +-</td>
+			</tr>
+	<tr>
+				<td valign="top"><a href="filter_sanitize_number_float.html">FILTER_SANITIZE_NUMBER_FLOAT</a></td>
+				<td valign="top">Remove all characters, except digits, +- and optionally .,eE</td>
+			</tr>
+	<tr>
+				<td valign="top"><a href="filter_sanitize_magic_quotes.html">FILTER_SANITIZE_MAGIC_QUOTES</a></td>
+				<td valign="top">Apply addslashes()</td>
+			</tr>
+	<tr>
+				<td valign="top"><a href="filter_unsafe_raw.html">FILTER_UNSAFE_RAW</a></td>
+				<td valign="top">Do nothing, optionally strip or encode special characters</td>
+			</tr>
+			<tr>
+				<td valign="top"><a href="filter_validate_int.html">FILTER_VALIDATE_INT</a></td>
+				<td valign="top">Validate value as integer, optionally from the specified 
+				range</td>
+			</tr>
+			<tr>
+				<td valign="top"><a href="filter_validate_boolean.html">FILTER_VALIDATE_BOOLEAN</a></td>
+				<td valign="top">Return TRUE for &quot;1&quot;, &quot;true&quot;, &quot;on&quot; and &quot;yes&quot;, FALSE for &quot;0&quot;, 
+				&quot;false&quot;, &quot;off&quot;, &quot;no&quot;, and &quot;&quot;, NULL otherwise</td>
+			</tr>
+			<tr>
+				<td valign="top"><a href="filter_validate_float.html">FILTER_VALIDATE_FLOAT</a></td>
+				<td valign="top">Validate value as float</td>
+			</tr>
+			<tr>
+				<td valign="top"><a href="filter_validate_regexp.html">FILTER_VALIDATE_REGEXP</a></td>
+				<td valign="top">Validate value against regexp, a Perl-compatible regular 
+				expression</td>
+			</tr>
+			<tr>
+				<td valign="top"><a href="filter_validate_url.html">FILTER_VALIDATE_URL</a></td>
+				<td valign="top">Validate value as URL, optionally with required components</td>
+			</tr>
+			<tr>
+				<td valign="top"><a href="filter_validate_email.html">FILTER_VALIDATE_EMAIL</a></td>
+				<td valign="top">Validate value as e-mail</td>
+			</tr>
+			<tr>
+				<td valign="top"><a href="filter_validate_ip.html">FILTER_VALIDATE_IP</a></td>
+				<td valign="top">Validate value as IP address, optionally only IPv4 or IPv6 
+				or not from private or reserved ranges</td>
+			</tr>
+			</table>
+<br />
+<div class="chapter">
+<div class="prev"><a class="chapter" href="php_ref_filesystem.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="php_ref_ftp.html">Next Chapter &raquo;</a></div>
+</div>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/php/php_ref_filter.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:23:57 GMT -->
+</html>

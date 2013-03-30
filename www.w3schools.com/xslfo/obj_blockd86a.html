@@ -1,0 +1,488 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/xslfo/obj_block.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:45:36 GMT -->
+<head>
+
+<title>XSL-FO block Object</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+
+<h1>XSL-FO <span class="color_h1">block</span> Object</h1>
+<a href="javascript:history.back()" onclick="history.back();return false"><img src="http://www.w3schools.com/images/btn_exit.gif" width="100" height="20" alt="Back" border="0"/></a>
+<hr />
+
+<h2>Definition and Usage</h2>
+
+<p>The &lt;fo:block&gt; object defines a block of output. Blocks are sequences 
+of output in rectangular boxes.</p>
+
+<p>The &lt;fo:block&gt; object is used to format paragraphs, titles, 
+headlines, etc.</p>
+
+<hr />
+
+<h2>Syntax</h2>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;fo:block&gt;<br />
+&nbsp;&nbsp;&lt;!--<br />
+&nbsp;&nbsp;&nbsp;&nbsp;Contents:(#PCDATA|bidi-override|character|<br />
+&nbsp;&nbsp;&nbsp;&nbsp;external-graphic|instream-foreign-object|<br />
+&nbsp;&nbsp;&nbsp;&nbsp;inline|inline-container|leader|page-number|<br />
+&nbsp;&nbsp;&nbsp;&nbsp;page-number-citation|basic-link|multi-toggle|<br />
+&nbsp;&nbsp;&nbsp;&nbsp;block|block-container|table-and-caption|<br />
+&nbsp;&nbsp;&nbsp;&nbsp;table|list-block)*<br />
+&nbsp;&nbsp;--&gt;<br />
+&lt;/fo:block&gt;
+</td></tr>
+</table>
+<h2>Properties</h2>
+<table class="reference">
+  <tr>
+    <th width="50%" align="left" valign="top">Property [A-J]</th>
+    <th width="50%" align="left" valign="top">Property [K-Z]</th>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_azimuth.asp">azimuth</a></td>
+    <td valign="top">
+    <a href="prop_keep-together.asp">keep-together</a></td>
+    </tr>
+  <tr>
+    <td valign="top"><a href="prop_background-attachment.asp">background-attachment</a></td>
+    <td valign="top">
+    <a href="prop_keep-with-next.asp">keep-with-next</a></td>
+    </tr>
+  <tr>
+    <td valign="top"><a href="prop_background-color.asp">background-color</a></td>
+    <td valign="top">
+    <a href="prop_keep-with-previous.asp">keep-with-previous</a></td>
+    </tr>
+  <tr>
+    <td valign="top"><a href="prop_background-image.asp">background-image</a></td>
+    <td valign="top">
+    <a href="prop_language.html">language</a></td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_background-repeat.asp">background-repeat</a></td>
+    <td valign="top">
+    <a href="prop_last-line-end-indent.html">last-line-end-indent</a></td>
+  </tr>
+  <tr>
+    <td valign="top">background-position-horizontal</td>
+    <td valign="top">
+    <a href="prop_left_right.asp">left</a></td>
+  </tr>
+  <tr>
+    <td valign="top">background-position-vertical</td>
+    <td valign="top">
+    <a href="prop_linefeed-treatment.html">linefeed-treatment</a></td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_color.asp">border-after-color</a></td>
+    <td valign="top">
+    <a href="prop_line-height.asp">line-height</a></td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_style.asp">border-after-style</a></td>
+    <td valign="top">line-height-shift-adjustment</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_width.asp">border-after-width</a></td>
+    <td valign="top">line-stacking-strategy</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_color.asp">border-before-color</a></td>
+    <td valign="top"><a href="prop_margin.asp">margin-bottom</a></td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_style.asp">border-before-style</a></td>
+    <td valign="top"><a href="prop_margin.asp">margin-left</a></td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_width.asp">border-before-width</a></td>
+    <td valign="top"><a href="prop_margin.asp">margin-right</a></td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_color.asp">border-bottom-color</a></td>
+    <td valign="top"><a href="prop_margin.asp">margin-top</a></td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_style.asp">border-bottom-style</a></td>
+    <td valign="top">orphans</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_width.asp">border-bottom-width</a></td>
+    <td valign="top">
+    <a href="prop_padding.asp">padding-after</a></td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_color.asp">border-end-color</a></td>
+    <td valign="top">
+    <a href="prop_padding.asp">padding-before</a></td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_style.asp">border-end-style</a></td>
+    <td valign="top">
+    <a href="prop_padding.asp">padding-bottom</a></td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_width.asp">border-end-width</a></td>
+    <td valign="top">
+    <a href="prop_padding.asp">padding-end</a></td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_color.asp">border-left-color</a></td>
+    <td valign="top">
+    <a href="prop_padding.asp">padding-left</a></td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_style.asp">border-left-style</a></td>
+    <td valign="top">
+    <a href="prop_padding.asp">padding-right</a></td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_width.asp">border-left-width</a></td>
+    <td valign="top">
+    <a href="prop_padding.asp">padding-start</a></td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_color.asp">border-right-color</a></td>
+    <td valign="top">
+    <a href="prop_padding.asp">padding-top</a></td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_style.asp">border-right-style</a></td>
+    <td valign="top">
+    <a href="prop_pause.asp">pause-after</a></td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_width.asp">border-right-width</a></td>
+    <td valign="top">
+    <a href="prop_pause.asp">pause-before</a></td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_color.asp">border-start-color</a></td>
+    <td valign="top">
+    <a href="prop_pitch.asp">pitch</a></td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_style.asp">border-start-style</a></td>
+    <td valign="top">
+    <a href="prop_pitch-range.asp">pitch-range</a></td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_width.asp">border-start-width</a></td>
+    <td valign="top">
+    <a href="prop_play-during.asp">play-during</a></td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_color.asp">border-top-color</a></td>
+    <td valign="top">
+    <a href="prop_relative-position.asp">relative-position</a></td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_style.asp">border-top-style</a></td>
+    <td valign="top">
+    <a href="prop_richness.asp">richness</a></td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_width.asp">border-top-width</a></td>
+    <td valign="top">
+    <a href="prop_left_right.asp">right</a></td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_top_bottom.html">bottom</a></td>
+    <td valign="top">
+    <a href="prop_role.asp">role</a></td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_break-after.html">break-after</a></td>
+    <td valign="top">
+    script</td>
+  </tr>
+  <tr>
+    <td valign="top">
+    <a href="prop_break-before.html">break-before</a></td>
+    <td valign="top">
+    <a href="prop_source-document.asp">source-document</a></td>
+  </tr>
+  <tr>
+    <td valign="top">
+    <a href="prop_color.html">color</a></td>
+    <td valign="top"><a href="prop_space.html">space-after</a></td>
+  </tr>
+  <tr>
+    <td valign="top">
+    <a href="prop_country.html">country</a></td>
+    <td valign="top"><a href="prop_space.html">space-before</a></td>
+  </tr>
+  <tr>
+    <td valign="top">
+    <a href="prop_cue.html">cue-after</a></td>
+    <td valign="top">span</td>
+  </tr>
+  <tr>
+    <td valign="top">
+    <a href="prop_cue.html">cue-before</a></td>
+    <td valign="top"><a href="prop_speak.asp">speak</a></td>
+  </tr>
+  <tr>
+    <td valign="top">
+    <a href="prop_elevation.html">elevation</a></td>
+    <td valign="top"><a href="prop_speak-header.asp">speak-header</a></td>
+  </tr>
+  <tr>
+    <td valign="top">
+    <a href="prop_end-indent.html">end-indent</a></td>
+    <td valign="top"><a href="prop_speak-numeral.asp">speak-numeral</a></td>
+  </tr>
+  <tr>
+    <td valign="top">
+    font-family</td>
+    <td valign="top"><a href="prop_speak-punctuation.asp">speak-punctuation</a></td>
+  </tr>
+  <tr>
+    <td valign="top">
+    font-selection-strategy</td>
+    <td valign="top"><a href="prop_speech-rate.html">speech-rate</a></td>
+  </tr>
+  <tr>
+    <td valign="top">
+    font-size</td>
+    <td valign="top"><a href="prop_start-indent.html">start-indent</a></td>
+  </tr>
+  <tr>
+    <td valign="top">
+    font-size-adjust</td>
+    <td valign="top"><a href="prop_stress.html">stress</a></td>
+  </tr>
+  <tr>
+    <td valign="top">
+    font-stretch</td>
+    <td valign="top">text-align</td>
+  </tr>
+  <tr>
+    <td valign="top">
+    font-style</td>
+    <td valign="top">text-align-last</td>
+  </tr>
+  <tr>
+    <td valign="top">
+    font-variant</td>
+    <td valign="top">
+    <a href="prop_text-altitude.html">text-altitude</a></td>
+  </tr>
+  <tr>
+    <td valign="top">
+    font-weight</td>
+    <td valign="top">
+    <a href="prop_text-depth.html">text-depth</a></td>
+  </tr>
+  <tr>
+    <td valign="top">
+    hyphenate</td>
+    <td valign="top">text-indent</td>
+  </tr>
+  <tr>
+    <td valign="top">
+    hyphenation-character</td>
+    <td valign="top"><a href="prop_top_bottom.html">top</a></td>
+  </tr>
+  <tr>
+    <td valign="top">
+    <a href="prop_hyphenation-keep.html">hyphenation-keep</a></td>
+    <td valign="top"><a href="prop_visibility.html">visibility</a></td>
+  </tr>
+  <tr>
+    <td valign="top">
+    <a href="prop_hyphenation-ladder_count.html">hyphenation-ladder-count</a></td>
+    <td valign="top"><a href="prop_voice-family.html">voice-family</a></td>
+  </tr>
+  <tr>
+    <td valign="top">
+    hyphenation-push-character-count</td>
+    <td valign="top"><a href="prop_volume.html">volume</a></td>
+  </tr>
+  <tr>
+    <td valign="top">
+    hyphenation-remain-character-count</td>
+    <td valign="top">white-space-collapse</td>
+  </tr>
+  <tr>
+    <td valign="top">
+    <a href="prop_id.html">id</a></td>
+    <td valign="top">white-space-treatment</td>
+  </tr>
+  <tr>
+    <td valign="top">
+    <a href="prop_intrusion-displace.html">intrusion-displace</a></td>
+    <td valign="top">widows</td>
+  </tr>
+  <tr>
+    <td valign="top">
+    &nbsp;</td>
+    <td valign="top">wrap-option</td>
+  </tr>
+  </table>
+
+<h3>Example 1</h3>
+<p>Blocks are sequences of output in rectangular boxes:</p>
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;fo:block<br />
+&nbsp;&nbsp;border-width=&quot;1mm&quot;&gt;<br />
+This block of output will have a one millimeter border around it.<br />
+&lt;/fo:block&gt;
+</td></tr>
+</table>
+
+<h3>Example 2</h3>
+<p>Blocks are sequences of output that can be styled individually:</p>
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;fo:block<br />
+&nbsp;&nbsp;font-size=&quot;12pt&quot;<br />
+&nbsp;&nbsp;font-family=&quot;sans-serif&quot;&gt;<br />
+This block of output will be written in a 12pt sans-serif font.<br />
+&lt;/fo:block&gt;
+</td></tr>
+</table>
+
+<h3>Example 3</h3>
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;fo:block<br />
+&nbsp;&nbsp;font-size=&quot;14pt&quot; font-family=&quot;verdana&quot; color=&quot;red&quot;<br />
+&nbsp;&nbsp;space-before=&quot;5mm&quot; space-after=&quot;5mm&quot;&gt;<br />
+W3Schools<br />
+&lt;/fo:block&gt;<br />
+<br />
+&lt;fo:block<br />
+&nbsp;&nbsp;text-indent=&quot;5mm&quot;<br />
+&nbsp;&nbsp;font-family=&quot;verdana&quot; font-size=&quot;12pt&quot;<br />
+&nbsp;&nbsp;space-before=&quot;5mm&quot; space-after=&quot;5mm&quot;&gt;<br />
+At W3Schools you will find all the Web-building tutorials you<br />
+need, from basic HTML and XHTML to advanced XML, XSL, Multimedia<br />
+and WAP.<br />
+&lt;/fo:block&gt;
+</td></tr>
+</table>
+<p>Result:</p>
+<table border="1" cellpadding="0" cellspacing="0" width="50%">
+  <tr>
+    <td width="100%">
+    <p><font size="4" face="Verdana" color="#FF0000"><br />
+    W3Schools</font></p>
+    <p><font face="Verdana">&nbsp;&nbsp; At W3Schools you will find all the Web-building 
+    tutorials you need, from basic HTML and XHTML to advanced XML, XSL, Multimedia and WAP.</font></p>
+    <br />
+  </td>
+  </tr>
+</table>
+<br />
+<hr />
+<a href="javascript:history.back()" onclick="history.back();return false"><img src="http://www.w3schools.com/images/btn_exit.gif" width="100" height="20" alt="Back" border="0"/></a>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/xslfo/obj_block.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:45:36 GMT -->
+</html>

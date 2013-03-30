@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/php/func_string_htmlentities.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:50:20 GMT -->
+<head>
+
+<title>PHP htmlentities() Function</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+
+<h1>PHP <span class="color_h1">htmlentities()</span> Function</h1>
+<hr />
+<a href="php_ref_string.html"><img class="navup" src="http://www.w3schools.com/images/up.gif" alt="PHP String Reference" border="0" /> Complete PHP String Reference</a>
+<hr />
+
+<h2>Definition and Usage</h2>
+
+<p>The htmlentities() function converts characters to HTML entities.</p>
+<h2>Syntax</h2>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+htmlentities(string,quotestyle,character-set)
+</td></tr>
+</table><br />
+
+<table class="reference"> 
+  <tr>
+    <th align="left" valign="top" width="20%">Parameter</th>
+    <th align="left" valign="top" width="80%">Description</th>
+  </tr>  
+  <tr>
+    <td valign="top">string</td>
+    <td valign="top">Required. Specifies the string to convert</td>
+  </tr>
+	<tr>
+    <td valign="top">quotestyle</td>
+    <td valign="top">Optional. Specifies how to encode single and double quotes.<p>The available quote styles 
+	are:</p>
+	<ul>
+		<li>ENT_COMPAT - Default. Encodes only double quotes</li>
+		<li>ENT_QUOTES - Encodes double and single quotes</li>
+		<li>ENT_NOQUOTES - Does not encode any quotes</li>
+	</ul>
+		</td>
+  </tr>
+  <tr>
+    <td valign="top">character-set</td>
+    <td valign="top">Optional. A string that specifies which character-set to 
+	use.<p>Allowed values are:</p>
+	<ul>
+		<li>ISO-8859-1 - Default. Western European</li>
+		<li>ISO-8859-15 - Western European (adds the Euro sign + French 
+		and Finnish letters missing in ISO-8859-1)</li>
+		<li>UTF-8 - ASCII compatible multi-byte 8-bit Unicode</li>
+		<li>cp866 - DOS-specific Cyrillic charset</li>
+		<li>cp1251 - Windows-specific Cyrillic charset</li>
+		<li>cp1252 - Windows specific charset for Western European</li>
+		<li>KOI8-R - Russian</li>
+		<li>BIG5 - Traditional Chinese, mainly used in Taiwan</li>
+		<li>GB2312 - Simplified Chinese, national standard character set</li>
+		<li>BIG5-HKSCS - Big5 with Hong Kong extensions</li>
+		<li>Shift_JIS - Japanese</li>
+		<li>EUC-JP - Japanese</li>
+	</ul>
+	</td>
+  </tr>
+  </table>
+<br />
+
+<hr />
+
+<h2>Tips and Notes</h2>
+
+<p><b>Note:</b> Unrecognized character-sets will be ignored and replaced by ISO-8859-1.</p>
+<hr />
+<h2>Example 1</h2>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;html&gt;<br />
+&lt;body&gt;<br />
+&lt;?php<br />
+$str = &quot;Jane &amp; 'Tarzan'&quot;;<br />
+echo htmlentities($str, ENT_COMPAT);<br />
+echo &quot;&lt;br /&gt;&quot;;<br />
+echo htmlentities($str, ENT_QUOTES);<br />
+echo &quot;&lt;br /&gt;&quot;;<br />
+echo htmlentities($str, ENT_NOQUOTES);<br />
+?&gt;<br />
+&lt;/body&gt;<br />
+&lt;/html&gt;
+</td></tr>
+</table>
+<p>The browser output of the code above will be:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+Jane &amp; 'Tarzan'<br />
+Jane &amp; 'Tarzan'<br />
+Jane &amp; 'Tarzan'
+</td></tr>
+</table>
+<p>If you select &quot;View source&quot; in the browser window, you will see the following 
+HTML:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;html&gt;<br />
+&lt;body&gt;<br />
+Jane &amp;amp; 'Tarzan'&lt;br /&gt;<br />
+Jane &amp;amp; &amp;#039;Tarzan&amp;#039;&lt;br /&gt;<br />
+Jane &amp;amp; 'Tarzan'<br />
+&lt;/body&gt;<br />
+&lt;/html&gt;
+</td></tr>
+</table><br />
+
+<hr />
+<h2>Example 2</h2>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;html&gt;<br />
+&lt;body&gt;<br />
+&lt;?php<br />
+$str = &quot;My name is Øyvind Åsane. I'm Norwegian&quot;;<br />
+echo htmlentities($str, ENT_COMPAT, &quot;ISO-8859-1&quot;);<br />
+?&gt;<br />
+&lt;/body&gt;<br />
+&lt;/html&gt;
+</td></tr>
+</table>
+<p>The browser output of the code above will be:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+My name is Øyvind Åsane. I'm Norwegian
+</td></tr>
+</table>
+<p>If you select &quot;View source&quot; in the browser window, you will see the following 
+HTML:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;html&gt;<br />
+&lt;body&gt;<br />
+My name is &amp;Oslash;yvind &amp;Aring;sane. I'm Norwegian<br />
+&lt;/body&gt;<br />
+&lt;/html&gt;
+</td></tr>
+</table><br />
+
+<hr />
+<a href="php_ref_string.html"><img class="navup" src="http://www.w3schools.com/images/up.gif" alt="PHP String Reference" border="0" /> Complete PHP String Reference</a>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/php/func_string_htmlentities.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:50:20 GMT -->
+</html>

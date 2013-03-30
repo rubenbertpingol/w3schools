@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/js/js_cookies.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:14:00 GMT -->
+<head>
+<title>JavaScript Cookies</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1>JavaScript <span class="color_h1">Cookies</span></h1>
+<div class="chapter">
+<div class="prev"><a class="chapter" href="js_browser.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="js_form_validation.html">Next Chapter &raquo;</a></div>
+</div>
+<hr />
+<p class="intro">A cookie is often used to identify a user.</p>
+<hr />
+
+<h2>What is a Cookie? </h2>
+<p>A cookie is a variable that is stored on the visitor's computer. Each 
+time the same computer requests a page with a browser, it will send the cookie 
+too. With JavaScript, you can both create and retrieve cookie values.</p>
+<p>Examples of cookies:</p>
+<ul>
+	<li>Name cookie - The first time a visitor arrives to your web page, he or 
+	she must fill in her/his name. The name is then stored in a cookie. Next 
+	time the visitor arrives at your page, he or she could get a welcome message 
+	like &quot;Welcome John Doe!&quot; The name is retrieved from the stored cookie</li>
+	<li>Password cookie - The first time a visitor arrives to your web page, he 
+	or she must fill in a password. The password is then stored in a cookie. 
+	Next time the visitor arrives at your page, the password is retrieved from 
+	the cookie</li>
+	<li>Date cookie - The first time a visitor arrives to your web page, the 
+	current date is stored in a cookie. Next time the visitor arrives at your 
+	page, he or she could get a message like &quot;Your last visit was on Tuesday 
+	August 11, 2005!&quot; The date is retrieved from the stored cookie</li>
+</ul>
+<hr />
+
+<h2>Create and Store a Cookie</h2>
+<p>In this example we will create a cookie that stores the name of a visitor. 
+The first time a visitor arrives to the web page, he or she will be asked to&nbsp; 
+fill in her/his name. The name is then stored in a cookie. The next time the 
+visitor arrives at the same page, he or she will get welcome message.</p>
+<p>First, we create a function that stores the name of the visitor in a cookie variable:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+function setCookie(c_name,value,exdays)<br />
+{<br />
+var exdate=new Date();<br />
+exdate.setDate(exdate.getDate() + exdays);<br />
+var c_value=escape(value) + ((exdays==null) ? &quot;&quot; : &quot;; expires=&quot;+exdate.toUTCString());<br />
+document.cookie=c_name + &quot;=&quot; + c_value;<br />
+}</td></tr></table>
+
+<p>The parameters of the function above hold the name of the cookie, the value of the cookie, and the number of days until the cookie expires.</p>
+<p>In the function above we first convert the number of days to a valid date, then we add the number of days until the cookie should expire. 
+After that we store the cookie name, cookie value and the expiration date in the document.cookie object.</p>
+<p>Then, we create another function that returns a specified cookie:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+function getCookie(c_name)<br />
+{<br />
+var i,x,y,ARRcookies=document.cookie.split(&quot;;&quot;);<br />
+for (i=0;i&lt;ARRcookies.length;i++)<br />
+{<br />
+&nbsp; x=ARRcookies[i].substr(0,ARRcookies[i].indexOf(&quot;=&quot;));<br />
+&nbsp; y=ARRcookies[i].substr(ARRcookies[i].indexOf(&quot;=&quot;)+1);<br />
+&nbsp; x=x.replace(/^\s+|\s+$/g,&quot;&quot;);<br />
+&nbsp; if (x==c_name)<br />
+&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp; return unescape(y);<br />
+&nbsp;&nbsp;&nbsp; }<br />
+&nbsp; }<br />
+}</td></tr></table>
+
+<p>The function above makes an array to retrieve cookie names and values, then 
+it checks if the specified cookie exists, and returns the cookie value.</p>
+<p>Last, we create the function that displays a welcome message if the cookie is set, and if the cookie is not set it will display a prompt box, asking for the 
+name of the user, and stores the username cookie for 365 days, by calling the 
+setCookie function:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+function checkCookie()<br />
+{<br />
+var username=getCookie(&quot;username&quot;);<br />
+&nbsp; if (username!=null &amp;&amp; username!=&quot;&quot;)<br />
+&nbsp; {<br />
+&nbsp; alert(&quot;Welcome again &quot; + username);<br />
+&nbsp; }<br />
+else <br />
+&nbsp; {<br />
+&nbsp; username=prompt(&quot;Please enter your name:&quot;,&quot;&quot;);<br />
+&nbsp; if (username!=null &amp;&amp; username!=&quot;&quot;)<br />
+&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp; setCookie(&quot;username&quot;,username,365);<br />
+&nbsp;&nbsp;&nbsp; }<br />
+&nbsp; }<br />
+}</td></tr></table>
+
+<p>All together now:</p>
+
+<table class="example" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+<h2 class="example">Example</h2>
+<table class="example_code notranslate" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+&lt;html&gt;<br />
+&lt;head&gt;<br />
+&lt;script type=&quot;text/javascript&quot;&gt;<br />
+function getCookie(c_name)<br />
+{<br />
+var i,x,y,ARRcookies=document.cookie.split(&quot;;&quot;);<br />
+for (i=0;i&lt;ARRcookies.length;i++)<br />
+&nbsp; {<br />
+&nbsp; x=ARRcookies[i].substr(0,ARRcookies[i].indexOf(&quot;=&quot;));<br />
+&nbsp; y=ARRcookies[i].substr(ARRcookies[i].indexOf(&quot;=&quot;)+1);<br />
+&nbsp; x=x.replace(/^\s+|\s+$/g,&quot;&quot;);<br />
+&nbsp; if (x==c_name)<br />
+&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp; return unescape(y);<br />
+&nbsp;&nbsp;&nbsp; }<br />
+&nbsp; }<br />
+}<br />
+<br />
+function setCookie(c_name,value,exdays)<br />
+{<br />
+var exdate=new Date();<br />
+exdate.setDate(exdate.getDate() + exdays);<br />
+var c_value=escape(value) + ((exdays==null) ? &quot;&quot; : &quot;; expires=&quot;+exdate.toUTCString());<br />
+document.cookie=c_name + &quot;=&quot; + c_value;<br />
+}<br />
+<br />
+function checkCookie()<br />
+{<br />
+var username=getCookie(&quot;username&quot;);<br />
+if (username!=null &amp;&amp; username!=&quot;&quot;)<br />
+&nbsp; {<br />
+&nbsp; alert(&quot;Welcome again &quot; + username);<br />
+&nbsp; }<br />
+else <br />
+&nbsp; {<br />
+&nbsp; username=prompt(&quot;Please enter your name:&quot;,&quot;&quot;);<br />
+&nbsp; if (username!=null &amp;&amp; username!=&quot;&quot;)<br />
+&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp; setCookie(&quot;username&quot;,username,365);<br />
+&nbsp;&nbsp;&nbsp; }<br />
+&nbsp; }<br />
+}<br />
+&lt;/script&gt;<br />
+&lt;/head&gt;<br />
+&lt;body onload=&quot;checkCookie()&quot;&gt;<br />
+&lt;/body&gt;<br />
+&lt;/html&gt;</td></tr></table>
+<br /><a target="_blank" href="http://www.w3schools.com/js/tryit.asp?filename=tryjs_cookie_username" class="tryitbtn">Try it yourself &raquo;</a>
+</td></tr></table>
+<p>The example above runs the checkCookie() function when the page loads.</p>
+<br />
+<div class="chapter">
+<div class="prev"><a class="chapter" href="js_browser.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="js_form_validation.html">Next Chapter &raquo;</a></div>
+</div>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/js/js_cookies.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:14:00 GMT -->
+</html>

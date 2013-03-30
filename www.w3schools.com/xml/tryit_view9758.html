@@ -1,0 +1,22 @@
+<html>
+<body>
+<script type="text/javascript">
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.open("GET","books.xml",false);
+xmlhttp.send();
+xmlDoc=xmlhttp.responseXML; 
+
+txt=xmlDoc.getElementsByTagName("title")[0].getAttribute("lang");
+document.write(txt);
+</script>
+</body>
+
+<!-- Mirrored from www.w3schools.com/xml/tryit_view.asp?filename=tryxml_dom_getattribute by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:45:53 GMT -->
+</html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/cssref/css_selectors.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:12:27 GMT -->
+<head>
+
+<title>CSS Reference</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1>CSS <span class="color_h1">Selector</span> Reference</h1>
+<div class="chapter">
+<div class="prev"><a class="chapter" href="default.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="css_ref_aural.html">Next Reference &raquo;</a></div>
+</div>
+<hr />
+<p><img style="float:left;margin-right:6px" border="0" alt="Note" src="http://www.w3schools.com/images/icon_small_star.gif" /> 
+W3Schools' CSS reference is tested regularly with all major browsers.<br />
+Tested: 1 July, 2011.</p>
+<hr />
+
+<h2>CSS Selectors</h2>
+
+<p>In CSS, selectors are patterns used to select the element(s) you want to 
+style.</p>
+<p>The &quot;CSS&quot; column indicates in which CSS version the property is defined (CSS1, CSS2, or CSS3).</p>
+
+<table class="reference">
+  <tr>
+    <th width="22%" align="left">Selector</th>
+    <th width="17%" align="left">Example</th>
+    <th width="56%" align="left">Example description</th>
+    <th align="left">CSS</th>
+  </tr>
+	<tr>
+    <td><a href="sel_class.html">.<i>class</i></a></td>
+    <td class="notranslate">.intro</td>
+    <td>Selects all elements with class=&quot;intro&quot;</td>
+    <td>1</td>
+  </tr>
+	<tr>
+    <td><a href="sel_id.html">#<i>id</i></a></td>
+    <td class="notranslate">#firstname</td>
+    <td>Selects the element with id=&quot;firstname&quot;</td>
+    <td>1</td>
+  </tr>  <tr>
+    <td><a href="sel_all.html">*</a></td>
+    <td class="code notranslate">*</td>
+    <td>Selects all elements</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td><i><a href="sel_element.html">element</a></i></td>
+    <td class="notranslate">p</td>
+    <td>Selects all &lt;p&gt; elements</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td><i><a href="sel_element_comma.html">element,element</a></i></td>
+    <td class="notranslate">div,p</td>
+    <td>Selects all &lt;div&gt; elements and all &lt;p&gt; elements</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td><a href="sel_element_element.html"><i>element</i> <i>element</i></a></td>
+    <td class="notranslate">div p</td>
+    <td>Selects all &lt;p&gt; elements inside &lt;div&gt; elements</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td><a href="sel_element_gt.html"><i>element</i>&gt;<i>element</i></a></td>
+    <td class="notranslate">div&gt;p</td>
+    <td>Selects all &lt;p&gt; elements where the parent is a &lt;div&gt; element</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td><a href="sel_element_pluss.html"><i>element</i>+<i>element</i></a></td>
+    <td class="notranslate">div+p</td>
+    <td>Selects all &lt;p&gt; elements that are placed immediately after &lt;div&gt; elements</td>
+    <td>2</td>
+  </tr>
+	<tr>
+    <td><a href="sel_attribute.html">[<i>attribute</i>]</a></td>
+    <td class="notranslate">[target]</td>
+    <td>Selects all elements with a target attribute</td>
+    <td>2</td>
+  </tr>
+	<tr>
+    <td><a href="sel_attribute_value.html">[<i>attribute</i>=<i>value</i>]</a></td>
+    <td class="notranslate">[target=_blank]</td>
+    <td>Selects all elements with target=&quot;_blank&quot;</td>
+    <td>2</td>
+  </tr>
+	<tr>
+    <td><a href="sel_attribute_value_contains.html">[<i>attribute</i>~=<i>value</i>]</a></td>
+    <td class="notranslate">[title~=flower]</td>
+    <td>Selects all elements with a title attribute containing the word &quot;flower&quot;</td>
+    <td>2</td>
+  </tr>
+	<tr>
+    <td><a href="sel_attribute_value_lang.html">[<i>attribute</i>|=<i>language</i>]</a></td>
+    <td class="notranslate">[lang|=en]</td>
+    <td>Selects all elements with a lang attribute value starting with &quot;en&quot;</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td><a href="sel_link.html">:link</a></td>
+    <td class="notranslate">a:link</td>
+    <td>Selects all unvisited links</td>
+    <td>1</td>
+  </tr>
+	<tr>
+    <td><a href="sel_visited.html">:visited</a></td>
+    <td class="notranslate">a:visited</td>
+    <td>Selects all visited links</td>
+    <td>1</td>
+  </tr>
+	<tr>
+    <td><a href="sel_active.html">:active</a></td>
+    <td class="notranslate">a:active</td>
+    <td>Selects the active link</td>
+    <td>1</td>
+  </tr>
+	<tr>
+    <td><a href="sel_hover.html">:hover</a></td>
+    <td class="notranslate">a:hover</td>
+    <td>Selects links on mouse over</td>
+    <td>1</td>
+  </tr>
+	<tr>
+    <td><a href="sel_focus.html">:focus</a></td>
+    <td class="notranslate">input:focus</td>
+    <td>Selects the input element which has focus</td>
+    <td>2</td>
+  </tr>
+	<tr>
+    <td><a href="sel_firstletter.html">:first-letter</a></td>
+    <td class="notranslate">p:first-letter</td>
+    <td>Selects the first letter of every &lt;p&gt; element</td>
+    <td>1</td>
+  </tr>
+	<tr>
+    <td><a href="sel_firstline.html">:first-line</a></td>
+    <td class="notranslate">p:first-line</td>
+    <td>Selects the first line of every &lt;p&gt; element</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td><a href="sel_firstchild.html">:first-child</a></td>
+    <td class="notranslate">p:first-child</td>
+    <td>Selects every &lt;p&gt; elements that is the first child of its parent</td>
+    <td>2</td>
+  </tr>
+	<tr>
+    <td><a href="sel_before.html">:before</a></td>
+    <td class="notranslate">p:before</td>
+    <td>Insert content before every &lt;p&gt; element</td>
+    <td>2</td>
+  </tr>
+	<tr>
+    <td><a href="sel_after.html">:after</a></td>
+    <td class="notranslate">p:after</td>
+    <td>Insert content after every &lt;p&gt; element</td>
+    <td>2</td>
+  </tr>
+	<tr>
+    <td><a href="sel_lang.html">:lang(<i>language</i>)</a></td>
+    <td class="notranslate">p:lang(it)</td>
+    <td>Selects every &lt;p&gt; element with a lang attribute value starting 
+	with &quot;it&quot;</td>
+    <td>2</td>
+  </tr>
+	<tr>
+    <td><a href="sel_gen_sibling.html"><i>element1</i>~<i>element2</i></a></td>
+    <td>p~ul</td>
+    <td>Selects every ul element that are preceded by a p element</td>
+    <td>3</td>
+  </tr>
+	<tr>
+    <td><a href="sel_attr_begin.html">[<i>attribute</i>^=<i>value</i>]</a></td>
+    <td>a[src^=&quot;https&quot;]</td>
+    <td>Selects every a element whose src attribute value begins with &quot;https&quot;</td>
+    <td>3</td>
+  </tr>
+	<tr>
+    <td><a href="sel_attr_end.html">[<i>attribute</i>$=<i>value</i>]</a></td>
+    <td>a[src$=&quot;.pdf&quot;]</td>
+    <td>Selects every a element whose src attribute value ends with &quot;.pdf&quot;</td>
+    <td>3</td>
+  </tr>
+	<tr>
+    <td><a href="sel_attr_contain.html">[<i>attribute</i>*=<i>value</i>]</a></td>
+    <td>a[src*=&quot;w3schools&quot;]</td>
+    <td>Selects every a element whose src attribute value contains the substring 
+	&quot;w3schools&quot;</td>
+    <td>3</td>
+  </tr>
+	<tr>
+    <td><a href="sel_first-of-type.html">:first-of-type</a></td>
+    <td>p:first-of-type</td>
+    <td>Selects every p element that is the first p element of its parent</td>
+    <td>3</td>
+  </tr>
+	<tr>
+    <td><a href="sel_last-of-type.html">:last-of-type</a></td>
+    <td>p:last-of-type</td>
+    <td>Selects every p element that is the last p element of its parent</td>
+    <td>3</td>
+  </tr>
+	<tr>
+    <td><a href="sel_only-of-type.html">:only-of-type</a></td>
+    <td>p:only-of-type</td>
+    <td>Selects every p element that is the only p element of its 
+	parent</td>
+    <td>3</td>
+  </tr>
+	<tr>
+    <td><a href="sel_only-child.html">:only-child</a></td>
+    <td>p:only-child</td>
+    <td>Selects every p element that is the only child of its parent</td>
+    <td>3</td>
+  </tr>
+	<tr>
+    <td><a href="sel_nth-child.html">:nth-child(<i>n</i>)</a></td>
+    <td>p:nth-child(2)</td>
+    <td>Selects every p element that is the second child of its parent</td>
+    <td>3</td>
+  </tr>
+	<tr>
+    <td><a href="sel_nth-last-child.html">:nth-last-child(<i>n</i>)</a></td>
+    <td>p:nth-last-child(2)</td>
+    <td>Selects every p element that is the second child of its parent, counting 
+	from the last child</td>
+    <td>3</td>
+  </tr>
+	<tr>
+    <td><a href="sel_nth-of-type.html">:nth-of-type(<i>n</i>)</a></td>
+    <td>p:nth-of-type(2)</td>
+    <td>Selects every p element that is the second p element of its parent</td>
+    <td>3</td>
+  </tr>
+	<tr>
+    <td><a href="sel_nth-last-of-type.html">:nth-last-of-type(<i>n</i>)</a></td>
+    <td>p:nth-last-of-type(2)</td>
+    <td>Selects every p element that is the second p element of its parent, counting 
+	from the last child</td>
+    <td>3</td>
+  </tr>
+	<tr>
+    <td><a href="sel_last-child.html">:last-child</a></td>
+    <td>p:last-child</td>
+    <td>Selects every p element that is the last child of its parent</td>
+    <td>3</td>
+  </tr>
+	<tr>
+    <td><a href="sel_root.html">:root</a></td>
+    <td>:root</td>
+    <td>Selects the document’s root element</td>
+    <td>3</td>
+  </tr>
+	<tr>
+    <td><a href="sel_empty.html">:empty</a></td>
+    <td>p:empty</td>
+    <td>Selects every p element that has no children (including text nodes)</td>
+    <td>3</td>
+  </tr>
+	<tr>
+    <td><a href="sel_target.html">:target</a></td>
+    <td>#news:target </td>
+    <td>Selects the current active #news element (clicked on a URL containing that anchor name)</td>
+    <td>3</td>
+  </tr>
+	<tr>
+    <td><a href="sel_enabled.html">:enabled</a></td>
+    <td>input:enabled</td>
+    <td>Selects every enabled input element</td>
+    <td>3</td>
+  </tr>
+	<tr>
+    <td><a href="sel_disabled.html">:disabled</a></td>
+    <td>input:disabled</td>
+    <td>Selects every disabled input element</td>
+    <td>3</td>
+  </tr>
+	<tr>
+    <td><a href="sel_checked.html">:checked</a></td>
+    <td>input:checked</td>
+    <td>Selects every checked input element</td>
+    <td>3</td>
+  </tr>
+	<tr>
+    <td><a href="sel_not.html">:not(<i>selector</i>)</a></td>
+    <td>:not(p)</td>
+    <td>Selects every element that is not a p element</td>
+    <td>3</td>
+  </tr>
+	<tr>
+    <td><a href="sel_selection.html">::selection</a></td>
+    <td>::selection</td>
+    <td>Selects the portion of an element that is selected by a user</td>
+    <td>3</td>
+  </tr>
+	</table>
+<br />
+
+<div class="chapter">
+<div class="prev"><a class="chapter" href="default.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="css_ref_aural.html">Next Reference &raquo;</a></div>
+</div>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/cssref/css_selectors.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:12:27 GMT -->
+</html>

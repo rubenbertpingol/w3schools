@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/dotnetmobile/control_mobilepage.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:56:19 GMT -->
+<head>
+
+<title>ASP.NET Mobile MobilePage Control</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1>ASP.NET Mobile <span class="color_h1">MobilePage</span> Control</h1>
+<hr />
+<a href="mobile_reference.html"><img class="navup" src="http://www.w3schools.com/images/up.gif" alt="ASP.NET Mobile Reference" border="0" /> Complete ASP.NET Mobile Reference</a>
+<hr />
+
+<h2>Definition and Usage</h2>
+
+<p>The MobilePage control defines a base class for all mobile pages.</p>
+
+<p>A mobile page requires two directives:</p>
+
+<ul>
+  <li>The Page directive</li>
+  <li>The Register directive</li>
+</ul>
+<p>The Page directive tells ASP to use (inherit) mobile page handling instead of 
+regular page handling (like the one used for traditional browsers).</p>
+<p>The Register directive defines the prefix that will be used for mobile 
+controls. We have used &quot;Mobile&quot;,&nbsp; but you can use any prefix you like.</p>
+
+<p>A mobile page starts with something like this:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;%@ Page Inherits=&quot;System.Web.UI.MobileControls.MobilePage&quot; %&gt;<br />
+&lt;%@ Register TagPrefix=&quot;Mobile&quot;<br />
+Namespace=&quot;System.Web.UI.MobileControls&quot;<br />
+Assembly=&quot;System.Web.Mobile&quot; %&gt;
+</td></tr>
+</table>
+<br />
+<hr />
+
+<h2>Properties</h2>
+
+<table class="reference">
+  <tr>
+    <th align="left">Property</th>
+    <th align="left">Description</th>
+  </tr>
+  <tr>
+    <td valign="top">Assembly</td>
+    <td valign="top">Required. Points to the assembly where the namespace 
+    resides</td>
+  </tr>
+  <tr>
+    <td valign="top">Inherits</td>
+    <td valign="top">Required. Specifies a class that this page should inherit 
+    from. If the page inherits directly from a MobilePage object, 
+    set this property to the &quot;System.Web.UI.MobileControls.MobilePage&quot; 
+    namespace. If the page inherits from a code-behind class, the name of the 
+    class must be specified instead</td>
+  </tr>
+  <tr>
+    <td valign="top">Language</td>
+    <td valign="top">Optional. Specifies the scripting language used on the page</td>
+  </tr>
+  <tr>
+    <td valign="top">NameSpace</td>
+    <td valign="top">Required. The namespace to use for mobile server controls</td>
+  </tr>
+  <tr>
+    <td valign="top">TagPrefix</td>
+    <td valign="top">Required. The tag prefix to use</td>
+  </tr>
+  </table>
+
+<h3>Example 1</h3>
+<p>The following example will display &quot;Hello W3Schools&quot; in a Label control in an .aspx file:</p>
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;%@ Page<br />
+Inherits=&quot;System.Web.UI.MobileControls.MobilePage&quot; %&gt;<br />
+&lt;%@ Register TagPrefix=&quot;Mobile&quot;<br />
+Namespace=&quot;System.Web.UI.MobileControls&quot;<br />
+Assembly=&quot;System.Web.Mobile&quot; %&gt;<br />
+<br />
+&lt;Mobile:Form runat=&quot;server&quot;&gt;<br />
+&nbsp;&nbsp;&lt;Mobile:Label runat=&quot;server&quot;&gt;Hello W3Schools<br />
+&nbsp;&nbsp;&lt;/Mobile:Label&gt;<br />
+&lt;/Mobile:Form&gt;
+</td></tr>
+</table>
+<br />
+<hr />
+<a href="mobile_reference.html"><img class="navup" src="http://www.w3schools.com/images/up.gif" alt="ASP.NET Mobile Reference" border="0" /> Complete ASP.NET Mobile Reference</a>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/dotnetmobile/control_mobilepage.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:56:19 GMT -->
+</html>

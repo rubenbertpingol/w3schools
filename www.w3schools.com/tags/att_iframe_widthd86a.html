@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/tags/att_iframe_width.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:59:37 GMT -->
+<head>
+
+<title>HTML iframe width Attribute</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+
+<h1>HTML &lt;iframe&gt; <span class="color_h1">width</span> Attribute</h1>
+<p><a href="tag_iframe.html"><img class="navup" src="http://www.w3schools.com/images/up.gif" alt="HTML iframe Tag Reference" border="0" /> HTML &lt;iframe&gt; tag</a></p>
+<table class="example" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td>
+<h2 class="example">Example</h2>
+<p>An iframe with a specified height and width:</p>
+<table class="example_code notranslate" border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td>&lt;iframe src=&quot;/default.asp&quot; width=&quot;200&quot; 
+	height=&quot;200&quot;&gt;<br />
+	&lt;p&gt;Your browser does not support iframes.&lt;/p&gt;<br />
+	&lt;/iframe&gt;</td>
+  </tr>
+</table>
+<br />
+<a target="_blank" href="tryit6a15.html?filename=tryhtml_iframe_height" class="tryitbtn">Try it yourself &raquo;</a></td>
+</tr>
+</table>
+<hr />
+
+<h2>Definition and Usage </h2>
+<p>The width attribute specifies the width of an iframe.</p>
+<hr />
+
+<h2>Browser Support</h2>
+<p><img border="0" src="http://www.w3schools.com/images/compatible_ie.gif" width="31" height="30" alt="Internet Explorer" title="Internet Explorer" />
+<img border="0" src="http://www.w3schools.com/images/compatible_firefox.gif" width="31" height="30" alt="Firefox" title="Firefox" />
+<img border="0" src="http://www.w3schools.com/images/compatible_opera.gif" width="28" height="30" alt="Opera" title="Opera" />
+<img border="0" src="http://www.w3schools.com/images/compatible_chrome.gif" width="31" height="30" alt="Google Chrome" title="Google Chrome" />
+<img border="0" src="http://www.w3schools.com/images/compatible_safari.gif" width="28" height="30" alt="Safari" title="Safari" /></p>
+<p>The width attribute is supported in all major browsers.</p>
+<hr />
+
+<h2>Syntax</h2>
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+  <tr>
+    <td>&lt;iframe width=&quot;<i>value</i>&quot;&gt;</td>
+</tr>
+</table>
+
+<h2>Attribute Values</h2>
+<table class="reference"> 
+  <tr>
+    <th align="left" width="20%">Value</th>
+    <th align="left" width="80%">Description</th>
+  </tr>  
+  <tr>
+    <td><i>pixels</i></td>
+    <td>The width in pixels (like &quot;100px&quot; or just &quot;100&quot;)</td>
+  </tr>
+  <tr>
+    <td><i>percent</i></td>
+    <td>The width in percent of the containing element (like 
+	&quot;20%&quot;)</td>
+  </tr>
+	</table>
+<br />
+<hr />
+<a href="tag_iframe.html"><img class="navup" src="http://www.w3schools.com/images/up.gif" alt="HTML iframe Tag Reference" border="0" /> HTML &lt;iframe&gt; tag</a>
+<hr />
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/tags/att_iframe_width.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:59:37 GMT -->
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/jquery/jquery_ref_effects.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:16:11 GMT -->
+<head>
+
+<title>jQuery Effect Methods</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1>jQuery <span class="color_h1">Effect</span> Methods</h1>
+<div class="chapter">
+<div class="prev"><a class="chapter" href="jquery_ref_events.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="jquery_ref_html.html">Next Chapter &raquo;</a></div>
+</div>
+<hr />
+<h2>jQuery Effect Methods</h2>
+<p>The following table lists all the methods used to create animation effects.</p>
+<table class="reference">
+<tr>
+<th width="20%" align="left">Method</th>
+<th width="80%" align="left">Description</th>
+</tr>
+	<tr>
+<td><a href="eff_animate.html">animate()</a></td>
+<td>Performs a custom animation (of a set of CSS properties) for selected elements</td>
+	</tr>
+	<tr>
+<td><a href="eff_clearqueue.html">clearQueue()</a></td>
+<td>Removes all queued functions for the selected element</td>
+	</tr>
+	<tr>
+<td>delay()</td>
+<td>Sets a delay for all queued functions for the selected element</td>
+	</tr>
+	<tr>
+<td>dequeue()</td>
+<td>Runs the next queued functions for the selected element</td>
+	</tr>
+	<tr>
+<td><a href="eff_fadein.html">fadeIn()</a></td>
+<td>Gradually changes the opacity, for selected elements, from hidden to visible</td>
+	</tr>
+	<tr>
+<td><a href="eff_fadeout.html">fadeOut()</a></td>
+<td>Gradually changes the opacity, for selected elements, from visible to hidden</td>
+	</tr>
+	<tr>
+<td><a href="eff_fadeto.html">fadeTo()</a></td>
+<td>Gradually changes the opacity, for selected elements, to a specified opacity </td>
+	</tr>
+	<tr>
+<td>fadeToggle()</td>
+<td>&nbsp;</td>
+	</tr>
+	<tr>
+<td><a href="eff_hide.html">hide()</a></td>
+<td>Hides selected elements</td>
+	</tr>
+	<tr>
+<td>queue()</td>
+<td>Shows the queued functions for the selected element</td>
+	</tr>
+<tr>
+<td><a href="eff_show.html">show()</a></td>
+<td>Shows hidden selected elements</td>
+</tr>
+	<tr>
+<td><a href="eff_slidedown.html">slideDown()</a></td>
+<td>Gradually changes the height, for selected elements, from hidden to visible</td>
+	</tr>
+	<tr>
+<td><a href="eff_slidetoggle.html">slideToggle()</a></td>
+<td>Toggles between slideUp() and slideDown() for selected elements</td>
+	</tr>
+	<tr>
+<td><a href="eff_slideup.html">slideUp()</a></td>
+<td>Gradually changes the height, for selected elements, from visible to hidden</td>
+	</tr>
+	<tr>
+<td><a href="eff_stop.html">stop()</a></td>
+<td>Stops a running animation on selected elements</td>
+	</tr>
+<tr>
+<td><a href="eff_toggle.html">toggle()</a></td>
+<td>Toggles between hide() and show(), or custom functions, for selected elements</td>
+</tr>
+</table>
+<br />
+<div class="chapter">
+<div class="prev"><a class="chapter" href="jquery_ref_events.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="jquery_ref_html.html">Next Chapter &raquo;</a></div>
+</div>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/jquery/jquery_ref_effects.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:16:11 GMT -->
+</html>

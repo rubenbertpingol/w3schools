@@ -1,0 +1,343 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/cssref/css_ref_aural.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:12:27 GMT -->
+<head>
+
+<title>CSS Aural Reference</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1>CSS <span class="color_h1">Aural</span> Reference</h1>
+<div class="chapter">
+<div class="prev"><a class="chapter" href="css_selectors.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="css_websafe_fonts.html">Next Reference &raquo;</a></div>
+</div>
+<hr />
+<h2>Aural Style Sheets</h2>
+<p>Aural style sheets use a combination of speech synthesis and sound effects to make the user listen to information, instead of reading information.</p>
+<p>Aural presentation can be used:</p>
+<ul>
+  <li>by blind people</li>
+  <li>to help users learning to read</li>
+  <li>to help users who have reading problems</li>
+  <li>for home entertainment</li>
+  <li>in the car</li>
+  <li>by print-impaired communities</li>
+</ul>
+<p>The aural presentation converts the document to plain text and feed this to a
+screen reader (a program that reads all the characters on the screen).</p>
+<p>An example of an Aural style sheet:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+h1,h2,h3,h4<br />
+{<br />
+voice-family:male;<br />
+richness:80;<br />
+cue-before:url(&quot;beep.au&quot;)<br />
+}</td></tr>
+</table>
+
+<p>The example above will make the speech synthesizer play a sound, then speak the headers in a very rich male voice.</p>
+<hr />
+
+<h2>CSS Aural Reference</h2>
+<p>The &quot;CSS&quot; column indicates in which CSS version the property is defined (CSS1 or CSS2).</p>
+
+<table class="reference">
+  <tr>
+    <th width="25%" align="left">Property</th>
+    <th width="43%" align="left">Description</th>
+    <th width="27%" align="left">Values</th>
+    <th width="5%" align="left">CSS</th>
+  </tr>
+  <tr>
+    <td>azimuth</td>
+    <td>Sets where the sound should come from</td>
+    <td><i>angle</i><br />
+      left-side<br />
+      far-left<br />
+      left<br />
+      center-left<br />
+      center<br />
+      center-right<br />
+      right<br />
+      far-right<br />
+      right-side<br />
+      behind<br />
+      leftwards<br />
+      rightwards</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>cue</td>
+    <td>Sets the cue properties
+      in one declaration</td>
+    <td><i>cue-before<br />
+      cue-after</i></td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>cue-after</td>
+    <td>Specifies a sound to be played after speaking an element's
+      content</td>
+    <td>none<br />
+      <i>url</i></td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>cue-before</td>
+    <td>Specifies a sound to be played before speaking an element's
+      content</td>
+    <td>none<br />
+      <i>url</i></td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>elevation</td>
+    <td>Sets where the sound should come from</td>
+    <td>angle<br />
+      below<br />
+      level<br />
+      above<br />
+      higher<br />
+      lower&nbsp;</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>pause</td>
+    <td>Sets the pause properties
+      in one declaration</td>
+    <td><i>pause-before<br />
+      pause-after</i></td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>pause-after</td>
+    <td>Specifies a pause after speaking an element's content</td>
+    <td><i>time<br />
+      %</i></td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>pause-before</td>
+    <td>Specifies a pause before speaking an element's content</td>
+    <td><i>time<br />
+      %</i></td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>pitch</td>
+    <td>Specifies the speaking voice</td>
+    <td><i>frequency</i><br />
+      x-low<br />
+      low<br />
+      medium<br />
+      high<br />
+      x-high&nbsp;</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>pitch-range</td>
+    <td>Specifies the variation in the speaking voice. (Monotone
+      voice or animated voice?)</td>
+    <td><i>number</i></td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>play-during</td>
+    <td>Specifies a sound to be played while speaking an element's
+      content</td>
+    <td>auto<br />
+      none<br />
+      <i>url</i><br />
+      mix<br />
+      repeat</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>richness</td>
+    <td>Specifies the richness of the speaking voice. (Rich voice
+      or thin voice?)</td>
+    <td><i>number</i></td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>speak</td>
+    <td>Specifies whether content will render aurally</td>
+    <td>normal<br />
+      none<br />
+      spell-out</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>speak-header</td>
+    <td>Specifies how to handle table headers. Should the headers
+      be spoken before every cell, or only before a cell with a different header
+      than the previous cell</td>
+    <td>always<br />
+      once<br />
+    </td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>speak-numeral</td>
+    <td>Specifies how to speak numbers</td>
+    <td>digits<br />
+      continuous</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>speak-punctuation</td>
+    <td>Specifies how to speak punctuation characters</td>
+    <td>none<br />
+      code</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>speech-rate</td>
+    <td>Specifies the speed of the speaking</td>
+    <td><i>number</i><br />
+      x-slow<br />
+      slow<br />
+      medium<br />
+      fast<br />
+      x-fast<br />
+      faster<br />
+      slower&nbsp;</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>stress</td>
+    <td>Specifies the &quot;stress&quot; in the speaking voice</td>
+    <td><i>number</i></td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>voice-family</td>
+    <td>Specifies the voice family of the speaking</td>
+    <td><i>specific-voice<br />
+      generic-voice</i></td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>volume</td>
+    <td>Specifies the volume of the speaking</td>
+    <td><i>number<br />
+      </i><i>%<br />
+      </i>silent<br />
+      x-soft<br />
+      soft<br />
+      medium<br />
+      loud<br />
+      x-loud&nbsp;</td>
+    <td>2</td>
+  </tr>
+</table>
+<br />
+<div class="chapter">
+<div class="prev"><a class="chapter" href="css_selectors.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="css_websafe_fonts.html">Next Reference &raquo;</a></div>
+</div>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/cssref/css_ref_aural.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:12:27 GMT -->
+</html>

@@ -1,0 +1,30 @@
+<html>
+<body>
+
+<p>VBScripts' function <b>MonthName</b> is used to get a month:</p>
+<script type="text/vbscript">
+document.write("<p>")
+document.write(MonthName(1))
+document.write("<br />")
+document.write(MonthName(2))
+document.write("</p><p>")
+
+document.write("Here is how you get the abbreviated name of a month:")
+document.write("<br />")
+document.write(MonthName(1,True))
+document.write("<br />")
+document.write(MonthName(2,True))
+document.write("</p><p>")
+
+document.write("Here is how you get the current month:")
+document.write("<br />")
+document.write(MonthName(Month(Date)))
+document.write("<br />")
+document.write(MonthName(Month(Date),True))
+document.write("</p>")
+</script>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/vbscript/tryit_view.asp?filename=vbdemo_monthname by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:45:56 GMT -->
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/xml/xml_encoding.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:16:19 GMT -->
+<head>
+
+<title>XML Encoding</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1>XML <span class="color_h1">Encoding</span></h1>
+<div class="chapter">
+<div class="prev"><a class="chapter" href="xml_cdata.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="xml_server.html">Next Chapter &raquo;</a></div>
+</div>
+<hr />
+<p class="intro">XML documents can contain non ASCII characters, like Norwegian æ ø å , or French ê è é.</p>
+<p class="intro">To avoid errors, specify the XML encoding, or save XML files as Unicode.</p>
+<hr />
+<h2>XML Encoding Errors</h2>
+<p>If you load an XML document, you can get two different errors indicating encoding problems:</p>
+<p><b>An invalid character was found in text content.</b></p>
+<p>You get this error if your XML contains non ASCII characters, and the file was saved as
+single-byte ANSI (or ASCII) with no encoding specified.</p>
+<p><a target="_blank" href="singlebyte2.xml">Single byte XML file with encoding attribute</a>.</p>
+<p><a target="_blank" href="singlebyte1.xml">Same single byte XML file with no encoding attribute</a>.</p>
+<p><b>Switch from current encoding to specified encoding not supported.</b></p>
+<p>You get this error if your XML file was saved as double-byte Unicode (or UTF-16) with a single-byte encoding (Windows-1252,
+ISO-8859-1, UTF-8) specified.</p>
+<p>You also get this error if your XML file was saved with single-byte ANSI (or ASCII), with double-byte encoding (UTF-16) specified.</p>
+<p><a target="_blank" href="doublebyte2.xml">Double byte XML file without encoding</a>.</p>
+<p><a target="_blank" href="doublebyte1.xml">Same double byte XML file with single byte encoding</a>.</p>
+<hr />
+
+<h2>Windows Notepad</h2>
+<p>Windows Notepad save files as single-byte ANSI (ASCII) by default.</p>
+<p>If you select &quot;Save as...&quot;, you can specify double-byte Unicode (UTF-16).</p>
+<p>Save the XML file below as Unicode (note that the document does not contain any encoding attribute):</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>&lt;?xml version=&quot;1.0&quot;?&gt;<br />
+&lt;note&gt;<br />
+  &lt;from&gt;Jani&lt;/from&gt;<br />
+  &lt;to&gt;Tove&lt;/to&gt;<br />
+  &lt;message&gt;Norwegian: æøå. French: êèé&lt;/message&gt;<br />
+&lt;/note&gt;</td></tr></table>
+
+<p>The file above, <a target="_blank" href="note_encode_none_u.xml">note_encode_none_u.xml</a> will NOT generate 
+an error. But if you specify a single-byte encoding it will.</p>
+<p>The following encoding (<a target="_blank" href="note_encode_1252_u.xml">open it</a>), will give an error message:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>&lt;?xml version=&quot;1.0&quot; encoding=&quot;windows-1252&quot;?&gt;</td></tr></table>
+
+<p>The following encoding (<a target="_blank" href="note_encode_8859_u.xml">open it</a>), will give an error message:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;</td></tr></table>  
+
+<p>The following encoding (<a target="_blank" href="note_encode_utf8_u.xml">open it</a>), will give an error message:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</td></tr></table>
+
+<p>The following encoding (<a target="_blank" href="note_encode_utf16_u.xml">open it</a>), will NOT give an error:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-16&quot;?&gt;</td></tr></table>  
+<br />
+<hr />
+<h2>Conclusion</h2>
+<ul>
+	<li>Always use the encoding attribute</li>
+	<li>Use an editor that supports encoding</li>
+	<li>Make sure you know what encoding the editor uses</li>
+	<li>Use the same encoding in your encoding attribute</li>
+</ul>
+<br />
+<div class="chapter">
+<div class="prev"><a class="chapter" href="xml_cdata.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="xml_server.html">Next Chapter &raquo;</a></div>
+</div>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/xml/xml_encoding.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:16:19 GMT -->
+</html>

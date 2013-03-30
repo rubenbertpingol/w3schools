@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/quality/quality_styles.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:35:35 GMT -->
+<head>
+
+<title>Web Quality Assurance StyleSheets</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1>Web Quality - <span class="color_h1">Style Sheets</span></h1>
+<div class="chapter">
+<div class="prev"><a class="chapter" href="quality_elements.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="quality_readability.html">Next Chapter &raquo;</a></div>
+</div>
+<hr />
+<p class="intro">Using Style Sheets is important to increase the web page quality.</p>
+<hr />
+<h2>Don't use the &lt;font&gt; tag!</h2>
+<p>The size, font, and color of text should be set with CSS (Cascading Style Sheets).</p>
+<p><b>Do not use the HTML &lt;font&gt; tag!</b></p>
+<p>Using the &lt;font&gt; tag will increase the size of your document, and give you a 
+nightmare every time you want to change your standard text size.</p>
+<p>Think of the following example:</p>
+<p>One day you decide to change all the headings in your web to another color and 
+another size. With CSS you can change the color and size attributes by rewriting 
+one line of code. If you have used the &lt;font&gt; tag, you will have to edit the 
+&lt;font&gt; tag for all the headings in all your web pages.</p>
+
+<p><img border="0" src="http://www.w3schools.com/images/lamp.gif" alt="lamp.gif" /> Using CSS instead of &lt;font&gt; makes it much easier to give all the 
+pages of your web site a high quality and consistent look.</p>
+
+<hr />
+
+<h2>Don't use fixed sizes</h2>
+
+<p>Never use fixed size values. Always use relative size values.</p>
+
+<p>The most important reason for this advice is that fixed sizes can not be 
+resized by the browser.</p>
+
+<p>Your visitors will have different monitors, different viewing 
+conditions (light), and possible disabilities (poor eyesight).</p>
+
+<p>Setting your default text size to 100% (or medium), your main headers to 140% 
+(or x-large), your sub headers to 120% (or large), as an example, will make it 
+possible for your reader to resize your pages to their best fit.</p>
+
+<p>Want to see how it works? Select view in your browsers menu, and change the 
+text size for this page.</p>
+
+<p><b>Note:</b> Adjusting the text size of a web 
+page also changes the amount of text that will fit on a printed page.</p>
+
+<hr />
+
+<h2>Don't use a small font size</h2>
+
+<p>Some web sites use a small text size just to &quot;squeeze&quot; more text into each 
+page, or to make the page more &quot;stylish&quot;.</p>
+<p>Again, visitors with different equipment, viewing conditions, and 
+disabilities might have difficulties reading the 
+text.</p>
+
+<p><img border="0" src="http://www.w3schools.com/images/lamp.gif" alt="lamp.gif" /> Don't force your 
+visitors to enlarge the text size every time they visit your site.</p>
+
+<hr />
+
+<h2>Always use a background color</h2>
+<p>Most web pages use colors for different text elements. Both headers and links 
+are often in a different color from the body text.</p>
+<p>As a web designer, you should be aware of the fact that your visitors are 
+able to change their default color preferences. </p>
+<p>If you define colors for your web elements (like header and links), you 
+should also define the background color.</p>
+<p>If you don't define a background color, your web site might end up with some 
+very bad combination of colors (like light red headers on a red background, or 
+even worse, black text on a black background)</p>
+
+<p><img border="0" src="http://www.w3schools.com/images/lamp.gif" alt="lamp.gif" /> If you don't specify a background 
+color, your text might be invisible.</p>
+<br />
+<div class="chapter">
+<div class="prev"><a class="chapter" href="quality_elements.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="quality_readability.html">Next Chapter &raquo;</a></div>
+</div>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/quality/quality_styles.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:35:35 GMT -->
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/xml/xml_view.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:16:18 GMT -->
+<head>
+
+<title>Viewing XML files</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1><span class="color_h1">Viewing</span> XML Files</h1>
+<div class="chapter">
+<div class="prev"><a class="chapter" href="xml_validator.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="xml_display.html">Next Chapter &raquo;</a></div>
+</div>
+<hr />
+<p class="intro">Raw XML files can be viewed in all major browsers.</p>
+<p class="intro">Don't expect XML files to be displayed as HTML pages.</p>
+<hr />
+
+<h2>Viewing XML Files</h2>
+<table width="100%" border="1" cellpadding="3" cellspacing="0" id="table1">
+<tr><td>
+<div style="font-size:120%" >
+<div style="color:blue">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;</div>
+<div><span style="color:red">&nbsp;- </span><span style="color:blue">&lt;</span><span style="color:maroon">note</span><span style="color:blue">&gt;</span></div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">&lt;</span><span style="color:maroon">to</span><span style="color:blue">&gt;</span><span style="font-weight:bold">Tove</span><span style="color:blue">&lt;/</span><span style="color:maroon">to</span><span style="color:blue">&gt;</span>
+</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">&lt;</span><span style="color:maroon">from</span><span style="color:blue">&gt;</span><span style="font-weight:bold">Jani</span><span style="color:blue">&lt;/</span><span style="color:maroon">from</span><span style="color:blue">&gt;</span>
+</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">&lt;</span><span style="color:maroon">heading</span><span style="color:blue">&gt;</span><span style="font-weight:bold">Reminder</span><span style="color:blue">&lt;/</span><span style="color:maroon">heading</span><span style="color:blue">&gt;</span>
+</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">&lt;</span><span style="color:maroon">body</span><span style="color:blue">&gt;</span><span style="font-weight:bold">Don't forget me this weekend!</span><span style="color:blue">&lt;/</span><span style="color:maroon">body</span><span style="color:blue">&gt;</span>
+</div>
+<div>&nbsp;&nbsp;&nbsp;<span style="color:blue">&lt;/</span><span style="color:maroon">note</span><span style="color:blue">&gt;</span></div>
+</div>
+</td></tr></table>
+
+<p>Look at this XML file: <a target="_blank" href="note.xml">note.xml</a></p>
+<p>The XML document will be displayed with color-coded root and child elements. A plus (+) or minus sign (-) to the left
+of the elements can be clicked to expand or collapse the element structure.&nbsp;To view the raw XML source (without the 
++ and - signs), select &quot;View Page Source&quot; or &quot;View Source&quot; from the browser menu.</p>
+<p><b>Note:</b> In Safari, only the element text will be displayed. To view the raw XML, you must right click the page and select &quot;View Source&quot;</p>
+<hr />
+
+<h2>Viewing an Invalid XML File</h2>
+<p>If an erroneous XML file is opened, the browser will report the error.</p>
+<p>Look at this XML file: <a target="_blank" href="note_error.xml">note_error.xml</a></p>
+<hr />
+
+<h2>Other XML Examples</h2>
+<p>Viewing some XML documents will help you get the XML feeling.</p>
+<p><a target="_blank" href="cd_catalog.xml">An XML CD catalog</a><br />
+This is a CD collection, stored as XML data.
+</p>
+<p><a target="_blank" href="plant_catalog.xml">An XML plant catalog</a><br />
+This is a plant catalog from a plant shop, stored as XML data.
+</p>
+<p><a target="_blank" href="simple.xml">A Simple Food Menu</a><br />
+This is a breakfast food menu from a restaurant, stored as XML data.
+</p>
+<hr />
+
+<h2>Why Does XML Display Like This?</h2>
+<p>XML documents do not carry information about how to display the data.</p>
+<p>Since XML tags are &quot;invented&quot; by the author of the XML document, browsers do not know if a tag like &lt;table&gt; describes an HTML table or a dining table.</p>
+<p>Without any information about how to display the data, most browsers will just display the XML document as it is.</p>
+<p>In the next chapters, we will take a look at different solutions to the display problem, using CSS, XSLT and JavaScript.</p>
+<br />
+<div class="chapter">
+<div class="prev"><a class="chapter" href="xml_validator.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="xml_display.html">Next Chapter &raquo;</a></div>
+</div>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/xml/xml_view.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:16:18 GMT -->
+</html>

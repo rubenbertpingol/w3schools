@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/razor/razor_howto.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:33:28 GMT -->
+<head>
+
+<title>ASP.NET Razor HowTo</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+<style>
+span.marked
+{
+font-size:16px;
+}
+</style>
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1>ASP.NET Razor <span class="color_h1">- HowTo</span></h1>
+<div class="chapter">
+<div class="prev"><a class="chapter" href="razor_syntax.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="razor_example.html">Next Chapter &raquo;</a></div>
+</div>
+<hr />
+<p class="intro">In this chapter you will learn how to add Razor code to a web page</p>
+<hr />
+<h1>Adding Razor Code</h1>
+<p>Remember the web page from previous chapter:</p>
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;!DOCTYPE html&gt;<br />
+<br>
+&lt;html lang=&quot;en&quot;&gt;<br />
+&lt;head&gt;<br />
+&nbsp; &nbsp;&nbsp;&lt;meta charset=&quot;utf-8&quot; /&gt;<br />
+&nbsp;&nbsp;&nbsp;
+&lt;title&gt;Hello World Page&lt;/title&gt;<br />
+&lt;/head&gt;<br />
+&lt;body&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Hello World Page&lt;/h1&gt; <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Hello World Page&lt;/p&gt; <br />
+&lt;/body&gt;<br />
+&lt;/html&gt;
+</td></tr>
+</table>
+
+<p>Now add some Razor code to the example:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;!DOCTYPE html&gt;<br />
+<br>
+&lt;html lang=&quot;en&quot;&gt;<br />
+&lt;head&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset=&quot;utf-8&quot; /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Hello World Page&lt;/title&gt;<br />
+&lt;/head&gt;<br />
+&lt;body&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Hello World Page&lt;/h1&gt; <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Hello World Page&lt;/p&gt; <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;The time is <span class="marked">@DateTime.Now</span>&lt;/p&gt;<br />
+&lt;/body&gt;<br />
+&lt;/html&gt;
+</td></tr>
+</table>
+
+<p>The page contains ordinary HTML markup, with one addition: the @ marked Razor code.</p>
+<p>The Razor code does all the work of determining the current time on the server and display it. (You can specify formatting options; this is 
+just the default.)</p>
+
+<p>Run the page. You now see the current date and time on the page:</p>
+<p>
+<img border="0" alt="WebMatrix" src="22.jpg" width="367" height="202" /></p>
+<div class="chapter">
+<div class="prev"><a class="chapter" href="razor_syntax.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="razor_example.html">Next Chapter &raquo;</a></div>
+</div>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+<!-- Mirrored from www.w3schools.com/razor/razor_howto.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:33:28 GMT -->
+</html>

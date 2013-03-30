@@ -1,0 +1,490 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/php/php_ref_math.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:25:39 GMT -->
+<head>
+<title>PHP Math Functions</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1>PHP <span class="color_h1">Math</span> Functions</h1>
+<div class="chapter">
+<div class="prev"><a class="chapter" href="php_ref_mail.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="php_ref_misc.html">Next Chapter &raquo;</a></div>
+</div>
+<hr />
+<h2>PHP Math Introduction</h2>
+<p>The math functions can handle values within the range of integer and float 
+types.</p>
+<hr />
+
+<h2>Installation</h2>
+<p>The math functions are part of the PHP core. There is no installation 
+needed to use these functions.</p>
+<hr />
+
+<h2>PHP Math Functions</h2>
+<p><b>PHP</b>: indicates the earliest version of PHP that supports the 
+  function. </p>
+<table class="reference">
+  <tr>
+    <th width="30%" align="left" valign="top">Function</th>
+    <th width="65%" align="left" valign="top">Description</th>
+    <th width="5%" align="left" valign="top">PHP</th>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_abs.html">abs()</a></td>
+    <td valign="top">Returns the absolute value of a number</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_acos.html">acos()</a></td>
+    <td valign="top">Returns the arccosine of a number</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_acosh.html">acosh()</a></td>
+    <td valign="top">Returns the inverse hyperbolic cosine of a number </td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_asin.html">asin()</a></td>
+    <td valign="top">Returns the arcsine of a number</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_asinh.html">asinh()</a></td>
+    <td valign="top">Returns the inverse hyperbolic sine of a number</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_atan.html">atan()</a></td>
+    <td valign="top">Returns the arctangent of a number as a numeric value between 
+	-PI/2 and PI/2 radians</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_atan.html">atan2()</a></td>
+    <td valign="top">Returns the angle theta of an (x,y) point as a numeric 
+	value between -PI and PI radians</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_atanh.html">atanh()</a></td>
+    <td valign="top">Returns the inverse hyperbolic tangent of a number</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_base_convert.html">base_convert()</a></td>
+    <td valign="top">Converts a number from one base to another</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_bindec.html">bindec()</a></td>
+    <td valign="top">Converts a binary number to a decimal number</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_ceil.html">ceil()</a></td>
+    <td valign="top">Returns the value of a number rounded upwards to the 
+	nearest integer</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_cos.html">cos()</a></td>
+    <td valign="top">Returns the cosine of a number</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_cosh.html">cosh()</a></td>
+    <td valign="top">Returns the hyperbolic cosine of a number</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_decbin.html">decbin()</a></td>
+    <td valign="top">Converts a decimal number to a binary number</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_dechex.html">dechex()</a></td>
+    <td valign="top">Converts a decimal number to a hexadecimal number</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_decoct.html">decoct()</a></td>
+    <td valign="top">Converts a decimal number to an octal number</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_deg2rad.html">deg2rad()</a></td>
+    <td valign="top">Converts a degree to a radian number</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_exp.html">exp()</a></td>
+    <td valign="top">Returns the value of E<sup>x</sup></td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_expm1.html">expm1()</a></td>
+    <td valign="top">Returns the value of E<sup>x</sup> - 1</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_floor.html">floor()</a></td>
+    <td valign="top">Returns the value of a number rounded downwards to the 
+	nearest integer</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_fmod.html">fmod()</a></td>
+    <td valign="top">Returns the remainder (modulo) of the division of the 
+	arguments</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top">
+	<p align="left"><a href="func_math_getrandmax.html">getrandmax()</a></td>
+    <td valign="top">Returns the maximum random number that can be returned by 
+	a call to the rand() function</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_hexdec.html">hexdec()</a></td>
+    <td valign="top">Converts a hexadecimal number to a decimal number</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_hypot.html">hypot()</a></td>
+    <td valign="top">Returns the length of the hypotenuse of a right-angle 
+	triangle</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_is_finite.html">is_finite()</a></td>
+    <td valign="top">Returns true if a value is a finite number</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_is_infinite.html">is_infinite()</a></td>
+    <td valign="top">Returns true if a value is an infinite number</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_is_nan.html">is_nan()</a></td>
+    <td valign="top">Returns true if a value is not a number</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_lcg_value.html">lcg_value()</a></td>
+    <td valign="top">Returns a pseudo random number in the range of (0,1)</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_log.html">log()</a></td>
+    <td valign="top">Returns the natural logarithm (base E) of a number</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_log10.html">log10()</a></td>
+    <td valign="top">Returns the base-10 logarithm of a number</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_log1p.html">log1p()</a></td>
+    <td valign="top">Returns log(1+number)</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_max.html">max()</a></td>
+    <td valign="top">Returns the number with the highest value of two specified 
+	numbers</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_min.html">min()</a></td>
+    <td valign="top">Returns the number with the lowest value of two specified 
+	numbers</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_mt_getrandmax.html">mt_getrandmax()</a></td>
+    <td valign="top">Returns the largest possible value that can be returned by 
+	mt_rand()</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_mt_rand.html">mt_rand()</a></td>
+    <td valign="top">Returns a random integer using Mersenne Twister algorithm</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_mt_srand.html">mt_srand()</a></td>
+    <td valign="top">Seeds the Mersenne Twister random number generator</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_octdec.html">octdec()</a></td>
+    <td valign="top">Converts an octal number to a decimal number</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_pi.html">pi()</a></td>
+    <td valign="top">Returns the value of PI</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_pow.html">pow()</a></td>
+    <td valign="top">Returns the value of x to the power of y</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_rad2deg.html">rad2deg()</a></td>
+    <td valign="top">Converts a radian number to a degree</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_rand.html">rand()</a></td>
+    <td valign="top">Returns a random integer</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_round.html">round()</a></td>
+    <td valign="top">Rounds a number to the nearest integer</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_sin.html">sin()</a></td>
+    <td valign="top">Returns the sine of a number</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_sinh.html">sinh()</a></td>
+    <td valign="top">Returns the hyperbolic sine of a number</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_sqrt.html">sqrt()</a></td>
+    <td valign="top">Returns the square root of a number</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_srand.html">srand()</a></td>
+    <td valign="top">Seeds the random number generator</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_tan.html">tan()</a></td>
+    <td valign="top">Returns the tangent of an angle</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="func_math_tanh.html">tanh()</a></td>
+    <td valign="top">Returns the hyperbolic tangent of an angle</td>
+    <td valign="top">4</td>
+  </tr>
+  </table>
+<br />
+<hr>
+
+<h2>PHP Math Constants</h2>
+<p><b>PHP</b>: indicates the earliest version of PHP that supports the 
+  constant. </p>
+<table class="reference">
+  <tr>
+    <th width="30%" align="left">Constant</th>
+    <th width="65%" align="left">Description</th>
+    <th width="5%" align="left">PHP</th>
+  </tr>
+  <tr>
+    <td valign="top">M_E</td>
+    <td valign="top">Returns e (approx. 2.718)</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top">M_EULER</td>
+    <td valign="top">Returns Euler's constant (approx. 0.577)</td>
+    <td valign="top">4</td>
+  </tr>
+	<tr>
+    <td valign="top">M_LNPI</td>
+    <td valign="top">Returns the natural logarithm of PI (approx. 1.144)</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top">M_LN2</td>
+    <td valign="top">Returns the natural logarithm of 2 (approx. 0.693)</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top">M_LN10</td>
+    <td valign="top">Returns the natural logarithm of 10 (approx. 2.302)</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top">M_LOG2E</td>
+    <td valign="top">Returns the base-2 logarithm of E (approx. 1.442)</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top">M_LOG10E</td>
+    <td valign="top">Returns the base-10 logarithm of E (approx. 0.434)</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top">M_PI</td>
+    <td valign="top">Returns PI (approx. 3.14159)</td>
+    <td valign="top">3</td>
+  </tr>
+  <tr>
+    <td valign="top">M_PI_2</td>
+    <td valign="top">Returns PI/2 (approx. 1.570)</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top">M_PI_4</td>
+    <td valign="top">Returns PI/4 (approx. 0.785)</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top">M_1_PI</td>
+    <td valign="top">Returns 1/PI (approx. 0.318)</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top">M_2_PI</td>
+    <td valign="top">Returns 2/PI (approx. 0.636)</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top">M_SQRTPI</td>
+    <td valign="top">Returns the square root of PI (approx. 1.772)</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top">M_2_SQRTPI</td>
+    <td valign="top">Returns 2/square root of PI (approx. 1.128)</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top">M_SQRT1_2</td>
+    <td valign="top">Returns the square root of 1/2 (approx. 0.707)</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top">M_SQRT2</td>
+    <td valign="top">Returns the square root of 2 (approx. 1.414)</td>
+    <td valign="top">4</td>
+  </tr>
+  <tr>
+    <td valign="top">M_SQRT3</td>
+    <td valign="top">Returns the square root of 3 (approx. 1.732)</td>
+    <td valign="top">4</td>
+  </tr>
+</table>
+<br />
+<div class="chapter">
+<div class="prev"><a class="chapter" href="php_ref_mail.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="php_ref_misc.html">Next Chapter &raquo;</a></div>
+</div>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/php/php_ref_math.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:25:39 GMT -->
+</html>

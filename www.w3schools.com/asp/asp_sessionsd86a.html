@@ -1,0 +1,295 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/asp/asp_sessions.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:16:49 GMT -->
+<head>
+
+<title>ASP Session object</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1>ASP <span class="color_h1">Session</span> Object</h1>
+<div class="chapter">
+<div class="prev"><a class="chapter" href="asp_cookies.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="asp_applications.html">Next Chapter &raquo;</a></div>
+</div>
+<hr />
+<p class="intro">A Session object stores information about, or change settings for a user session.</p>
+<hr />
+
+<h2>The Session object </h2>
+<p>When you are working with an application on your computer, you open it, do some changes and then
+you close it. This is much like a Session. The computer knows who you are. It
+knows when you open the application and when you close it. However, on the internet there is one
+problem: the web server does not know who you are and what you do, because the HTTP address doesn't maintain state. </p>
+
+<p>ASP solves this problem by creating a unique cookie for each user. The cookie
+is sent to the user's computer and it contains information that identifies the user. This
+interface is called the Session object. </p>
+
+<p>The Session object stores information about, or change settings for a user session.</p>
+<p>Variables stored in a Session object hold information about one single user, and are available to all pages in one application. Common information
+stored in session variables are name, id, and preferences. The server creates a new Session object for each new user, and destroys the Session object when the session expires. </p>
+<hr />
+
+<h2>When does a Session Start?</h2>
+<p>A session starts when:</p>
+<ul>
+  <li>A new user requests an ASP file, and the Global.asa file includes a Session_OnStart procedure</li>
+  <li>A value is stored in a Session variable</li>
+  <li>A user requests an ASP file, and the Global.asa file uses the &lt;object&gt; tag to instantiate an object with session scope</li>
+</ul>
+<hr />
+
+<h2>When does a Session End?</h2>
+<p>A session ends if a user has not requested or refreshed a page in the application for a specified period. By default, this is 20 minutes. </p>
+<p>If you want to set a timeout interval that is shorter or longer than the default, 
+use the <b>Timeout</b> property.</p>
+<p>The example below sets a timeout interval of 5 minutes:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;%<br />
+Session.Timeout=5<br />
+%&gt;</td></tr></table>
+
+<p>Use the <b>Abandon</b> method to end a session immediately:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;%<br />
+Session.Abandon<br />
+%&gt;</td></tr></table>
+
+<p><b>Note:</b> The main problem with sessions is WHEN they should end. We do 
+not know if the user's last request was the final one or not. So we do not know 
+how long we should keep the session &quot;alive&quot;. Waiting too long for an idle 
+session uses up resources on the server, but if the session is deleted too soon 
+the user has to start all over again because the server has deleted all the 
+information. Finding the right timeout interval can be difficult!</p>
+
+<p><img src="lamp.gif" alt="Tip" /> <b>Tip:</b> Only store SMALL amounts of data in session variables!</p>
+<hr />
+
+<h2>Store and Retrieve Session Variables </h2>
+<p>The most important thing about the Session object is that you can store variables in it.</p>
+<p>The example below will set the Session variable <i>username</i> to &quot;Donald Duck&quot; and the Session variable <i>age</i> to &quot;50&quot;:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;%<br />
+Session(&quot;username&quot;)=&quot;Donald Duck&quot;<br />
+Session(&quot;age&quot;)=50<br />
+%&gt;</td></tr></table>
+
+<p>When the value is stored in a session variable it can be reached from ANY page in the ASP application:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>Welcome &lt;%Response.Write(Session(&quot;username&quot;))%&gt;</td></tr></table>
+
+<p>The line above returns: &quot;Welcome Donald Duck&quot;.</p>
+<p>You can also store user preferences in the Session object, and then access
+that preference to choose what page to return to the user.</p>
+<p>The example below specifies a text-only version of the page if the user has a low screen resolution: </p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;%If Session(&quot;screenres&quot;)=&quot;low&quot; Then%&gt;<br />
+  &nbsp;
+  This is the text version of the page<br />
+&lt;%Else%&gt;<br />
+  &nbsp;
+  This is the multimedia version of the page<br />
+&lt;%End If%&gt;</td></tr></table>
+<br />
+<hr />
+
+<h2>Remove Session Variables </h2>
+<p>The Contents collection contains all session variables.</p>
+<p>It is possible to remove a session variable with the Remove method.</p>
+<p>The example below removes the session variable &quot;sale&quot; if the value of the session variable &quot;age&quot; is lower than 18: </p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;%<br />
+If Session.Contents(&quot;age&quot;)&lt;18 then<br />
+  &nbsp;
+  Session.Contents.Remove(&quot;sale&quot;)<br />
+End If<br />
+%&gt;</td></tr></table>
+
+<p>To remove all variables in a session, use the RemoveAll method: </p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;%<br />
+Session.Contents.RemoveAll()<br />
+%&gt;</td></tr></table>
+<br />
+<hr />
+
+<h2>Loop Through the Contents Collection</h2>
+<p>The Contents collection contains all session variables. You can loop through the Contents collection, to see what's stored in it: </p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;%<br />
+Session(&quot;username&quot;)=&quot;Donald Duck&quot;<br />
+Session(&quot;age&quot;)=50<br /><br />
+dim i<br />
+For Each i in Session.Contents<br />
+  &nbsp;
+  Response.Write(i &amp; &quot;&lt;br /&gt;&quot;)<br />
+Next<br />
+%&gt;</td></tr></table>
+
+<p>Result:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+username<br />
+age</td></tr></table>
+
+<p>If you do not know the number of items in the Contents collection, you can use the Count property:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;%<br />
+dim i<br />
+dim j<br />
+j=Session.Contents.Count<br />
+Response.Write(&quot;Session variables: &quot; &amp; j)<br />
+For i=1 to j<br />
+  &nbsp;
+  Response.Write(Session.Contents(i) &amp; &quot;&lt;br /&gt;&quot;)<br />
+Next<br />
+%&gt;</td></tr></table>
+
+<p>Result:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+Session variables: 2<br />
+Donald Duck<br />
+50</td></tr></table>
+<br />
+<hr />
+
+<h2>Loop Through the StaticObjects Collection</h2>
+<p>You can loop through the StaticObjects collection, to see the values of all objects stored in the Session object:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;%<br />
+dim i<br />
+For Each i in Session.StaticObjects<br />
+  &nbsp;
+  Response.Write(i &amp; &quot;&lt;br /&gt;&quot;)<br />
+Next<br />
+%&gt;</td></tr></table>
+<br />
+<div class="chapter">
+<div class="prev"><a class="chapter" href="asp_cookies.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="asp_applications.html">Next Chapter &raquo;</a></div>
+</div>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/asp/asp_sessions.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:16:49 GMT -->
+</html>

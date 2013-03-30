@@ -1,0 +1,2403 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/html/html_colorsmore.asp?color=0 by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:08:49 GMT -->
+<head>
+
+<title>HTML More Colors</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<div style="position:relative;width:100%;margin-top:0px;margin-bottom:0px;">
+<a id="top"></a>
+<div style="width:960px;margin-top:5px;margin-left:auto;margin-right:auto">
+<div style="width:960px;height:74px;margin:0;padding:0;">
+<div style="width:340px;text-align:left;float:left;">
+	<a href="../index.html"><img width="336" height="69" src="http://www.w3schools.com/images/w3schoolslogo.gif" alt="W3Schools.com" style="border:0;margin-top:5px;" /></a>
+</div>
+
+<div style="width:300px;float:right;text-align:right;margin-top:20px;margin-right:14px;margin-bottom:5px;">
+<div id="google_translate_element" style="display:none"></div>
+<div id="translate_link" style="margin-bottom:14px">
+<a href="#" class="topnav"
+onclick="document.getElementById('google_translate_element').style.display='inline';document.getElementById('translate_link').style.display='none';return false;">
+TRANSLATE
+</a>
+</div>
+	<form style="font-size:11px;" method="get" name="searchform" action="http://www.google.com/search" target="_blank">
+    <input type="hidden" name="sitesearch" value="www.w3schools.com" />
+    <input onfocus="searchfield_focus(this)" style="width:150px;color:#808080;font-style:italic;margin:0;" 
+    type="text" name="as_q" size="20" value="Search w3schools.com" /><input type="submit" style="margin:0;" value="Search" title="Search" />
+	</form>
+</div>
+</div>
+<div id="topnav" style="clear:both;width:960px;height:25px;">
+<div style="float:left;width:400px;word-spacing:12px;font-size:90%;padding-left:15px;padding-top:6px;white-space:nowrap;text-align:left;">
+	<a class="topnav" href="../default.html" target="_top">HOME </a>
+	<a class="topnav" href="default.html" target="_top">HTML </a>
+	<a class="topnav" href="../css/default.html" target="_top">CSS </a>
+	<a class="topnav" href="../xml/default.html" target="_top">XML </a>
+	<a class="topnav" href="../js/default.html" target="_top">JAVASCRIPT </a>
+	<a class="topnav" href="../asp/default.html" target="_top">ASP </a>
+	<a class="topnav" href="../php/default.html" target="_top">PHP </a>
+	<a class="topnav" href="../sql/default.html" target="_top">SQL </a>	
+	<a class="topnav" href="../sitemap/default-3.html" target="_top">MORE...</a>
+</div>
+<div style="float:right;width:280px;word-spacing:6px;font-size:80%;padding-right:13px;padding-top:7px;color:#888888;white-space:nowrap;text-align:right;">
+	<a class="topnav" href="../sitemap/default-3.html#references" target="_top">REFERENCES</a> |
+	<a class="topnav" href="../sitemap/default-3.html#examples" target="_top">EXAMPLES</a> |
+	<a class="topnav" href="http://w3schools.invisionzone.com/" target="_top">FORUM</a> |
+	<a class="topnav" href="../about/default.html" target="_top">ABOUT</a>	
+</div>
+</div>
+
+<div style="width:960px;height:94px;position:relative;margin-left:auto;margin-right:auto;margin:0px;padding:0px;overflow:hidden">
+<script type='text/javascript' src='../../partner.googleadservices.com/gampad/google_service.js'>
+</script>
+<script type='text/javascript'>
+GS_googleAddAdSenseService("ca-pub-3440800076797949");
+GS_googleEnableAllServices();
+</script>
+<script type='text/javascript'>
+
+GA_googleAddSlot("ca-pub-3440800076797949", "MainLeaderboard");
+GA_googleAddSlot("ca-pub-3440800076797949", "SmallPS");
+GA_googleAddSlot("ca-pub-3440800076797949", "LargePS");
+GA_googleAddSlot("ca-pub-3440800076797949", "BottomBanner");
+
+GA_googleAddSlot("ca-pub-3440800076797949", "TopRectangle");
+</script>
+<script type='text/javascript'>
+GA_googleFetchAds();
+</script>
+<!-- TopRectangle -->
+<script type='text/javascript'>
+GA_googleFillSlot("TopRectangle");
+</script>
+<div style="width:728px;height:90px;position:absolute;right:0px;top:0px;margin:0;padding:0;overflow:hidden;">
+
+<!-- MainLeaderboard -->
+<script type='text/javascript'>
+GA_googleFillSlot("MainLeaderboard");
+</script>
+
+</div></div>
+<div style="width:960px;padding:0px;margin:0px;">
+<div id="leftcolumn" style="width:170px;margin:0;padding:0;margin-top:5px;float:left;"><h2 class="left"><span class="left_h2">HTML</span> Basic</h2>
+<a target="_top" href="default.html" >HTML HOME</a><br />
+<a target="_top" href="html_intro.html" >HTML Introduction</a><br />
+<a target="_top" href="html_getstarted.html" >HTML Get Started</a><br />
+<a target="_top" href="html_primary.html" >HTML Basic</a><br />
+<a target="_top" href="html_elements.html" >HTML Elements</a><br />
+<a target="_top" href="html_attributes.html" >HTML Attributes</a><br />
+<a target="_top" href="html_headings.html" >HTML Headings</a><br />
+<a target="_top" href="html_paragraphs.html" >HTML Paragraphs</a><br />
+<a target="_top" href="html_formatting.html" >HTML Formatting</a><br />
+<a target="_top" href="html_fonts.html" >HTML Fonts</a><br />
+<a target="_top" href="html_styles.html" >HTML Styles</a><br />
+<a target="_top" href="html_links.html" >HTML Links</a><br />
+<a target="_top" href="html_images.html" >HTML Images</a><br />
+<a target="_top" href="html_tables.html" >HTML Tables</a><br />
+<a target="_top" href="html_lists.html" >HTML Lists</a><br />
+<a target="_top" href="html_forms.html" >HTML Forms</a><br />
+<a target="_top" href="html_frames.html" >HTML Frames</a><br />
+<a target="_top" href="html_iframe.html" >HTML Iframes</a><br />
+<a target="_top" href="html_colors.html" >HTML Colors</a><br />
+<a target="_top" href="html_colornames.html" >HTML Colornames</a><br />
+<a target="_top" href="html_colorvalues.html" >HTML Colorvalues</a><br />
+<a target="_top" href="html_quick.html" >HTML Quick List</a><br />
+<br />
+<h2 class="left"><span class="left_h2">HTML</span> Advanced</h2>
+<a target="_top" href="html_layout.html" >HTML Layout</a><br />
+<a target="_top" href="html_doctype.html" >HTML Doctypes</a><br />
+<a target="_top" href="html_css.html" >HTML CSS</a><br />
+<a target="_top" href="html_head.html" >HTML Head</a><br />
+<a target="_top" href="html_meta.html" >HTML Meta</a><br />
+<a target="_top" href="html_scripts.html" >HTML Scripts</a><br />
+<a target="_top" href="html_entities.html" >HTML Entities</a><br />
+<a target="_top" href="html_url.html" >HTML URLs</a><br />
+<a target="_top" href="html_urlencode.html" >HTML URL Encode</a><br />
+<a target="_top" href="html_webserver.html" >HTML Webserver</a><br />
+<a target="_top" href="html_summary.html" >HTML Summary</a><br />
+<br />
+<h2 class="left"><span class="left_h2">HTML</span> Media</h2>
+<a target="_top" href="html_media.html" >HTML Media</a><br />
+<a target="_top" href="html_sounds.html" >HTML 
+Audio</a><br />
+<a target="_top" href="html_object.html" >HTML Object</a><br />
+<a target="_top" href="html_videos.html" >HTML Video</a><br />
+<a target="_top" href="html_youtube.html" >HTML YouTube</a><br />
+<a target="_top" href="html_mediatags.html" >HTML Media Tags</a><br />
+<br />
+<h2 class="left"><span class="left_h2">HTML</span> XHTML</h2>
+<a target="_top" href="html_xhtml.html" >XHTML Intro</a><br />
+<a target="_top" href="html_xhtml_syntax.html" >XHTML Syntax</a><br />
+<a target="_top" href="html_xhtml_dtd.html" >XHTML Doctype</a><br />
+<br />
+<h2 class="left"><span class="left_h2">HTML</span> Examples</h2>
+<a target="_top" href="html_examples.html" >HTML Examples</a><br />
+<a target="_top" href="html_quiz.html" >HTML Quiz</a><br />
+<a target="_top" href="html_exam.html" >HTML Certificate</a><br />
+<br />
+<h2 class="left"><span class="left_h2">HTML</span> References</h2>
+<a target="_top" href="../tags/default.html">HTML Tag List</a><br />
+<a target="_top" href="../tags/ref_standardattributes.html">HTML Attributes</a><br />
+<a target="_top" href="../tags/ref_eventattributes.html">HTML Events</a><br />
+<a target="_top" href="../tags/ref_colornames.html">HTML Colornames</a><br />
+<a target="_top" href="../tags/ref_colorpicker.html">HTML Colorpicker</a><br />
+<a target="_top" href="../tags/ref_charactersets.html">HTML Character Sets</a><br />
+<a target="_top" href="../tags/ref_ascii.html">HTML ASCII</a><br />
+<a target="_top" href="../tags/ref_entities.html">HTML ISO-8859-1</a><br />
+<a target="_top" href="../tags/ref_symbols.html">HTML Symbols</a><br />
+<a target="_top" href="../tags/ref_urlencode.html">HTML URL Encode</a><br />
+<a target="_top" href="../tags/ref_language_codes.html">HTML Lang Codes</a><br />
+<a target="_top" href="../tags/ref_httpmessages.html">HTML Status Codes</a><br />
+<br />
+<h2 class="left"><span class="left_h2">HTML5</span></h2>
+<a target="_top" href="../html5/default.html">HTML5 Tutorial</a><br />
+<a target="_top" href="../html5/html5_reference.html">HTML5 Reference</a><br />
+<br />
+<a target="_top" href="../cn/html/default.html"><img border="0" src="chinese.jpg" alt="Chinese" style="margin-right:3px;position:relative;top:2px;" />Chinese Version</a><br /></div>
+<div style="width:634px;margin:0px;padding:0px;background-color:#ffffff;color:#000000;padding-bottom:8px;padding-right:5px;padding-top:4px;float:left;">
+
+<h1>HTML <span class="color_h1">More Colors</span></h1>
+
+<a href="html_colors.html"><img class="navup" src="http://www.w3schools.com/images/up.gif" alt="HTML Colors" border="0" /> HTML 
+Colors</a>
+<hr />
+
+<table border="1" width="100%">
+<tr>
+<th width="50%" align="left">The Red value is now #00</th>
+<td width="50%" style="color:#ffffff;background-color:#000000">&nbsp;</td>
+</tr>
+</table>
+<br />
+<table border="0" width="100%">
+<tr>
+<td style="color:#ffffff;background-color:#000000"><a href="html_colorsmore2d0d.html?color=0">&nbsp;</a></td>
+<td style="color:#ffffff;background-color:#100000"><a href="html_colorsmore5ef6.html?color=16">&nbsp;</a></td>
+<td style="color:#ffffff;background-color:#200000"><a href="html_colorsmore5362.html?color=32">&nbsp;</a></td>
+<td style="color:#ffffff;background-color:#300000"><a href="html_colorsmore61e7.html?color=48">&nbsp;</a></td>
+<td style="color:#ffffff;background-color:#400000"><a href="html_colorsmore43aa.html?color=64">&nbsp;</a></td>
+<td style="color:#ffffff;background-color:#500000"><a href="html_colorsmore8c59.html?color=80">&nbsp;</a></td>
+<td style="color:#ffffff;background-color:#600000"><a href="html_colorsmoref359.html?color=96">&nbsp;</a></td>
+<td style="color:#ffffff;background-color:#700000"><a href="html_colorsmore745e.html?color=112">&nbsp;</a></td>
+<td style="color:#ffffff;background-color:#800000"><a href="html_colorsmore602c.html?color=136">&nbsp;</a></td>
+<td style="color:#ffffff;background-color:#900000"><a href="html_colorsmore3036.html?color=152">&nbsp;</a></td>
+<td style="color:#ffffff;background-color:#A00000"><a href="html_colorsmore2d37.html?color=168">&nbsp;</a></td>
+<td style="color:#ffffff;background-color:#B00000"><a href="html_colorsmoredf79.html?color=184">&nbsp;</a></td>
+<td style="color:#ffffff;background-color:#C00000"><a href="html_colorsmore072b.html?color=200">&nbsp;</a></td>
+<td style="color:#ffffff;background-color:#D00000"><a href="html_colorsmoref412.html?color=216">&nbsp;</a></td>
+<td style="color:#ffffff;background-color:#E00000"><a href="html_colorsmore8063.html?color=232">&nbsp;</a></td>
+<td style="color:#ffffff;background-color:#F00000"><a href="html_colorsmore13bc.html?color=248">&nbsp;</a></td>
+<td style="color:#ffffff;background-color:#FF0000"><a href="html_colorsmore453e.html?color=255">&nbsp;</a></td>
+</tr>
+<tr>
+<td><a href="html_colorsmore2d0d.html?color=0">00</a></td>
+<td><a href="html_colorsmore5ef6.html?color=16">10</a></td>
+<td><a href="html_colorsmore5362.html?color=32">20</a></td>
+<td><a href="html_colorsmore61e7.html?color=48">30</a></td>
+<td><a href="html_colorsmore43aa.html?color=64">40</a></td>
+<td><a href="html_colorsmore8c59.html?color=80">50</a></td>
+<td><a href="html_colorsmoref359.html?color=96">60</a></td>
+<td><a href="html_colorsmore745e.html?color=112">70</a></td>
+<td><a href="html_colorsmore602c.html?color=136">80</a></td>
+<td><a href="html_colorsmore3036.html?color=152">90</a></td>
+<td><a href="html_colorsmore2d37.html?color=168">A0</a></td>
+<td><a href="html_colorsmoredf79.html?color=184">B0</a></td>
+<td><a href="html_colorsmore072b.html?color=200">C0</a></td>
+<td><a href="html_colorsmoref412.html?color=216">D0</a></td>
+<td><a href="html_colorsmore8063.html?color=232">E0</a></td>
+<td><a href="html_colorsmore13bc.html?color=248">F0</a></td>
+<td><a href="html_colorsmore453e.html?color=255">FF</a></td>
+</tr>
+</table>
+
+<p>The vertical numbers are the Green values, horizontal values are the Blue.
+</p>
+
+<hr />
+
+<table width="100%" border="0">
+<tr><td>&nbsp;</td>
+
+<td>00</td>
+
+<td>10</td>
+
+<td>20</td>
+
+<td>30</td>
+
+<td>40</td>
+
+<td>50</td>
+
+<td>60</td>
+
+<td>70</td>
+
+<td>80</td>
+
+<td>90</td>
+
+<td>A0</td>
+
+<td>B0</td>
+
+<td>C0</td>
+
+<td>D0</td>
+
+<td>E0</td>
+
+<td>F0</td>
+
+<td>FF</td>
+
+</tr>
+
+
+<tr><td>00</td>
+
+
+<td title="#000000" 
+bgcolor="#000000">&nbsp;&nbsp;</td>
+
+<td title="#000010" 
+bgcolor="#000010">&nbsp;&nbsp;</td>
+
+<td title="#000020" 
+bgcolor="#000020">&nbsp;&nbsp;</td>
+
+<td title="#000030" 
+bgcolor="#000030">&nbsp;&nbsp;</td>
+
+<td title="#000040" 
+bgcolor="#000040">&nbsp;&nbsp;</td>
+
+<td title="#000050" 
+bgcolor="#000050">&nbsp;&nbsp;</td>
+
+<td title="#000060" 
+bgcolor="#000060">&nbsp;&nbsp;</td>
+
+<td title="#000070" 
+bgcolor="#000070">&nbsp;&nbsp;</td>
+
+<td title="#000080" 
+bgcolor="#000080">&nbsp;&nbsp;</td>
+
+<td title="#000090" 
+bgcolor="#000090">&nbsp;&nbsp;</td>
+
+<td title="#0000A0" 
+bgcolor="#0000A0">&nbsp;&nbsp;</td>
+
+<td title="#0000B0" 
+bgcolor="#0000B0">&nbsp;&nbsp;</td>
+
+<td title="#0000C0" 
+bgcolor="#0000C0">&nbsp;&nbsp;</td>
+
+<td title="#0000D0" 
+bgcolor="#0000D0">&nbsp;&nbsp;</td>
+
+<td title="#0000E0" 
+bgcolor="#0000E0">&nbsp;&nbsp;</td>
+
+<td title="#0000F0" 
+bgcolor="#0000F0">&nbsp;&nbsp;</td>
+
+<td title="#0000FF" 
+bgcolor="#0000FF">&nbsp;&nbsp;</td>
+
+</tr>
+
+<tr><td>08</td>
+
+
+<td title="#000800" 
+bgcolor="#000800">&nbsp;&nbsp;</td>
+
+<td title="#000810" 
+bgcolor="#000810">&nbsp;&nbsp;</td>
+
+<td title="#000820" 
+bgcolor="#000820">&nbsp;&nbsp;</td>
+
+<td title="#000830" 
+bgcolor="#000830">&nbsp;&nbsp;</td>
+
+<td title="#000840" 
+bgcolor="#000840">&nbsp;&nbsp;</td>
+
+<td title="#000850" 
+bgcolor="#000850">&nbsp;&nbsp;</td>
+
+<td title="#000860" 
+bgcolor="#000860">&nbsp;&nbsp;</td>
+
+<td title="#000870" 
+bgcolor="#000870">&nbsp;&nbsp;</td>
+
+<td title="#000880" 
+bgcolor="#000880">&nbsp;&nbsp;</td>
+
+<td title="#000890" 
+bgcolor="#000890">&nbsp;&nbsp;</td>
+
+<td title="#0008A0" 
+bgcolor="#0008A0">&nbsp;&nbsp;</td>
+
+<td title="#0008B0" 
+bgcolor="#0008B0">&nbsp;&nbsp;</td>
+
+<td title="#0008C0" 
+bgcolor="#0008C0">&nbsp;&nbsp;</td>
+
+<td title="#0008D0" 
+bgcolor="#0008D0">&nbsp;&nbsp;</td>
+
+<td title="#0008E0" 
+bgcolor="#0008E0">&nbsp;&nbsp;</td>
+
+<td title="#0008F0" 
+bgcolor="#0008F0">&nbsp;&nbsp;</td>
+
+<td title="#0008FF" 
+bgcolor="#0008FF">&nbsp;&nbsp;</td>
+
+</tr>
+
+<tr><td>10</td>
+
+
+<td title="#001000" 
+bgcolor="#001000">&nbsp;&nbsp;</td>
+
+<td title="#001010" 
+bgcolor="#001010">&nbsp;&nbsp;</td>
+
+<td title="#001020" 
+bgcolor="#001020">&nbsp;&nbsp;</td>
+
+<td title="#001030" 
+bgcolor="#001030">&nbsp;&nbsp;</td>
+
+<td title="#001040" 
+bgcolor="#001040">&nbsp;&nbsp;</td>
+
+<td title="#001050" 
+bgcolor="#001050">&nbsp;&nbsp;</td>
+
+<td title="#001060" 
+bgcolor="#001060">&nbsp;&nbsp;</td>
+
+<td title="#001070" 
+bgcolor="#001070">&nbsp;&nbsp;</td>
+
+<td title="#001080" 
+bgcolor="#001080">&nbsp;&nbsp;</td>
+
+<td title="#001090" 
+bgcolor="#001090">&nbsp;&nbsp;</td>
+
+<td title="#0010A0" 
+bgcolor="#0010A0">&nbsp;&nbsp;</td>
+
+<td title="#0010B0" 
+bgcolor="#0010B0">&nbsp;&nbsp;</td>
+
+<td title="#0010C0" 
+bgcolor="#0010C0">&nbsp;&nbsp;</td>
+
+<td title="#0010D0" 
+bgcolor="#0010D0">&nbsp;&nbsp;</td>
+
+<td title="#0010E0" 
+bgcolor="#0010E0">&nbsp;&nbsp;</td>
+
+<td title="#0010F0" 
+bgcolor="#0010F0">&nbsp;&nbsp;</td>
+
+<td title="#0010FF" 
+bgcolor="#0010FF">&nbsp;&nbsp;</td>
+
+</tr>
+
+<tr><td>18</td>
+
+
+<td title="#001800" 
+bgcolor="#001800">&nbsp;&nbsp;</td>
+
+<td title="#001810" 
+bgcolor="#001810">&nbsp;&nbsp;</td>
+
+<td title="#001820" 
+bgcolor="#001820">&nbsp;&nbsp;</td>
+
+<td title="#001830" 
+bgcolor="#001830">&nbsp;&nbsp;</td>
+
+<td title="#001840" 
+bgcolor="#001840">&nbsp;&nbsp;</td>
+
+<td title="#001850" 
+bgcolor="#001850">&nbsp;&nbsp;</td>
+
+<td title="#001860" 
+bgcolor="#001860">&nbsp;&nbsp;</td>
+
+<td title="#001870" 
+bgcolor="#001870">&nbsp;&nbsp;</td>
+
+<td title="#001880" 
+bgcolor="#001880">&nbsp;&nbsp;</td>
+
+<td title="#001890" 
+bgcolor="#001890">&nbsp;&nbsp;</td>
+
+<td title="#0018A0" 
+bgcolor="#0018A0">&nbsp;&nbsp;</td>
+
+<td title="#0018B0" 
+bgcolor="#0018B0">&nbsp;&nbsp;</td>
+
+<td title="#0018C0" 
+bgcolor="#0018C0">&nbsp;&nbsp;</td>
+
+<td title="#0018D0" 
+bgcolor="#0018D0">&nbsp;&nbsp;</td>
+
+<td title="#0018E0" 
+bgcolor="#0018E0">&nbsp;&nbsp;</td>
+
+<td title="#0018F0" 
+bgcolor="#0018F0">&nbsp;&nbsp;</td>
+
+<td title="#0018FF" 
+bgcolor="#0018FF">&nbsp;&nbsp;</td>
+
+</tr>
+
+<tr><td>20</td>
+
+
+<td title="#002000" 
+bgcolor="#002000">&nbsp;&nbsp;</td>
+
+<td title="#002010" 
+bgcolor="#002010">&nbsp;&nbsp;</td>
+
+<td title="#002020" 
+bgcolor="#002020">&nbsp;&nbsp;</td>
+
+<td title="#002030" 
+bgcolor="#002030">&nbsp;&nbsp;</td>
+
+<td title="#002040" 
+bgcolor="#002040">&nbsp;&nbsp;</td>
+
+<td title="#002050" 
+bgcolor="#002050">&nbsp;&nbsp;</td>
+
+<td title="#002060" 
+bgcolor="#002060">&nbsp;&nbsp;</td>
+
+<td title="#002070" 
+bgcolor="#002070">&nbsp;&nbsp;</td>
+
+<td title="#002080" 
+bgcolor="#002080">&nbsp;&nbsp;</td>
+
+<td title="#002090" 
+bgcolor="#002090">&nbsp;&nbsp;</td>
+
+<td title="#0020A0" 
+bgcolor="#0020A0">&nbsp;&nbsp;</td>
+
+<td title="#0020B0" 
+bgcolor="#0020B0">&nbsp;&nbsp;</td>
+
+<td title="#0020C0" 
+bgcolor="#0020C0">&nbsp;&nbsp;</td>
+
+<td title="#0020D0" 
+bgcolor="#0020D0">&nbsp;&nbsp;</td>
+
+<td title="#0020E0" 
+bgcolor="#0020E0">&nbsp;&nbsp;</td>
+
+<td title="#0020F0" 
+bgcolor="#0020F0">&nbsp;&nbsp;</td>
+
+<td title="#0020FF" 
+bgcolor="#0020FF">&nbsp;&nbsp;</td>
+
+</tr>
+
+<tr><td>28</td>
+
+
+<td title="#002800" 
+bgcolor="#002800">&nbsp;&nbsp;</td>
+
+<td title="#002810" 
+bgcolor="#002810">&nbsp;&nbsp;</td>
+
+<td title="#002820" 
+bgcolor="#002820">&nbsp;&nbsp;</td>
+
+<td title="#002830" 
+bgcolor="#002830">&nbsp;&nbsp;</td>
+
+<td title="#002840" 
+bgcolor="#002840">&nbsp;&nbsp;</td>
+
+<td title="#002850" 
+bgcolor="#002850">&nbsp;&nbsp;</td>
+
+<td title="#002860" 
+bgcolor="#002860">&nbsp;&nbsp;</td>
+
+<td title="#002870" 
+bgcolor="#002870">&nbsp;&nbsp;</td>
+
+<td title="#002880" 
+bgcolor="#002880">&nbsp;&nbsp;</td>
+
+<td title="#002890" 
+bgcolor="#002890">&nbsp;&nbsp;</td>
+
+<td title="#0028A0" 
+bgcolor="#0028A0">&nbsp;&nbsp;</td>
+
+<td title="#0028B0" 
+bgcolor="#0028B0">&nbsp;&nbsp;</td>
+
+<td title="#0028C0" 
+bgcolor="#0028C0">&nbsp;&nbsp;</td>
+
+<td title="#0028D0" 
+bgcolor="#0028D0">&nbsp;&nbsp;</td>
+
+<td title="#0028E0" 
+bgcolor="#0028E0">&nbsp;&nbsp;</td>
+
+<td title="#0028F0" 
+bgcolor="#0028F0">&nbsp;&nbsp;</td>
+
+<td title="#0028FF" 
+bgcolor="#0028FF">&nbsp;&nbsp;</td>
+
+</tr>
+
+<tr><td>30</td>
+
+
+<td title="#003000" 
+bgcolor="#003000">&nbsp;&nbsp;</td>
+
+<td title="#003010" 
+bgcolor="#003010">&nbsp;&nbsp;</td>
+
+<td title="#003020" 
+bgcolor="#003020">&nbsp;&nbsp;</td>
+
+<td title="#003030" 
+bgcolor="#003030">&nbsp;&nbsp;</td>
+
+<td title="#003040" 
+bgcolor="#003040">&nbsp;&nbsp;</td>
+
+<td title="#003050" 
+bgcolor="#003050">&nbsp;&nbsp;</td>
+
+<td title="#003060" 
+bgcolor="#003060">&nbsp;&nbsp;</td>
+
+<td title="#003070" 
+bgcolor="#003070">&nbsp;&nbsp;</td>
+
+<td title="#003080" 
+bgcolor="#003080">&nbsp;&nbsp;</td>
+
+<td title="#003090" 
+bgcolor="#003090">&nbsp;&nbsp;</td>
+
+<td title="#0030A0" 
+bgcolor="#0030A0">&nbsp;&nbsp;</td>
+
+<td title="#0030B0" 
+bgcolor="#0030B0">&nbsp;&nbsp;</td>
+
+<td title="#0030C0" 
+bgcolor="#0030C0">&nbsp;&nbsp;</td>
+
+<td title="#0030D0" 
+bgcolor="#0030D0">&nbsp;&nbsp;</td>
+
+<td title="#0030E0" 
+bgcolor="#0030E0">&nbsp;&nbsp;</td>
+
+<td title="#0030F0" 
+bgcolor="#0030F0">&nbsp;&nbsp;</td>
+
+<td title="#0030FF" 
+bgcolor="#0030FF">&nbsp;&nbsp;</td>
+
+</tr>
+
+<tr><td>38</td>
+
+
+<td title="#003800" 
+bgcolor="#003800">&nbsp;&nbsp;</td>
+
+<td title="#003810" 
+bgcolor="#003810">&nbsp;&nbsp;</td>
+
+<td title="#003820" 
+bgcolor="#003820">&nbsp;&nbsp;</td>
+
+<td title="#003830" 
+bgcolor="#003830">&nbsp;&nbsp;</td>
+
+<td title="#003840" 
+bgcolor="#003840">&nbsp;&nbsp;</td>
+
+<td title="#003850" 
+bgcolor="#003850">&nbsp;&nbsp;</td>
+
+<td title="#003860" 
+bgcolor="#003860">&nbsp;&nbsp;</td>
+
+<td title="#003870" 
+bgcolor="#003870">&nbsp;&nbsp;</td>
+
+<td title="#003880" 
+bgcolor="#003880">&nbsp;&nbsp;</td>
+
+<td title="#003890" 
+bgcolor="#003890">&nbsp;&nbsp;</td>
+
+<td title="#0038A0" 
+bgcolor="#0038A0">&nbsp;&nbsp;</td>
+
+<td title="#0038B0" 
+bgcolor="#0038B0">&nbsp;&nbsp;</td>
+
+<td title="#0038C0" 
+bgcolor="#0038C0">&nbsp;&nbsp;</td>
+
+<td title="#0038D0" 
+bgcolor="#0038D0">&nbsp;&nbsp;</td>
+
+<td title="#0038E0" 
+bgcolor="#0038E0">&nbsp;&nbsp;</td>
+
+<td title="#0038F0" 
+bgcolor="#0038F0">&nbsp;&nbsp;</td>
+
+<td title="#0038FF" 
+bgcolor="#0038FF">&nbsp;&nbsp;</td>
+
+</tr>
+
+<tr><td>40</td>
+
+
+<td title="#004000" 
+bgcolor="#004000">&nbsp;&nbsp;</td>
+
+<td title="#004010" 
+bgcolor="#004010">&nbsp;&nbsp;</td>
+
+<td title="#004020" 
+bgcolor="#004020">&nbsp;&nbsp;</td>
+
+<td title="#004030" 
+bgcolor="#004030">&nbsp;&nbsp;</td>
+
+<td title="#004040" 
+bgcolor="#004040">&nbsp;&nbsp;</td>
+
+<td title="#004050" 
+bgcolor="#004050">&nbsp;&nbsp;</td>
+
+<td title="#004060" 
+bgcolor="#004060">&nbsp;&nbsp;</td>
+
+<td title="#004070" 
+bgcolor="#004070">&nbsp;&nbsp;</td>
+
+<td title="#004080" 
+bgcolor="#004080">&nbsp;&nbsp;</td>
+
+<td title="#004090" 
+bgcolor="#004090">&nbsp;&nbsp;</td>
+
+<td title="#0040A0" 
+bgcolor="#0040A0">&nbsp;&nbsp;</td>
+
+<td title="#0040B0" 
+bgcolor="#0040B0">&nbsp;&nbsp;</td>
+
+<td title="#0040C0" 
+bgcolor="#0040C0">&nbsp;&nbsp;</td>
+
+<td title="#0040D0" 
+bgcolor="#0040D0">&nbsp;&nbsp;</td>
+
+<td title="#0040E0" 
+bgcolor="#0040E0">&nbsp;&nbsp;</td>
+
+<td title="#0040F0" 
+bgcolor="#0040F0">&nbsp;&nbsp;</td>
+
+<td title="#0040FF" 
+bgcolor="#0040FF">&nbsp;&nbsp;</td>
+
+</tr>
+
+<tr><td>48</td>
+
+
+<td title="#004800" 
+bgcolor="#004800">&nbsp;&nbsp;</td>
+
+<td title="#004810" 
+bgcolor="#004810">&nbsp;&nbsp;</td>
+
+<td title="#004820" 
+bgcolor="#004820">&nbsp;&nbsp;</td>
+
+<td title="#004830" 
+bgcolor="#004830">&nbsp;&nbsp;</td>
+
+<td title="#004840" 
+bgcolor="#004840">&nbsp;&nbsp;</td>
+
+<td title="#004850" 
+bgcolor="#004850">&nbsp;&nbsp;</td>
+
+<td title="#004860" 
+bgcolor="#004860">&nbsp;&nbsp;</td>
+
+<td title="#004870" 
+bgcolor="#004870">&nbsp;&nbsp;</td>
+
+<td title="#004880" 
+bgcolor="#004880">&nbsp;&nbsp;</td>
+
+<td title="#004890" 
+bgcolor="#004890">&nbsp;&nbsp;</td>
+
+<td title="#0048A0" 
+bgcolor="#0048A0">&nbsp;&nbsp;</td>
+
+<td title="#0048B0" 
+bgcolor="#0048B0">&nbsp;&nbsp;</td>
+
+<td title="#0048C0" 
+bgcolor="#0048C0">&nbsp;&nbsp;</td>
+
+<td title="#0048D0" 
+bgcolor="#0048D0">&nbsp;&nbsp;</td>
+
+<td title="#0048E0" 
+bgcolor="#0048E0">&nbsp;&nbsp;</td>
+
+<td title="#0048F0" 
+bgcolor="#0048F0">&nbsp;&nbsp;</td>
+
+<td title="#0048FF" 
+bgcolor="#0048FF">&nbsp;&nbsp;</td>
+
+</tr>
+
+<tr><td>50</td>
+
+
+<td title="#005000" 
+bgcolor="#005000">&nbsp;&nbsp;</td>
+
+<td title="#005010" 
+bgcolor="#005010">&nbsp;&nbsp;</td>
+
+<td title="#005020" 
+bgcolor="#005020">&nbsp;&nbsp;</td>
+
+<td title="#005030" 
+bgcolor="#005030">&nbsp;&nbsp;</td>
+
+<td title="#005040" 
+bgcolor="#005040">&nbsp;&nbsp;</td>
+
+<td title="#005050" 
+bgcolor="#005050">&nbsp;&nbsp;</td>
+
+<td title="#005060" 
+bgcolor="#005060">&nbsp;&nbsp;</td>
+
+<td title="#005070" 
+bgcolor="#005070">&nbsp;&nbsp;</td>
+
+<td title="#005080" 
+bgcolor="#005080">&nbsp;&nbsp;</td>
+
+<td title="#005090" 
+bgcolor="#005090">&nbsp;&nbsp;</td>
+
+<td title="#0050A0" 
+bgcolor="#0050A0">&nbsp;&nbsp;</td>
+
+<td title="#0050B0" 
+bgcolor="#0050B0">&nbsp;&nbsp;</td>
+
+<td title="#0050C0" 
+bgcolor="#0050C0">&nbsp;&nbsp;</td>
+
+<td title="#0050D0" 
+bgcolor="#0050D0">&nbsp;&nbsp;</td>
+
+<td title="#0050E0" 
+bgcolor="#0050E0">&nbsp;&nbsp;</td>
+
+<td title="#0050F0" 
+bgcolor="#0050F0">&nbsp;&nbsp;</td>
+
+<td title="#0050FF" 
+bgcolor="#0050FF">&nbsp;&nbsp;</td>
+
+</tr>
+
+<tr><td>58</td>
+
+
+<td title="#005800" 
+bgcolor="#005800">&nbsp;&nbsp;</td>
+
+<td title="#005810" 
+bgcolor="#005810">&nbsp;&nbsp;</td>
+
+<td title="#005820" 
+bgcolor="#005820">&nbsp;&nbsp;</td>
+
+<td title="#005830" 
+bgcolor="#005830">&nbsp;&nbsp;</td>
+
+<td title="#005840" 
+bgcolor="#005840">&nbsp;&nbsp;</td>
+
+<td title="#005850" 
+bgcolor="#005850">&nbsp;&nbsp;</td>
+
+<td title="#005860" 
+bgcolor="#005860">&nbsp;&nbsp;</td>
+
+<td title="#005870" 
+bgcolor="#005870">&nbsp;&nbsp;</td>
+
+<td title="#005880" 
+bgcolor="#005880">&nbsp;&nbsp;</td>
+
+<td title="#005890" 
+bgcolor="#005890">&nbsp;&nbsp;</td>
+
+<td title="#0058A0" 
+bgcolor="#0058A0">&nbsp;&nbsp;</td>
+
+<td title="#0058B0" 
+bgcolor="#0058B0">&nbsp;&nbsp;</td>
+
+<td title="#0058C0" 
+bgcolor="#0058C0">&nbsp;&nbsp;</td>
+
+<td title="#0058D0" 
+bgcolor="#0058D0">&nbsp;&nbsp;</td>
+
+<td title="#0058E0" 
+bgcolor="#0058E0">&nbsp;&nbsp;</td>
+
+<td title="#0058F0" 
+bgcolor="#0058F0">&nbsp;&nbsp;</td>
+
+<td title="#0058FF" 
+bgcolor="#0058FF">&nbsp;&nbsp;</td>
+
+</tr>
+
+<tr><td>60</td>
+
+
+<td title="#006000" 
+bgcolor="#006000">&nbsp;&nbsp;</td>
+
+<td title="#006010" 
+bgcolor="#006010">&nbsp;&nbsp;</td>
+
+<td title="#006020" 
+bgcolor="#006020">&nbsp;&nbsp;</td>
+
+<td title="#006030" 
+bgcolor="#006030">&nbsp;&nbsp;</td>
+
+<td title="#006040" 
+bgcolor="#006040">&nbsp;&nbsp;</td>
+
+<td title="#006050" 
+bgcolor="#006050">&nbsp;&nbsp;</td>
+
+<td title="#006060" 
+bgcolor="#006060">&nbsp;&nbsp;</td>
+
+<td title="#006070" 
+bgcolor="#006070">&nbsp;&nbsp;</td>
+
+<td title="#006080" 
+bgcolor="#006080">&nbsp;&nbsp;</td>
+
+<td title="#006090" 
+bgcolor="#006090">&nbsp;&nbsp;</td>
+
+<td title="#0060A0" 
+bgcolor="#0060A0">&nbsp;&nbsp;</td>
+
+<td title="#0060B0" 
+bgcolor="#0060B0">&nbsp;&nbsp;</td>
+
+<td title="#0060C0" 
+bgcolor="#0060C0">&nbsp;&nbsp;</td>
+
+<td title="#0060D0" 
+bgcolor="#0060D0">&nbsp;&nbsp;</td>
+
+<td title="#0060E0" 
+bgcolor="#0060E0">&nbsp;&nbsp;</td>
+
+<td title="#0060F0" 
+bgcolor="#0060F0">&nbsp;&nbsp;</td>
+
+<td title="#0060FF" 
+bgcolor="#0060FF">&nbsp;&nbsp;</td>
+
+</tr>
+
+<tr><td>68</td>
+
+
+<td title="#006800" 
+bgcolor="#006800">&nbsp;&nbsp;</td>
+
+<td title="#006810" 
+bgcolor="#006810">&nbsp;&nbsp;</td>
+
+<td title="#006820" 
+bgcolor="#006820">&nbsp;&nbsp;</td>
+
+<td title="#006830" 
+bgcolor="#006830">&nbsp;&nbsp;</td>
+
+<td title="#006840" 
+bgcolor="#006840">&nbsp;&nbsp;</td>
+
+<td title="#006850" 
+bgcolor="#006850">&nbsp;&nbsp;</td>
+
+<td title="#006860" 
+bgcolor="#006860">&nbsp;&nbsp;</td>
+
+<td title="#006870" 
+bgcolor="#006870">&nbsp;&nbsp;</td>
+
+<td title="#006880" 
+bgcolor="#006880">&nbsp;&nbsp;</td>
+
+<td title="#006890" 
+bgcolor="#006890">&nbsp;&nbsp;</td>
+
+<td title="#0068A0" 
+bgcolor="#0068A0">&nbsp;&nbsp;</td>
+
+<td title="#0068B0" 
+bgcolor="#0068B0">&nbsp;&nbsp;</td>
+
+<td title="#0068C0" 
+bgcolor="#0068C0">&nbsp;&nbsp;</td>
+
+<td title="#0068D0" 
+bgcolor="#0068D0">&nbsp;&nbsp;</td>
+
+<td title="#0068E0" 
+bgcolor="#0068E0">&nbsp;&nbsp;</td>
+
+<td title="#0068F0" 
+bgcolor="#0068F0">&nbsp;&nbsp;</td>
+
+<td title="#0068FF" 
+bgcolor="#0068FF">&nbsp;&nbsp;</td>
+
+</tr>
+
+<tr><td>70</td>
+
+
+<td title="#007000" 
+bgcolor="#007000">&nbsp;&nbsp;</td>
+
+<td title="#007010" 
+bgcolor="#007010">&nbsp;&nbsp;</td>
+
+<td title="#007020" 
+bgcolor="#007020">&nbsp;&nbsp;</td>
+
+<td title="#007030" 
+bgcolor="#007030">&nbsp;&nbsp;</td>
+
+<td title="#007040" 
+bgcolor="#007040">&nbsp;&nbsp;</td>
+
+<td title="#007050" 
+bgcolor="#007050">&nbsp;&nbsp;</td>
+
+<td title="#007060" 
+bgcolor="#007060">&nbsp;&nbsp;</td>
+
+<td title="#007070" 
+bgcolor="#007070">&nbsp;&nbsp;</td>
+
+<td title="#007080" 
+bgcolor="#007080">&nbsp;&nbsp;</td>
+
+<td title="#007090" 
+bgcolor="#007090">&nbsp;&nbsp;</td>
+
+<td title="#0070A0" 
+bgcolor="#0070A0">&nbsp;&nbsp;</td>
+
+<td title="#0070B0" 
+bgcolor="#0070B0">&nbsp;&nbsp;</td>
+
+<td title="#0070C0" 
+bgcolor="#0070C0">&nbsp;&nbsp;</td>
+
+<td title="#0070D0" 
+bgcolor="#0070D0">&nbsp;&nbsp;</td>
+
+<td title="#0070E0" 
+bgcolor="#0070E0">&nbsp;&nbsp;</td>
+
+<td title="#0070F0" 
+bgcolor="#0070F0">&nbsp;&nbsp;</td>
+
+<td title="#0070FF" 
+bgcolor="#0070FF">&nbsp;&nbsp;</td>
+
+</tr>
+
+<tr><td>78</td>
+
+
+<td title="#007800" 
+bgcolor="#007800">&nbsp;&nbsp;</td>
+
+<td title="#007810" 
+bgcolor="#007810">&nbsp;&nbsp;</td>
+
+<td title="#007820" 
+bgcolor="#007820">&nbsp;&nbsp;</td>
+
+<td title="#007830" 
+bgcolor="#007830">&nbsp;&nbsp;</td>
+
+<td title="#007840" 
+bgcolor="#007840">&nbsp;&nbsp;</td>
+
+<td title="#007850" 
+bgcolor="#007850">&nbsp;&nbsp;</td>
+
+<td title="#007860" 
+bgcolor="#007860">&nbsp;&nbsp;</td>
+
+<td title="#007870" 
+bgcolor="#007870">&nbsp;&nbsp;</td>
+
+<td title="#007880" 
+bgcolor="#007880">&nbsp;&nbsp;</td>
+
+<td title="#007890" 
+bgcolor="#007890">&nbsp;&nbsp;</td>
+
+<td title="#0078A0" 
+bgcolor="#0078A0">&nbsp;&nbsp;</td>
+
+<td title="#0078B0" 
+bgcolor="#0078B0">&nbsp;&nbsp;</td>
+
+<td title="#0078C0" 
+bgcolor="#0078C0">&nbsp;&nbsp;</td>
+
+<td title="#0078D0" 
+bgcolor="#0078D0">&nbsp;&nbsp;</td>
+
+<td title="#0078E0" 
+bgcolor="#0078E0">&nbsp;&nbsp;</td>
+
+<td title="#0078F0" 
+bgcolor="#0078F0">&nbsp;&nbsp;</td>
+
+<td title="#0078FF" 
+bgcolor="#0078FF">&nbsp;&nbsp;</td>
+
+</tr>
+
+<tr><td>80</td>
+
+
+<td title="#008000" 
+bgcolor="#008000">&nbsp;&nbsp;</td>
+
+<td title="#008010" 
+bgcolor="#008010">&nbsp;&nbsp;</td>
+
+<td title="#008020" 
+bgcolor="#008020">&nbsp;&nbsp;</td>
+
+<td title="#008030" 
+bgcolor="#008030">&nbsp;&nbsp;</td>
+
+<td title="#008040" 
+bgcolor="#008040">&nbsp;&nbsp;</td>
+
+<td title="#008050" 
+bgcolor="#008050">&nbsp;&nbsp;</td>
+
+<td title="#008060" 
+bgcolor="#008060">&nbsp;&nbsp;</td>
+
+<td title="#008070" 
+bgcolor="#008070">&nbsp;&nbsp;</td>
+
+<td title="#008080" 
+bgcolor="#008080">&nbsp;&nbsp;</td>
+
+<td title="#008090" 
+bgcolor="#008090">&nbsp;&nbsp;</td>
+
+<td title="#0080A0" 
+bgcolor="#0080A0">&nbsp;&nbsp;</td>
+
+<td title="#0080B0" 
+bgcolor="#0080B0">&nbsp;&nbsp;</td>
+
+<td title="#0080C0" 
+bgcolor="#0080C0">&nbsp;&nbsp;</td>
+
+<td title="#0080D0" 
+bgcolor="#0080D0">&nbsp;&nbsp;</td>
+
+<td title="#0080E0" 
+bgcolor="#0080E0">&nbsp;&nbsp;</td>
+
+<td title="#0080F0" 
+bgcolor="#0080F0">&nbsp;&nbsp;</td>
+
+<td title="#0080FF" 
+bgcolor="#0080FF">&nbsp;&nbsp;</td>
+
+</tr>
+
+<tr><td>88</td>
+
+
+<td title="#008800" 
+bgcolor="#008800">&nbsp;&nbsp;</td>
+
+<td title="#008810" 
+bgcolor="#008810">&nbsp;&nbsp;</td>
+
+<td title="#008820" 
+bgcolor="#008820">&nbsp;&nbsp;</td>
+
+<td title="#008830" 
+bgcolor="#008830">&nbsp;&nbsp;</td>
+
+<td title="#008840" 
+bgcolor="#008840">&nbsp;&nbsp;</td>
+
+<td title="#008850" 
+bgcolor="#008850">&nbsp;&nbsp;</td>
+
+<td title="#008860" 
+bgcolor="#008860">&nbsp;&nbsp;</td>
+
+<td title="#008870" 
+bgcolor="#008870">&nbsp;&nbsp;</td>
+
+<td title="#008880" 
+bgcolor="#008880">&nbsp;&nbsp;</td>
+
+<td title="#008890" 
+bgcolor="#008890">&nbsp;&nbsp;</td>
+
+<td title="#0088A0" 
+bgcolor="#0088A0">&nbsp;&nbsp;</td>
+
+<td title="#0088B0" 
+bgcolor="#0088B0">&nbsp;&nbsp;</td>
+
+<td title="#0088C0" 
+bgcolor="#0088C0">&nbsp;&nbsp;</td>
+
+<td title="#0088D0" 
+bgcolor="#0088D0">&nbsp;&nbsp;</td>
+
+<td title="#0088E0" 
+bgcolor="#0088E0">&nbsp;&nbsp;</td>
+
+<td title="#0088F0" 
+bgcolor="#0088F0">&nbsp;&nbsp;</td>
+
+<td title="#0088FF" 
+bgcolor="#0088FF">&nbsp;&nbsp;</td>
+
+</tr>
+
+<tr><td>90</td>
+
+
+<td title="#009000" 
+bgcolor="#009000">&nbsp;&nbsp;</td>
+
+<td title="#009010" 
+bgcolor="#009010">&nbsp;&nbsp;</td>
+
+<td title="#009020" 
+bgcolor="#009020">&nbsp;&nbsp;</td>
+
+<td title="#009030" 
+bgcolor="#009030">&nbsp;&nbsp;</td>
+
+<td title="#009040" 
+bgcolor="#009040">&nbsp;&nbsp;</td>
+
+<td title="#009050" 
+bgcolor="#009050">&nbsp;&nbsp;</td>
+
+<td title="#009060" 
+bgcolor="#009060">&nbsp;&nbsp;</td>
+
+<td title="#009070" 
+bgcolor="#009070">&nbsp;&nbsp;</td>
+
+<td title="#009080" 
+bgcolor="#009080">&nbsp;&nbsp;</td>
+
+<td title="#009090" 
+bgcolor="#009090">&nbsp;&nbsp;</td>
+
+<td title="#0090A0" 
+bgcolor="#0090A0">&nbsp;&nbsp;</td>
+
+<td title="#0090B0" 
+bgcolor="#0090B0">&nbsp;&nbsp;</td>
+
+<td title="#0090C0" 
+bgcolor="#0090C0">&nbsp;&nbsp;</td>
+
+<td title="#0090D0" 
+bgcolor="#0090D0">&nbsp;&nbsp;</td>
+
+<td title="#0090E0" 
+bgcolor="#0090E0">&nbsp;&nbsp;</td>
+
+<td title="#0090F0" 
+bgcolor="#0090F0">&nbsp;&nbsp;</td>
+
+<td title="#0090FF" 
+bgcolor="#0090FF">&nbsp;&nbsp;</td>
+
+</tr>
+
+<tr><td>98</td>
+
+
+<td title="#009800" 
+bgcolor="#009800">&nbsp;&nbsp;</td>
+
+<td title="#009810" 
+bgcolor="#009810">&nbsp;&nbsp;</td>
+
+<td title="#009820" 
+bgcolor="#009820">&nbsp;&nbsp;</td>
+
+<td title="#009830" 
+bgcolor="#009830">&nbsp;&nbsp;</td>
+
+<td title="#009840" 
+bgcolor="#009840">&nbsp;&nbsp;</td>
+
+<td title="#009850" 
+bgcolor="#009850">&nbsp;&nbsp;</td>
+
+<td title="#009860" 
+bgcolor="#009860">&nbsp;&nbsp;</td>
+
+<td title="#009870" 
+bgcolor="#009870">&nbsp;&nbsp;</td>
+
+<td title="#009880" 
+bgcolor="#009880">&nbsp;&nbsp;</td>
+
+<td title="#009890" 
+bgcolor="#009890">&nbsp;&nbsp;</td>
+
+<td title="#0098A0" 
+bgcolor="#0098A0">&nbsp;&nbsp;</td>
+
+<td title="#0098B0" 
+bgcolor="#0098B0">&nbsp;&nbsp;</td>
+
+<td title="#0098C0" 
+bgcolor="#0098C0">&nbsp;&nbsp;</td>
+
+<td title="#0098D0" 
+bgcolor="#0098D0">&nbsp;&nbsp;</td>
+
+<td title="#0098E0" 
+bgcolor="#0098E0">&nbsp;&nbsp;</td>
+
+<td title="#0098F0" 
+bgcolor="#0098F0">&nbsp;&nbsp;</td>
+
+<td title="#0098FF" 
+bgcolor="#0098FF">&nbsp;&nbsp;</td>
+
+</tr>
+
+<tr><td>A0</td>
+
+
+<td title="#00A000" 
+bgcolor="#00A000">&nbsp;&nbsp;</td>
+
+<td title="#00A010" 
+bgcolor="#00A010">&nbsp;&nbsp;</td>
+
+<td title="#00A020" 
+bgcolor="#00A020">&nbsp;&nbsp;</td>
+
+<td title="#00A030" 
+bgcolor="#00A030">&nbsp;&nbsp;</td>
+
+<td title="#00A040" 
+bgcolor="#00A040">&nbsp;&nbsp;</td>
+
+<td title="#00A050" 
+bgcolor="#00A050">&nbsp;&nbsp;</td>
+
+<td title="#00A060" 
+bgcolor="#00A060">&nbsp;&nbsp;</td>
+
+<td title="#00A070" 
+bgcolor="#00A070">&nbsp;&nbsp;</td>
+
+<td title="#00A080" 
+bgcolor="#00A080">&nbsp;&nbsp;</td>
+
+<td title="#00A090" 
+bgcolor="#00A090">&nbsp;&nbsp;</td>
+
+<td title="#00A0A0" 
+bgcolor="#00A0A0">&nbsp;&nbsp;</td>
+
+<td title="#00A0B0" 
+bgcolor="#00A0B0">&nbsp;&nbsp;</td>
+
+<td title="#00A0C0" 
+bgcolor="#00A0C0">&nbsp;&nbsp;</td>
+
+<td title="#00A0D0" 
+bgcolor="#00A0D0">&nbsp;&nbsp;</td>
+
+<td title="#00A0E0" 
+bgcolor="#00A0E0">&nbsp;&nbsp;</td>
+
+<td title="#00A0F0" 
+bgcolor="#00A0F0">&nbsp;&nbsp;</td>
+
+<td title="#00A0FF" 
+bgcolor="#00A0FF">&nbsp;&nbsp;</td>
+
+</tr>
+
+<tr><td>A8</td>
+
+
+<td title="#00A800" 
+bgcolor="#00A800">&nbsp;&nbsp;</td>
+
+<td title="#00A810" 
+bgcolor="#00A810">&nbsp;&nbsp;</td>
+
+<td title="#00A820" 
+bgcolor="#00A820">&nbsp;&nbsp;</td>
+
+<td title="#00A830" 
+bgcolor="#00A830">&nbsp;&nbsp;</td>
+
+<td title="#00A840" 
+bgcolor="#00A840">&nbsp;&nbsp;</td>
+
+<td title="#00A850" 
+bgcolor="#00A850">&nbsp;&nbsp;</td>
+
+<td title="#00A860" 
+bgcolor="#00A860">&nbsp;&nbsp;</td>
+
+<td title="#00A870" 
+bgcolor="#00A870">&nbsp;&nbsp;</td>
+
+<td title="#00A880" 
+bgcolor="#00A880">&nbsp;&nbsp;</td>
+
+<td title="#00A890" 
+bgcolor="#00A890">&nbsp;&nbsp;</td>
+
+<td title="#00A8A0" 
+bgcolor="#00A8A0">&nbsp;&nbsp;</td>
+
+<td title="#00A8B0" 
+bgcolor="#00A8B0">&nbsp;&nbsp;</td>
+
+<td title="#00A8C0" 
+bgcolor="#00A8C0">&nbsp;&nbsp;</td>
+
+<td title="#00A8D0" 
+bgcolor="#00A8D0">&nbsp;&nbsp;</td>
+
+<td title="#00A8E0" 
+bgcolor="#00A8E0">&nbsp;&nbsp;</td>
+
+<td title="#00A8F0" 
+bgcolor="#00A8F0">&nbsp;&nbsp;</td>
+
+<td title="#00A8FF" 
+bgcolor="#00A8FF">&nbsp;&nbsp;</td>
+
+</tr>
+
+<tr><td>B0</td>
+
+
+<td title="#00B000" 
+bgcolor="#00B000">&nbsp;&nbsp;</td>
+
+<td title="#00B010" 
+bgcolor="#00B010">&nbsp;&nbsp;</td>
+
+<td title="#00B020" 
+bgcolor="#00B020">&nbsp;&nbsp;</td>
+
+<td title="#00B030" 
+bgcolor="#00B030">&nbsp;&nbsp;</td>
+
+<td title="#00B040" 
+bgcolor="#00B040">&nbsp;&nbsp;</td>
+
+<td title="#00B050" 
+bgcolor="#00B050">&nbsp;&nbsp;</td>
+
+<td title="#00B060" 
+bgcolor="#00B060">&nbsp;&nbsp;</td>
+
+<td title="#00B070" 
+bgcolor="#00B070">&nbsp;&nbsp;</td>
+
+<td title="#00B080" 
+bgcolor="#00B080">&nbsp;&nbsp;</td>
+
+<td title="#00B090" 
+bgcolor="#00B090">&nbsp;&nbsp;</td>
+
+<td title="#00B0A0" 
+bgcolor="#00B0A0">&nbsp;&nbsp;</td>
+
+<td title="#00B0B0" 
+bgcolor="#00B0B0">&nbsp;&nbsp;</td>
+
+<td title="#00B0C0" 
+bgcolor="#00B0C0">&nbsp;&nbsp;</td>
+
+<td title="#00B0D0" 
+bgcolor="#00B0D0">&nbsp;&nbsp;</td>
+
+<td title="#00B0E0" 
+bgcolor="#00B0E0">&nbsp;&nbsp;</td>
+
+<td title="#00B0F0" 
+bgcolor="#00B0F0">&nbsp;&nbsp;</td>
+
+<td title="#00B0FF" 
+bgcolor="#00B0FF">&nbsp;&nbsp;</td>
+
+</tr>
+
+<tr><td>B8</td>
+
+
+<td title="#00B800" 
+bgcolor="#00B800">&nbsp;&nbsp;</td>
+
+<td title="#00B810" 
+bgcolor="#00B810">&nbsp;&nbsp;</td>
+
+<td title="#00B820" 
+bgcolor="#00B820">&nbsp;&nbsp;</td>
+
+<td title="#00B830" 
+bgcolor="#00B830">&nbsp;&nbsp;</td>
+
+<td title="#00B840" 
+bgcolor="#00B840">&nbsp;&nbsp;</td>
+
+<td title="#00B850" 
+bgcolor="#00B850">&nbsp;&nbsp;</td>
+
+<td title="#00B860" 
+bgcolor="#00B860">&nbsp;&nbsp;</td>
+
+<td title="#00B870" 
+bgcolor="#00B870">&nbsp;&nbsp;</td>
+
+<td title="#00B880" 
+bgcolor="#00B880">&nbsp;&nbsp;</td>
+
+<td title="#00B890" 
+bgcolor="#00B890">&nbsp;&nbsp;</td>
+
+<td title="#00B8A0" 
+bgcolor="#00B8A0">&nbsp;&nbsp;</td>
+
+<td title="#00B8B0" 
+bgcolor="#00B8B0">&nbsp;&nbsp;</td>
+
+<td title="#00B8C0" 
+bgcolor="#00B8C0">&nbsp;&nbsp;</td>
+
+<td title="#00B8D0" 
+bgcolor="#00B8D0">&nbsp;&nbsp;</td>
+
+<td title="#00B8E0" 
+bgcolor="#00B8E0">&nbsp;&nbsp;</td>
+
+<td title="#00B8F0" 
+bgcolor="#00B8F0">&nbsp;&nbsp;</td>
+
+<td title="#00B8FF" 
+bgcolor="#00B8FF">&nbsp;&nbsp;</td>
+
+</tr>
+
+<tr><td>C0</td>
+
+
+<td title="#00C000" 
+bgcolor="#00C000">&nbsp;&nbsp;</td>
+
+<td title="#00C010" 
+bgcolor="#00C010">&nbsp;&nbsp;</td>
+
+<td title="#00C020" 
+bgcolor="#00C020">&nbsp;&nbsp;</td>
+
+<td title="#00C030" 
+bgcolor="#00C030">&nbsp;&nbsp;</td>
+
+<td title="#00C040" 
+bgcolor="#00C040">&nbsp;&nbsp;</td>
+
+<td title="#00C050" 
+bgcolor="#00C050">&nbsp;&nbsp;</td>
+
+<td title="#00C060" 
+bgcolor="#00C060">&nbsp;&nbsp;</td>
+
+<td title="#00C070" 
+bgcolor="#00C070">&nbsp;&nbsp;</td>
+
+<td title="#00C080" 
+bgcolor="#00C080">&nbsp;&nbsp;</td>
+
+<td title="#00C090" 
+bgcolor="#00C090">&nbsp;&nbsp;</td>
+
+<td title="#00C0A0" 
+bgcolor="#00C0A0">&nbsp;&nbsp;</td>
+
+<td title="#00C0B0" 
+bgcolor="#00C0B0">&nbsp;&nbsp;</td>
+
+<td title="#00C0C0" 
+bgcolor="#00C0C0">&nbsp;&nbsp;</td>
+
+<td title="#00C0D0" 
+bgcolor="#00C0D0">&nbsp;&nbsp;</td>
+
+<td title="#00C0E0" 
+bgcolor="#00C0E0">&nbsp;&nbsp;</td>
+
+<td title="#00C0F0" 
+bgcolor="#00C0F0">&nbsp;&nbsp;</td>
+
+<td title="#00C0FF" 
+bgcolor="#00C0FF">&nbsp;&nbsp;</td>
+
+</tr>
+
+<tr><td>C8</td>
+
+
+<td title="#00C800" 
+bgcolor="#00C800">&nbsp;&nbsp;</td>
+
+<td title="#00C810" 
+bgcolor="#00C810">&nbsp;&nbsp;</td>
+
+<td title="#00C820" 
+bgcolor="#00C820">&nbsp;&nbsp;</td>
+
+<td title="#00C830" 
+bgcolor="#00C830">&nbsp;&nbsp;</td>
+
+<td title="#00C840" 
+bgcolor="#00C840">&nbsp;&nbsp;</td>
+
+<td title="#00C850" 
+bgcolor="#00C850">&nbsp;&nbsp;</td>
+
+<td title="#00C860" 
+bgcolor="#00C860">&nbsp;&nbsp;</td>
+
+<td title="#00C870" 
+bgcolor="#00C870">&nbsp;&nbsp;</td>
+
+<td title="#00C880" 
+bgcolor="#00C880">&nbsp;&nbsp;</td>
+
+<td title="#00C890" 
+bgcolor="#00C890">&nbsp;&nbsp;</td>
+
+<td title="#00C8A0" 
+bgcolor="#00C8A0">&nbsp;&nbsp;</td>
+
+<td title="#00C8B0" 
+bgcolor="#00C8B0">&nbsp;&nbsp;</td>
+
+<td title="#00C8C0" 
+bgcolor="#00C8C0">&nbsp;&nbsp;</td>
+
+<td title="#00C8D0" 
+bgcolor="#00C8D0">&nbsp;&nbsp;</td>
+
+<td title="#00C8E0" 
+bgcolor="#00C8E0">&nbsp;&nbsp;</td>
+
+<td title="#00C8F0" 
+bgcolor="#00C8F0">&nbsp;&nbsp;</td>
+
+<td title="#00C8FF" 
+bgcolor="#00C8FF">&nbsp;&nbsp;</td>
+
+</tr>
+
+<tr><td>D0</td>
+
+
+<td title="#00D000" 
+bgcolor="#00D000">&nbsp;&nbsp;</td>
+
+<td title="#00D010" 
+bgcolor="#00D010">&nbsp;&nbsp;</td>
+
+<td title="#00D020" 
+bgcolor="#00D020">&nbsp;&nbsp;</td>
+
+<td title="#00D030" 
+bgcolor="#00D030">&nbsp;&nbsp;</td>
+
+<td title="#00D040" 
+bgcolor="#00D040">&nbsp;&nbsp;</td>
+
+<td title="#00D050" 
+bgcolor="#00D050">&nbsp;&nbsp;</td>
+
+<td title="#00D060" 
+bgcolor="#00D060">&nbsp;&nbsp;</td>
+
+<td title="#00D070" 
+bgcolor="#00D070">&nbsp;&nbsp;</td>
+
+<td title="#00D080" 
+bgcolor="#00D080">&nbsp;&nbsp;</td>
+
+<td title="#00D090" 
+bgcolor="#00D090">&nbsp;&nbsp;</td>
+
+<td title="#00D0A0" 
+bgcolor="#00D0A0">&nbsp;&nbsp;</td>
+
+<td title="#00D0B0" 
+bgcolor="#00D0B0">&nbsp;&nbsp;</td>
+
+<td title="#00D0C0" 
+bgcolor="#00D0C0">&nbsp;&nbsp;</td>
+
+<td title="#00D0D0" 
+bgcolor="#00D0D0">&nbsp;&nbsp;</td>
+
+<td title="#00D0E0" 
+bgcolor="#00D0E0">&nbsp;&nbsp;</td>
+
+<td title="#00D0F0" 
+bgcolor="#00D0F0">&nbsp;&nbsp;</td>
+
+<td title="#00D0FF" 
+bgcolor="#00D0FF">&nbsp;&nbsp;</td>
+
+</tr>
+
+<tr><td>D8</td>
+
+
+<td title="#00D800" 
+bgcolor="#00D800">&nbsp;&nbsp;</td>
+
+<td title="#00D810" 
+bgcolor="#00D810">&nbsp;&nbsp;</td>
+
+<td title="#00D820" 
+bgcolor="#00D820">&nbsp;&nbsp;</td>
+
+<td title="#00D830" 
+bgcolor="#00D830">&nbsp;&nbsp;</td>
+
+<td title="#00D840" 
+bgcolor="#00D840">&nbsp;&nbsp;</td>
+
+<td title="#00D850" 
+bgcolor="#00D850">&nbsp;&nbsp;</td>
+
+<td title="#00D860" 
+bgcolor="#00D860">&nbsp;&nbsp;</td>
+
+<td title="#00D870" 
+bgcolor="#00D870">&nbsp;&nbsp;</td>
+
+<td title="#00D880" 
+bgcolor="#00D880">&nbsp;&nbsp;</td>
+
+<td title="#00D890" 
+bgcolor="#00D890">&nbsp;&nbsp;</td>
+
+<td title="#00D8A0" 
+bgcolor="#00D8A0">&nbsp;&nbsp;</td>
+
+<td title="#00D8B0" 
+bgcolor="#00D8B0">&nbsp;&nbsp;</td>
+
+<td title="#00D8C0" 
+bgcolor="#00D8C0">&nbsp;&nbsp;</td>
+
+<td title="#00D8D0" 
+bgcolor="#00D8D0">&nbsp;&nbsp;</td>
+
+<td title="#00D8E0" 
+bgcolor="#00D8E0">&nbsp;&nbsp;</td>
+
+<td title="#00D8F0" 
+bgcolor="#00D8F0">&nbsp;&nbsp;</td>
+
+<td title="#00D8FF" 
+bgcolor="#00D8FF">&nbsp;&nbsp;</td>
+
+</tr>
+
+<tr><td>E0</td>
+
+
+<td title="#00E000" 
+bgcolor="#00E000">&nbsp;&nbsp;</td>
+
+<td title="#00E010" 
+bgcolor="#00E010">&nbsp;&nbsp;</td>
+
+<td title="#00E020" 
+bgcolor="#00E020">&nbsp;&nbsp;</td>
+
+<td title="#00E030" 
+bgcolor="#00E030">&nbsp;&nbsp;</td>
+
+<td title="#00E040" 
+bgcolor="#00E040">&nbsp;&nbsp;</td>
+
+<td title="#00E050" 
+bgcolor="#00E050">&nbsp;&nbsp;</td>
+
+<td title="#00E060" 
+bgcolor="#00E060">&nbsp;&nbsp;</td>
+
+<td title="#00E070" 
+bgcolor="#00E070">&nbsp;&nbsp;</td>
+
+<td title="#00E080" 
+bgcolor="#00E080">&nbsp;&nbsp;</td>
+
+<td title="#00E090" 
+bgcolor="#00E090">&nbsp;&nbsp;</td>
+
+<td title="#00E0A0" 
+bgcolor="#00E0A0">&nbsp;&nbsp;</td>
+
+<td title="#00E0B0" 
+bgcolor="#00E0B0">&nbsp;&nbsp;</td>
+
+<td title="#00E0C0" 
+bgcolor="#00E0C0">&nbsp;&nbsp;</td>
+
+<td title="#00E0D0" 
+bgcolor="#00E0D0">&nbsp;&nbsp;</td>
+
+<td title="#00E0E0" 
+bgcolor="#00E0E0">&nbsp;&nbsp;</td>
+
+<td title="#00E0F0" 
+bgcolor="#00E0F0">&nbsp;&nbsp;</td>
+
+<td title="#00E0FF" 
+bgcolor="#00E0FF">&nbsp;&nbsp;</td>
+
+</tr>
+
+<tr><td>E8</td>
+
+
+<td title="#00E800" 
+bgcolor="#00E800">&nbsp;&nbsp;</td>
+
+<td title="#00E810" 
+bgcolor="#00E810">&nbsp;&nbsp;</td>
+
+<td title="#00E820" 
+bgcolor="#00E820">&nbsp;&nbsp;</td>
+
+<td title="#00E830" 
+bgcolor="#00E830">&nbsp;&nbsp;</td>
+
+<td title="#00E840" 
+bgcolor="#00E840">&nbsp;&nbsp;</td>
+
+<td title="#00E850" 
+bgcolor="#00E850">&nbsp;&nbsp;</td>
+
+<td title="#00E860" 
+bgcolor="#00E860">&nbsp;&nbsp;</td>
+
+<td title="#00E870" 
+bgcolor="#00E870">&nbsp;&nbsp;</td>
+
+<td title="#00E880" 
+bgcolor="#00E880">&nbsp;&nbsp;</td>
+
+<td title="#00E890" 
+bgcolor="#00E890">&nbsp;&nbsp;</td>
+
+<td title="#00E8A0" 
+bgcolor="#00E8A0">&nbsp;&nbsp;</td>
+
+<td title="#00E8B0" 
+bgcolor="#00E8B0">&nbsp;&nbsp;</td>
+
+<td title="#00E8C0" 
+bgcolor="#00E8C0">&nbsp;&nbsp;</td>
+
+<td title="#00E8D0" 
+bgcolor="#00E8D0">&nbsp;&nbsp;</td>
+
+<td title="#00E8E0" 
+bgcolor="#00E8E0">&nbsp;&nbsp;</td>
+
+<td title="#00E8F0" 
+bgcolor="#00E8F0">&nbsp;&nbsp;</td>
+
+<td title="#00E8FF" 
+bgcolor="#00E8FF">&nbsp;&nbsp;</td>
+
+</tr>
+
+<tr><td>F0</td>
+
+
+<td title="#00F000" 
+bgcolor="#00F000">&nbsp;&nbsp;</td>
+
+<td title="#00F010" 
+bgcolor="#00F010">&nbsp;&nbsp;</td>
+
+<td title="#00F020" 
+bgcolor="#00F020">&nbsp;&nbsp;</td>
+
+<td title="#00F030" 
+bgcolor="#00F030">&nbsp;&nbsp;</td>
+
+<td title="#00F040" 
+bgcolor="#00F040">&nbsp;&nbsp;</td>
+
+<td title="#00F050" 
+bgcolor="#00F050">&nbsp;&nbsp;</td>
+
+<td title="#00F060" 
+bgcolor="#00F060">&nbsp;&nbsp;</td>
+
+<td title="#00F070" 
+bgcolor="#00F070">&nbsp;&nbsp;</td>
+
+<td title="#00F080" 
+bgcolor="#00F080">&nbsp;&nbsp;</td>
+
+<td title="#00F090" 
+bgcolor="#00F090">&nbsp;&nbsp;</td>
+
+<td title="#00F0A0" 
+bgcolor="#00F0A0">&nbsp;&nbsp;</td>
+
+<td title="#00F0B0" 
+bgcolor="#00F0B0">&nbsp;&nbsp;</td>
+
+<td title="#00F0C0" 
+bgcolor="#00F0C0">&nbsp;&nbsp;</td>
+
+<td title="#00F0D0" 
+bgcolor="#00F0D0">&nbsp;&nbsp;</td>
+
+<td title="#00F0E0" 
+bgcolor="#00F0E0">&nbsp;&nbsp;</td>
+
+<td title="#00F0F0" 
+bgcolor="#00F0F0">&nbsp;&nbsp;</td>
+
+<td title="#00F0FF" 
+bgcolor="#00F0FF">&nbsp;&nbsp;</td>
+
+</tr>
+
+<tr><td>F8</td>
+
+
+<td title="#00F800" 
+bgcolor="#00F800">&nbsp;&nbsp;</td>
+
+<td title="#00F810" 
+bgcolor="#00F810">&nbsp;&nbsp;</td>
+
+<td title="#00F820" 
+bgcolor="#00F820">&nbsp;&nbsp;</td>
+
+<td title="#00F830" 
+bgcolor="#00F830">&nbsp;&nbsp;</td>
+
+<td title="#00F840" 
+bgcolor="#00F840">&nbsp;&nbsp;</td>
+
+<td title="#00F850" 
+bgcolor="#00F850">&nbsp;&nbsp;</td>
+
+<td title="#00F860" 
+bgcolor="#00F860">&nbsp;&nbsp;</td>
+
+<td title="#00F870" 
+bgcolor="#00F870">&nbsp;&nbsp;</td>
+
+<td title="#00F880" 
+bgcolor="#00F880">&nbsp;&nbsp;</td>
+
+<td title="#00F890" 
+bgcolor="#00F890">&nbsp;&nbsp;</td>
+
+<td title="#00F8A0" 
+bgcolor="#00F8A0">&nbsp;&nbsp;</td>
+
+<td title="#00F8B0" 
+bgcolor="#00F8B0">&nbsp;&nbsp;</td>
+
+<td title="#00F8C0" 
+bgcolor="#00F8C0">&nbsp;&nbsp;</td>
+
+<td title="#00F8D0" 
+bgcolor="#00F8D0">&nbsp;&nbsp;</td>
+
+<td title="#00F8E0" 
+bgcolor="#00F8E0">&nbsp;&nbsp;</td>
+
+<td title="#00F8F0" 
+bgcolor="#00F8F0">&nbsp;&nbsp;</td>
+
+<td title="#00F8FF" 
+bgcolor="#00F8FF">&nbsp;&nbsp;</td>
+
+</tr>
+
+<tr><td>FF</td>
+
+
+<td title="#00FF00" 
+bgcolor="#00FF00">&nbsp;&nbsp;</td>
+
+<td title="#00FF10" 
+bgcolor="#00FF10">&nbsp;&nbsp;</td>
+
+<td title="#00FF20" 
+bgcolor="#00FF20">&nbsp;&nbsp;</td>
+
+<td title="#00FF30" 
+bgcolor="#00FF30">&nbsp;&nbsp;</td>
+
+<td title="#00FF40" 
+bgcolor="#00FF40">&nbsp;&nbsp;</td>
+
+<td title="#00FF50" 
+bgcolor="#00FF50">&nbsp;&nbsp;</td>
+
+<td title="#00FF60" 
+bgcolor="#00FF60">&nbsp;&nbsp;</td>
+
+<td title="#00FF70" 
+bgcolor="#00FF70">&nbsp;&nbsp;</td>
+
+<td title="#00FF80" 
+bgcolor="#00FF80">&nbsp;&nbsp;</td>
+
+<td title="#00FF90" 
+bgcolor="#00FF90">&nbsp;&nbsp;</td>
+
+<td title="#00FFA0" 
+bgcolor="#00FFA0">&nbsp;&nbsp;</td>
+
+<td title="#00FFB0" 
+bgcolor="#00FFB0">&nbsp;&nbsp;</td>
+
+<td title="#00FFC0" 
+bgcolor="#00FFC0">&nbsp;&nbsp;</td>
+
+<td title="#00FFD0" 
+bgcolor="#00FFD0">&nbsp;&nbsp;</td>
+
+<td title="#00FFE0" 
+bgcolor="#00FFE0">&nbsp;&nbsp;</td>
+
+<td title="#00FFF0" 
+bgcolor="#00FFF0">&nbsp;&nbsp;</td>
+
+<td title="#00FFFF" 
+bgcolor="#00FFFF">&nbsp;&nbsp;</td>
+
+</tr>
+
+</table>
+
+
+<hr />
+
+<a href="html_colors.html"><img class="navup" src="http://www.w3schools.com/images/up.gif"
+alt="HTML Colors" border="0" /> HTML Colors</a>
+
+<hr />
+
+<!-- **** SPOTLIGHTS 1 **** -->
+<!-- SmallPS -->
+<script type='text/javascript'>
+GA_googleFillSlot("SmallPS");
+</script>
+<!-- **** SPOTLIGHTS 2 **** -->
+<!-- LargePS -->
+<script type='text/javascript'>
+GA_googleFillSlot("LargePS");
+</script>
+<!-- **** SPOTLIGHTS 3 **** -->
+<script type="text/javascript"><!--
+document.write('<table cellpadding="0" cellspacing="0"><tr><td width="108">&nbsp;</td><td>');
+google_ad_client = "pub-3440800076797949";
+/*txt*/
+google_ad_slot = "1699448869";
+google_ad_width = 336;
+google_ad_height = 280;
+//-->
+</script>
+<script type="text/javascript"
+src="../../pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<script type="text/javascript">
+<!--
+document.write("</td></tr></table>");
+//-->
+</script>
+
+<!-- BottomBanner -->
+<script type='text/javascript'>
+GA_googleFillSlot("BottomBanner");
+</script>
+
+
+<div id="err_form" style="display:none">
+<h2>Your suggestion:</h2>
+<p><label for="err_email">Your E-mail (optional):</label> <input type="text" id="err_email" name="err_email" /></p>
+<p><label for="err_url">Page address:</label> <input type="text" disabled="disabled" id="err_url" name="err_url" /></p>
+<p><label for="err_desc">Description:</label> <textarea name="err_desc" id="err_desc" cols="92" rows="20"></textarea></p>
+<p class="submit"><input type="button" value="Submit" onclick="sendErr()" /></p>
+<div class="err_close" onclick="hideError()">Close [X]</div>
+</div>
+<div id="err_sent" style="display:none">
+<h2>Thank you for your support.</h2>
+<div class="err_close" onclick="hideSent()">Close [X]</div>
+</div>
+
+</div>
+
+<div id="rightcolumn" style="width:150px;margin:0px;padding:0px;float:left">
+<table>
+<tr><th>WEB HOSTING</th></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://www.lunarpages.com/id/w3schools/goto/w3schools">Best Web Hosting</a>
+</td></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://www.eukhost.com/">PHP MySQL Hosting</a>
+</td></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://www.web-hosting-top.com/coupons">Best Hosting Coupons</a>
+</td></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://www.heartinternet.co.uk/index.shtml">UK Reseller Hosting</a>
+</td></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://www.webhosting.uk.com/cloud-hosting.php">Cloud Hosting</a>
+</td></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://stats.justhost.com/track?c878c3580275f4db3720fbc777a282233">Top Web Hosting</a>
+</td></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://www.doteasy.com/index.cfm?A=w3text">$7.95/mo SEO Hosting</a>
+</td></tr>
+</table>
+
+<table>
+<tr><th>WEB BUILDING</th></tr>
+<tr><td>
+
+<a target="_blank" rel="nofollow" href="http://www.altova.com/ref/?s=w3s_text&amp;q=xmlspy">Download XML Editor</a>
+
+</td></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://www.wix.com/start/wfree?utm_campaign=ma_w3schools.com&amp;experiment_id=ma_w3schools.com300builder">FREE Website BUILDER</a>
+</td></tr>
+<tr><td>
+<a target="_blank" rel="nofollow" href="http://www.dreamtemplate.com/">Free Website Templates</a>
+<a target="_blank" rel="nofollow" href="http://www.templatesold.com/">Free WordPress Themes</a>
+</td></tr>
+</table>
+
+<table>
+<tr><th>W3SCHOOLS EXAMS</th></tr>
+<tr><td>
+<a target="_blank" href="../cert/default.html">Get Certified in:<br />HTML, CSS, JavaScript, XML, PHP, and ASP</a>
+</td></tr>
+</table>
+
+<table>
+<tr><th>W3SCHOOLS BOOKS</th></tr>
+<tr><td>
+<a target="_blank" href="../books/default.html">
+New Books:<br />HTML, CSS<br />
+JavaScript, and Ajax</a>
+</td></tr>
+</table>
+
+<table>
+<tr><th>STATISTICS</th></tr>
+<tr><td>
+<a target="_top" href="../browsers/browsers_stats.html">Browser Statistics</a><br />
+<a target="_top" href="../browsers/browsers_os.html">Browser OS</a><br />
+<a target="_top" href="../browsers/browsers_display.html">Browser Display</a>
+</td></tr></table>
+
+<script type="text/javascript">
+<!--
+function sharethis()
+{
+txt='<a href="http://www.facebook.com/sharer.php?u='+document.URL+'" target="_blank" title="Facebook">'
+txt=txt+'<img src="/images/share_facebook.gif" border="0" width="16px" height="16px" style="margin-right:4px" /></a>';
+txt=txt+'<a href="http://twitter.com/home?status=Currently reading '+document.URL+'" target="_blank" title="Twitter">';
+txt=txt+'<img src="/images/share_twitter.gif" border="0" width="16px" height="16px" style="margin-right:4px" /></a>';
+txt=txt+'<a href="mailto:?&amp;subject='+document.title+'&amp;body=Take%20a%20look%20at%20this%20page%20at%20W3Schools.com:%20'+document.URL+'" target="_blank" title="E-mail">';
+txt=txt+'<img src="/images/share_email.gif" border="0" width="16px" height="16px" style="margin-right:4px" /></a>';
+txt=txt+'<a href="http://delicious.com/save?v=5&noui&jump=close&url='+document.URL+'&title='+document.title+'" target="_blank" title="Delicious">';
+txt=txt+'<img src="/images/share_delicious.gif" border="0" width="16px" height="16px" style="margin-right:4px" /></a>';
+txt=txt+'<a href="http://www.reddit.com/submit?url='+document.URL+'" target="_blank" title="Reddit">';
+txt=txt+'<img src="/images/share_reddit.gif" border="0" width="16px" height="16px" style="margin-right:4px" /></a>';
+txt=txt+'<a href="http://digg.com/submit?url='+document.URL+'&amp;title='+document.title+'" target="_blank" title="Digg">';
+txt=txt+'<img src="/images/share_digg.gif" border="0" width="16px" height="16px" style="margin-right:4px" /></a>';
+txt=txt+'<a href="http://www.stumbleupon.com/submit?url='+document.URL+'%26title%3D'+document.title+'" target="_blank" title="Stumbleupon">';
+txt=txt+'<img src="/images/share_stumbleupon.gif" border="0" width="16px" height="16px" /></a>';
+document.getElementById("sharethis").innerHTML=txt;
+}
+//--></script>
+<table>
+<tr><th>SHARE THIS PAGE</th></tr>
+<tr>
+<td id="sharethis">
+<div style="height:16px">
+<a href="#" onclick="sharethis();return false;">Share with &raquo;</a>
+</div>
+</td>
+</tr>
+</table>
+
+
+</div>
+</div>
+	<br />
+</div>
+<div style="width:100%;clear:both;margin:0;padding:0;background-color:transparent;background-image:url('http://www.w3schools.com/images/gradientbottom.jpg');background-repeat:repeat-x;position:relative;">
+<div id="footer" style="width:960px;margin-left:auto;margin-right:auto;height:110px;">
+<div style="float:left;width:200px;text-align:left;padding-left:3px;padding-top:11px;"><a href="../index.html">
+<img style="border:0" src="http://www.w3schools.com/images/w3schoolscom_gray.gif" alt="W3Schools.com" /></a>
+</div>
+<div style="word-spacing:6px;font-size:80%;padding-right:12px;padding-top:19px;float:right;width:600px;text-align:right;">
+		<a href="#" onclick="displayError();return false">REPORT ERROR</a> |
+		<a href="../default.html" target="_top">HOME</a> |
+		<a href="#top" target="_top">TOP</a> |
+		<a href='html_colorsmored86a.asp?output=print' target="_blank">PRINT</a> |
+		<a href="http://w3schools.invisionzone.com/" target="_blank">FORUM</a> |
+		<a href="../about/default.html" target="_top">ABOUT</a>
+</div>
+<div style="padding-top:13px;color:#404040;clear:both;">
+		W3Schools is optimized for learning, testing, and training. Examples might be simplified to improve reading and basic understanding.<br />
+		Tutorials, references, and examples are constantly reviewed to avoid errors, but we cannot warrant full correctness of all content.<br />
+		While using this site, you agree to have read and accepted our
+		<a href="../about/about_copyright.html">terms of use</a> and
+		<a href="../about/about_privacy.html">privacy policy</a>.<br />
+		<a href="../about/about_copyright.html">Copyright 1999-2011</a> by Refsnes Data. All Rights Reserved.
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    autoDisplay: false,    
+    gaTrack: true,
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+  }, 'google_translate_element');
+}
+</script><script src="../../translate.google.com/translate_a/elementa0d8.html?cb=googleTranslateElementInit" type="text/javascript"></script>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/html/html_colorsmore.asp?color=0 by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:08:49 GMT -->
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/webservices/ws_example.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:33:58 GMT -->
+<head>
+
+<title>Web Service Example</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1>Web Services <span class="color_h1">Example</span></h1>
+<div class="chapter">
+<div class="prev"><a class="chapter" href="ws_platform.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="ws_use.html">Next Chapter &raquo;</a></div>
+</div>
+<hr />
+<p class="intro">Any application can have a Web Service component.</p>
+<p class="intro">Web Services can be created regardless of programming language.</p>
+<hr />
+
+<h2>A Web Service Example</h2>
+<p>In the following example we will use ASP.NET to create a simple Web Service 
+that converts the temperature from Fahrenheit to Celsius, and vice versa:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;%@ WebService Language=&quot;VBScript&quot; Class=&quot;TempConvert&quot; %&gt;<br /><br />
+Imports System<br />
+Imports System.Web.Services<br /><br />
+Public Class TempConvert :Inherits WebService<br /><br />
+&lt;WebMethod()&gt; Public Function FahrenheitToCelsius<br />
+(ByVal Fahrenheit As String) As String<br />
+  &nbsp;
+  dim fahr<br />
+  &nbsp;
+  fahr=trim(replace(Fahrenheit,&quot;,&quot;,&quot;.&quot;))<br />
+  &nbsp;
+  if fahr=&quot;&quot; or IsNumeric(fahr)=false then return &quot;Error&quot;<br />
+  &nbsp;
+  return ((((fahr) - 32) / 9) * 5)<br />
+end function<br /><br />
+&lt;WebMethod()&gt; Public Function CelsiusToFahrenheit<br />
+(ByVal Celsius As String) As String<br />
+  &nbsp;
+  dim cel<br />
+  &nbsp;
+  cel=trim(replace(Celsius,&quot;,&quot;,&quot;.&quot;))<br />
+  &nbsp;
+  if cel=&quot;&quot; or IsNumeric(cel)=false then return &quot;Error&quot;<br />
+  &nbsp;
+  return ((((cel) * 9) / 5) + 32)<br />
+end function<br /><br />
+end class</td></tr></table>
+
+<p>This document is saved as an .asmx file. This is the ASP.NET file extension for XML Web Services.</p>
+<hr />
+
+<h2>Example Explained</h2>
+<p><b>Note:</b> To run this example, you will need a .NET server.</p>
+<p>The first line in the example states that this is a Web Service, written in VBScript, and has the class name &quot;TempConvert&quot;:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>&lt;%@ WebService Language=&quot;VBScript&quot; Class=&quot;TempConvert&quot; %&gt;</td></tr></table>
+
+<p>The next lines import the namespace &quot;System.Web.Services&quot; from the .NET framework:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>Imports System<br />
+Imports System.Web.Services</td></tr></table>
+
+<p>The next line defines that the &quot;TempConvert&quot; class is a WebService class type:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>Public Class TempConvert :Inherits WebService</td></tr></table>
+
+<p>The next steps are basic VB programming. This application has two functions. One to convert from Fahrenheit to Celsius, and one to convert from Celsius to Fahrenheit.</p>
+<p>The only difference from a normal application is that this function is defined as a &quot;WebMethod()&quot;.  </p>
+<p>Use &quot;WebMethod()&quot; to convert the functions in your application into web services:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;WebMethod()&gt; Public Function FahrenheitToCelsius<br />
+(ByVal Fahrenheit As String) As String<br />
+  &nbsp;
+  dim fahr<br />
+  &nbsp;
+  fahr=trim(replace(Fahrenheit,&quot;,&quot;,&quot;.&quot;))<br />
+  &nbsp;
+  if fahr=&quot;&quot; or IsNumeric(fahr)=false then return &quot;Error&quot;<br />
+  &nbsp;
+  return ((((fahr) - 32) / 9) * 5)<br />
+end function<br /><br />
+&lt;WebMethod()&gt; Public Function CelsiusToFahrenheit<br />
+(ByVal Celsius As String) As String<br />
+  &nbsp;
+  dim cel<br />
+  &nbsp;
+  cel=trim(replace(Celsius,&quot;,&quot;,&quot;.&quot;))<br />
+  &nbsp;
+  if cel=&quot;&quot; or IsNumeric(cel)=false then return &quot;Error&quot;<br />
+  &nbsp;
+  return ((((cel) * 9) / 5) + 32)<br />
+end function</td></tr></table>
+
+<p>Then, end the class:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>end class</td></tr></table>
+
+<p>Publish the .asmx file on a server with .NET support, and you will have your first working Web Service.</p>
+<p>Look at our <a target="_blank" href="tempconvert.html">example Web Service</a></p>
+<hr />
+
+<h2>ASP.NET Automates the Process</h2>
+<p>With ASP.NET, you do not have to write your own WSDL and SOAP documents.</p>
+<p>If you look closer at our example Web Service, you will see that ASP.NET has automatically created a
+<a target="_blank" href="tempconverte7f6.asmx?WSDL">WSDL</a> and
+<a target="_blank" href="tempconvert0dc4.html?op=FahrenheitToCelsius">SOAP</a> request.</p>
+<br />
+<div class="chapter">
+<div class="prev"><a class="chapter" href="ws_platform.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="ws_use.html">Next Chapter &raquo;</a></div>
+</div>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/webservices/ws_example.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:33:58 GMT -->
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/xslfo/obj_region-after.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:45:44 GMT -->
+<head>
+
+<title>XSL-FO region-after Object</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+
+<h1>XSL-FO <span class="color_h1">region-after</span> Object</h1>
+<a href="javascript:history.back()" onclick="history.back();return false"><img src="http://www.w3schools.com/images/btn_exit.gif" width="100" height="20" alt="Back" border="0"/></a>
+<hr />
+
+<h2>Definition and Usage</h2>
+
+<p>The &lt;fo:region-after&gt; object defines the bottom region of a page (footer).</p>
+
+<p>XSL-FO uses the following elements to define the regions of a page:</p>
+
+<ul type="square">
+  <li>&lt;fo:region-body&gt; defines the body region</li>
+  <li>&lt;fo:region-before&gt; defines the top region (header)</li>
+  <li>&lt;fo:region-after&gt; defines the bottom region (footer)</li>
+  <li>&lt;fo:region-start&gt; defines the left region (left sidebar)</li>
+  <li>&lt;fo:region-end&gt; defines the right region (right sidebar)</li>
+</ul>
+
+<p><b>Note:</b> region-before, region-after, region-start, and region-end is a 
+part of the region-body. To avoid text in the region-body to overwrite text in 
+the other regions, the region-body must have margins at least the size of these 
+regions. </p>
+
+<p><b>Note:</b> According to version 1.0 of the XSL-FO Recommendation, the 
+padding and border-width properties must be 0. </p>
+
+<hr />
+
+<h2>Syntax</h2>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;fo:region-after&gt;<br />
+&nbsp;&nbsp;&lt;!--<br />
+&nbsp;&nbsp;&nbsp;&nbsp;Contents:EMPTY<br />
+&nbsp;&nbsp;--&gt;<br />
+&lt;/fo:region-after&gt;
+</td></tr>
+</table>
+<h2>Properties</h2>
+<table class="reference">
+  <tr>
+    <th width="50%" align="left" valign="top">Property [A-B]</th>
+    <th width="50%" align="left" valign="top">Property [C-Z]</th>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_background-attachment.asp">background-attachment</a></td>
+    <td valign="top">clip</td>
+    </tr>
+  <tr>
+    <td valign="top"><a href="prop_background-color.asp">background-color</a></td>
+    <td valign="top">
+    display-align</td>
+    </tr>
+  <tr>
+    <td valign="top"><a href="prop_background-image.asp">background-image</a></td>
+    <td valign="top">
+    extent</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_background-repeat.asp">background-repeat</a></td>
+    <td valign="top">overflow</td>
+  </tr>
+  <tr>
+    <td valign="top">background-position-horizontal</td>
+    <td valign="top">
+    <a href="prop_padding.asp">padding-after</a></td>
+  </tr>
+  <tr>
+    <td valign="top">background-position-vertical</td>
+    <td valign="top">
+    <a href="prop_padding.asp">padding-before</a></td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_color.asp">border-after-color</a></td>
+    <td valign="top">
+    <a href="prop_padding.asp">padding-bottom</a></td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_style.asp">border-after-style</a></td>
+    <td valign="top">
+    <a href="prop_padding.asp">padding-end</a></td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_width.asp">border-after-width</a></td>
+    <td valign="top">
+    <a href="prop_padding.asp">padding-left</a></td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_color.asp">border-before-color</a></td>
+    <td valign="top">
+    <a href="prop_padding.asp">padding-right</a></td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_style.asp">border-before-style</a></td>
+    <td valign="top">
+    <a href="prop_padding.asp">padding-start</a></td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_width.asp">border-before-width</a></td>
+    <td valign="top">
+    <a href="prop_padding.asp">padding-top</a></td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_color.asp">border-bottom-color</a></td>
+    <td valign="top">
+    precedence</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_style.asp">border-bottom-style</a></td>
+    <td valign="top">
+    region-name</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_width.asp">border-bottom-width</a></td>
+    <td valign="top">
+    reference-orientation</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_color.asp">border-end-color</a></td>
+    <td valign="top">
+    writing-mode</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_style.asp">border-end-style</a></td>
+    <td valign="top">
+    &nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_width.asp">border-end-width</a></td>
+    <td valign="top">
+    &nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_color.asp">border-left-color</a></td>
+    <td valign="top">
+    &nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_style.asp">border-left-style</a></td>
+    <td valign="top">
+    &nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_width.asp">border-left-width</a></td>
+    <td valign="top">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_color.asp">border-right-color</a></td>
+    <td valign="top">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_style.asp">border-right-style</a></td>
+    <td valign="top">
+    &nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_width.asp">border-right-width</a></td>
+    <td valign="top">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_color.asp">border-start-color</a></td>
+    <td valign="top">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_style.asp">border-start-style</a></td>
+    <td valign="top">
+    &nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_width.asp">border-start-width</a></td>
+    <td valign="top">
+    &nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_color.asp">border-top-color</a></td>
+    <td valign="top">
+    &nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_style.asp">border-top-style</a></td>
+    <td valign="top">
+    &nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="prop_border_width.asp">border-top-width</a></td>
+    <td valign="top">
+    &nbsp;</td>
+  </tr>
+  </table>
+
+<h3>Example 1</h3>
+
+<p>XSL-FO uses page templates called &quot;Page Masters&quot; to define the layout of&nbsp; 
+pages. Each template 
+must have a unique name:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;fo:simple-page-master master-name=&quot;intro&quot;&gt;<br />
+&nbsp;&nbsp;&lt;fo:region-body margin=&quot;5in&quot; /&gt;<br />
+&lt;/fo:simple-page-master&gt;<br />
+<br />
+&lt;fo:simple-page-master master-name=&quot;left&quot;&gt;<br />
+&nbsp;&nbsp;&lt;fo:region-body margin-left=&quot;2in&quot; margin-right=&quot;3in&quot; /&gt;<br />
+&lt;/fo:simple-page-master&gt;<br />
+<br />
+&lt;fo:simple-page-master master-name=&quot;right&quot;&gt;<br />
+&nbsp;&nbsp;&lt;fo:region-body margin-left=&quot;3in&quot; margin-right=&quot;2in&quot; /&gt;<br />
+&lt;/fo:simple-page-master&gt;
+</td></tr>
+</table>
+<p>In the example above, three &lt;fo:simple-page-master&gt; elements, define three 
+different templates. Each template (page-master) has a different name.</p>
+<p>The first template is called &quot;intro&quot;. It could be used as a template for 
+introduction pages.</p>
+<p>The second and third templates are called &quot;left&quot; and &quot;right&quot;. They could be 
+used as templates for even and odd page numbers.</p>
+
+<h3>Example 2</h3>
+<p>This is an extract from an XSL-FO document:</p>
+
+<table class="code notranslate" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td>
+&lt;fo:simple-page-master master-name=&quot;A4&quot;<br />
+ page-width=&quot;297mm&quot; page-height=&quot;210mm&quot;<br />
+ margin-top=&quot;1cm&quot;   margin-bottom=&quot;1cm&quot;<br />
+ margin-left=&quot;1cm&quot;  margin-right=&quot;1cm&quot;&gt;<br />
+&nbsp;&nbsp;&lt;fo:region-body   margin=&quot;3cm&quot;/&gt;<br />
+&nbsp;&nbsp;&lt;fo:region-before extent=&quot;2cm&quot;/&gt;<br />
+&nbsp;&nbsp;&lt;fo:region-after  extent=&quot;2cm&quot;/&gt;<br />
+&nbsp;&nbsp;&lt;fo:region-start  extent=&quot;2cm&quot;/&gt;<br />
+&nbsp;&nbsp;&lt;fo:region-end    extent=&quot;2cm&quot;/&gt;<br />
+&lt;/fo:simple-page-master&gt;
+</td></tr>
+</table>
+<p>The code above defines a &quot;Simple Page Master Template&quot; with the name &quot;A4&quot;.</p>
+<p>The width of the page is 297 millimeters and the height is 210 millimeters.</p>
+<p>The top, bottom, left, and right margins of the page are all 1 centimeter.</p>
+<p>The body has a 3 centimeter margin (on all sides).</p>
+<p>The before, after, start, and end regions (of the body) are all 2 
+centimeters.</p>
+<p>The 
+width of the body in the example above can be 
+calculated by subtracting the left and right margins and the region-body 
+margins from the width of the page itself:</p>
+<p>297mm - (2 x 1cm) - (2 x 3cm) = 297mm - 20mm - 60mm = 217mm.</p>
+
+<p>Note that the regions (region-start and region-end) are not a part of the 
+calculation. As described earlier, these regions are parts of the body.</p>
+<hr />
+<a href="javascript:history.back()" onclick="history.back();return false"><img src="http://www.w3schools.com/images/btn_exit.gif" width="100" height="20" alt="Back" border="0"/></a>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/xslfo/obj_region-after.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:45:44 GMT -->
+</html>

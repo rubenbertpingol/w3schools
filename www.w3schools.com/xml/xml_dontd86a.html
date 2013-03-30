@@ -1,0 +1,272 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3schools.com/xml/xml_dont.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:16:19 GMT -->
+<head>
+
+<title>XML Don't</title>
+ 
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="Keywords" content="html,css,tutorial,html5,dhtml,css3,xsl,xslt,xhtml,javascript,jquery,asp,ado,net,vbscript,dom,sql,colors,soap,php,rss,authoring,programming,training,learning,quiz,beginner's guide,primer,lessons,school,howto,reference,examples,samples,source code,tags,demos,tips,links,FAQ,tag list,forms,frames,color table,w3c,cascading style sheets,active server pages,dynamic html,internet,database,development,Web building,Webmaster,html guide" />
+
+<meta name="Description" content="Free HTML XHTML CSS JavaScript jQuery XML DOM XSL XSLT RSS AJAX ASP .NET PHP SQL tutorials, references, examples for web building." />
+
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<script type="text/javascript">
+<!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function searchfield_focus(obj)
+{
+obj.style.color=""
+obj.style.fontStyle=""
+if (obj.value=="Search w3schools.com")
+	{
+	obj.value=""
+	}
+}
+
+var pageTracker = _gat._getTracker("UA-3855518-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+
+var addr=document.location.href;
+function displayError()
+{
+document.getElementById("err_url").value=addr;
+document.getElementById("err_form").style.display="block";
+document.getElementById("err_desc").focus();
+hideSent();
+}
+function hideError()
+{
+document.getElementById("err_form").style.display="none";
+}
+function hideSent()
+{
+document.getElementById("err_sent").style.display="none";
+}
+function sendErr()
+{
+var xmlhttp;
+var err_url=document.getElementById("err_url").value;
+var err_email=document.getElementById("err_email").value;
+var err_desc=document.getElementById("err_desc").value;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("POST","../err_sup.html",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("err_url=" + err_url + "&err_email=" + err_email + "&err_desc=" + escape(err_desc));
+hideError();
+document.getElementById("err_sent").style.display="block";
+}
+
+function click_expandingMenuHeader(obj,sectionName)
+{
+var x=document.getElementById("cssprop_" + sectionName).parentNode.className;
+if (x.indexOf("expandingMenuNotSelected")>-1)
+	{
+	x=x.replace("expandingMenuNotSelected","expandingMenuSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="block";
+	}
+else
+	{
+	x=x.replace("expandingMenuSelected","expandingMenuNotSelected");
+	document.getElementById("cssprop_" + sectionName).parentNode.className=x;
+	document.getElementById("cssprop_" + sectionName).style.display="none";
+	}
+}
+
+//-->
+</script>
+<!--[if lt IE 7]>
+<style>
+#leftcolumn{margin-left:0}
+</style>
+<![endif]-->
+</head>
+<body>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+<h1>XML <span class="color_h1">Don't</span></h1>
+<div class="chapter">
+<div class="prev"><a class="chapter" href="xml_dom_advanced.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="xml_technologies.html">Next Chapter &raquo;</a></div>
+</div>
+<hr />
+<p class="intro">Here are some technologies you should try to avoid when 
+using XML.</p>
+<hr />
+<h2>Internet Explorer - XML Data Islands</h2>
+<p><b>What is it? </b>An XML data island is XML data embedded into an HTML page.</p>
+<p><b>Why avoid it?</b> XML Data Islands only works with Internet Explorer browsers.</p>
+<p><b>What to use instead?</b> You should use JavaScript and XML DOM to parse 
+and display XML in HTML.</p>
+<p>For more information about JavaScript and XML DOM, visit our <a href="../dom/default.html">XML 
+DOM tutorial.</a></p>
+<hr />
+<h2>XML Data Island Example</h2>
+<p>This example uses the XML document &quot;<a target="_blank" href="cd_catalog.xml">cd_catalog.xml</a>&quot;.</p>
+<p>Bind the XML document to an &lt;xml&gt; tag in the HTML document. The id attribute defines an 
+id for the data island, and the src 
+attribute points to the XML file:</p>
+<table class="example" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+<h2 class="example">Example</h2>
+<p>This example only works in IE</p>
+<table class="example_code notranslate" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+&lt;html&gt;<br />
+&lt;body&gt;<br />
+<br />
+&lt;xml id=&quot;cdcat&quot; src=&quot;cd_catalog.xml&quot;&gt;&lt;/xml&gt;<br />
+<br />
+&lt;table border=&quot;1&quot; datasrc=&quot;#cdcat&quot;&gt;<br />
+&lt;tr&gt;<br />
+&lt;td&gt;&lt;span datafld=&quot;ARTIST&quot;&gt;&lt;/span&gt;&lt;/td&gt;<br />
+&lt;td&gt;&lt;span datafld=&quot;TITLE&quot;&gt;&lt;/span&gt;&lt;/td&gt;<br />
+&lt;/tr&gt;<br />
+&lt;/table&gt;<br />
+<br />
+&lt;/body&gt;<br />
+&lt;/html&gt;
+</td></tr></table>
+<br /><a target="_blank" href="tryit8c97.html?filename=cd_catalog_island" class="tryitbtn">Try it yourself &raquo;</a>
+</td></tr></table>
+<p>The datasrc attribute of the &lt;table&gt; tag binds the HTML table to 
+the XML data island.</p>
+<p>The &lt;span&gt; tags allow the datafld attribute to refer to the XML element to 
+be displayed. In this case, &quot;ARTIST&quot; and &quot;TITLE&quot;. As the XML is read, additional rows are created for each &lt;CD&gt; 
+element.</p>
+
+
+<hr />
+
+<h2>Internet Explorer - Behaviors</h2>
+<p><b>What is it? </b>Internet Explorer 5 introduced behaviors. Behaviors are a 
+way to add behaviors to XML (or HTML) elements with the use of CSS styles.</p>
+<p><b>Why avoid it?</b> The behavior attribute is only supported by Internet Explorer.</p>
+<p><b>What to use instead? </b>Use JavaScript and XML DOM (or HTML DOM) instead.</p>
+<table class="example" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+<h2 class="example">Example 1 - Mouseover Highlight</h2>
+<p>The following HTML file has a &lt;style&gt; element that defines a behavior for the &lt;h1&gt;
+element:</p>
+<table class="example_code notranslate" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+&lt;html&gt;<br />
+&lt;head&gt;<br />
+&lt;style type=&quot;text/css&quot;&gt;<br />
+h1 { behavior: url(behave.htc) }<br />
+&lt;/style&gt;<br />
+&lt;/head&gt;<br />
+&lt;body&gt;<br />
+<br />
+&lt;h1&gt;Mouse over me!!!&lt;/h1&gt;<br />
+<br />
+&lt;/body&gt;<br />
+&lt;/html&gt;
+</td></tr></table>
+<p>The XML document &quot;behave.htc&quot; is shown below (The file contains a 
+JavaScript and event handlers for the elements):</p>
+<table class="example_code notranslate" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+&lt;attach for=&quot;element&quot; event=&quot;onmouseover&quot; handler=&quot;hig_lite&quot; /&gt;<br />
+&lt;attach for=&quot;element&quot; event=&quot;onmouseout&quot; handler=&quot;low_lite&quot; /&gt;<br />
+<br />
+&lt;script type=&quot;text/javascript&quot;&gt;<br />
+function hig_lite()<br />
+{<br />
+element.style.color='red';<br />
+}<br />
+<br />
+function low_lite()<br />
+{<br />
+element.style.color='blue';<br />
+}<br />
+&lt;/script&gt;
+</td></tr></table>
+<br /><a target="_blank" href="tryit3d8d.html?filename=behave" class="tryitbtn">Try it yourself &raquo;</a>
+</td></tr></table>
+<br />
+
+<table class="example" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+<h2 class="example">Example 2 - Typewriter Simulation</h2>
+<p>The following HTML file has a &lt;style&gt; element that defines a behavior 
+for elements with an id of &quot;typing&quot;:</p>
+<table class="example_code notranslate" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+&lt;html&gt;<br />
+&lt;head&gt;<br />
+&lt;style type=&quot;text/css&quot;&gt;<br />
+#typing<br />
+{<br />
+behavior:url(typing.htc);<br />
+font-family:'courier new';<br />
+}<br />
+&lt;/style&gt;<br />
+&lt;/head&gt;<br />
+&lt;body&gt;<br />
+<br />
+&lt;span id=&quot;typing&quot; speed=&quot;100&quot;&gt;IE5 introduced DHTML behaviors.<br />
+Behaviors are a way to add DHTML functionality to HTML elements<br />
+with the ease of CSS.&lt;br /&gt;&lt;br /&gt;How do behaviors work?&lt;br /&gt;<br />
+By using XML we can link behaviors to any element in a web page<br />
+and manipulate that element.&lt;/p&gt;v
+&lt;/span&gt;<br />
+<br />
+&lt;/body&gt;<br />
+&lt;/html&gt;
+</td></tr></table>
+<p>The XML document &quot;typing.htc&quot; is shown below:</p>
+<table class="example_code notranslate" border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+&lt;attach for=&quot;window&quot; event=&quot;onload&quot; handler=&quot;beginTyping&quot; /&gt;<br />
+&lt;method name=&quot;type&quot; /&gt;<br />
+<br />
+&lt;script type=&quot;text/javascript&quot;&gt;<br />
+var i,text1,text2,textLength,t;<br />
+<br />
+function beginTyping()<br />
+{<br />
+i=0;<br />
+text1=element.innerText;<br />
+textLength=text1.length;<br />
+element.innerText=&quot;&quot;;<br />
+text2=&quot;&quot;;<br />
+t=window.setInterval(element.id+&quot;.type()&quot;,speed);<br />
+}<br />
+<br />
+function type()<br />
+{<br />
+text2=text2+text1.substring(i,i+1);<br />
+element.innerText=text2;<br />
+i=i+1;<br />
+if (i==textLength)<br />
+&nbsp;&nbsp;{<br />
+&nbsp;&nbsp;clearInterval(t);<br />
+&nbsp;&nbsp;}<br />
+}<br />
+&lt;/script&gt;
+</td></tr></table>
+<br /><a target="_blank" href="tryit74c3.html?filename=behave_typing" class="tryitbtn">Try it yourself &raquo;</a>
+</td></tr></table>
+<br />
+<div class="chapter">
+<div class="prev"><a class="chapter" href="xml_dom_advanced.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="xml_technologies.html">Next Chapter &raquo;</a></div>
+</div>
+
+<p>From <b>http://www.w3schools.com</b> (Copyright Refsnes Data)</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/xml/xml_dont.asp?output=print by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 15 Oct 2011 23:16:19 GMT -->
+</html>
